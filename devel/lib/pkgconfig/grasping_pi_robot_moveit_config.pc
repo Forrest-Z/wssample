@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/grasping_pi_robot_moveit_config/lib/pkgconfig/grasping_pi_robot_moveit_config.pc

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/gnss/share/gnss/cmake/gnssConfig.cmake

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>g29_driver</name>
+  <version>0.0.1</version>
+  <description>Logitech G29 for ROS device drivers.</description>
+  <license>MIT</license>
+
+  <maintainer email="fun@todo.todo">fun</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  
+</package>

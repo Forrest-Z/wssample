@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/localization_msgs/share/roseus/ros/localization_msgs/msg/SteerSpeedYawRate.l

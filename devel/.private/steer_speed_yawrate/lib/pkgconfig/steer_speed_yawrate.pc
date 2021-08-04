@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/steer_speed_yawrate
+
+Name: steer_speed_yawrate
+Description: Description of steer_speed_yawrate
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

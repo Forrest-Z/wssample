@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/displaydata_msgs/share/gennodejs/ros/displaydata_msgs/_index.js

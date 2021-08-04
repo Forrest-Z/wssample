@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/oligay_61/zone3/src/drivers/kvaser_interface/src/kvaser_interface.cpp
+kvaser_interface.h
+/home/oligay_61/zone3/src/drivers/kvaser_interface/src/kvaser_interface.h
+string
+-
+vector
+-
+cstring
+-
+sstream
+-
+algorithm
+-
+iomanip
+-
+
+/home/oligay_61/zone3/src/drivers/kvaser_interface/src/kvaser_interface.h
+canlib.h
+-
+iostream
+-
+memory
+-
+string
+-
+vector
+-
+functional
+-
+

@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/container_angle_calibration
+
+Name: container_angle_calibration
+Description: Description of container_angle_calibration
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/teledrive_msgs
+
+Name: teledrive_msgs
+Description: Description of teledrive_msgs
+Version: 1.0.0
+Cflags: -I/home/oligay_61/zone3/devel/.private/teledrive_msgs/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime std_msgs

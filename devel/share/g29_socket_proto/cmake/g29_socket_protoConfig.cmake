@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_socket_proto/share/g29_socket_proto/cmake/g29_socket_protoConfig.cmake

@@ -1,0 +1,31 @@
+<launch>
+    <arg name="video_device" default="/dev/video2" />
+
+
+<!--节点的名字叫做usb_cam，然后运行一个叫usb_cam_node的可执行文件，这个文件在ros的lib里面，找不到源码文件，只有这个包装好可执行文件-->
+    <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" clear_params="true" output="screen">
+        <remap from="usb_cam/image_raw" to="/camera/rgb/image_raw" />
+        <remap from="usb_cam/camera_info" to="/camera/rgb/camera_info" />
+        <!-- 摄像头编号类型 -->
+        <param name="video_device" value="$(arg video_device)" />
+        <!-- 摄像头页面的宽 -->
+        <param name="image_width" value="1920" />
+        <!-- 摄像头页面的高 -->
+        <param name="image_height" value="1020" />
+        <!-- 帧率 -->
+        <param name="framerate" value="30" />
+        <!-- 像素编码，可选值：mjepg、yuyv、uyvy，类型：string -->
+        <param name="pixel_format" value="yuyv" />
+        <!-- 对比度 -->
+        <param name="contrast" value="32" />
+        <!-- 亮度 -->
+        <param name="brightness" value="32" />
+        <!-- 饱和度 -->
+        <param name="saturation" value="32" />
+        <!-- 自动聚焦 -->
+        <param name="autofocus" value="true" />
+        <!-- 摄像头坐标系，类型：string -->
+        <param name="camera_frame_id" value="camera_link" />
+
+    </node>
+</launch>

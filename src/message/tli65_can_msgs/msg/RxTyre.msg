@@ -1,0 +1,34 @@
+Header header
+
+# tyre1
+uint16 front_left_pressure
+uint16 front_right_pressure
+uint16 middle_left_outer_pressure
+uint16 middle_left_inner_pressure
+uint16 middle_right_inner_pressure
+uint16 middle_right_outer_pressure
+uint8 pressure_test_fault
+
+# tyre2
+uint16 back_left_outer_pressure
+uint16 back_left_inner_pressure
+uint16 back_right_inner_pressure
+uint16 back_right_outer_pressure
+
+# tyre3
+float64 front_left_temperature
+float64 front_right_temperature
+uint8 front_temperature_test_fault
+uint8 middle_back_temperature_test_fault
+
+# tyre4
+float64 middle_left_outer_temperature
+float64 middle_left_inner_temperature
+float64 middle_right_inner_temperature
+float64 middle_right_outer_temperature
+
+# tyre5
+float64 back_left_outer_temperature
+float64 back_left_inner_temperature
+float64 back_right_inner_temperature
+float64 back_right_outer_temperature

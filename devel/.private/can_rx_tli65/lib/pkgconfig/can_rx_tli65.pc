@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/can_rx_tli65
+
+Name: can_rx_tli65
+Description: Description of can_rx_tli65
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

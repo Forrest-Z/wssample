@@ -1,0 +1,36 @@
+truck:
+  truck_model: "tongli"
+
+  truck_length: 9.3
+  truck_width: 3.22
+  truck_height: 3.76
+
+  steer_to_wheel_ratio: 30
+  axle_base1: 3.7
+  axle_base2: 1.5
+  front_axle_to_front: 2.1
+
+  # deg, deg, m
+  steer_wheel_angle: [-780, -26, 0, 0, 30, 1, 780, 26]
+
+  empty_mass: 23000
+  full_mass: 63000
+  tyre_radius: 0.685
+
+  # degree
+  # for tli90, use front wheel angle
+  max_wheel_angle: 28
+  min_wheel_angle: -28
+
+  max_steer_angle: 900
+  min_steer_angle: -900
+
+  # oligay_61 max 47
+  max_hang_angle: 40
+
+  # sensors calibration matrix
+
+  # imu : q = {w, x, y, z}, translation = {x, y, z}
+  # base : ego coord
+  imu_ego_origin_q: [-0.7074569165023789, -0.002021702041270745, -0.003145149732650013, -0.7067465914278127]
+  imu_ego_origin_translation: [4, 0, 0]

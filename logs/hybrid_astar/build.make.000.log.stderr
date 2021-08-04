@@ -1,0 +1,14 @@
+[01m[K/home/oligay_61/zone3/src/hybrid_astar/src/collisiondetection.cpp:[m[K In member function ‘[01m[Kbool HybridAStar::CollisionDetection::configurationTest(float, float, float) const[m[K’:
+[01m[K/home/oligay_61/zone3/src/hybrid_astar/src/collisiondetection.cpp:31:27:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (cX >= 0 && cX < grid->info.width && cY >= 0 &&
+[01;32m[K                           ^[m[K
+[01m[K/home/oligay_61/zone3/src/hybrid_astar/src/collisiondetection.cpp:32:16:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+             cY < grid->info.height) {
+[01;32m[K                ^[m[K
+[01m[K/home/oligay_61/zone3/src/hybrid_astar/src/collisiondetection.cpp:[m[K In member function ‘[01m[Kbool HybridAStar::CollisionDetection::configurationTest(float, float, float) const[m[K’:
+[01m[K/home/oligay_61/zone3/src/hybrid_astar/src/collisiondetection.cpp:31:27:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (cX >= 0 && cX < grid->info.width && cY >= 0 &&
+[01;32m[K                           ^[m[K
+[01m[K/home/oligay_61/zone3/src/hybrid_astar/src/collisiondetection.cpp:32:16:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+             cY < grid->info.height) {
+[01;32m[K                ^[m[K

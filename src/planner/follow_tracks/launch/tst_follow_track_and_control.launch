@@ -1,0 +1,24 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find record_tracks)/../../.." />
+	<arg name="vehicle_id" default="oligay_61" />
+	<arg name="record_path" default="$(arg pre_dir)/bags/tst" />
+	<arg name="record_topics" default="/none" />
+	<arg name="file_name" default="8.trk" />
+	<!-- parameters -->
+	<param name="/pre_dir" type="string" value="$(arg pre_dir)" />
+	<param name="/file_name" type="string" value="$(arg file_name)" />
+	<rosparam command="load" file="$(arg pre_dir)/config/global.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/$(arg vehicle_id).yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_tracks.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_planner.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_control.yaml"/>
+	<group>
+		<!-- planner -->
+		<include file="$(find planner_fsm)/launch/planner_fsm.launch" />
+		<include file="$(find follow_tracks)/launch/follow_tracks.launch" />
+		<!-- control -->
+		<include file="$(find control_fsm)/launch/control_fsm.launch" />
+		<include file="$(find control_action)/launch/control_action.launch" />
+	</group>
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+	<group ns="zone3">
+		<group ns="drivers">
+			<node name="chassis_can" pkg="kvaser_interface" type="kvaser_can_bridge" output="screen">
+				<param name="tx_topic" value="/zone3/drivers/can/tx" />
+				<param name="rx_topic" value="/zone3/drivers/can/rx" />
+				<param name="can_hardware_id" value="12204" />
+				<param name="can_circuit_id" value="0" />
+				<param name="can_bit_rate" value="250000" />
+			</node>
+		</group>
+	</group>
+</launch>

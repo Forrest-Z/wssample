@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/kalman_msgs/share/gennodejs/ros/kalman_msgs/msg/Kinematics.js

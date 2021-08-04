@@ -1,0 +1,14 @@
+<launch>
+	<group ns="zone3">
+		<node name="planner_fsm" pkg="planner_fsm" type="planner_fsm" output="screen">
+			<!-- sub -->
+			<param name="pose_topic" value="/zone3/localization/pose" />
+			<param name="state_highspeed_topic" value="/zone3/chassis/rx/state_highspeed" />
+			<!-- in ego coord -->
+			<param name="waypoint_topic" value="/zone3/planner/follow_tracks/way_points" />
+			<param name="fsm_trigger_topic" value="/zone3/planner/fsm_trigger" />
+			<!-- pub -->
+			<param name="pub_fsm_topic" value="/zone3/planner/planner_fsm" />
+		</node>
+	</group>
+</launch>

@@ -1,0 +1,7 @@
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:[m[K In member function ‘[01m[Kvoid zone3::DataDisplay::ProcTyre(const RxTyre&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:124:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Ktyre_pressure[m[K’
+     global_data.tyre_pressure = msg.front_left_pressure;
+[01;32m[K                 ^[m[K
+make[2]: *** [CMakeFiles/data_display.dir/src/datadisplay.cpp.o] Error 1
+make[1]: *** [CMakeFiles/data_display.dir/all] Error 2
+make: *** [all] Error 2

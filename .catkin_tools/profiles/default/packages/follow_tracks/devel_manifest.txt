@@ -1,0 +1,6 @@
+planner/follow_tracks
+/home/oligay_61/zone3/devel/.private/follow_tracks/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/follow_tracks/share/follow_tracks/cmake/follow_tracksConfig-version.cmake /home/oligay_61/zone3/devel/share/follow_tracks/cmake/follow_tracksConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/follow_tracks/share/follow_tracks/cmake/follow_tracksConfig.cmake /home/oligay_61/zone3/devel/share/follow_tracks/cmake/follow_tracksConfig.cmake
+/home/oligay_61/zone3/devel/.private/follow_tracks/lib/pkgconfig/follow_tracks.pc /home/oligay_61/zone3/devel/lib/pkgconfig/follow_tracks.pc
+/home/oligay_61/zone3/devel/.private/follow_tracks/lib/follow_tracks/follow_tracks /home/oligay_61/zone3/devel/lib/follow_tracks/follow_tracks

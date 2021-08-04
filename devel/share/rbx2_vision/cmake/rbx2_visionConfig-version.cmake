@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_vision/share/rbx2_vision/cmake/rbx2_visionConfig-version.cmake

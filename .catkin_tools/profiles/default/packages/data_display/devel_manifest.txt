@@ -1,0 +1,6 @@
+data_display
+/home/oligay_61/zone3/devel/.private/data_display/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/data_display/share/data_display/cmake/data_displayConfig-version.cmake /home/oligay_61/zone3/devel/share/data_display/cmake/data_displayConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/data_display/share/data_display/cmake/data_displayConfig.cmake /home/oligay_61/zone3/devel/share/data_display/cmake/data_displayConfig.cmake
+/home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display /home/oligay_61/zone3/devel/lib/data_display/data_display
+/home/oligay_61/zone3/devel/.private/data_display/lib/pkgconfig/data_display.pc /home/oligay_61/zone3/devel/lib/pkgconfig/data_display.pc

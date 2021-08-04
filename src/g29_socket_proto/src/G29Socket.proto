@@ -1,0 +1,11 @@
+syntax = "proto3";
+package G29Socket;
+
+message G29SocketPack {
+    uint32 seq = 1;
+    uint32 secs = 2;
+    uint32 nsecs = 3;
+    string frame_id = 4;
+    repeated float axes = 5;
+    repeated float buttons = 6;
+}

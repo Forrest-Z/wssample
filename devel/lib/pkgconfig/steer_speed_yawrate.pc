@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/steer_speed_yawrate/lib/pkgconfig/steer_speed_yawrate.pc

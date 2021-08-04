@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/kvaser_interface/share/kvaser_interface/cmake/kvaser_interfaceConfig-version.cmake

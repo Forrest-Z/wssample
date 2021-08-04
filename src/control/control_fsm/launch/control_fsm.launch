@@ -1,0 +1,19 @@
+<launch>
+	<group ns="zone3">
+		<node name="control_fsm" pkg="control_fsm" type="control_fsm" output="screen">
+			<!-- sub -->
+			<param name="command_topic" value="/zone3/planner/follow_tracks/stop_go_command" />
+			<param name="planner_fsm_topic" value="/zone3/planner/planner_fsm" />
+			<param name="waypoints_topic" value="/zone3/planner/follow_tracks/way_points" />
+			<param name="teledrive_topic" value="/zone3/teledrive/teledrive_command" />
+			<param name="kalman_kinematics_topic" value="/zone3/kalman_filter/kalman_kinematics" />
+			<param name="container_topic" value="/zone3/chassis/rx/container_calib" />
+			<param name="state_highspeed_topic" value="/zone3/chassis/rx/state_highspeed" />
+			<param name="state_lowspeed_topic" value="/zone3/chassis/rx/state_lowspeed" />
+			<param name="fault_topic" value="/zone3/chassis/rx/fault" />
+			<param name="pose_topic" value="/zone3/localization/pose" />
+			<!-- pub -->
+			<param name="control_fsm_topic" value="/zone3/control/control_fsm" />
+		</node>
+	</group>
+</launch>

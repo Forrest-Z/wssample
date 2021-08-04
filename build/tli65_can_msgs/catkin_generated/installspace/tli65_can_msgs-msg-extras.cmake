@@ -1,0 +1,2 @@
+set(tli65_can_msgs_MESSAGE_FILES "msg/RxContainer.msg;msg/RxEPB.msg;msg/RxFt.msg;msg/RxFuel.msg;msg/RxHands.msg;msg/RxMaintain.msg;msg/RxSpeed.msg;msg/RxSt1.msg;msg/RxSt2.msg;msg/RxSt3.msg;msg/RxSt4.msg;msg/RxSt5.msg;msg/RxSt6.msg;msg/RxSt7.msg;msg/RxSt8.msg;msg/RxSt9.msg;msg/RxStHighspeed.msg;msg/RxStLowspeed.msg;msg/RxTyre.msg;msg/RxVIN.msg;msg/ContainerCalib.msg")
+set(tli65_can_msgs_SERVICE_FILES "")

@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/data_display
+
+Name: data_display
+Description: Description of data_display
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

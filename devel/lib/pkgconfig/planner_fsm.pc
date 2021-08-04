@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/planner_fsm/lib/pkgconfig/planner_fsm.pc

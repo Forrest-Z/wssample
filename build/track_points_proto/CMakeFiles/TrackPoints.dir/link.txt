@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -std=c++14 -O3 -g -Wall   -shared -Wl,-soname,libTrackPoints.so -o /home/oligay_61/zone3/devel/.private/track_points_proto/lib/libTrackPoints.so CMakeFiles/TrackPoints.dir/src/TrackPoints.pb.cc.o 

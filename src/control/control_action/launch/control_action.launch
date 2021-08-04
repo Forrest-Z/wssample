@@ -1,0 +1,14 @@
+<launch>
+	<group ns="zone3">
+		<node name="control_action" pkg="control_action" type="control_action" output="screen">
+			<!-- sub -->
+			<param name="control_fsm_topic" value="/zone3/control/control_fsm" />
+			<param name="waypoints_topic" value="/zone3/planner/follow_tracks/way_points" />
+			<param name="teledrive_topic" value="/zone3/teledrive/teledrive_command" />
+			<param name="kalman_kinematics_topic" value="/zone3/kalman_filter/kalman_kinematics" />
+			<!-- pub -->
+			<param name="pub_highspeed_topic" value="/zone3/control/highspeed_command" />
+			<param name="pub_lowspeed_topic" value="/zone3/control/lowspeed_command" />
+		</node>
+	</group>
+</launch>

@@ -1,0 +1,5 @@
+drivers/g29_driver
+/home/oligay_61/zone3/devel/.private/g29_driver/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/g29_driver/share/g29_driver/cmake/g29_driverConfig.cmake /home/oligay_61/zone3/devel/share/g29_driver/cmake/g29_driverConfig.cmake
+/home/oligay_61/zone3/devel/.private/g29_driver/share/g29_driver/cmake/g29_driverConfig-version.cmake /home/oligay_61/zone3/devel/share/g29_driver/cmake/g29_driverConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/g29_driver/lib/pkgconfig/g29_driver.pc /home/oligay_61/zone3/devel/lib/pkgconfig/g29_driver.pc

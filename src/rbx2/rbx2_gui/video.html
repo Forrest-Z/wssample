@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML5//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.65, user-scalable=yes">
+
+  <title>Rosbridge Simple GUI</title>
+  <script src="./js/roslib.js"></script>
+  <script type="text/javascript" src="js/eventemitter2.min.js"></script>
+  <script type="text/javascript" src="js/mjpegcanvas.min.js"></script>
+  <script type="text/javascript" src="js/roslib.min.js"></script>
+
+
+
+  <script type="text/javascript">
+    function init() {
+      var readyStateCheckInterval = setInterval(function () {
+        if (document.readyState === "complete") {
+          init();
+          clearInterval(readyStateCheckInterval);
+        }
+      }, 100);
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+  </style>
+</head>
+
+<body onload="init();init_ros();">
+  <div id="videoCanvas" style="display: block;"></div><br />
+  <script>
+    // 设置rosbridge和mjpegPort服务器端口
+    var rosbridgePort = "9090";
+    var mjpegPort = "8080";
+
+    // 获取当前主机名
+    thisHostName = document.location.hostname;
+
+    // 相应地设置rosbridge和mjpegPort服务器主机名
+    var rosbridgeHost = thisHostName;
+    var mjpegHost = thisHostName;
+
+    // 建立rosbride服务器的websocket URL
+    var serverURL = "ws://" + rosbridgeHost + ":" + rosbridgePort;
+
+    // 稍后将定义的mjpeg客户机对象
+    var mjpegViewer;
+
+    // 默认视频主题（可以在rosbridge启动文件中设置）
+    var videoTopic = "/camera/rgb/image_raw";
+
+    // mjpeg 视频质量
+    var videoQuality = 50;
+
+    // 包含此脚本参数的ROS命名空间
+    var param_ns = '/robot_gui';
+
+    // Get the current window width and height
+    // 获取窗口宽高
+    var windowWidth = this.window.innerWidth;
+    var windowHeight = this.window.innerHeight;
+
+    // 设置视频窗口的宽高
+    // var videoWidth = Math.round(windowWidth / 2.0);
+    var videoWidth = Math.round(800);
+    var videoHeight = Math.round(videoWidth * 240 / 320);
+
+    //The main ROS object
+    var ros = new ROSLIB.Ros();
+
+    // Connect to ROS
+    // 连接ros
+    function init_ros() {
+      // server websocket URL
+      ros.connect(serverURL);
+    }
+
+    // 发生错误打印错误
+    ros.on('error', function (error) {
+      console.log("Rosbridge Error: " + error);
+    });
+
+    // 连接完成,执行
+    ros.on('connection', function () {
+      console.log('Rosbridge connected.');
+
+      // Create a Param object for the video topic
+      var videoTopicParam = new ROSLIB.Param({
+        ros: ros,
+        name: param_ns + '/videoTopic'
+      });
+
+      videoTopicParam.get(function (value) {
+        if (value != null) {
+          videoTopic = value;
+        }
+
+        // Create the video viewer
+        if (!mjpegViewer) {
+          mjpegViewer = new MJPEGCANVAS.Viewer({
+            divID: 'videoCanvas',
+            host: mjpegHost,
+            port: mjpegPort,
+            width: videoWidth,
+            height: videoHeight,
+            quality: videoQuality,
+            topic: videoTopic
+          });
+
+        }
+
+        // gear
+        var oligay = { gear: 0 };
+        // 临时保存
+        var temGear = oligay.watchValue;
+        var videoCanvas = document.getElementById("videoCanvas")
+        // 
+        Object.defineProperty(oligay, 'gear', {
+          get: function () {
+            return gear;
+          },
+          set: function (value) {
+            gear = value;
+            if (temGear != gear) {
+              temGear = gear;
+              console.log("gear:" + gear);
+              if (gear == -1) {
+                videoCanvas.innerHTML = ""
+                if (videoCanvas.innerHTML == "") {
+                  mjpegViewer = new MJPEGCANVAS.Viewer({
+                    divID: 'videoCanvas',
+                    host: mjpegHost,
+                    port: mjpegPort,
+                    width: windowWidth,
+                    height: windowHeight,
+                    quality: videoQuality,
+                    topic: videoTopic
+                  })
+                }
+
+              } else {
+                // console.log(mjpegViewer.width);
+                if (mjpegViewer.width == windowWidth) {
+                  videoCanvas.innerHTML = ""
+                  mjpegViewer = new MJPEGCANVAS.Viewer({
+                    divID: 'videoCanvas',
+                    host: mjpegHost,
+                    port: mjpegPort,
+                    width: videoWidth,
+                    height: videoHeight,
+                    quality: videoQuality,
+                    topic: "/camera/rgb/image_raw1"
+                  })
+                }
+              }
+            }
+          }
+        });
+
+        var listener = new ROSLIB.Topic({
+          ros: ros,
+          name: '/oligay/chassis/rx/state_highspeed',
+        });
+        let gearP = document.getElementById("gear");
+        listener.subscribe(function (message) {
+          console.log(message);
+          oligay.gear = message.gear
+        });
+      });
+
+    });
+
+
+  </script>
+</body>
+
+</html>

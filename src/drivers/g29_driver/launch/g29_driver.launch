@@ -1,0 +1,10 @@
+<launch>
+	<group ns="G29">
+		<node name="joy" pkg="joy" type="joy_node">
+			<param name="coalesce_interval" type="double" value="0.02"/>
+			<param name="default_trig_val" value="true"/>
+			<param name="dev" value="/dev/input/js0" type="string "/>
+			<param name="deadzone" value="0.0001" type="double"/>
+		</node>
+	</group>
+</launch>

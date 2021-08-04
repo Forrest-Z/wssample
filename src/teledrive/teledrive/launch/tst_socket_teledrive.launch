@@ -1,0 +1,17 @@
+<launch>
+	<group ns="zone3">
+		<!-- parameters -->
+		<rosparam command="load" file="$(arg pre_dir)/config/config_teledrive.yaml"/>
+		<group>
+			<!-- g29 driver -->
+			<include file="$(find g29_driver)/launch/g29_driver.launch" />
+		</group>
+		<group>
+			<include file="$(find g29_socket_recv)/launch/g29_socket_recv.launch" />
+			<include file="$(find g29_socket_send)/launch/g29_socket_send.launch" />
+		</group>
+		<group>
+			<include file="$(find teledrive)/launch/socket_teledrive.launch" />
+		</group>
+	</group>
+</launch>

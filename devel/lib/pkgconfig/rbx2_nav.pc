@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_nav/lib/pkgconfig/rbx2_nav.pc

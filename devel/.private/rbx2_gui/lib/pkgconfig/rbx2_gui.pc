@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/rbx2_gui
+
+Name: rbx2_gui
+Description: Description of rbx2_gui
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

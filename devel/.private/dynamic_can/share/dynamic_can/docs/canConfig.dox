@@ -1,0 +1,42 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~ignition" : \b [str] An Integer parameter min: , default: 11, max: 
+- \b "~steer" : \b [double] A double parameter min: -800.0, default: 0.0, max: 800.0
+- \b "~steer_active" : \b [double] A string parameter min: 0.0, default: 0.0, max: 1.0
+- \b "~steer_angle_rate" : \b [double] A Boolean parameter min: 0.0, default: 70.0, max: 540.0
+- \b "~throttle_active" : \b [int] An Integer parameter min: 0, default: 0, max: 1
+- \b "~throttle_precentage" : \b [int] A double parameter min: 0, default: 0, max: 100
+- \b "~XBR" : \b [double] A string parameter min: -5.5, default: 0.0, max: 0.0
+- \b "~XBR_active" : \b [int] A Boolean parameter min: 0, default: 0, max: 1
+- \b "~hands" : \b [str] A string parameter min: , default: MF_READY, max: 
+- \b "~EPB_active" : \b [int] An Integer parameter min: 0, default: 0, max: 1
+- \b "~EPB" : \b [int] A double parameter min: 0, default: 0, max: 1
+- \b "~retarder_active" : \b [int] A string parameter min: 0, default: 0, max: 1
+- \b "~retarder" : \b [double] A Boolean parameter min: -125.0, default: 0.0, max: 0.0
+- \b "~gear_active" : \b [int] An Integer parameter min: 0, default: 0, max: 1
+- \b "~max_forward_gear" : \b [int] A double parameter min: 1, default: 6, max: 6
+- \b "~gear_R82_N78_D68" : \b [int] A string parameter min: 0, default: 78, max: 100
+- \b "~hang_active" : \b [int] A Boolean parameter min: 0, default: 0, max: 1
+- \b "~hang" : \b [str] A Boolean parameter min: , default: 11, max: 
+- \b "~fsm_state" : \b [int] A Boolean parameter min: 0, default: 0, max: 200
+- \b "~left" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~right" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~near" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~far" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~top_warn" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~air_beep" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~front_fog" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~front_work" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~side" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~position" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~emergency" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~brake" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~reverse" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~back_work" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~cooler" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~axle_diff" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~exhaust_brake" : \b [bool] A Boolean parameter min: False, default: False, max: True
+- \b "~size" : \b [int] A size parameter which is edited via an enum min: 0, default: 1, max: 3
+

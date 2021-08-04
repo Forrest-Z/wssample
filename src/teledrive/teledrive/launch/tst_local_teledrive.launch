@@ -1,0 +1,11 @@
+<launch>
+	<group ns="zone3">
+		<group>
+			<!-- g29 driver -->
+			<include file="$(find g29_driver)/launch/g29_driver.launch" />
+		</group>
+		<group>
+			<include file="$(find teledrive)/launch/local_teledrive.launch" />
+		</group>
+	</group>
+</launch>

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/follow_tracks/lib/pkgconfig/follow_tracks.pc

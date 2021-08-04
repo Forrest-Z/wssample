@@ -1,0 +1,13 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find gnss)/../../.." />
+	<!-- parameters -->
+	<param name="/pre_dir" type="string" value="$(arg pre_dir)" />
+	<group>
+		<!-- gnss -->
+		<include file="$(find advanced_navigation_driver_992)/launch/gps.launch" />
+	</group>
+	<group>
+		<include file="$(find gnss)/launch/imu_calibration.launch" />
+	</group>
+</launch>

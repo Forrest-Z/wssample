@@ -1,0 +1,43 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_can" pkg="dynamic_can" type="dynamic_can">
+  <param name="ignition" type="str" value="11" />
+  <param name="steer" type="double" value="0.0" />
+  <param name="steer_active" type="double" value="0.0" />
+  <param name="steer_angle_rate" type="double" value="70.0" />
+  <param name="throttle_active" type="int" value="0" />
+  <param name="throttle_precentage" type="int" value="0" />
+  <param name="XBR" type="double" value="0.0" />
+  <param name="XBR_active" type="int" value="0" />
+  <param name="hands" type="str" value="MF_READY" />
+  <param name="EPB_active" type="int" value="0" />
+  <param name="EPB" type="int" value="0" />
+  <param name="retarder_active" type="int" value="0" />
+  <param name="retarder" type="double" value="0.0" />
+  <param name="gear_active" type="int" value="0" />
+  <param name="max_forward_gear" type="int" value="6" />
+  <param name="gear_R82_N78_D68" type="int" value="78" />
+  <param name="hang_active" type="int" value="0" />
+  <param name="hang" type="str" value="11" />
+  <param name="fsm_state" type="int" value="0" />
+  <param name="left" type="bool" value="False" />
+  <param name="right" type="bool" value="False" />
+  <param name="near" type="bool" value="False" />
+  <param name="far" type="bool" value="False" />
+  <param name="top_warn" type="bool" value="False" />
+  <param name="air_beep" type="bool" value="False" />
+  <param name="front_fog" type="bool" value="False" />
+  <param name="front_work" type="bool" value="False" />
+  <param name="side" type="bool" value="False" />
+  <param name="position" type="bool" value="False" />
+  <param name="emergency" type="bool" value="False" />
+  <param name="brake" type="bool" value="False" />
+  <param name="reverse" type="bool" value="False" />
+  <param name="back_work" type="bool" value="False" />
+  <param name="cooler" type="bool" value="False" />
+  <param name="axle_diff" type="bool" value="False" />
+  <param name="exhaust_brake" type="bool" value="False" />
+  <param name="size" type="int" value="1" />
+</node>
+\endverbatim
+

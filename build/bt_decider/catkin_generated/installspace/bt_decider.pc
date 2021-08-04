@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/install
+
+Name: bt_decider
+Description: Description of bt_decider
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

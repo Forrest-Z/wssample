@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rosbag_filter_gui/lib/pkgconfig/rosbag_filter_gui.pc

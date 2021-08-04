@@ -1,0 +1,15 @@
+Header header
+
+int8 throttle_pedal_pos
+int8 engine_torque_percentage
+int32 engine_speed
+int8 actual_throttle_pedal_pos
+int8 brake_pedal_pos
+int8 retarder_torque_percentage
+int32 steer_angle
+int32 electric_steer_torque
+int32 steer_angle_rate
+float64 speed_from_gear
+uint8 gear_active
+int8 max_forward_gear
+int8 gear

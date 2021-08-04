@@ -1,0 +1,17 @@
+<launch>
+	<group ns="zone3">
+		<node name="follow_tracks" pkg="follow_tracks" type="follow_tracks" output="screen">
+			<!-- sub -->
+			<param name="pose_topic" value="/zone3/localization/pose" />
+			<param name="planner_fsm_topic" value="/zone3/planner/planner_fsm" />
+			<param name="control_fsm_topic" value="/zone3/control/control_fsm" />
+			<!-- pub -->
+			<!-- in IMU coord -->
+			<param name="pub_waypoint_topic" value="/zone3/planner/follow_tracks/way_points" />
+			<!-- in ENU coord -->
+			<param name="pub_waypoint_rviz_topic" value="/zone3/planner/follow_tracks/way_points_rviz" />
+			<param name="pub_command_topic" value="/zone3/planner/follow_tracks/stop_go_command" />
+			<param name="pub_fsm_trigger_topic" value="/zone3/planner/fsm_trigger" />
+		</node>
+	</group>
+</launch>

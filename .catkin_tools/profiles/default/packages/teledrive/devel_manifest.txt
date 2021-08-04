@@ -1,0 +1,6 @@
+teledrive/teledrive
+/home/oligay_61/zone3/devel/.private/teledrive/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/teledrive/share/teledrive/cmake/teledriveConfig-version.cmake /home/oligay_61/zone3/devel/share/teledrive/cmake/teledriveConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/teledrive/share/teledrive/cmake/teledriveConfig.cmake /home/oligay_61/zone3/devel/share/teledrive/cmake/teledriveConfig.cmake
+/home/oligay_61/zone3/devel/.private/teledrive/lib/pkgconfig/teledrive.pc /home/oligay_61/zone3/devel/lib/pkgconfig/teledrive.pc
+/home/oligay_61/zone3/devel/.private/teledrive/lib/teledrive/teledrive /home/oligay_61/zone3/devel/lib/teledrive/teledrive

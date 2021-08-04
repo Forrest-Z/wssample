@@ -1,0 +1,5 @@
+rbx2/grasping_pi_robot_moveit_config
+/home/oligay_61/zone3/devel/.private/grasping_pi_robot_moveit_config/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/grasping_pi_robot_moveit_config/share/grasping_pi_robot_moveit_config/cmake/grasping_pi_robot_moveit_configConfig.cmake /home/oligay_61/zone3/devel/share/grasping_pi_robot_moveit_config/cmake/grasping_pi_robot_moveit_configConfig.cmake
+/home/oligay_61/zone3/devel/.private/grasping_pi_robot_moveit_config/share/grasping_pi_robot_moveit_config/cmake/grasping_pi_robot_moveit_configConfig-version.cmake /home/oligay_61/zone3/devel/share/grasping_pi_robot_moveit_config/cmake/grasping_pi_robot_moveit_configConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/grasping_pi_robot_moveit_config/lib/pkgconfig/grasping_pi_robot_moveit_config.pc /home/oligay_61/zone3/devel/lib/pkgconfig/grasping_pi_robot_moveit_config.pc

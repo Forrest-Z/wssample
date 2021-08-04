@@ -1,0 +1,15 @@
+<launch>
+	<group ns="zone3">
+		<group ns="kalman_filter">
+			<node name="kalman_kinematics" pkg="kalman_kinematics" type="kalman_kinematics" output="screen">
+				<!-- sub -->
+				<param name="pose_topic" value="/zone3/localization/pose" />
+				<param name="speed_topic" value="/zone3/chassis/rx/speed" />
+				<param name="st_highspeed_topic" value="/zone3/chassis/rx/state_highspeed" />
+				<param name="steer_speed_yawrate_topic" value="/zone3/localization/steer_speed_yawrate" />
+				<!-- pub -->
+				<param name="node_pub_topic" value="/zone3/kalman_filter/kalman_kinematics" />
+			</node>
+		</group>
+	</group>
+</launch>

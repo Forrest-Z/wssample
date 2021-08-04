@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_nav/share/rbx2_nav/cmake/rbx2_navConfig.cmake

@@ -1,0 +1,48 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find track_viz)/../../.." />
+	<arg name="vehicle_id" default="oligay_61" />
+	<arg name="file_name" default="" />
+	<!-- parameters -->
+	<param name="/pre_dir" type="string" value="$(arg pre_dir)" />
+	<param name="/file_name" type="string" value="$(arg file_name)" />
+	<!-- Load yaml parameters -->
+	<rosparam command="load" file="$(arg pre_dir)/config/global.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/$(arg vehicle_id).yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_tracks.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_control.yaml"/>
+	<group ns="zone3">
+		<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg pre_dir)/config/track_viz.rviz" required="true" />
+		<node name="tf" pkg="track_viz" type="tf">
+			<!-- sub -->
+			<param name="pose_topic" value="/zone3/localization/pose" />
+		</node>
+		<node name="pose_viz" pkg="track_viz" type="pose_viz">
+			<!-- sub -->
+			<param name="pose_topic" value="/zone3/localization/pose" />
+			<!-- pub -->
+			<param name="pose_marker_topic" value="/zone3/track_viz/pose_marker" />
+			<param name="pose_heading_topic" value="/zone3/track_viz/heading_marker" />
+		</node>
+		<node name="ego_box_viz" pkg="track_viz" type="ego_box_viz">
+			<!-- sub -->
+			<param name="pose_topic" value="/zone3/localization/pose" />
+			<param name="control_steer" value="/zone3/control/highspeed_command" />
+			<param name="st_steer" value="/zone3/chassis/rx/state_highspeed" />
+			<!-- pub -->
+			<param name="ego_box_marker_topic" value="/zone3/track_viz/ego_box_marker" />
+		</node>
+		<node name="waypoints_viz" pkg="track_viz" type="waypoints_viz">
+			<!-- sub -->
+			<param name="waypoints_topic" value="/zone3/planner/follow_tracks/way_points_rviz" />
+			<!-- pub -->
+			<param name="waypoints_marker_topic" value="/zone3/track_viz/waypoints_marker" />
+		</node>
+		<node name="track_viz" pkg="track_viz" type="track_viz" output="screen">
+			<!-- sub -->
+			<param name="waypoints_topic" value="/zone3/planner/follow_tracks/way_points_rviz" />
+			<!-- pub -->
+			<param name="track_marker_topic" value="/zone3/track_viz/track_markers" />
+		</node>
+	</group>
+</launch>

@@ -1,0 +1,5 @@
+rbx2/rbx2_vision
+/home/oligay_61/zone3/devel/.private/rbx2_vision/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/rbx2_vision/share/rbx2_vision/cmake/rbx2_visionConfig-version.cmake /home/oligay_61/zone3/devel/share/rbx2_vision/cmake/rbx2_visionConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_vision/share/rbx2_vision/cmake/rbx2_visionConfig.cmake /home/oligay_61/zone3/devel/share/rbx2_vision/cmake/rbx2_visionConfig.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_vision/lib/pkgconfig/rbx2_vision.pc /home/oligay_61/zone3/devel/lib/pkgconfig/rbx2_vision.pc

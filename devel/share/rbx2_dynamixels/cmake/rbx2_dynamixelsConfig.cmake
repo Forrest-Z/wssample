@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_dynamixels/share/rbx2_dynamixels/cmake/rbx2_dynamixelsConfig.cmake

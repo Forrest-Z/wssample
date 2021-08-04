@@ -1,0 +1,17 @@
+<!-- <?xml version="1.0"?> -->
+<package format="2">
+	<name>control_action</name>
+	<version>1.0.0</version>
+	<description>The control_action package</description>
+	<maintainer email="fun@todo.todo">fun</maintainer>
+	<license>TODO</license>
+	<buildtool_depend>catkin</buildtool_depend>
+	<depend>roscpp</depend>
+	<depend>std_msgs</depend>
+	<depend>can_msgs</depend>
+	<depend>control_msgs</depend>
+	<depend>kalman_msgs</depend>
+	<depend>planner_msgs</depend>
+	<depend>teledrive_msgs</depend>
+	<export></export>
+</package>

@@ -1,0 +1,12 @@
+(cl:in-package control_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          CONTROL_FSM-VAL
+          CONTROL_FSM
+          LAST_CONTROL_FSM-VAL
+          LAST_CONTROL_FSM
+          FLAG_FOLLOW_TRACKS_PLANNERON-VAL
+          FLAG_FOLLOW_TRACKS_PLANNERON
+          GEAR-VAL
+          GEAR
+))

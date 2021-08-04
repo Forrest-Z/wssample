@@ -1,0 +1,20 @@
+message/g29_socket_msgs
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/gennodejs/ros/g29_socket_msgs/_index.js /home/oligay_61/zone3/devel/share/gennodejs/ros/g29_socket_msgs/_index.js
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/gennodejs/ros/g29_socket_msgs/msg/_index.js /home/oligay_61/zone3/devel/share/gennodejs/ros/g29_socket_msgs/msg/_index.js
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/gennodejs/ros/g29_socket_msgs/msg/G29Socket.js /home/oligay_61/zone3/devel/share/gennodejs/ros/g29_socket_msgs/msg/G29Socket.js
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/roseus/ros/g29_socket_msgs/manifest.l /home/oligay_61/zone3/devel/share/roseus/ros/g29_socket_msgs/manifest.l
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/roseus/ros/g29_socket_msgs/msg/G29Socket.l /home/oligay_61/zone3/devel/share/roseus/ros/g29_socket_msgs/msg/G29Socket.l
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/common-lisp/ros/g29_socket_msgs/msg/_package_G29Socket.lisp /home/oligay_61/zone3/devel/share/common-lisp/ros/g29_socket_msgs/msg/_package_G29Socket.lisp
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/common-lisp/ros/g29_socket_msgs/msg/g29_socket_msgs-msg.asd /home/oligay_61/zone3/devel/share/common-lisp/ros/g29_socket_msgs/msg/g29_socket_msgs-msg.asd
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/common-lisp/ros/g29_socket_msgs/msg/_package.lisp /home/oligay_61/zone3/devel/share/common-lisp/ros/g29_socket_msgs/msg/_package.lisp
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/common-lisp/ros/g29_socket_msgs/msg/G29Socket.lisp /home/oligay_61/zone3/devel/share/common-lisp/ros/g29_socket_msgs/msg/G29Socket.lisp
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/g29_socket_msgs/cmake/g29_socket_msgsConfig.cmake /home/oligay_61/zone3/devel/share/g29_socket_msgs/cmake/g29_socket_msgsConfig.cmake
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/g29_socket_msgs/cmake/g29_socket_msgsConfig-version.cmake /home/oligay_61/zone3/devel/share/g29_socket_msgs/cmake/g29_socket_msgsConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/g29_socket_msgs/cmake/g29_socket_msgs-msg-extras.cmake /home/oligay_61/zone3/devel/share/g29_socket_msgs/cmake/g29_socket_msgs-msg-extras.cmake
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/g29_socket_msgs/cmake/g29_socket_msgs-msg-paths.cmake /home/oligay_61/zone3/devel/share/g29_socket_msgs/cmake/g29_socket_msgs-msg-paths.cmake
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/include/g29_socket_msgs/G29Socket.h /home/oligay_61/zone3/devel/include/g29_socket_msgs/G29Socket.h
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/lib/pkgconfig/g29_socket_msgs.pc /home/oligay_61/zone3/devel/lib/pkgconfig/g29_socket_msgs.pc
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/lib/python2.7/dist-packages/g29_socket_msgs/__init__.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/g29_socket_msgs/__init__.py
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/lib/python2.7/dist-packages/g29_socket_msgs/msg/_G29Socket.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/g29_socket_msgs/msg/_G29Socket.py
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/lib/python2.7/dist-packages/g29_socket_msgs/msg/__init__.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/g29_socket_msgs/msg/__init__.py

@@ -1,0 +1,21 @@
+<root main_tree_to_execute = "LatTree">
+    <BehaviorTree ID="LatTree">
+        <Fallback>
+            <Sequence>
+                <!-- lane : left, ego, right  -->
+                <!-- distance : m -->
+                <CheckLaneFrontClear which_lane="ego" distance="35.2" />
+                <ActionKeepLane />
+            </Sequence>
+
+            <Sequence>
+                <CheckLaneFrontClear which_lane="left" distance="35.2" />
+                <CheckLaneBackClear which_lane="left" distance="20.2" />
+                <CheckAvailDriveAreaClear which_lane="left" />
+                <ActionLeftBypass />
+            </Sequence>
+
+            <ActionKeepLane />
+        </Fallback>
+    </BehaviorTree>
+</root>

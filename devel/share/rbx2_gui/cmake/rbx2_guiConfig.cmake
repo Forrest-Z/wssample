@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_gui/share/rbx2_gui/cmake/rbx2_guiConfig.cmake

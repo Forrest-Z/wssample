@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/grasping_pi_robot_moveit_config/share/grasping_pi_robot_moveit_config/cmake/grasping_pi_robot_moveit_configConfig.cmake

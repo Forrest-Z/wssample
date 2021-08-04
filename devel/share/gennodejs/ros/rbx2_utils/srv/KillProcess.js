@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_utils/share/gennodejs/ros/rbx2_utils/srv/KillProcess.js

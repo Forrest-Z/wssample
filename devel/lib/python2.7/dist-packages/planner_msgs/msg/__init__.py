@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/planner_msgs/lib/python2.7/dist-packages/planner_msgs/msg/__init__.py

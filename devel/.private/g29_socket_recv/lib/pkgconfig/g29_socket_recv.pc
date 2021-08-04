@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/g29_socket_recv
+
+Name: g29_socket_recv
+Description: Description of g29_socket_recv
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

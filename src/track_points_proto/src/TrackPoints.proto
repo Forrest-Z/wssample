@@ -1,0 +1,27 @@
+syntax = "proto3";
+package TrackPoints;
+
+message Point{
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    float yaw = 4;
+    float kalman_vx = 5;
+    float accel = 6;
+    float kalman_yawrate = 7;
+    float steer = 8;
+    int32 throttle_pedal = 9;
+    float xbr = 10;
+    int32 gear = 11;
+    float this_to_last_dis = 12;
+    int32 left_light = 13;
+    int32 right_light = 14;
+    int32 air_beep = 15;
+}
+
+message Track{
+    string coord_type = 1;
+    int32 track_points_count = 2;
+    float track_dis = 3;
+    repeated Point pt = 4;
+}

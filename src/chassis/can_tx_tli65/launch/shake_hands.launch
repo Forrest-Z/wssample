@@ -1,0 +1,9 @@
+<launch>
+	<group ns="zone3">
+		<group ns="chassis">
+			<node name="shake_hands" pkg="can_tx_tli65" type="shake_hands">
+				<param name="node_pub_topic" value="/zone3/control/lowspeed_command" />
+			</node>
+		</group>
+	</group>
+</launch>

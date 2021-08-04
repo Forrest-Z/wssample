@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/record_tracks
+
+Name: record_tracks
+Description: Description of record_tracks
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

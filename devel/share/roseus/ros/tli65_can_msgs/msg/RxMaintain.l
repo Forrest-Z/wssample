@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/tli65_can_msgs/share/roseus/ros/tli65_can_msgs/msg/RxMaintain.l

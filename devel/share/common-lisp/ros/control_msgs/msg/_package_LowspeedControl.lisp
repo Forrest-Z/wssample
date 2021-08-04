@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/control_msgs/share/common-lisp/ros/control_msgs/msg/_package_LowspeedControl.lisp

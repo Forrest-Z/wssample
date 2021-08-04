@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/displaydata_msgs/share/roseus/ros/displaydata_msgs/manifest.l

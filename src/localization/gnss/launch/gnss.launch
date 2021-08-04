@@ -1,0 +1,16 @@
+<launch>
+	<group ns="zone3">
+		<group ns="localization">
+			<node name="gnss" pkg="gnss" type="gnss" output="screen">
+				<!-- sub -->
+				<param name="NavSatFix_topic" value="/zone3/drivers/gps/NavSatFix" />
+				<param name="Imu_topic" value="/zone3/drivers/gps/Imu" />
+				<param name="twist_topic" value="/zone3/drivers/gps/Twist" />
+				<param name="system_status_topic" value="/zone3/drivers/gps/SystemStatus" />
+				<param name="filter_status_topic" value="/zone3/drivers/gps/FilterStatus" />
+				<!-- pub -->
+				<param name="node_pub_topic" value="/zone3/localization/pose" />
+			</node>
+		</group>
+	</group>
+</launch>

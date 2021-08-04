@@ -1,0 +1,6 @@
+devel_space: /home/oligay_61/zone3/devel
+install: false
+install_space: /home/oligay_61/zone3/install
+profile: default
+source_space: /home/oligay_61/zone3/src
+workspace: /home/oligay_61/zone3

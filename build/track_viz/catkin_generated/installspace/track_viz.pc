@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/install
+
+Name: track_viz
+Description: Description of track_viz
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

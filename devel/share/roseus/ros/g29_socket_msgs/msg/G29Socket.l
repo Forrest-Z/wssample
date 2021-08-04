@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/roseus/ros/g29_socket_msgs/msg/G29Socket.l

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/bt_decider/share/bt_decider/cmake/bt_deciderConfig-version.cmake

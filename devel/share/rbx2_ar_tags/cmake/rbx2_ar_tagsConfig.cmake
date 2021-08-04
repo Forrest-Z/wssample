@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_ar_tags/share/rbx2_ar_tags/cmake/rbx2_ar_tagsConfig.cmake

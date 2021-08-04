@@ -1,0 +1,33 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find record_tracks)/../../.." />
+	<arg name="vehicle_id" default="oligay_61" />
+	<arg name="record_path" default="$(arg pre_dir)/bags/tst" />
+	<arg name="record_topics" default="/none" />
+	<arg name="file_name" default="" />
+	<!-- parameters -->
+	<param name="/file_name" type="string" value="$(arg file_name)" />
+	<rosparam command="load" file="$(arg pre_dir)/config/global.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_tracks.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_planner.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_control.yaml"/>
+	<!-- record bags -->
+	<node name="rosbag_record" pkg="rosbag" type="record" args="-o $(arg record_path) $(arg record_topics) --split --duration=5m" />
+	<group>
+		<!-- gnss -->
+		<include file="$(find advanced_navigation_driver_992)/launch/gps.launch" />
+		<include file="$(find gnss)/launch/gnss.launch" />
+		<!-- CAN rx tx-->
+		<include file="$(find kvaser_interface)/launch/kvaser_can.launch">
+			<arg name="vehicle_id" value="$(arg vehicle_id)" />
+		</include>
+		<include file="$(find can_rx_tli65)/launch/can_rx_tli65.launch" />
+		<include file="$(find can_tx_tli65)/launch/can_tx_tli65.launch" />
+	</group>
+	<group>
+		<!-- follow track -->
+		<!-- <include file="$(find follow_tracks)/launch/follow_track.launch" /> -->
+		<!-- control -->
+		<!-- <include file="$(find control_base)/launch/control_base.launch" /> -->
+	</group>
+</launch>

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/_index.js

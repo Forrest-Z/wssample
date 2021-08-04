@@ -1,0 +1,4 @@
+[01m[K/home/oligay_61/zone3/src/track_viz/src/track_viz.cc:[m[K In function ‘[01m[Kvoid ParseTrack()[m[K’:
+[01m[K/home/oligay_61/zone3/src/track_viz/src/track_viz.cc:103:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i = 0; i < off_load_positions.size(); i++) {
+[01;32m[K                       ^[m[K

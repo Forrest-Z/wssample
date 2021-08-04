@@ -1,0 +1,25 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find record_tracks)/../../.." />
+	<arg name="file_name_date" default="0000" />
+	<arg name="vehicle_id" default="oligay_62" />
+	<arg name="record_path" default="$(arg pre_dir)/bags/tst" />
+	<arg name="record_topics" default="/none" />
+	<!-- parameters -->
+	<param name="/pre_dir" type="string" value="$(arg pre_dir)" />
+	<param name="/file_name_date" type="string" value="$(arg file_name_date)" />
+	<rosparam command="load" file="$(arg pre_dir)/config/global.yaml" />
+	<rosparam command="load" file="$(arg pre_dir)/config/$(arg vehicle_id).yaml" />
+	<rosparam command="load" file="$(arg pre_dir)/config/config_tracks.yaml" />
+	<group>
+		<!-- CAN rx -->
+		<include file="$(find kvaser_interface)/launch/$(arg vehicle_id).launch" />
+		<include file="$(find can_rx_tli65)/launch/can_rx_tli65.launch" />
+		<include file="$(find can_tx_tli65)/launch/can_tx_tli65.launch" />
+		<include file="$(find can_tx_tli65)/launch/shake_hands.launch" />
+	</group>
+	<group>
+		<include file="$(find dynamic_can)/launch/dynamic_can.launch" />
+		<node pkg="rqt_reconfigure" name="rqt_reconfigure" type="rqt_reconfigure"/>
+	</group>
+</launch>

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/Obj.l

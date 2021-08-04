@@ -1,0 +1,11 @@
+<launch>
+	<group ns="zone3">
+		<node name="record_tracks" pkg="record_tracks" type="record_tracks" output="screen">
+			<!-- sub -->
+			<param name="pose_topic" value="/zone3/localization/pose" />
+			<param name="st_highspeed_topic" value="/zone3/chassis/rx/state_highspeed" />
+			<param name="st_lowspeed_topic" value="/zone3/chassis/rx/state_lowspeed" />
+			<param name="kalman_topic" value="/zone3/kalman_filter/kalman_kinematics" />
+		</node>
+	</group>
+</launch>

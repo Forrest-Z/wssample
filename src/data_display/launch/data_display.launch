@@ -1,0 +1,21 @@
+<launch>
+	<group ns="zone3">
+		<node name="data_display" pkg="data_display" type="data_display" output="screen">
+			<!-- sub -->
+			<param name="kalman_topic" value="/zone3/kalman_filter/kalman_kinematics" />
+			<param name="state_highspeed_topic" value="/zone3/chassis/rx/state_highspeed" />
+			<param name="state_lowspeed_topic" value="/zone3/chassis/rx/state_lowspeed" />
+			<param name="container_topic" value="/zone3/chassis/rx/container_calib" />
+			<param name="EPB_topic" value="/zone3/chassis/rx/EPB" />
+			<param name="Ft_topic" value="/zone3/chassis/rx/fault" />
+			<param name="tyre_topic" value="/zone3/chassis/rx/tyre" />
+			<param name="waypoints_topic" value="/zone3/planner/follow_tracks/way_points" />
+			<param name="control_fsm_topic" value="/zone3/control/control_fsm" />
+			<param name="control_highspeed_topic" value="/zone3/control/highspeed_command" />
+			<param name="control_lowspeed_topic" value="/zone3/control/lowspeed_command" />
+			<param name="pose_topic" value="/zone3/localization/pose" />
+			<!-- pub -->
+			<param name="display_topic" value="/zone3/data_display/data_display" />
+		</node>
+	</group>
+</launch>

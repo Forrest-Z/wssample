@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/livox_ros_driver/share/roseus/ros/livox_ros_driver/msg/CustomMsg.l

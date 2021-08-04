@@ -1,0 +1,6 @@
+rbx2/rbx2_dynamixels
+/home/oligay_61/zone3/devel/.private/rbx2_dynamixels/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/rbx2_dynamixels/share/rbx2_dynamixels/cmake/rbx2_dynamixelsConfig-version.cmake /home/oligay_61/zone3/devel/share/rbx2_dynamixels/cmake/rbx2_dynamixelsConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_dynamixels/share/rbx2_dynamixels/cmake/rbx2_dynamixelsConfig.cmake /home/oligay_61/zone3/devel/share/rbx2_dynamixels/cmake/rbx2_dynamixelsConfig.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_dynamixels/lib/pkgconfig/rbx2_dynamixels.pc /home/oligay_61/zone3/devel/lib/pkgconfig/rbx2_dynamixels.pc
+/home/oligay_61/zone3/devel/.private/rbx2_dynamixels/lib/python2.7/dist-packages/rbx2_dynamixels/__init__.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/rbx2_dynamixels/__init__.py

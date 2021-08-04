@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/roslib.js"></script>
+    <script type="text/javascript" src="js/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="js/mjpegcanvas.min.js"></script>
+    <!-- <script type="text/javascript" src="js/roslib.min.js"></script> -->
+</head>
+
+<body>
+    <div id="videoCanvasD" style="display: block;"></div><br />
+    <div id="videoCanvasL" style="display: block;"></div>
+    <div id="videoCanvas" style="display: block;"></div>
+    <script>
+        var ros = new ROSLIB.Ros();
+        // 相应地设置rosbridge主机名和端口
+        var rosbridgeHost = document.location.hostname;
+        var rosbridgePort = "9090";
+        var serverURL = "ws://" + rosbridgeHost + ":" + rosbridgePort;
+
+        // 设置相机相关参数
+        var mjpegHost = document.location.hostname;
+        var mjpegPort = "8080";
+        console.log(mjpegHost);
+        // 默认视频主题（可以在rosbridge启动文件中设置）
+        var videoTopic = "/camera/rgb/image_raw";
+        // mjpeg 视频质量
+        var videoQuality = 50;
+        // 设置视频窗口的宽高
+        var videoWidth = Math.round(500);
+        var videoHeight = Math.round(videoWidth * 240 / 320);
+        // console.log(videoWidth, videoHeight);
+
+
+        ros.connect(serverURL);
+        ros.on('error', function (error) {
+            console.log(error);
+        });
+
+        ros.on('connection', function () {
+            console.log("--- 连接成功 ---");
+            // 
+            var videoTopicParam = new ROSLIB.Param({
+                ros: ros,
+                name: '/robot_gui/videoTopic'
+            });
+
+            videoTopicParam.get(function (value) {
+                if (value != null) {
+                    videoTopic = value;
+                    console.log(videoTopic);
+                }
+                new MJPEGCANVAS.Viewer({
+                    divID: 'videoCanvasD',
+                    host: mjpegHost,
+                    port: mjpegPort,
+                    width: videoWidth,
+                    height: videoHeight,
+                    quality: videoQuality,
+                    topic: "/camera/rgb/dell"
+                });
+
+                new MJPEGCANVAS.Viewer({
+                    divID: 'videoCanvasL',
+                    host: mjpegHost,
+                    port: mjpegPort,
+                    width: videoWidth,
+                    height: videoHeight,
+                    quality: videoQuality,
+                    topic: "/camera/rgb/leopard"
+                });
+            })
+
+        });
+
+        ros.on('close', function () {
+            console.log('Connection closed.');
+        });
+    </script>
+</body>
+
+</html>

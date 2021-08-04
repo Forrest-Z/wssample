@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_gazebo/share/rbx2_gazebo/cmake/rbx2_gazeboConfig-version.cmake

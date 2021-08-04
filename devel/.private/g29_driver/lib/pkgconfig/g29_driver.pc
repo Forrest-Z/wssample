@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/g29_driver
+
+Name: g29_driver
+Description: Description of g29_driver
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

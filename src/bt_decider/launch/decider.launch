@@ -1,0 +1,17 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find bt_decider)/../../.." />
+	<!-- parameters -->
+	<param name="/pre_dir" type="string" value="$(arg pre_dir)" />
+	<group ns="zone3">
+		<node name="bt_decider" pkg="bt_decider" type="bt_decider" output="screen">
+			<!-- sub -->
+			<param name="lane_topic" value="/zone3/track/lanes" />
+			<param name="teledrive_topic" value="/zone3/teledrive/commands" />
+			<param name="objs_topic" value="/zone3/perception/objs" />
+			<param name="drive_area_topic" value="/zone3/perception/drive_area" />
+			<!-- pub -->
+			<param name="pub_decider_topic" value="/zone3/decider/strategy" />
+		</node>
+	</group>
+</launch>

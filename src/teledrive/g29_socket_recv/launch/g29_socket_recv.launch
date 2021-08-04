@@ -1,0 +1,10 @@
+<launch>
+	<group ns="zone3">
+		<group ns="teledrive">
+			<node name="g29_socket_recv" pkg="g29_socket_recv" type="g29_socket_recv" output="screen">
+				<!-- pub -->
+				<param name="teledrive_command" value="/zone3/g29_socket_recv/socket_recv" />
+			</node>
+		</group>
+	</group>
+</launch>

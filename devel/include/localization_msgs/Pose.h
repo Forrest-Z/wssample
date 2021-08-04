@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/localization_msgs/include/localization_msgs/Pose.h

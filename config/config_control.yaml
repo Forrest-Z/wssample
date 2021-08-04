@@ -1,0 +1,4 @@
+control:
+  near_stop_way_point_radius: 1
+  
+  hangup_threshold: 40

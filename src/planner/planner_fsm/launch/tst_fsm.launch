@@ -1,0 +1,5 @@
+<launch>
+	<group ns="zone3">
+		<node name="tst_fsm" pkg="planner_fsm" type="tst_fsm" output="screen"/>
+	</group>
+</launch>

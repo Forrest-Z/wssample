@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/planner_msgs/share/gennodejs/ros/planner_msgs/msg/WayPoint.js

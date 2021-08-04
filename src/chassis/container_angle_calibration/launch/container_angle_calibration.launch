@@ -1,0 +1,13 @@
+<launch>
+	<group ns="zone3">
+		<group ns="chassis">
+			<node name="container_angle_calibration" pkg="container_angle_calibration" type="container_angle_calibration" output="screen">
+				<!-- sub -->
+				<param name="pose_topic" value="/zone3/localization/pose" />
+				<param name="container_topic" value="/zone3/chassis/rx/container" />
+				<!-- pub -->
+				<param name="container_calib_topic" value="/zone3/chassis/rx/container_calib" />
+			</node>
+		</group>
+	</group>
+</launch>

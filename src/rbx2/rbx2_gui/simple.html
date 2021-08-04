@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- 导入应用程序所需的所有 JavaScript 文件 -->
+    <script src="./js/roslib.js"></script>
+
+    <script>
+        // 创建一个 Ros 节点对象来与 rosbridge v2.0服务器通信
+        var ros = new ROSLIB.Ros();
+        ros.connect('ws://localhost:9090');
+        // 监视 rosbridge 服务器的连接。,监听连接状态:error,connection,close
+        ros.on('error', function (error) {
+            // 操作消息状态的显示
+            document.getElementById('connecting').style.display = 'none';
+            document.getElementById('connected').style.display = 'none';
+            document.getElementById('closed').style.display = 'none';
+            // 当前为error
+            document.getElementById('error').style.display = 'inline';
+            console.log(error);
+        });
+
+        ros.on('connection', function () {
+            console.log('Connection made!');
+            document.getElementById('connecting').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('closed').style.display = 'none';
+            document.getElementById('connected').style.display = 'inline';
+        });
+
+        ros.on('close', function () {
+            console.log('Connection closed.');
+            document.getElementById('connecting').style.display = 'none';
+            document.getElementById('connected').style.display = 'none';
+            document.getElementById('closed').style.display = 'inline';
+        });
+
+        // 新建一个 topic 话题 http://robotwebtools.org/jsdoc/roslibjs/current/Topic.html
+        // 话题声明话题名称、消息类型，并传递前面的 ROS 对象
+        var cmdVel = new ROSLIB.Topic({
+            ros: ros,
+            // 话题名称
+            name: '/cmd_vel',
+            // 消息类型, Twist - 线速度角速度
+            messageType: 'geometry_msgs/Twist'
+        });
+        // 创建一个新的 ROSLIB.Message
+        var twist = new ROSLIB.Message({
+            linear: {
+                x: 0.1,
+                y: 0.2,
+                z: 0.3
+            },
+            angular: {
+                x: -0.1,
+                y: -0.2,
+                z: -0.3
+            }
+        });
+
+        // cmdVel是一个话题的名称,通过cmdVel调用topic方法 pulish() 
+        // pulish(一个 ROSLIB.Message 对象) 发布消息,
+        cmdVel.publish(twist);
+
+
+        // 新建一个监听器话题
+        var listener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/oligay/localization/pose',
+            // 消息类型
+            // messageType: 'geometry_msgs/Twist'
+        });
+        /* 通过对listener话题调用 subscribe ()并传入回调，就可以进行订阅。
+           无论何时 ROS 在“/listener”主题上发布消息，rosbridge 都会将该消息转发给浏览器，
+           并使用该消息调用回调函数。
+        */
+        listener.subscribe(function (message) {
+            // 打印收到的消息
+            // console.log('Received message on ' + listener.name + ': ' + message.data);
+            console.log(typeof message);
+            console.log(message);
+            document.getElementById("data").innerHTML = message.data
+            // setInterval(function () {
+            //   window.location.reload()
+            // }, 100)
+            // 取消订阅话题
+            listener.unsubscribe();
+        });
+
+
+
+
+
+        // 创建一个 ROSLIB.Service 对象
+        // 它类似于上面的 ROSLIB.Topic 对象，因为它负责与 ROS 服务的所有交互。
+        var addTwoIntsClient = new ROSLIB.Service({
+            ros: ros,
+            name: '/add_two_ints',
+            // 
+            serviceType: 'rospy_tutorials/AddTwoInts'
+        });
+        // 请求
+        var request = new ROSLIB.ServiceRequest({
+            a: 1,
+            b: 2
+        });
+        // ROSLIB.Service的方法 , 调用服务
+        // callService(request, callback, failedCallback)
+        // request  要发送的 ROSLIB.ServiceRequest
+        addTwoIntsClient.callService(request, function (result) {
+            // 结果,打印服务的名字和结果数量
+            console.log('Result for service call on ' + addTwoIntsClient.name + ': ' + result.sum);
+        });
+
+        // 新建一个 Service 获取和设置 ROS 参数 的对象
+        var setBoolServer = new ROSLIB.Service({
+            ros: ros,
+            name: '/set_bool',
+            serviceType: 'std_srvs/SetBool'
+        });
+        // 新建一个广播,对于在此服务上发出的每个请求，都将调用该回调
+        setBoolServer.advertise(function (request, response) {
+            // 打印收到的服务请求
+            console.log('Received service request on ' + setBoolServer.name + ': ' + request.data);
+            // 响应消息
+            response['success'] = true;
+            response['message'] = 'Set successfully';
+            return true;
+        });
+        // 获取参数
+        ros.getParams(function (params) {
+            // 打印参数,params 是一个数组
+            console.log(params);
+        });
+        // 新建一个 Param (操作参数)
+        var maxVelX = new ROSLIB.Param({
+            ros: ros,
+            name: 'max_vel_y'
+        });
+        // 使用简单的 param.set (value)来设置参数
+        maxVelX.set(0.8);
+        // 获取参数
+        maxVelX.get(function (value) {
+            console.log('MAX VAL: ' + value);
+        });
+
+        // 新建 Param (操作参数)
+        var favoriteColor = new ROSLIB.Param({
+            ros: ros,
+            name: 'favorite_color'
+        });
+        // 设置参数
+        favoriteColor.set('red');
+        // 获取参数
+        favoriteColor.get(function (value) {
+            console.log('My robot\'s favorite color is ' + value);
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Simple roslib Example</h1>
+    <p>Run the following commands in the terminal then refresh this page. Check the JavaScript
+        console for the output.</p>
+    <ol>
+        <li><tt>roscore</tt></li>
+        <li><tt>rostopic pub /listener std_msgs/String "Hello, World"</tt></li>
+        <li><tt>rostopic echo /cmd_vel</tt></li>
+        <li><tt>rosrun rospy_tutorials add_two_ints_server</tt></li>
+        <li><tt>roslaunch rosbridge_server rosbridge_websocket.launch</tt></li>
+    </ol>
+    <div id="statusIndicator">
+        <p id="connecting">
+            Connecting to rosbridge...
+        </p>
+        <p id="connected" style="color:#00D600; display:none">
+            Connected
+        </p>
+        <p id="error" style="color:#FF0000; display:none">
+            Error in the backend!
+        </p>
+        <p id="closed" style="display:none">
+            Connection closed.
+        </p>
+        <div id="data"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+rbx2/rbx2_gui
+/home/oligay_61/zone3/devel/.private/rbx2_gui/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/rbx2_gui/share/rbx2_gui/cmake/rbx2_guiConfig.cmake /home/oligay_61/zone3/devel/share/rbx2_gui/cmake/rbx2_guiConfig.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_gui/share/rbx2_gui/cmake/rbx2_guiConfig-version.cmake /home/oligay_61/zone3/devel/share/rbx2_gui/cmake/rbx2_guiConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_gui/lib/pkgconfig/rbx2_gui.pc /home/oligay_61/zone3/devel/lib/pkgconfig/rbx2_gui.pc

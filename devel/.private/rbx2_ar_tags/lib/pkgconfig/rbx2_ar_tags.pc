@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/rbx2_ar_tags
+
+Name: rbx2_ar_tags
+Description: Description of rbx2_ar_tags
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/install
+
+Name: can_tx_tli65
+Description: Description of can_tx_tli65
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

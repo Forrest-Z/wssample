@@ -1,0 +1,5 @@
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/tx_ff.cc:8:46:[m[K [01;31m[Kfatal error: [m[Kg29_force_feedback/ForceFeedback.h: No such file or directory
+compilation terminated.
+make[2]: *** [CMakeFiles/tx_ff.dir/src/tx_ff.cc.o] Error 1
+make[1]: *** [CMakeFiles/tx_ff.dir/all] Error 2
+make: *** [all] Error 2

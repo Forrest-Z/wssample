@@ -1,0 +1,35 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find record_tracks)/../../.." />
+	<arg name="file_name_date" default="0000" />
+	<arg name="vehicle_id" default="oligay_61" />
+	<arg name="record_path" default="$(arg pre_dir)/bags/tst" />
+	<arg name="record_topics" default="/none" />
+	<!-- parameters -->
+	<param name="/pre_dir" type="string" value="$(arg pre_dir)" />
+	<param name="/file_name_date" type="string" value="$(arg file_name_date)" />
+	<rosparam command="load" file="$(arg pre_dir)/config/global.yaml" />
+	<rosparam command="load" file="$(arg pre_dir)/config/$(arg vehicle_id).yaml" />
+	<rosparam command="load" file="$(arg pre_dir)/config/config_tracks.yaml" />
+	<!-- record bags -->
+	<node name="rosbag_record" pkg="rosbag" type="record" args="-o $(arg record_path) $(arg record_topics) --split --duration=5m" />
+	<group>
+		<!-- gnss -->
+		<include file="$(find advanced_navigation_driver_992)/launch/gps.launch" />
+		<include file="$(find gnss)/launch/gnss.launch" />
+		<include file="$(find steer_speed_yawrate)/launch/steer_speed_yawrate.launch" />
+		<!-- CAN rx -->
+		<include file="$(find kvaser_interface)/launch/$(arg vehicle_id).launch" />
+		<include file="$(find can_rx_tli65)/launch/can_rx_tli65.launch" />
+		<include file="$(find container_angle_calibration)/launch/container_angle_calibration.launch" />
+		<include file="$(find can_tx_tli65)/launch/can_tx_tli65.launch" />
+	</group>
+	<group>
+		<!-- kalman -->
+		<include file="$(find kalman_kinematics)/launch/kalman_kinematics.launch" />
+	</group>
+	<group>
+		<!-- record tracks -->
+		<include file="$(find record_tracks)/launch/record_track.launch" />
+	</group>
+</launch>

@@ -1,0 +1,15 @@
+Header header
+
+uint8 back_left_light
+uint8 back_right_light
+uint8 back_position_light
+uint8 brake_light
+uint8 reverse_light
+uint8 back_work_light
+uint8 cooler1
+uint8 cooler2
+uint8 axle_diff_switch
+uint8 drier_power
+uint8 inclinometer_power
+uint8 cold_water_treasure_power
+uint8 exhaust_brake_switch

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/common-lisp/ros/rbx2_msgs/srv/_package.lisp

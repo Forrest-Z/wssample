@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/perception_msgs/share/perception_msgs/cmake/perception_msgsConfig.cmake

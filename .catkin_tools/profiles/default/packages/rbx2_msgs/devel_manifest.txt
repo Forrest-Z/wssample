@@ -1,0 +1,22 @@
+rbx2/rbx2_msgs
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/gennodejs/ros/rbx2_msgs/_index.js /home/oligay_61/zone3/devel/share/gennodejs/ros/rbx2_msgs/_index.js
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/gennodejs/ros/rbx2_msgs/srv/SetBatteryLevel.js /home/oligay_61/zone3/devel/share/gennodejs/ros/rbx2_msgs/srv/SetBatteryLevel.js
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/gennodejs/ros/rbx2_msgs/srv/_index.js /home/oligay_61/zone3/devel/share/gennodejs/ros/rbx2_msgs/srv/_index.js
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/roseus/ros/rbx2_msgs/manifest.l /home/oligay_61/zone3/devel/share/roseus/ros/rbx2_msgs/manifest.l
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/roseus/ros/rbx2_msgs/srv/SetBatteryLevel.l /home/oligay_61/zone3/devel/share/roseus/ros/rbx2_msgs/srv/SetBatteryLevel.l
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/rbx2_msgs/cmake/rbx2_msgsConfig.cmake /home/oligay_61/zone3/devel/share/rbx2_msgs/cmake/rbx2_msgsConfig.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/rbx2_msgs/cmake/rbx2_msgs-msg-paths.cmake /home/oligay_61/zone3/devel/share/rbx2_msgs/cmake/rbx2_msgs-msg-paths.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/rbx2_msgs/cmake/rbx2_msgsConfig-version.cmake /home/oligay_61/zone3/devel/share/rbx2_msgs/cmake/rbx2_msgsConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/rbx2_msgs/cmake/rbx2_msgs-msg-extras.cmake /home/oligay_61/zone3/devel/share/rbx2_msgs/cmake/rbx2_msgs-msg-extras.cmake
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/common-lisp/ros/rbx2_msgs/srv/SetBatteryLevel.lisp /home/oligay_61/zone3/devel/share/common-lisp/ros/rbx2_msgs/srv/SetBatteryLevel.lisp
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/common-lisp/ros/rbx2_msgs/srv/_package_SetBatteryLevel.lisp /home/oligay_61/zone3/devel/share/common-lisp/ros/rbx2_msgs/srv/_package_SetBatteryLevel.lisp
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/common-lisp/ros/rbx2_msgs/srv/rbx2_msgs-srv.asd /home/oligay_61/zone3/devel/share/common-lisp/ros/rbx2_msgs/srv/rbx2_msgs-srv.asd
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/common-lisp/ros/rbx2_msgs/srv/_package.lisp /home/oligay_61/zone3/devel/share/common-lisp/ros/rbx2_msgs/srv/_package.lisp
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/include/rbx2_msgs/SetBatteryLevelResponse.h /home/oligay_61/zone3/devel/include/rbx2_msgs/SetBatteryLevelResponse.h
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/include/rbx2_msgs/SetBatteryLevelRequest.h /home/oligay_61/zone3/devel/include/rbx2_msgs/SetBatteryLevelRequest.h
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/include/rbx2_msgs/SetBatteryLevel.h /home/oligay_61/zone3/devel/include/rbx2_msgs/SetBatteryLevel.h
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/lib/pkgconfig/rbx2_msgs.pc /home/oligay_61/zone3/devel/lib/pkgconfig/rbx2_msgs.pc
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/lib/python2.7/dist-packages/rbx2_msgs/__init__.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/rbx2_msgs/__init__.py
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/lib/python2.7/dist-packages/rbx2_msgs/srv/_SetBatteryLevel.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/rbx2_msgs/srv/_SetBatteryLevel.py
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/lib/python2.7/dist-packages/rbx2_msgs/srv/__init__.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/rbx2_msgs/srv/__init__.py

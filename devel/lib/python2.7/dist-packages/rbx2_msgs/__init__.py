@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/lib/python2.7/dist-packages/rbx2_msgs/__init__.py

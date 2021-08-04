@@ -1,0 +1,13 @@
+dynamic_can
+/home/oligay_61/zone3/devel/.private/dynamic_can/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/dynamic_can/share/dynamic_can/docs/canConfig.dox /home/oligay_61/zone3/devel/share/dynamic_can/docs/canConfig.dox
+/home/oligay_61/zone3/devel/.private/dynamic_can/share/dynamic_can/docs/canConfig.wikidoc /home/oligay_61/zone3/devel/share/dynamic_can/docs/canConfig.wikidoc
+/home/oligay_61/zone3/devel/.private/dynamic_can/share/dynamic_can/docs/canConfig-usage.dox /home/oligay_61/zone3/devel/share/dynamic_can/docs/canConfig-usage.dox
+/home/oligay_61/zone3/devel/.private/dynamic_can/share/dynamic_can/cmake/dynamic_canConfig-version.cmake /home/oligay_61/zone3/devel/share/dynamic_can/cmake/dynamic_canConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/dynamic_can/share/dynamic_can/cmake/dynamic_canConfig.cmake /home/oligay_61/zone3/devel/share/dynamic_can/cmake/dynamic_canConfig.cmake
+/home/oligay_61/zone3/devel/.private/dynamic_can/include/dynamic_can/canConfig.h /home/oligay_61/zone3/devel/include/dynamic_can/canConfig.h
+/home/oligay_61/zone3/devel/.private/dynamic_can/lib/pkgconfig/dynamic_can.pc /home/oligay_61/zone3/devel/lib/pkgconfig/dynamic_can.pc
+/home/oligay_61/zone3/devel/.private/dynamic_can/lib/dynamic_can/dynamic_can /home/oligay_61/zone3/devel/lib/dynamic_can/dynamic_can
+/home/oligay_61/zone3/devel/.private/dynamic_can/lib/python2.7/dist-packages/dynamic_can/__init__.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/dynamic_can/__init__.py
+/home/oligay_61/zone3/devel/.private/dynamic_can/lib/python2.7/dist-packages/dynamic_can/cfg/__init__.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/dynamic_can/cfg/__init__.py
+/home/oligay_61/zone3/devel/.private/dynamic_can/lib/python2.7/dist-packages/dynamic_can/cfg/canConfig.py /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/dynamic_can/cfg/canConfig.py

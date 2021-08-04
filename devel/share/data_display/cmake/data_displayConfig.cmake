@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/data_display/share/data_display/cmake/data_displayConfig.cmake

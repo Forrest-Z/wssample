@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/common-lisp/ros/g29_socket_msgs/msg/g29_socket_msgs-msg.asd

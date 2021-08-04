@@ -1,0 +1,5 @@
+<launch>
+	<group ns="zone3">
+		<node pkg="dynamic_can" name="dynamic_can" type="dynamic_can"/>
+	</group>
+</launch>

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/kalman_kinematics/lib/pkgconfig/kalman_kinematics.pc

@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/install
+
+Name: rbx2_nav
+Description: Description of rbx2_nav
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

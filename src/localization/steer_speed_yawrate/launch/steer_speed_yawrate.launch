@@ -1,0 +1,18 @@
+<launch>
+	<!-- launch args -->
+	<!-- <arg name="pre_dir" default="$(find record_tracks)/../../.." /> -->
+	<!-- <arg name="vehicle_id" default="oligay_61" /> -->
+	<!-- parameters -->
+	<!-- <rosparam command="load" file="$(arg pre_dir)/config/$(arg vehicle_id).yaml"/> -->
+	<group ns="zone3">
+		<group ns="localization">
+			<node name="steer_speed_yawrate" pkg="steer_speed_yawrate" type="steer_speed_yawrate" output="screen">
+				<!-- sub -->
+				<param name="pose_topic" value="/zone3/localization/pose" />
+				<param name="st_highspeed_topic" value="/zone3/chassis/rx/state_highspeed" />
+				<!-- pub -->
+				<param name="node_pub_topic" value="/zone3/localization/steer_speed_yawrate" />
+			</node>
+		</group>
+	</group>
+</launch>

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_socket_msgs/share/gennodejs/ros/g29_socket_msgs/_index.js

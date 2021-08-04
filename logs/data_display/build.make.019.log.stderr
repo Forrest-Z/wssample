@@ -1,0 +1,4 @@
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:[m[K In member function ‘[01m[Kvoid zone3::DataDisplay::ProcControlLowspeed(const LowspeedControl&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:146:9:[m[K [01;35m[Kwarning: [m[Kcase label value is less than minimum value for type
+         case -1:
+[01;32m[K         ^[m[K

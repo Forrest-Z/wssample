@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/install
+
+Name: rosbag_filter_gui
+Description: Description of rosbag_filter_gui
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

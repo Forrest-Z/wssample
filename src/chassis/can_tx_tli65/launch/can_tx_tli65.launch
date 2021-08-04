@@ -1,0 +1,13 @@
+<launch>
+	<group ns="zone3">
+		<group ns="chassis">
+			<node name="can_tx_tli65" pkg="can_tx_tli65" type="can_tx_tli65">
+				<!-- sub -->
+				<param name="highspeed_topic" value="/zone3/control/highspeed_command" />
+				<param name="lowspeed_topic" value="/zone3/control/lowspeed_command" />
+				<!-- pub -->
+				<param name="node_pub_topic" value="/zone3/drivers/can/tx" />
+			</node>
+		</group>
+	</group>
+</launch>

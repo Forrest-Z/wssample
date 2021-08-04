@@ -1,0 +1,6 @@
+teledrive/g29_socket_recv
+/home/oligay_61/zone3/devel/.private/g29_socket_recv/cmake.lock /home/oligay_61/zone3/devel/./cmake.lock
+/home/oligay_61/zone3/devel/.private/g29_socket_recv/share/g29_socket_recv/cmake/g29_socket_recvConfig-version.cmake /home/oligay_61/zone3/devel/share/g29_socket_recv/cmake/g29_socket_recvConfig-version.cmake
+/home/oligay_61/zone3/devel/.private/g29_socket_recv/share/g29_socket_recv/cmake/g29_socket_recvConfig.cmake /home/oligay_61/zone3/devel/share/g29_socket_recv/cmake/g29_socket_recvConfig.cmake
+/home/oligay_61/zone3/devel/.private/g29_socket_recv/lib/g29_socket_recv/g29_socket_recv /home/oligay_61/zone3/devel/lib/g29_socket_recv/g29_socket_recv
+/home/oligay_61/zone3/devel/.private/g29_socket_recv/lib/pkgconfig/g29_socket_recv.pc /home/oligay_61/zone3/devel/lib/pkgconfig/g29_socket_recv.pc

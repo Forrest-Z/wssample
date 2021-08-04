@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rbx2_msgs/share/rbx2_msgs/cmake/rbx2_msgsConfig.cmake

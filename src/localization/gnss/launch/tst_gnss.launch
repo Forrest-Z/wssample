@@ -1,0 +1,25 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find record_tracks)/../../.." />
+	<arg name="file_name_date" default="0000" />
+	<arg name="vehicle_id" default="oligay_61" />
+	<arg name="record_path" default="$(arg pre_dir)/bags/tst" />
+	<arg name="record_topics" default="/none" />
+	<!-- parameters -->
+	<param name="/pre_dir" type="string" value="$(arg pre_dir)" />
+	<param name="/file_name_date" type="string" value="$(arg file_name_date)" />
+	<rosparam command="load" file="$(arg pre_dir)/config/global.yaml" />
+	<rosparam command="load" file="$(arg pre_dir)/config/$(arg vehicle_id).yaml" />
+	<rosparam command="load" file="$(arg pre_dir)/config/config_tracks.yaml" />
+	<group>
+		<!-- gnss -->
+		<include file="$(find advanced_navigation_driver_992)/launch/gps.launch" />
+		<include file="$(find gnss)/launch/gnss.launch" />
+		<!-- CAN rx -->
+		<!-- <include file="$(find kvaser_interface)/launch/kvaser_can.launch"><arg name="vehicle_id" value="$(arg vehicle_id)" /></include><include file="$(find can_rx_tli65)/launch/can_rx_tli65.launch" /> -->
+	</group>
+	<group>
+		<!-- record tracks -->
+		<!-- <include file="$(find record_tracks)/launch/record_track.launch" /> -->
+	</group>
+</launch>

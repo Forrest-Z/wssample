@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/g29_force_feedback
+
+Name: g29_force_feedback
+Description: Description of g29_force_feedback
+Version: 0.0.0
+Cflags: -I/home/oligay_61/zone3/devel/.private/g29_force_feedback/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy message_runtime

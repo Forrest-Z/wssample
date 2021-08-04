@@ -1,0 +1,8 @@
+prefix=/home/oligay_61/zone3/devel/.private/track_points_proto
+
+Name: track_points_proto
+Description: Description of track_points_proto
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

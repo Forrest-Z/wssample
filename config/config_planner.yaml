@@ -1,0 +1,11 @@
+planner:
+  way_point_time_interval: 0.5
+  
+  # aim distance cannot less than 5m (1.5 * near_stop_way_point_radius)
+  # or control fsm will turn brake state 
+  # in m/s
+  aim_distance_switch_speed: 8
+  high_speed_aim_distance: 10
+  low_speed_aim_distance: 6
+  
+  lock_down_in_track_radius: 4

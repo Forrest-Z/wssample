@@ -1,0 +1,10 @@
+<launch>
+	<group ns="zone3">
+		<group ns="localization">
+			<node name="imu_cal" pkg="gnss" type="imu_cal" output="screen">
+				<param name="NavSatFix_topic" value="/zone3/drivers/gps/NavSatFix" />
+				<param name="Imu_topic" value="/zone3/drivers/gps/Imu" />
+			</node>
+		</group>
+	</group>
+</launch>

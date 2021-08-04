@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/decider_msgs/share/gennodejs/ros/decider_msgs/_index.js

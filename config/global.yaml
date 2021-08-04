@@ -1,0 +1,3 @@
+global:
+  # point0-x, point0-y, point1-x, point1-y, point2-x, point2-y, ... in enu coord
+  off_load_position_list_enu: [0, 0]

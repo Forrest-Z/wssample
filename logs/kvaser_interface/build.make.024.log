@@ -1,0 +1,4 @@
+[ 25%] Built target ros_kvaser_interface
+[ 50%] Built target list_channels
+[ 75%] Built target kvaser_can_bridge
+[100%] Built target canmonitor

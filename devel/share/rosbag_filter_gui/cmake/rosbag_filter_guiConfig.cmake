@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/rosbag_filter_gui/share/rosbag_filter_gui/cmake/rosbag_filter_guiConfig.cmake

@@ -1,0 +1,53 @@
+<launch>
+	<!-- launch args -->
+	<arg name="pre_dir" default="$(find record_tracks)/../../.." />
+	<arg name="vehicle_id" default="oligay_61" />
+	<arg name="record_path" default="$(arg pre_dir)/bags/tst" />
+	<arg name="record_topics" default="/none" />
+	<arg name="file_name" default="" />
+	<!-- parameters -->
+	<param name="/file_name" type="string" value="$(arg file_name)" />
+	<rosparam command="load" file="$(arg pre_dir)/config/global.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/$(arg vehicle_id).yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_tracks.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_planner.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_control.yaml"/>
+	<rosparam command="load" file="$(arg pre_dir)/config/config_teledrive.yaml"/>
+	<!-- record bags -->
+	<node name="rosbag_record" pkg="rosbag" type="record" args="-o $(arg record_path) $(arg record_topics) --split --duration=5m" />
+	<group>
+		<!-- gnss -->
+		<include file="$(find advanced_navigation_driver_992)/launch/gps.launch" />
+		<include file="$(find gnss)/launch/gnss.launch" />
+		<include file="$(find steer_speed_yawrate)/launch/steer_speed_yawrate.launch" />
+		<!-- CAN rx tx-->
+		<include file="$(find kvaser_interface)/launch/$(arg vehicle_id).launch" />
+		<include file="$(find can_rx_tli65)/launch/can_rx_tli65.launch" />
+		<include file="$(find container_angle_calibration)/launch/container_angle_calibration.launch" />
+		<include file="$(find can_tx_tli65)/launch/can_tx_tli65.launch" />
+		<!-- g29 driver -->
+		<include file="$(find g29_driver)/launch/g29_driver.launch" />
+	</group>
+	<group>
+		<!-- kalman -->
+		<include file="$(find kalman_kinematics)/launch/kalman_kinematics.launch" />
+	</group>
+	<group>
+		<!-- planner -->
+		<include file="$(find planner_fsm)/launch/planner_fsm.launch" />
+		<include file="$(find follow_tracks)/launch/follow_tracks.launch" />
+		<!-- control -->
+		<include file="$(find control_fsm)/launch/control_fsm.launch" />
+		<include file="$(find control_action)/launch/control_action.launch" />
+		<!-- teledrive -->
+		<include file="$(find g29_socket_recv)/launch/g29_socket_recv.launch" />
+		<include file="$(find g29_socket_send)/launch/g29_socket_send.launch" />
+		<!-- <include file="$(find teledrive)/launch/local_teledrive.launch" /> -->
+		<include file="$(find teledrive)/launch/socket_teledrive.launch" />
+	</group>
+	<group>
+		<!-- front end display -->
+		<!-- rviz -->
+		<!-- <include file="$(find track_viz)/launch/track_viz.launch"><arg name="vehicle_id" value="$(arg vehicle_id)" /><arg name="file_name" value="$(arg file_name)" /></include> -->
+	</group>
+</launch>

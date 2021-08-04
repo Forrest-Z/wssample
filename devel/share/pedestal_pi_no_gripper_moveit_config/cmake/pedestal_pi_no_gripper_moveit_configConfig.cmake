@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/pedestal_pi_no_gripper_moveit_config/share/pedestal_pi_no_gripper_moveit_config/cmake/pedestal_pi_no_gripper_moveit_configConfig.cmake

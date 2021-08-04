@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/pi_robot_moveit_config/share/pi_robot_moveit_config/cmake/pi_robot_moveit_configConfig-version.cmake

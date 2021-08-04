@@ -1,0 +1,13 @@
+<launch>
+	<group ns="zone3">
+		<group ns="drivers">
+			<node name="gps_992" pkg="advanced_navigation_driver_992" type="advanced_navigation_driver_992" output="screen">
+				<param name="topic_prefix" value="/zone3/drivers/gps"/>
+				<param name="nav_sat_frame_id" value="gps" />
+				<param name="imu_frame_id" value="imu" />
+				<param name="port" value="/dev/ttyS4" />
+				<param name="baud_rate" value="115200" />
+			</node>
+		</group>
+	</group>
+</launch>
