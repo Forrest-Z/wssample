@@ -1,0 +1,11 @@
+Symlinking /home/oligay_61/zone3/devel/share/dynamic_can/docs/canConfig.dox
+Symlinking /home/oligay_61/zone3/devel/share/dynamic_can/docs/canConfig.wikidoc
+Symlinking /home/oligay_61/zone3/devel/share/dynamic_can/docs/canConfig-usage.dox
+Symlinking /home/oligay_61/zone3/devel/share/dynamic_can/cmake/dynamic_canConfig-version.cmake
+Symlinking /home/oligay_61/zone3/devel/share/dynamic_can/cmake/dynamic_canConfig.cmake
+Symlinking /home/oligay_61/zone3/devel/include/dynamic_can/canConfig.h
+Symlinking /home/oligay_61/zone3/devel/lib/pkgconfig/dynamic_can.pc
+Symlinking /home/oligay_61/zone3/devel/lib/dynamic_can/dynamic_can
+Symlinking /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/dynamic_can/__init__.py
+Symlinking /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/dynamic_can/cfg/__init__.py
+Symlinking /home/oligay_61/zone3/devel/lib/python2.7/dist-packages/dynamic_can/cfg/canConfig.py

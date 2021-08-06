@@ -85,6 +85,34 @@
           CONTROL_HANG
           CONTROL_FSM_STATE-VAL
           CONTROL_FSM_STATE
+          LEFT-VAL
+          LEFT
+          RIGHT-VAL
+          RIGHT
+          NEAR-VAL
+          NEAR
+          FAR-VAL
+          FAR
+          TOP_WARN-VAL
+          TOP_WARN
+          CONTROL_AIR_BEEP-VAL
+          CONTROL_AIR_BEEP
+          FRONT_FOG-VAL
+          FRONT_FOG
+          FRONT_WORK-VAL
+          FRONT_WORK
+          SIDE-VAL
+          SIDE
+          POSITION-VAL
+          POSITION
+          EMERGENCY-VAL
+          EMERGENCY
+          BRAKE-VAL
+          BRAKE
+          REVERSE-VAL
+          REVERSE
+          BACK_WORK-VAL
+          BACK_WORK
           TARGET_X-VAL
           TARGET_X
           TARGET_Y-VAL

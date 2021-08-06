@@ -68,6 +68,20 @@ struct DisplayData_
     , control_gear()
     , control_hang()
     , control_fsm_state()
+    , left(0)
+    , right(0)
+    , near(0)
+    , far(0)
+    , top_warn(0)
+    , control_air_beep(0)
+    , front_fog(0)
+    , front_work(0)
+    , side(0)
+    , position(0)
+    , emergency(0)
+    , brake(0)
+    , reverse(0)
+    , back_work(0)
     , target_x(0.0)
     , target_y(0.0)
     , NumSate(0)
@@ -131,6 +145,20 @@ struct DisplayData_
     , control_gear(_alloc)
     , control_hang(_alloc)
     , control_fsm_state(_alloc)
+    , left(0)
+    , right(0)
+    , near(0)
+    , far(0)
+    , top_warn(0)
+    , control_air_beep(0)
+    , front_fog(0)
+    , front_work(0)
+    , side(0)
+    , position(0)
+    , emergency(0)
+    , brake(0)
+    , reverse(0)
+    , back_work(0)
     , target_x(0.0)
     , target_y(0.0)
     , NumSate(0)
@@ -283,6 +311,48 @@ struct DisplayData_
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _control_fsm_state_type;
   _control_fsm_state_type control_fsm_state;
 
+   typedef uint8_t _left_type;
+  _left_type left;
+
+   typedef uint8_t _right_type;
+  _right_type right;
+
+   typedef uint8_t _near_type;
+  _near_type near;
+
+   typedef uint8_t _far_type;
+  _far_type far;
+
+   typedef uint8_t _top_warn_type;
+  _top_warn_type top_warn;
+
+   typedef uint8_t _control_air_beep_type;
+  _control_air_beep_type control_air_beep;
+
+   typedef uint8_t _front_fog_type;
+  _front_fog_type front_fog;
+
+   typedef uint8_t _front_work_type;
+  _front_work_type front_work;
+
+   typedef uint8_t _side_type;
+  _side_type side;
+
+   typedef uint8_t _position_type;
+  _position_type position;
+
+   typedef uint8_t _emergency_type;
+  _emergency_type emergency;
+
+   typedef uint8_t _brake_type;
+  _brake_type brake;
+
+   typedef uint8_t _reverse_type;
+  _reverse_type reverse;
+
+   typedef uint8_t _back_work_type;
+  _back_work_type back_work;
+
    typedef double _target_x_type;
   _target_x_type target_x;
 
@@ -415,12 +485,12 @@ struct MD5Sum< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "a64f4819ed17b4d87c0476c69984faf5";
+    return "29de8c5bc2f5d30b1f3b83a6a6936749";
   }
 
   static const char* value(const ::displaydata_msgs::DisplayData_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xa64f4819ed17b4d8ULL;
-  static const uint64_t static_value2 = 0x7c0476c69984faf5ULL;
+  static const uint64_t static_value1 = 0x29de8c5bc2f5d30bULL;
+  static const uint64_t static_value2 = 0x1f3b83a6a6936749ULL;
 };
 
 template<class ContainerAllocator>
@@ -500,6 +570,20 @@ uint8 control_EPB\n\
 string control_gear\n\
 string control_hang\n\
 string control_fsm_state\n\
+uint8 left\n\
+uint8 right\n\
+uint8 near\n\
+uint8 far\n\
+uint8 top_warn\n\
+uint8 control_air_beep\n\
+uint8 front_fog\n\
+uint8 front_work\n\
+uint8 side\n\
+uint8 position\n\
+uint8 emergency\n\
+uint8 brake\n\
+uint8 reverse\n\
+uint8 back_work\n\
 \n\
 # waypoints planning \n\
 float64 target_x\n\
@@ -609,6 +693,20 @@ namespace serialization
       stream.next(m.control_gear);
       stream.next(m.control_hang);
       stream.next(m.control_fsm_state);
+      stream.next(m.left);
+      stream.next(m.right);
+      stream.next(m.near);
+      stream.next(m.far);
+      stream.next(m.top_warn);
+      stream.next(m.control_air_beep);
+      stream.next(m.front_fog);
+      stream.next(m.front_work);
+      stream.next(m.side);
+      stream.next(m.position);
+      stream.next(m.emergency);
+      stream.next(m.brake);
+      stream.next(m.reverse);
+      stream.next(m.back_work);
       stream.next(m.target_x);
       stream.next(m.target_y);
       stream.next(m.NumSate);
@@ -732,6 +830,34 @@ struct Printer< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_hang);
     s << indent << "control_fsm_state: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_fsm_state);
+    s << indent << "left: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.left);
+    s << indent << "right: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.right);
+    s << indent << "near: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.near);
+    s << indent << "far: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.far);
+    s << indent << "top_warn: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.top_warn);
+    s << indent << "control_air_beep: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.control_air_beep);
+    s << indent << "front_fog: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.front_fog);
+    s << indent << "front_work: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.front_work);
+    s << indent << "side: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.side);
+    s << indent << "position: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.position);
+    s << indent << "emergency: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.emergency);
+    s << indent << "brake: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.brake);
+    s << indent << "reverse: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.reverse);
+    s << indent << "back_work: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.back_work);
     s << indent << "target_x: ";
     Printer<double>::stream(s, indent + "  ", v.target_x);
     s << indent << "target_y: ";

@@ -62,6 +62,20 @@ class DisplayData {
       this.control_gear = null;
       this.control_hang = null;
       this.control_fsm_state = null;
+      this.left = null;
+      this.right = null;
+      this.near = null;
+      this.far = null;
+      this.top_warn = null;
+      this.control_air_beep = null;
+      this.front_fog = null;
+      this.front_work = null;
+      this.side = null;
+      this.position = null;
+      this.emergency = null;
+      this.brake = null;
+      this.reverse = null;
+      this.back_work = null;
       this.target_x = null;
       this.target_y = null;
       this.NumSate = null;
@@ -340,6 +354,90 @@ class DisplayData {
       else {
         this.control_fsm_state = '';
       }
+      if (initObj.hasOwnProperty('left')) {
+        this.left = initObj.left
+      }
+      else {
+        this.left = 0;
+      }
+      if (initObj.hasOwnProperty('right')) {
+        this.right = initObj.right
+      }
+      else {
+        this.right = 0;
+      }
+      if (initObj.hasOwnProperty('near')) {
+        this.near = initObj.near
+      }
+      else {
+        this.near = 0;
+      }
+      if (initObj.hasOwnProperty('far')) {
+        this.far = initObj.far
+      }
+      else {
+        this.far = 0;
+      }
+      if (initObj.hasOwnProperty('top_warn')) {
+        this.top_warn = initObj.top_warn
+      }
+      else {
+        this.top_warn = 0;
+      }
+      if (initObj.hasOwnProperty('control_air_beep')) {
+        this.control_air_beep = initObj.control_air_beep
+      }
+      else {
+        this.control_air_beep = 0;
+      }
+      if (initObj.hasOwnProperty('front_fog')) {
+        this.front_fog = initObj.front_fog
+      }
+      else {
+        this.front_fog = 0;
+      }
+      if (initObj.hasOwnProperty('front_work')) {
+        this.front_work = initObj.front_work
+      }
+      else {
+        this.front_work = 0;
+      }
+      if (initObj.hasOwnProperty('side')) {
+        this.side = initObj.side
+      }
+      else {
+        this.side = 0;
+      }
+      if (initObj.hasOwnProperty('position')) {
+        this.position = initObj.position
+      }
+      else {
+        this.position = 0;
+      }
+      if (initObj.hasOwnProperty('emergency')) {
+        this.emergency = initObj.emergency
+      }
+      else {
+        this.emergency = 0;
+      }
+      if (initObj.hasOwnProperty('brake')) {
+        this.brake = initObj.brake
+      }
+      else {
+        this.brake = 0;
+      }
+      if (initObj.hasOwnProperty('reverse')) {
+        this.reverse = initObj.reverse
+      }
+      else {
+        this.reverse = 0;
+      }
+      if (initObj.hasOwnProperty('back_work')) {
+        this.back_work = initObj.back_work
+      }
+      else {
+        this.back_work = 0;
+      }
       if (initObj.hasOwnProperty('target_x')) {
         this.target_x = initObj.target_x
       }
@@ -539,6 +637,34 @@ class DisplayData {
     bufferOffset = _serializer.string(obj.control_hang, buffer, bufferOffset);
     // Serialize message field [control_fsm_state]
     bufferOffset = _serializer.string(obj.control_fsm_state, buffer, bufferOffset);
+    // Serialize message field [left]
+    bufferOffset = _serializer.uint8(obj.left, buffer, bufferOffset);
+    // Serialize message field [right]
+    bufferOffset = _serializer.uint8(obj.right, buffer, bufferOffset);
+    // Serialize message field [near]
+    bufferOffset = _serializer.uint8(obj.near, buffer, bufferOffset);
+    // Serialize message field [far]
+    bufferOffset = _serializer.uint8(obj.far, buffer, bufferOffset);
+    // Serialize message field [top_warn]
+    bufferOffset = _serializer.uint8(obj.top_warn, buffer, bufferOffset);
+    // Serialize message field [control_air_beep]
+    bufferOffset = _serializer.uint8(obj.control_air_beep, buffer, bufferOffset);
+    // Serialize message field [front_fog]
+    bufferOffset = _serializer.uint8(obj.front_fog, buffer, bufferOffset);
+    // Serialize message field [front_work]
+    bufferOffset = _serializer.uint8(obj.front_work, buffer, bufferOffset);
+    // Serialize message field [side]
+    bufferOffset = _serializer.uint8(obj.side, buffer, bufferOffset);
+    // Serialize message field [position]
+    bufferOffset = _serializer.uint8(obj.position, buffer, bufferOffset);
+    // Serialize message field [emergency]
+    bufferOffset = _serializer.uint8(obj.emergency, buffer, bufferOffset);
+    // Serialize message field [brake]
+    bufferOffset = _serializer.uint8(obj.brake, buffer, bufferOffset);
+    // Serialize message field [reverse]
+    bufferOffset = _serializer.uint8(obj.reverse, buffer, bufferOffset);
+    // Serialize message field [back_work]
+    bufferOffset = _serializer.uint8(obj.back_work, buffer, bufferOffset);
     // Serialize message field [target_x]
     bufferOffset = _serializer.float64(obj.target_x, buffer, bufferOffset);
     // Serialize message field [target_y]
@@ -668,6 +794,34 @@ class DisplayData {
     data.control_hang = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [control_fsm_state]
     data.control_fsm_state = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [left]
+    data.left = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [right]
+    data.right = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [near]
+    data.near = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [far]
+    data.far = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [top_warn]
+    data.top_warn = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [control_air_beep]
+    data.control_air_beep = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [front_fog]
+    data.front_fog = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [front_work]
+    data.front_work = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [side]
+    data.side = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [position]
+    data.position = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [emergency]
+    data.emergency = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [brake]
+    data.brake = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [reverse]
+    data.reverse = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [back_work]
+    data.back_work = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [target_x]
     data.target_x = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [target_y]
@@ -714,7 +868,7 @@ class DisplayData {
     length += object.control_gear.length;
     length += object.control_hang.length;
     length += object.control_fsm_state.length;
-    return length + 200;
+    return length + 214;
   }
 
   static datatype() {
@@ -724,7 +878,7 @@ class DisplayData {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'a64f4819ed17b4d87c0476c69984faf5';
+    return '29de8c5bc2f5d30b1f3b83a6a6936749';
   }
 
   static messageDefinition() {
@@ -791,6 +945,20 @@ class DisplayData {
     string control_gear
     string control_hang
     string control_fsm_state
+    uint8 left
+    uint8 right
+    uint8 near
+    uint8 far
+    uint8 top_warn
+    uint8 control_air_beep
+    uint8 front_fog
+    uint8 front_work
+    uint8 side
+    uint8 position
+    uint8 emergency
+    uint8 brake
+    uint8 reverse
+    uint8 back_work
     
     # waypoints planning 
     float64 target_x
@@ -1148,6 +1316,104 @@ class DisplayData {
     }
     else {
       resolved.control_fsm_state = ''
+    }
+
+    if (msg.left !== undefined) {
+      resolved.left = msg.left;
+    }
+    else {
+      resolved.left = 0
+    }
+
+    if (msg.right !== undefined) {
+      resolved.right = msg.right;
+    }
+    else {
+      resolved.right = 0
+    }
+
+    if (msg.near !== undefined) {
+      resolved.near = msg.near;
+    }
+    else {
+      resolved.near = 0
+    }
+
+    if (msg.far !== undefined) {
+      resolved.far = msg.far;
+    }
+    else {
+      resolved.far = 0
+    }
+
+    if (msg.top_warn !== undefined) {
+      resolved.top_warn = msg.top_warn;
+    }
+    else {
+      resolved.top_warn = 0
+    }
+
+    if (msg.control_air_beep !== undefined) {
+      resolved.control_air_beep = msg.control_air_beep;
+    }
+    else {
+      resolved.control_air_beep = 0
+    }
+
+    if (msg.front_fog !== undefined) {
+      resolved.front_fog = msg.front_fog;
+    }
+    else {
+      resolved.front_fog = 0
+    }
+
+    if (msg.front_work !== undefined) {
+      resolved.front_work = msg.front_work;
+    }
+    else {
+      resolved.front_work = 0
+    }
+
+    if (msg.side !== undefined) {
+      resolved.side = msg.side;
+    }
+    else {
+      resolved.side = 0
+    }
+
+    if (msg.position !== undefined) {
+      resolved.position = msg.position;
+    }
+    else {
+      resolved.position = 0
+    }
+
+    if (msg.emergency !== undefined) {
+      resolved.emergency = msg.emergency;
+    }
+    else {
+      resolved.emergency = 0
+    }
+
+    if (msg.brake !== undefined) {
+      resolved.brake = msg.brake;
+    }
+    else {
+      resolved.brake = 0
+    }
+
+    if (msg.reverse !== undefined) {
+      resolved.reverse = msg.reverse;
+    }
+    else {
+      resolved.reverse = 0
+    }
+
+    if (msg.back_work !== undefined) {
+      resolved.back_work = msg.back_work;
+    }
+    else {
+      resolved.back_work = 0
     }
 
     if (msg.target_x !== undefined) {

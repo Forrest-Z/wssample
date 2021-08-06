@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target G29Socket[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/G29Socket.dir/src/G29Socket.pb.cc.o[0m
+[100%] [32m[1mLinking CXX shared library /home/oligay_61/zone3/devel/.private/g29_socket_proto/lib/libG29Socket.so[0m
+[100%] Built target G29Socket

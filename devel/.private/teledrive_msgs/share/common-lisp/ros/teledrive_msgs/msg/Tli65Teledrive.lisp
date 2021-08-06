@@ -67,49 +67,49 @@
     :initarg :far_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_rotate_warning_light
-    :reader TL_rotate_warning_light
-    :initarg :TL_rotate_warning_light
+   (top_warning_light
+    :reader top_warning_light
+    :initarg :top_warning_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_front_fog_light
-    :reader TL_front_fog_light
-    :initarg :TL_front_fog_light
+   (front_fog_light
+    :reader front_fog_light
+    :initarg :front_fog_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_front_work_light
-    :reader TL_front_work_light
-    :initarg :TL_front_work_light
+   (front_work_light
+    :reader front_work_light
+    :initarg :front_work_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_back_work_light
-    :reader TL_back_work_light
-    :initarg :TL_back_work_light
+   (back_work_light
+    :reader back_work_light
+    :initarg :back_work_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_side_light
-    :reader TL_side_light
-    :initarg :TL_side_light
+   (side_light
+    :reader side_light
+    :initarg :side_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_back_position_light
-    :reader TL_back_position_light
-    :initarg :TL_back_position_light
+   (position_light
+    :reader position_light
+    :initarg :position_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_hazard_indicator_light
-    :reader TL_hazard_indicator_light
-    :initarg :TL_hazard_indicator_light
+   (emergency_light
+    :reader emergency_light
+    :initarg :emergency_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_brake_light
-    :reader TL_brake_light
-    :initarg :TL_brake_light
+   (brake_light
+    :reader brake_light
+    :initarg :brake_light
     :type cl:boolean
     :initform cl:nil)
-   (TL_return_light
-    :reader TL_return_light
-    :initarg :TL_return_light
+   (reverse_light
+    :reader reverse_light
+    :initarg :reverse_light
     :type cl:boolean
     :initform cl:nil))
 )
@@ -182,50 +182,50 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:far_light-val is deprecated.  Use teledrive_msgs-msg:far_light instead.")
   (far_light m))
 
-(cl:ensure-generic-function 'TL_rotate_warning_light-val :lambda-list '(m))
-(cl:defmethod TL_rotate_warning_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_rotate_warning_light-val is deprecated.  Use teledrive_msgs-msg:TL_rotate_warning_light instead.")
-  (TL_rotate_warning_light m))
+(cl:ensure-generic-function 'top_warning_light-val :lambda-list '(m))
+(cl:defmethod top_warning_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:top_warning_light-val is deprecated.  Use teledrive_msgs-msg:top_warning_light instead.")
+  (top_warning_light m))
 
-(cl:ensure-generic-function 'TL_front_fog_light-val :lambda-list '(m))
-(cl:defmethod TL_front_fog_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_front_fog_light-val is deprecated.  Use teledrive_msgs-msg:TL_front_fog_light instead.")
-  (TL_front_fog_light m))
+(cl:ensure-generic-function 'front_fog_light-val :lambda-list '(m))
+(cl:defmethod front_fog_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:front_fog_light-val is deprecated.  Use teledrive_msgs-msg:front_fog_light instead.")
+  (front_fog_light m))
 
-(cl:ensure-generic-function 'TL_front_work_light-val :lambda-list '(m))
-(cl:defmethod TL_front_work_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_front_work_light-val is deprecated.  Use teledrive_msgs-msg:TL_front_work_light instead.")
-  (TL_front_work_light m))
+(cl:ensure-generic-function 'front_work_light-val :lambda-list '(m))
+(cl:defmethod front_work_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:front_work_light-val is deprecated.  Use teledrive_msgs-msg:front_work_light instead.")
+  (front_work_light m))
 
-(cl:ensure-generic-function 'TL_back_work_light-val :lambda-list '(m))
-(cl:defmethod TL_back_work_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_back_work_light-val is deprecated.  Use teledrive_msgs-msg:TL_back_work_light instead.")
-  (TL_back_work_light m))
+(cl:ensure-generic-function 'back_work_light-val :lambda-list '(m))
+(cl:defmethod back_work_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:back_work_light-val is deprecated.  Use teledrive_msgs-msg:back_work_light instead.")
+  (back_work_light m))
 
-(cl:ensure-generic-function 'TL_side_light-val :lambda-list '(m))
-(cl:defmethod TL_side_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_side_light-val is deprecated.  Use teledrive_msgs-msg:TL_side_light instead.")
-  (TL_side_light m))
+(cl:ensure-generic-function 'side_light-val :lambda-list '(m))
+(cl:defmethod side_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:side_light-val is deprecated.  Use teledrive_msgs-msg:side_light instead.")
+  (side_light m))
 
-(cl:ensure-generic-function 'TL_back_position_light-val :lambda-list '(m))
-(cl:defmethod TL_back_position_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_back_position_light-val is deprecated.  Use teledrive_msgs-msg:TL_back_position_light instead.")
-  (TL_back_position_light m))
+(cl:ensure-generic-function 'position_light-val :lambda-list '(m))
+(cl:defmethod position_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:position_light-val is deprecated.  Use teledrive_msgs-msg:position_light instead.")
+  (position_light m))
 
-(cl:ensure-generic-function 'TL_hazard_indicator_light-val :lambda-list '(m))
-(cl:defmethod TL_hazard_indicator_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_hazard_indicator_light-val is deprecated.  Use teledrive_msgs-msg:TL_hazard_indicator_light instead.")
-  (TL_hazard_indicator_light m))
+(cl:ensure-generic-function 'emergency_light-val :lambda-list '(m))
+(cl:defmethod emergency_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:emergency_light-val is deprecated.  Use teledrive_msgs-msg:emergency_light instead.")
+  (emergency_light m))
 
-(cl:ensure-generic-function 'TL_brake_light-val :lambda-list '(m))
-(cl:defmethod TL_brake_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_brake_light-val is deprecated.  Use teledrive_msgs-msg:TL_brake_light instead.")
-  (TL_brake_light m))
+(cl:ensure-generic-function 'brake_light-val :lambda-list '(m))
+(cl:defmethod brake_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:brake_light-val is deprecated.  Use teledrive_msgs-msg:brake_light instead.")
+  (brake_light m))
 
-(cl:ensure-generic-function 'TL_return_light-val :lambda-list '(m))
-(cl:defmethod TL_return_light-val ((m <Tli65Teledrive>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:TL_return_light-val is deprecated.  Use teledrive_msgs-msg:TL_return_light instead.")
-  (TL_return_light m))
+(cl:ensure-generic-function 'reverse_light-val :lambda-list '(m))
+(cl:defmethod reverse_light-val ((m <Tli65Teledrive>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader teledrive_msgs-msg:reverse_light-val is deprecated.  Use teledrive_msgs-msg:reverse_light instead.")
+  (reverse_light m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <Tli65Teledrive>) ostream)
   "Serializes a message object of type '<Tli65Teledrive>"
   (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'control_type))))
@@ -284,15 +284,15 @@
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'right_light) 1 0)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'near_light) 1 0)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'far_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_rotate_warning_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_front_fog_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_front_work_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_back_work_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_side_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_back_position_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_hazard_indicator_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_brake_light) 1 0)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'TL_return_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'top_warning_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'front_fog_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'front_work_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'back_work_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'side_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'position_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'emergency_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'brake_light) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'reverse_light) 1 0)) ostream)
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <Tli65Teledrive>) istream)
   "Deserializes a message object of type '<Tli65Teledrive>"
@@ -357,15 +357,15 @@
     (cl:setf (cl:slot-value msg 'right_light) (cl:not (cl:zerop (cl:read-byte istream))))
     (cl:setf (cl:slot-value msg 'near_light) (cl:not (cl:zerop (cl:read-byte istream))))
     (cl:setf (cl:slot-value msg 'far_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_rotate_warning_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_front_fog_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_front_work_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_back_work_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_side_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_back_position_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_hazard_indicator_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_brake_light) (cl:not (cl:zerop (cl:read-byte istream))))
-    (cl:setf (cl:slot-value msg 'TL_return_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'top_warning_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'front_fog_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'front_work_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'back_work_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'side_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'position_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'emergency_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'brake_light) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'reverse_light) (cl:not (cl:zerop (cl:read-byte istream))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<Tli65Teledrive>)))
@@ -376,16 +376,16 @@
   "teledrive_msgs/Tli65Teledrive")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Tli65Teledrive>)))
   "Returns md5sum for a message object of type '<Tli65Teledrive>"
-  "ff9fc773e79bfc906f0ea2de32f97922")
+  "2039e574d82f1c10ec3f95ef9b8ec5ce")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Tli65Teledrive)))
   "Returns md5sum for a message object of type 'Tli65Teledrive"
-  "ff9fc773e79bfc906f0ea2de32f97922")
+  "2039e574d82f1c10ec3f95ef9b8ec5ce")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Tli65Teledrive>)))
   "Returns full string definition for message of type '<Tli65Teledrive>"
-  (cl:format cl:nil "string control_type~%~%float64 steer~%float64 throttle_pedal~%float64 xbr~%int32 gear~%int32 epb~%int32 hang~%bool air_beep~%bool left_light~%bool right_light~%bool near_light~%bool far_light~%~%#TL lights state~%bool TL_rotate_warning_light~%bool TL_front_fog_light~%bool TL_front_work_light~%bool TL_back_work_light~%bool TL_side_light~%bool TL_back_position_light~%bool TL_hazard_indicator_light~%bool TL_brake_light~%bool TL_return_light~%~%"))
+  (cl:format cl:nil "string control_type~%~%float64 steer~%float64 throttle_pedal~%float64 xbr~%int32 gear~%int32 epb~%int32 hang~%bool air_beep~%bool left_light~%bool right_light~%bool near_light~%bool far_light~%~%#TL lights state~%bool top_warning_light~%bool front_fog_light~%bool front_work_light~%bool back_work_light~%bool side_light~%bool position_light~%bool emergency_light~%bool brake_light~%bool reverse_light~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Tli65Teledrive)))
   "Returns full string definition for message of type 'Tli65Teledrive"
-  (cl:format cl:nil "string control_type~%~%float64 steer~%float64 throttle_pedal~%float64 xbr~%int32 gear~%int32 epb~%int32 hang~%bool air_beep~%bool left_light~%bool right_light~%bool near_light~%bool far_light~%~%#TL lights state~%bool TL_rotate_warning_light~%bool TL_front_fog_light~%bool TL_front_work_light~%bool TL_back_work_light~%bool TL_side_light~%bool TL_back_position_light~%bool TL_hazard_indicator_light~%bool TL_brake_light~%bool TL_return_light~%~%"))
+  (cl:format cl:nil "string control_type~%~%float64 steer~%float64 throttle_pedal~%float64 xbr~%int32 gear~%int32 epb~%int32 hang~%bool air_beep~%bool left_light~%bool right_light~%bool near_light~%bool far_light~%~%#TL lights state~%bool top_warning_light~%bool front_fog_light~%bool front_work_light~%bool back_work_light~%bool side_light~%bool position_light~%bool emergency_light~%bool brake_light~%bool reverse_light~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Tli65Teledrive>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'control_type))
@@ -425,13 +425,13 @@
     (cl:cons ':right_light (right_light msg))
     (cl:cons ':near_light (near_light msg))
     (cl:cons ':far_light (far_light msg))
-    (cl:cons ':TL_rotate_warning_light (TL_rotate_warning_light msg))
-    (cl:cons ':TL_front_fog_light (TL_front_fog_light msg))
-    (cl:cons ':TL_front_work_light (TL_front_work_light msg))
-    (cl:cons ':TL_back_work_light (TL_back_work_light msg))
-    (cl:cons ':TL_side_light (TL_side_light msg))
-    (cl:cons ':TL_back_position_light (TL_back_position_light msg))
-    (cl:cons ':TL_hazard_indicator_light (TL_hazard_indicator_light msg))
-    (cl:cons ':TL_brake_light (TL_brake_light msg))
-    (cl:cons ':TL_return_light (TL_return_light msg))
+    (cl:cons ':top_warning_light (top_warning_light msg))
+    (cl:cons ':front_fog_light (front_fog_light msg))
+    (cl:cons ':front_work_light (front_work_light msg))
+    (cl:cons ':back_work_light (back_work_light msg))
+    (cl:cons ':side_light (side_light msg))
+    (cl:cons ':position_light (position_light msg))
+    (cl:cons ':emergency_light (emergency_light msg))
+    (cl:cons ':brake_light (brake_light msg))
+    (cl:cons ':reverse_light (reverse_light msg))
 ))

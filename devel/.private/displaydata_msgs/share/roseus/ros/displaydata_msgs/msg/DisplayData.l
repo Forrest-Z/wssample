@@ -16,7 +16,7 @@
 
 (defclass displaydata_msgs::DisplayData
   :super ros::object
-  :slots (_header _rtk_state _lat _lng _alt _latlng_std _x_enu _y_enu _z_enu _xy_std_enu _speed _headingangle _current_steer _current_brake_pedal_pos _current_throttle_percentage _current_retarder_torque_percentage _current_EPB _current_gear _current_hangangle _auto_mode _left_light _right_light _near_light _far_light _air_beep _top_warning_light _front_fog_light _front_work_light _side_light _position_light _back_left_light _back_right_light _back_position_light _brake_light _reverse_light _back_work_light _control_steer _control_throttle_percentage _control_xbr _control_EPB _control_gear _control_hang _control_fsm_state _target_x _target_y _NumSate _engine_fault _gear_fault _EBS_fault _EPS_fault _EPB_fault _truck_fault_level _engine_fault_code _gear_fault_code _EPS_fault_code _EBS_fault_code _electric_fault_code _tyre_pressure_leftfront _tyre_pressure_rightfront _front_left_temperature _front_right_temperature ))
+  :slots (_header _rtk_state _lat _lng _alt _latlng_std _x_enu _y_enu _z_enu _xy_std_enu _speed _headingangle _current_steer _current_brake_pedal_pos _current_throttle_percentage _current_retarder_torque_percentage _current_EPB _current_gear _current_hangangle _auto_mode _left_light _right_light _near_light _far_light _air_beep _top_warning_light _front_fog_light _front_work_light _side_light _position_light _back_left_light _back_right_light _back_position_light _brake_light _reverse_light _back_work_light _control_steer _control_throttle_percentage _control_xbr _control_EPB _control_gear _control_hang _control_fsm_state _left _right _near _far _top_warn _control_air_beep _front_fog _front_work _side _position _emergency _brake _reverse _back_work _target_x _target_y _NumSate _engine_fault _gear_fault _EBS_fault _EPS_fault _EPB_fault _truck_fault_level _engine_fault_code _gear_fault_code _EPS_fault_code _EBS_fault_code _electric_fault_code _tyre_pressure_leftfront _tyre_pressure_rightfront _front_left_temperature _front_right_temperature ))
 
 (defmethod displaydata_msgs::DisplayData
   (:init
@@ -64,6 +64,20 @@
     ((:control_gear __control_gear) "")
     ((:control_hang __control_hang) "")
     ((:control_fsm_state __control_fsm_state) "")
+    ((:left __left) 0)
+    ((:right __right) 0)
+    ((:near __near) 0)
+    ((:far __far) 0)
+    ((:top_warn __top_warn) 0)
+    ((:control_air_beep __control_air_beep) 0)
+    ((:front_fog __front_fog) 0)
+    ((:front_work __front_work) 0)
+    ((:side __side) 0)
+    ((:position __position) 0)
+    ((:emergency __emergency) 0)
+    ((:brake __brake) 0)
+    ((:reverse __reverse) 0)
+    ((:back_work __back_work) 0)
     ((:target_x __target_x) 0.0)
     ((:target_y __target_y) 0.0)
     ((:NumSate __NumSate) 0)
@@ -127,6 +141,20 @@
    (setq _control_gear (string __control_gear))
    (setq _control_hang (string __control_hang))
    (setq _control_fsm_state (string __control_fsm_state))
+   (setq _left (round __left))
+   (setq _right (round __right))
+   (setq _near (round __near))
+   (setq _far (round __far))
+   (setq _top_warn (round __top_warn))
+   (setq _control_air_beep (round __control_air_beep))
+   (setq _front_fog (round __front_fog))
+   (setq _front_work (round __front_work))
+   (setq _side (round __side))
+   (setq _position (round __position))
+   (setq _emergency (round __emergency))
+   (setq _brake (round __brake))
+   (setq _reverse (round __reverse))
+   (setq _back_work (round __back_work))
    (setq _target_x (float __target_x))
    (setq _target_y (float __target_y))
    (setq _NumSate (round __NumSate))
@@ -279,6 +307,48 @@
   (:control_fsm_state
    (&optional __control_fsm_state)
    (if __control_fsm_state (setq _control_fsm_state __control_fsm_state)) _control_fsm_state)
+  (:left
+   (&optional __left)
+   (if __left (setq _left __left)) _left)
+  (:right
+   (&optional __right)
+   (if __right (setq _right __right)) _right)
+  (:near
+   (&optional __near)
+   (if __near (setq _near __near)) _near)
+  (:far
+   (&optional __far)
+   (if __far (setq _far __far)) _far)
+  (:top_warn
+   (&optional __top_warn)
+   (if __top_warn (setq _top_warn __top_warn)) _top_warn)
+  (:control_air_beep
+   (&optional __control_air_beep)
+   (if __control_air_beep (setq _control_air_beep __control_air_beep)) _control_air_beep)
+  (:front_fog
+   (&optional __front_fog)
+   (if __front_fog (setq _front_fog __front_fog)) _front_fog)
+  (:front_work
+   (&optional __front_work)
+   (if __front_work (setq _front_work __front_work)) _front_work)
+  (:side
+   (&optional __side)
+   (if __side (setq _side __side)) _side)
+  (:position
+   (&optional __position)
+   (if __position (setq _position __position)) _position)
+  (:emergency
+   (&optional __emergency)
+   (if __emergency (setq _emergency __emergency)) _emergency)
+  (:brake
+   (&optional __brake)
+   (if __brake (setq _brake __brake)) _brake)
+  (:reverse
+   (&optional __reverse)
+   (if __reverse (setq _reverse __reverse)) _reverse)
+  (:back_work
+   (&optional __back_work)
+   (if __back_work (setq _back_work __back_work)) _back_work)
   (:target_x
    (&optional __target_x)
    (if __target_x (setq _target_x __target_x)) _target_x)
@@ -422,6 +492,34 @@
     4 (length _control_hang)
     ;; string _control_fsm_state
     4 (length _control_fsm_state)
+    ;; uint8 _left
+    1
+    ;; uint8 _right
+    1
+    ;; uint8 _near
+    1
+    ;; uint8 _far
+    1
+    ;; uint8 _top_warn
+    1
+    ;; uint8 _control_air_beep
+    1
+    ;; uint8 _front_fog
+    1
+    ;; uint8 _front_work
+    1
+    ;; uint8 _side
+    1
+    ;; uint8 _position
+    1
+    ;; uint8 _emergency
+    1
+    ;; uint8 _brake
+    1
+    ;; uint8 _reverse
+    1
+    ;; uint8 _back_work
+    1
     ;; float64 _target_x
     8
     ;; float64 _target_y
@@ -549,6 +647,34 @@
        (write-long (length _control_hang) s) (princ _control_hang s)
      ;; string _control_fsm_state
        (write-long (length _control_fsm_state) s) (princ _control_fsm_state s)
+     ;; uint8 _left
+       (write-byte _left s)
+     ;; uint8 _right
+       (write-byte _right s)
+     ;; uint8 _near
+       (write-byte _near s)
+     ;; uint8 _far
+       (write-byte _far s)
+     ;; uint8 _top_warn
+       (write-byte _top_warn s)
+     ;; uint8 _control_air_beep
+       (write-byte _control_air_beep s)
+     ;; uint8 _front_fog
+       (write-byte _front_fog s)
+     ;; uint8 _front_work
+       (write-byte _front_work s)
+     ;; uint8 _side
+       (write-byte _side s)
+     ;; uint8 _position
+       (write-byte _position s)
+     ;; uint8 _emergency
+       (write-byte _emergency s)
+     ;; uint8 _brake
+       (write-byte _brake s)
+     ;; uint8 _reverse
+       (write-byte _reverse s)
+     ;; uint8 _back_work
+       (write-byte _back_work s)
      ;; float64 _target_x
        (sys::poke _target_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _target_y
@@ -678,6 +804,34 @@
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_hang (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;; string _control_fsm_state
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_fsm_state (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; uint8 _left
+     (setq _left (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _right
+     (setq _right (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _near
+     (setq _near (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _far
+     (setq _far (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _top_warn
+     (setq _top_warn (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _control_air_beep
+     (setq _control_air_beep (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _front_fog
+     (setq _front_fog (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _front_work
+     (setq _front_work (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _side
+     (setq _side (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _position
+     (setq _position (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _emergency
+     (setq _emergency (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _brake
+     (setq _brake (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _reverse
+     (setq _reverse (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _back_work
+     (setq _back_work (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; float64 _target_x
      (setq _target_x (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _target_y
@@ -718,7 +872,7 @@
    self)
   )
 
-(setf (get displaydata_msgs::DisplayData :md5sum-) "a64f4819ed17b4d87c0476c69984faf5")
+(setf (get displaydata_msgs::DisplayData :md5sum-) "29de8c5bc2f5d30b1f3b83a6a6936749")
 (setf (get displaydata_msgs::DisplayData :datatype-) "displaydata_msgs/DisplayData")
 (setf (get displaydata_msgs::DisplayData :definition-)
       "Header header
@@ -782,6 +936,20 @@ uint8 control_EPB
 string control_gear
 string control_hang
 string control_fsm_state
+uint8 left
+uint8 right
+uint8 near
+uint8 far
+uint8 top_warn
+uint8 control_air_beep
+uint8 front_fog
+uint8 front_work
+uint8 side
+uint8 position
+uint8 emergency
+uint8 brake
+uint8 reverse
+uint8 back_work
 
 # waypoints planning 
 float64 target_x
@@ -835,6 +1003,6 @@ string frame_id
 
 
 
-(provide :displaydata_msgs/DisplayData "a64f4819ed17b4d87c0476c69984faf5")
+(provide :displaydata_msgs/DisplayData "29de8c5bc2f5d30b1f3b83a6a6936749")
 
 

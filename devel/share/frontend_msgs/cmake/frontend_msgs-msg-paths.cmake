@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/frontend_msgs/cmake/frontend_msgs-msg-paths.cmake

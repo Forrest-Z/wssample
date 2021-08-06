@@ -30,15 +30,15 @@ class Tli65Teledrive {
       this.right_light = null;
       this.near_light = null;
       this.far_light = null;
-      this.TL_rotate_warning_light = null;
-      this.TL_front_fog_light = null;
-      this.TL_front_work_light = null;
-      this.TL_back_work_light = null;
-      this.TL_side_light = null;
-      this.TL_back_position_light = null;
-      this.TL_hazard_indicator_light = null;
-      this.TL_brake_light = null;
-      this.TL_return_light = null;
+      this.top_warning_light = null;
+      this.front_fog_light = null;
+      this.front_work_light = null;
+      this.back_work_light = null;
+      this.side_light = null;
+      this.position_light = null;
+      this.emergency_light = null;
+      this.brake_light = null;
+      this.reverse_light = null;
     }
     else {
       if (initObj.hasOwnProperty('control_type')) {
@@ -113,59 +113,59 @@ class Tli65Teledrive {
       else {
         this.far_light = false;
       }
-      if (initObj.hasOwnProperty('TL_rotate_warning_light')) {
-        this.TL_rotate_warning_light = initObj.TL_rotate_warning_light
+      if (initObj.hasOwnProperty('top_warning_light')) {
+        this.top_warning_light = initObj.top_warning_light
       }
       else {
-        this.TL_rotate_warning_light = false;
+        this.top_warning_light = false;
       }
-      if (initObj.hasOwnProperty('TL_front_fog_light')) {
-        this.TL_front_fog_light = initObj.TL_front_fog_light
-      }
-      else {
-        this.TL_front_fog_light = false;
-      }
-      if (initObj.hasOwnProperty('TL_front_work_light')) {
-        this.TL_front_work_light = initObj.TL_front_work_light
+      if (initObj.hasOwnProperty('front_fog_light')) {
+        this.front_fog_light = initObj.front_fog_light
       }
       else {
-        this.TL_front_work_light = false;
+        this.front_fog_light = false;
       }
-      if (initObj.hasOwnProperty('TL_back_work_light')) {
-        this.TL_back_work_light = initObj.TL_back_work_light
-      }
-      else {
-        this.TL_back_work_light = false;
-      }
-      if (initObj.hasOwnProperty('TL_side_light')) {
-        this.TL_side_light = initObj.TL_side_light
+      if (initObj.hasOwnProperty('front_work_light')) {
+        this.front_work_light = initObj.front_work_light
       }
       else {
-        this.TL_side_light = false;
+        this.front_work_light = false;
       }
-      if (initObj.hasOwnProperty('TL_back_position_light')) {
-        this.TL_back_position_light = initObj.TL_back_position_light
-      }
-      else {
-        this.TL_back_position_light = false;
-      }
-      if (initObj.hasOwnProperty('TL_hazard_indicator_light')) {
-        this.TL_hazard_indicator_light = initObj.TL_hazard_indicator_light
+      if (initObj.hasOwnProperty('back_work_light')) {
+        this.back_work_light = initObj.back_work_light
       }
       else {
-        this.TL_hazard_indicator_light = false;
+        this.back_work_light = false;
       }
-      if (initObj.hasOwnProperty('TL_brake_light')) {
-        this.TL_brake_light = initObj.TL_brake_light
-      }
-      else {
-        this.TL_brake_light = false;
-      }
-      if (initObj.hasOwnProperty('TL_return_light')) {
-        this.TL_return_light = initObj.TL_return_light
+      if (initObj.hasOwnProperty('side_light')) {
+        this.side_light = initObj.side_light
       }
       else {
-        this.TL_return_light = false;
+        this.side_light = false;
+      }
+      if (initObj.hasOwnProperty('position_light')) {
+        this.position_light = initObj.position_light
+      }
+      else {
+        this.position_light = false;
+      }
+      if (initObj.hasOwnProperty('emergency_light')) {
+        this.emergency_light = initObj.emergency_light
+      }
+      else {
+        this.emergency_light = false;
+      }
+      if (initObj.hasOwnProperty('brake_light')) {
+        this.brake_light = initObj.brake_light
+      }
+      else {
+        this.brake_light = false;
+      }
+      if (initObj.hasOwnProperty('reverse_light')) {
+        this.reverse_light = initObj.reverse_light
+      }
+      else {
+        this.reverse_light = false;
       }
     }
   }
@@ -196,24 +196,24 @@ class Tli65Teledrive {
     bufferOffset = _serializer.bool(obj.near_light, buffer, bufferOffset);
     // Serialize message field [far_light]
     bufferOffset = _serializer.bool(obj.far_light, buffer, bufferOffset);
-    // Serialize message field [TL_rotate_warning_light]
-    bufferOffset = _serializer.bool(obj.TL_rotate_warning_light, buffer, bufferOffset);
-    // Serialize message field [TL_front_fog_light]
-    bufferOffset = _serializer.bool(obj.TL_front_fog_light, buffer, bufferOffset);
-    // Serialize message field [TL_front_work_light]
-    bufferOffset = _serializer.bool(obj.TL_front_work_light, buffer, bufferOffset);
-    // Serialize message field [TL_back_work_light]
-    bufferOffset = _serializer.bool(obj.TL_back_work_light, buffer, bufferOffset);
-    // Serialize message field [TL_side_light]
-    bufferOffset = _serializer.bool(obj.TL_side_light, buffer, bufferOffset);
-    // Serialize message field [TL_back_position_light]
-    bufferOffset = _serializer.bool(obj.TL_back_position_light, buffer, bufferOffset);
-    // Serialize message field [TL_hazard_indicator_light]
-    bufferOffset = _serializer.bool(obj.TL_hazard_indicator_light, buffer, bufferOffset);
-    // Serialize message field [TL_brake_light]
-    bufferOffset = _serializer.bool(obj.TL_brake_light, buffer, bufferOffset);
-    // Serialize message field [TL_return_light]
-    bufferOffset = _serializer.bool(obj.TL_return_light, buffer, bufferOffset);
+    // Serialize message field [top_warning_light]
+    bufferOffset = _serializer.bool(obj.top_warning_light, buffer, bufferOffset);
+    // Serialize message field [front_fog_light]
+    bufferOffset = _serializer.bool(obj.front_fog_light, buffer, bufferOffset);
+    // Serialize message field [front_work_light]
+    bufferOffset = _serializer.bool(obj.front_work_light, buffer, bufferOffset);
+    // Serialize message field [back_work_light]
+    bufferOffset = _serializer.bool(obj.back_work_light, buffer, bufferOffset);
+    // Serialize message field [side_light]
+    bufferOffset = _serializer.bool(obj.side_light, buffer, bufferOffset);
+    // Serialize message field [position_light]
+    bufferOffset = _serializer.bool(obj.position_light, buffer, bufferOffset);
+    // Serialize message field [emergency_light]
+    bufferOffset = _serializer.bool(obj.emergency_light, buffer, bufferOffset);
+    // Serialize message field [brake_light]
+    bufferOffset = _serializer.bool(obj.brake_light, buffer, bufferOffset);
+    // Serialize message field [reverse_light]
+    bufferOffset = _serializer.bool(obj.reverse_light, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -245,24 +245,24 @@ class Tli65Teledrive {
     data.near_light = _deserializer.bool(buffer, bufferOffset);
     // Deserialize message field [far_light]
     data.far_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_rotate_warning_light]
-    data.TL_rotate_warning_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_front_fog_light]
-    data.TL_front_fog_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_front_work_light]
-    data.TL_front_work_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_back_work_light]
-    data.TL_back_work_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_side_light]
-    data.TL_side_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_back_position_light]
-    data.TL_back_position_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_hazard_indicator_light]
-    data.TL_hazard_indicator_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_brake_light]
-    data.TL_brake_light = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [TL_return_light]
-    data.TL_return_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [top_warning_light]
+    data.top_warning_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [front_fog_light]
+    data.front_fog_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [front_work_light]
+    data.front_work_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [back_work_light]
+    data.back_work_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [side_light]
+    data.side_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [position_light]
+    data.position_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [emergency_light]
+    data.emergency_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [brake_light]
+    data.brake_light = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [reverse_light]
+    data.reverse_light = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
@@ -279,7 +279,7 @@ class Tli65Teledrive {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'ff9fc773e79bfc906f0ea2de32f97922';
+    return '2039e574d82f1c10ec3f95ef9b8ec5ce';
   }
 
   static messageDefinition() {
@@ -300,15 +300,15 @@ class Tli65Teledrive {
     bool far_light
     
     #TL lights state
-    bool TL_rotate_warning_light
-    bool TL_front_fog_light
-    bool TL_front_work_light
-    bool TL_back_work_light
-    bool TL_side_light
-    bool TL_back_position_light
-    bool TL_hazard_indicator_light
-    bool TL_brake_light
-    bool TL_return_light
+    bool top_warning_light
+    bool front_fog_light
+    bool front_work_light
+    bool back_work_light
+    bool side_light
+    bool position_light
+    bool emergency_light
+    bool brake_light
+    bool reverse_light
     `;
   }
 
@@ -402,67 +402,67 @@ class Tli65Teledrive {
       resolved.far_light = false
     }
 
-    if (msg.TL_rotate_warning_light !== undefined) {
-      resolved.TL_rotate_warning_light = msg.TL_rotate_warning_light;
+    if (msg.top_warning_light !== undefined) {
+      resolved.top_warning_light = msg.top_warning_light;
     }
     else {
-      resolved.TL_rotate_warning_light = false
+      resolved.top_warning_light = false
     }
 
-    if (msg.TL_front_fog_light !== undefined) {
-      resolved.TL_front_fog_light = msg.TL_front_fog_light;
+    if (msg.front_fog_light !== undefined) {
+      resolved.front_fog_light = msg.front_fog_light;
     }
     else {
-      resolved.TL_front_fog_light = false
+      resolved.front_fog_light = false
     }
 
-    if (msg.TL_front_work_light !== undefined) {
-      resolved.TL_front_work_light = msg.TL_front_work_light;
+    if (msg.front_work_light !== undefined) {
+      resolved.front_work_light = msg.front_work_light;
     }
     else {
-      resolved.TL_front_work_light = false
+      resolved.front_work_light = false
     }
 
-    if (msg.TL_back_work_light !== undefined) {
-      resolved.TL_back_work_light = msg.TL_back_work_light;
+    if (msg.back_work_light !== undefined) {
+      resolved.back_work_light = msg.back_work_light;
     }
     else {
-      resolved.TL_back_work_light = false
+      resolved.back_work_light = false
     }
 
-    if (msg.TL_side_light !== undefined) {
-      resolved.TL_side_light = msg.TL_side_light;
+    if (msg.side_light !== undefined) {
+      resolved.side_light = msg.side_light;
     }
     else {
-      resolved.TL_side_light = false
+      resolved.side_light = false
     }
 
-    if (msg.TL_back_position_light !== undefined) {
-      resolved.TL_back_position_light = msg.TL_back_position_light;
+    if (msg.position_light !== undefined) {
+      resolved.position_light = msg.position_light;
     }
     else {
-      resolved.TL_back_position_light = false
+      resolved.position_light = false
     }
 
-    if (msg.TL_hazard_indicator_light !== undefined) {
-      resolved.TL_hazard_indicator_light = msg.TL_hazard_indicator_light;
+    if (msg.emergency_light !== undefined) {
+      resolved.emergency_light = msg.emergency_light;
     }
     else {
-      resolved.TL_hazard_indicator_light = false
+      resolved.emergency_light = false
     }
 
-    if (msg.TL_brake_light !== undefined) {
-      resolved.TL_brake_light = msg.TL_brake_light;
+    if (msg.brake_light !== undefined) {
+      resolved.brake_light = msg.brake_light;
     }
     else {
-      resolved.TL_brake_light = false
+      resolved.brake_light = false
     }
 
-    if (msg.TL_return_light !== undefined) {
-      resolved.TL_return_light = msg.TL_return_light;
+    if (msg.reverse_light !== undefined) {
+      resolved.reverse_light = msg.reverse_light;
     }
     else {
-      resolved.TL_return_light = false
+      resolved.reverse_light = false
     }
 
     return resolved;

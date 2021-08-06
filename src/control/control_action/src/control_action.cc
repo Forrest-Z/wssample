@@ -446,6 +446,15 @@ void ProcTeledrive(const teledrive_msgs::Tli65Teledrive &msg) {
         lowspeed_msg.right = msg.right_light;
         lowspeed_msg.near = msg.near_light;
         lowspeed_msg.far = msg.far_light;
+        lowspeed_msg.top_warn = msg.top_warning_light;
+        lowspeed_msg.front_fog = msg.front_fog_light;
+        lowspeed_msg.front_work = msg.front_work_light;
+        lowspeed_msg.back_work = msg.back_work_light;
+        lowspeed_msg.side = msg.side_light;
+        lowspeed_msg.position = msg.position_light;
+        lowspeed_msg.emergency = msg.emergency_light;
+        lowspeed_msg.brake = msg.brake_light;
+        lowspeed_msg.reverse = msg.reverse_light;
     }
 }
 

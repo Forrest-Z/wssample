@@ -20,6 +20,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/oligay_61/zone3/src/teledrive/teledrive/include"
   "/home/oligay_61/zone3/devel/.private/teledrive_msgs/include"
   "/home/oligay_61/zone3/devel/.private/g29_socket_msgs/include"
+  "/home/oligay_61/zone3/devel/.private/tli65_can_msgs/include"
+  "/home/oligay_61/zone3/devel/.private/frontend_msgs/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/home/oligay_61/zone3/src/teledrive/teledrive/src/include"

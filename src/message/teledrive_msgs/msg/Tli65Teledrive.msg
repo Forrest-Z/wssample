@@ -13,12 +13,12 @@ bool near_light
 bool far_light
 
 #TL lights state
-bool TL_rotate_warning_light
-bool TL_front_fog_light
-bool TL_front_work_light
-bool TL_back_work_light
-bool TL_side_light
-bool TL_back_position_light
-bool TL_hazard_indicator_light
-bool TL_brake_light
-bool TL_return_light
+bool top_warning_light
+bool front_fog_light
+bool front_work_light
+bool back_work_light
+bool side_light
+bool position_light
+bool emergency_light
+bool brake_light
+bool reverse_light

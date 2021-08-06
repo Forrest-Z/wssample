@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_be6b1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_be6b1.dir/build.make CMakeFiles/cmTC_be6b1.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_20b78/fast"
+/usr/bin/make -f CMakeFiles/cmTC_20b78.dir/build.make CMakeFiles/cmTC_20b78.dir/build
 make[1]: Entering directory '/home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_be6b1.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_be6b1.dir/CheckSymbolExists.cxx.o -c /home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-Linking CXX executable cmTC_be6b1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be6b1.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_be6b1.dir/CheckSymbolExists.cxx.o  -o cmTC_be6b1 -rdynamic 
-CMakeFiles/cmTC_be6b1.dir/CheckSymbolExists.cxx.o: In function `main':
+Building CXX object CMakeFiles/cmTC_20b78.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_20b78.dir/CheckSymbolExists.cxx.o -c /home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_20b78
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20b78.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_20b78.dir/CheckSymbolExists.cxx.o  -o cmTC_20b78 -rdynamic 
+CMakeFiles/cmTC_20b78.dir/CheckSymbolExists.cxx.o: In function `main':
 CheckSymbolExists.cxx:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_be6b1.dir/build.make:97: recipe for target 'cmTC_be6b1' failed
-make[1]: *** [cmTC_be6b1] Error 1
+CMakeFiles/cmTC_20b78.dir/build.make:97: recipe for target 'cmTC_20b78' failed
+make[1]: *** [cmTC_20b78] Error 1
 make[1]: Leaving directory '/home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_be6b1/fast' failed
-make: *** [cmTC_be6b1/fast] Error 2
+Makefile:126: recipe for target 'cmTC_20b78/fast' failed
+make: *** [cmTC_20b78/fast] Error 2
 
 File /home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f99af/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f99af.dir/build.make CMakeFiles/cmTC_f99af.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7b48b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7b48b.dir/build.make CMakeFiles/cmTC_7b48b.dir/build
 make[1]: Entering directory '/home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f99af.dir/CheckFunctionExists.cxx.o
-/usr/bin/c++     -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f99af.dir/CheckFunctionExists.cxx.o -c /home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
-Linking CXX executable cmTC_f99af
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f99af.dir/link.txt --verbose=1
-/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_f99af.dir/CheckFunctionExists.cxx.o  -o cmTC_f99af -rdynamic -lpthreads 
+Building CXX object CMakeFiles/cmTC_7b48b.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++     -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7b48b.dir/CheckFunctionExists.cxx.o -c /home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_7b48b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b48b.dir/link.txt --verbose=1
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_7b48b.dir/CheckFunctionExists.cxx.o  -o cmTC_7b48b -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_f99af.dir/build.make:97: recipe for target 'cmTC_f99af' failed
-make[1]: *** [cmTC_f99af] Error 1
+CMakeFiles/cmTC_7b48b.dir/build.make:97: recipe for target 'cmTC_7b48b' failed
+make[1]: *** [cmTC_7b48b] Error 1
 make[1]: Leaving directory '/home/oligay_61/zone3/build/livox_ros_driver/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_f99af/fast' failed
-make: *** [cmTC_f99af/fast] Error 2
+Makefile:126: recipe for target 'cmTC_7b48b/fast' failed
+make: *** [cmTC_7b48b/fast] Error 2
 
 

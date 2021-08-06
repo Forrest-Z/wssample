@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++14 -O3 -g -Wall    -DCMAKE_BUILD_TYPE=Release
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"teledrive\"
 
-CXX_INCLUDES = -I/home/oligay_61/zone3/src/teledrive/teledrive/include -I/home/oligay_61/zone3/devel/.private/teledrive_msgs/include -I/home/oligay_61/zone3/devel/.private/g29_socket_msgs/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/oligay_61/zone3/src/teledrive/teledrive/src/include 
+CXX_INCLUDES = -I/home/oligay_61/zone3/src/teledrive/teledrive/include -I/home/oligay_61/zone3/devel/.private/teledrive_msgs/include -I/home/oligay_61/zone3/devel/.private/g29_socket_msgs/include -I/home/oligay_61/zone3/devel/.private/tli65_can_msgs/include -I/home/oligay_61/zone3/devel/.private/frontend_msgs/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/oligay_61/zone3/src/teledrive/teledrive/src/include 
 

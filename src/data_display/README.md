@@ -25,6 +25,7 @@ collect different node information and pub to frontend display.
 19. fault
 20. speed
 21. tyre
+22. lights
 
 
 **Input Topics**

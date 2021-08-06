@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 54, in <module>
+    spec = load_msg_from_file(msg_context, msg_file, full_type_name)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/genmsg/msg_loader.py", line 289, in load_msg_from_file
+    raise InvalidMsgSpec('%s: %s'%(file_path, e))
+genmsg.base.InvalidMsgSpec: /home/oligay_61/zone3/src/message/displaydata_msgs/msg/DisplayData.msg: Duplicate field names in message: ['header', 'rtk_state', 'lat', 'lng', 'alt', 'latlng_std', 'x_enu', 'y_enu', 'z_enu', 'xy_std_enu', 'speed', 'headingangle', 'current_steer', 'current_brake_pedal_pos', 'current_throttle_percentage', 'current_retarder_torque_percentage', 'current_EPB', 'current_gear', 'current_hangangle', 'auto_mode', 'left_light', 'right_light', 'near_light', 'far_light', 'air_beep', 'top_warning_light', 'front_fog_light', 'front_work_light', 'side_light', 'position_light', 'back_left_light', 'back_right_light', 'back_position_light', 'brake_light', 'reverse_light', 'back_work_light', 'control_steer', 'control_throttle_percentage', 'control_xbr', 'control_EPB', 'control_gear', 'control_hang', 'control_fsm_state', 'left', 'right', 'near', 'far', 'top_warn', 'air_beep', 'front_fog', 'front_work', 'side', 'target_x', 'target_y', 'NumSate', 'engine_fault', 'gear_fault', 'EBS_fault', 'EPS_fault', 'EPB_fault', 'truck_fault_level', 'engine_fault_code', 'gear_fault_code', 'EPS_fault_code', 'EBS_fault_code', 'electric_fault_code', 'tyre_pressure_leftfront', 'tyre_pressure_rightfront', 'front_left_temperature', 'front_right_temperature']
+CMakeFiles/_displaydata_msgs_generate_messages_check_deps_DisplayData.dir/build.make:57: recipe for target 'CMakeFiles/_displaydata_msgs_generate_messages_check_deps_DisplayData' failed
+CMakeFiles/Makefile2:260: recipe for target 'CMakeFiles/_displaydata_msgs_generate_messages_check_deps_DisplayData.dir/all' failed
+make[2]: *** [CMakeFiles/_displaydata_msgs_generate_messages_check_deps_DisplayData] Error 1
+make[1]: *** [CMakeFiles/_displaydata_msgs_generate_messages_check_deps_DisplayData.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  0%] Built target std_msgs_generate_messages_lisp
+Makefile:138: recipe for target 'all' failed
+make: *** [all] Error 2

@@ -1,0 +1,31 @@
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:[m[K In member function ‘[01m[Kvoid zone3::DataDisplay::ProcControlLowspeed(const LowspeedControl&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:204:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Ktop_warn[m[K’
+     global_data.top_warn = msg.top_warn;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:206:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kfront_fog[m[K’
+     global_data.front_fog = msg.front_fog;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:207:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kfront_work[m[K’
+     global_data.front_work = msg.front_work;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:208:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kside[m[K’
+     global_data.side = msg.side;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:209:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kposition[m[K’
+     global_data.position = msg.position;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:210:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kemergency[m[K’
+     global_data.emergency = msg.emergency;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:211:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kbrake[m[K’
+     global_data.brake = msg.brake;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:212:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kreverse[m[K’
+     global_data.reverse = msg.reverse;
+[01;32m[K                 ^[m[K
+[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:213:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kdisplaydata_msgs::DisplayData {aka struct displaydata_msgs::DisplayData_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kback_work[m[K’
+     global_data.back_work = msg.back_work;
+[01;32m[K                 ^[m[K
+make[2]: *** [CMakeFiles/data_display.dir/src/datadisplay.cpp.o] Error 1
+make[1]: *** [CMakeFiles/data_display.dir/all] Error 2
+make: *** [all] Error 2

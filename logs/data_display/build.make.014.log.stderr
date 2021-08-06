@@ -1,7 +1,0 @@
-[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:[m[K In member function ‘[01m[Kvoid zone3::DataDisplay::ProcStHighspeed(const RxStHighspeed&)[m[K’:
-[01m[K/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp:71:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kswitch[m[K’
-     switch (msg.gear) {
-[01;32m[K     ^[m[K
-make[2]: *** [CMakeFiles/data_display.dir/src/datadisplay.cpp.o] Error 1
-make[1]: *** [CMakeFiles/data_display.dir/all] Error 2
-make: *** [all] Error 2

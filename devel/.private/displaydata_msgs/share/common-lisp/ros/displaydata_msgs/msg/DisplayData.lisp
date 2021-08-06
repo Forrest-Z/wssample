@@ -222,6 +222,76 @@
     :initarg :control_fsm_state
     :type cl:string
     :initform "")
+   (left
+    :reader left
+    :initarg :left
+    :type cl:fixnum
+    :initform 0)
+   (right
+    :reader right
+    :initarg :right
+    :type cl:fixnum
+    :initform 0)
+   (near
+    :reader near
+    :initarg :near
+    :type cl:fixnum
+    :initform 0)
+   (far
+    :reader far
+    :initarg :far
+    :type cl:fixnum
+    :initform 0)
+   (top_warn
+    :reader top_warn
+    :initarg :top_warn
+    :type cl:fixnum
+    :initform 0)
+   (control_air_beep
+    :reader control_air_beep
+    :initarg :control_air_beep
+    :type cl:fixnum
+    :initform 0)
+   (front_fog
+    :reader front_fog
+    :initarg :front_fog
+    :type cl:fixnum
+    :initform 0)
+   (front_work
+    :reader front_work
+    :initarg :front_work
+    :type cl:fixnum
+    :initform 0)
+   (side
+    :reader side
+    :initarg :side
+    :type cl:fixnum
+    :initform 0)
+   (position
+    :reader position
+    :initarg :position
+    :type cl:fixnum
+    :initform 0)
+   (emergency
+    :reader emergency
+    :initarg :emergency
+    :type cl:fixnum
+    :initform 0)
+   (brake
+    :reader brake
+    :initarg :brake
+    :type cl:fixnum
+    :initform 0)
+   (reverse
+    :reader reverse
+    :initarg :reverse
+    :type cl:fixnum
+    :initform 0)
+   (back_work
+    :reader back_work
+    :initarg :back_work
+    :type cl:fixnum
+    :initform 0)
    (target_x
     :reader target_x
     :initarg :target_x
@@ -537,6 +607,76 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:control_fsm_state-val is deprecated.  Use displaydata_msgs-msg:control_fsm_state instead.")
   (control_fsm_state m))
 
+(cl:ensure-generic-function 'left-val :lambda-list '(m))
+(cl:defmethod left-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:left-val is deprecated.  Use displaydata_msgs-msg:left instead.")
+  (left m))
+
+(cl:ensure-generic-function 'right-val :lambda-list '(m))
+(cl:defmethod right-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:right-val is deprecated.  Use displaydata_msgs-msg:right instead.")
+  (right m))
+
+(cl:ensure-generic-function 'near-val :lambda-list '(m))
+(cl:defmethod near-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:near-val is deprecated.  Use displaydata_msgs-msg:near instead.")
+  (near m))
+
+(cl:ensure-generic-function 'far-val :lambda-list '(m))
+(cl:defmethod far-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:far-val is deprecated.  Use displaydata_msgs-msg:far instead.")
+  (far m))
+
+(cl:ensure-generic-function 'top_warn-val :lambda-list '(m))
+(cl:defmethod top_warn-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:top_warn-val is deprecated.  Use displaydata_msgs-msg:top_warn instead.")
+  (top_warn m))
+
+(cl:ensure-generic-function 'control_air_beep-val :lambda-list '(m))
+(cl:defmethod control_air_beep-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:control_air_beep-val is deprecated.  Use displaydata_msgs-msg:control_air_beep instead.")
+  (control_air_beep m))
+
+(cl:ensure-generic-function 'front_fog-val :lambda-list '(m))
+(cl:defmethod front_fog-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:front_fog-val is deprecated.  Use displaydata_msgs-msg:front_fog instead.")
+  (front_fog m))
+
+(cl:ensure-generic-function 'front_work-val :lambda-list '(m))
+(cl:defmethod front_work-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:front_work-val is deprecated.  Use displaydata_msgs-msg:front_work instead.")
+  (front_work m))
+
+(cl:ensure-generic-function 'side-val :lambda-list '(m))
+(cl:defmethod side-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:side-val is deprecated.  Use displaydata_msgs-msg:side instead.")
+  (side m))
+
+(cl:ensure-generic-function 'position-val :lambda-list '(m))
+(cl:defmethod position-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:position-val is deprecated.  Use displaydata_msgs-msg:position instead.")
+  (position m))
+
+(cl:ensure-generic-function 'emergency-val :lambda-list '(m))
+(cl:defmethod emergency-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:emergency-val is deprecated.  Use displaydata_msgs-msg:emergency instead.")
+  (emergency m))
+
+(cl:ensure-generic-function 'brake-val :lambda-list '(m))
+(cl:defmethod brake-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:brake-val is deprecated.  Use displaydata_msgs-msg:brake instead.")
+  (brake m))
+
+(cl:ensure-generic-function 'reverse-val :lambda-list '(m))
+(cl:defmethod reverse-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:reverse-val is deprecated.  Use displaydata_msgs-msg:reverse instead.")
+  (reverse m))
+
+(cl:ensure-generic-function 'back_work-val :lambda-list '(m))
+(cl:defmethod back_work-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:back_work-val is deprecated.  Use displaydata_msgs-msg:back_work instead.")
+  (back_work m))
+
 (cl:ensure-generic-function 'target_x-val :lambda-list '(m))
 (cl:defmethod target_x-val ((m <DisplayData>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:target_x-val is deprecated.  Use displaydata_msgs-msg:target_x instead.")
@@ -809,6 +949,20 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
   (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'control_fsm_state))
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'left)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'right)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'near)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'far)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'top_warn)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_air_beep)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_fog)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_work)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'side)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'position)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'emergency)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'brake)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'reverse)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_work)) ostream)
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'target_x))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
@@ -1067,6 +1221,20 @@
       (cl:setf (cl:slot-value msg 'control_fsm_state) (cl:make-string __ros_str_len))
       (cl:dotimes (__ros_str_idx __ros_str_len msg)
         (cl:setf (cl:char (cl:slot-value msg 'control_fsm_state) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'left)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'right)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'near)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'far)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'top_warn)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_air_beep)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_fog)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_work)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'side)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'position)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'emergency)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'brake)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'reverse)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_work)) (cl:read-byte istream))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -1133,16 +1301,16 @@
   "displaydata_msgs/DisplayData")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<DisplayData>)))
   "Returns md5sum for a message object of type '<DisplayData>"
-  "a64f4819ed17b4d87c0476c69984faf5")
+  "29de8c5bc2f5d30b1f3b83a6a6936749")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'DisplayData)))
   "Returns md5sum for a message object of type 'DisplayData"
-  "a64f4819ed17b4d87c0476c69984faf5")
+  "29de8c5bc2f5d30b1f3b83a6a6936749")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<DisplayData>)))
   "Returns full string definition for message of type '<DisplayData>"
-  (cl:format cl:nil "Header header~%~%# RTK~%int8 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int8 current_throttle_percentage~%int8 current_retarder_torque_percentage~%uint8 current_EPB~%string current_gear~%uint8 current_hangangle~%uint8 auto_mode~%uint8 left_light~%uint8 right_light~%uint8 near_light~%uint8 far_light~%uint8 air_beep~%uint8 top_warning_light~%uint8 front_fog_light~%uint8 front_work_light~%uint8 side_light~%uint8 position_light~%uint8 back_left_light~%uint8 back_right_light~%uint8 back_position_light~%uint8 brake_light~%uint8 reverse_light~%uint8 back_work_light~%~%# Tli65 control parameters control_msgs~%float64 control_steer~%uint8 control_throttle_percentage~%float64 control_xbr~%uint8 control_EPB~%string control_gear~%string control_hang~%string control_fsm_state~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%uint8 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%uint8 engine_fault~%uint8 gear_fault~%uint8 EBS_fault~%uint8 EPS_fault~%uint8 EPB_fault~%~%# ft2~%uint8 truck_fault_level~%uint8 engine_fault_code~%uint8 gear_fault_code~%~%# ft3~%uint8 EPS_fault_code~%uint8 EBS_fault_code~%uint8 electric_fault_code~%~%# tyre~%uint16 tyre_pressure_leftfront~%uint16 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%~%# RTK~%int8 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int8 current_throttle_percentage~%int8 current_retarder_torque_percentage~%uint8 current_EPB~%string current_gear~%uint8 current_hangangle~%uint8 auto_mode~%uint8 left_light~%uint8 right_light~%uint8 near_light~%uint8 far_light~%uint8 air_beep~%uint8 top_warning_light~%uint8 front_fog_light~%uint8 front_work_light~%uint8 side_light~%uint8 position_light~%uint8 back_left_light~%uint8 back_right_light~%uint8 back_position_light~%uint8 brake_light~%uint8 reverse_light~%uint8 back_work_light~%~%# Tli65 control parameters control_msgs~%float64 control_steer~%uint8 control_throttle_percentage~%float64 control_xbr~%uint8 control_EPB~%string control_gear~%string control_hang~%string control_fsm_state~%uint8 left~%uint8 right~%uint8 near~%uint8 far~%uint8 top_warn~%uint8 control_air_beep~%uint8 front_fog~%uint8 front_work~%uint8 side~%uint8 position~%uint8 emergency~%uint8 brake~%uint8 reverse~%uint8 back_work~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%uint8 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%uint8 engine_fault~%uint8 gear_fault~%uint8 EBS_fault~%uint8 EPS_fault~%uint8 EPB_fault~%~%# ft2~%uint8 truck_fault_level~%uint8 engine_fault_code~%uint8 gear_fault_code~%~%# ft3~%uint8 EPS_fault_code~%uint8 EBS_fault_code~%uint8 electric_fault_code~%~%# tyre~%uint16 tyre_pressure_leftfront~%uint16 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'DisplayData)))
   "Returns full string definition for message of type 'DisplayData"
-  (cl:format cl:nil "Header header~%~%# RTK~%int8 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int8 current_throttle_percentage~%int8 current_retarder_torque_percentage~%uint8 current_EPB~%string current_gear~%uint8 current_hangangle~%uint8 auto_mode~%uint8 left_light~%uint8 right_light~%uint8 near_light~%uint8 far_light~%uint8 air_beep~%uint8 top_warning_light~%uint8 front_fog_light~%uint8 front_work_light~%uint8 side_light~%uint8 position_light~%uint8 back_left_light~%uint8 back_right_light~%uint8 back_position_light~%uint8 brake_light~%uint8 reverse_light~%uint8 back_work_light~%~%# Tli65 control parameters control_msgs~%float64 control_steer~%uint8 control_throttle_percentage~%float64 control_xbr~%uint8 control_EPB~%string control_gear~%string control_hang~%string control_fsm_state~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%uint8 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%uint8 engine_fault~%uint8 gear_fault~%uint8 EBS_fault~%uint8 EPS_fault~%uint8 EPB_fault~%~%# ft2~%uint8 truck_fault_level~%uint8 engine_fault_code~%uint8 gear_fault_code~%~%# ft3~%uint8 EPS_fault_code~%uint8 EBS_fault_code~%uint8 electric_fault_code~%~%# tyre~%uint16 tyre_pressure_leftfront~%uint16 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%~%# RTK~%int8 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int8 current_throttle_percentage~%int8 current_retarder_torque_percentage~%uint8 current_EPB~%string current_gear~%uint8 current_hangangle~%uint8 auto_mode~%uint8 left_light~%uint8 right_light~%uint8 near_light~%uint8 far_light~%uint8 air_beep~%uint8 top_warning_light~%uint8 front_fog_light~%uint8 front_work_light~%uint8 side_light~%uint8 position_light~%uint8 back_left_light~%uint8 back_right_light~%uint8 back_position_light~%uint8 brake_light~%uint8 reverse_light~%uint8 back_work_light~%~%# Tli65 control parameters control_msgs~%float64 control_steer~%uint8 control_throttle_percentage~%float64 control_xbr~%uint8 control_EPB~%string control_gear~%string control_hang~%string control_fsm_state~%uint8 left~%uint8 right~%uint8 near~%uint8 far~%uint8 top_warn~%uint8 control_air_beep~%uint8 front_fog~%uint8 front_work~%uint8 side~%uint8 position~%uint8 emergency~%uint8 brake~%uint8 reverse~%uint8 back_work~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%uint8 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%uint8 engine_fault~%uint8 gear_fault~%uint8 EBS_fault~%uint8 EPS_fault~%uint8 EPB_fault~%~%# ft2~%uint8 truck_fault_level~%uint8 engine_fault_code~%uint8 gear_fault_code~%~%# ft3~%uint8 EPS_fault_code~%uint8 EBS_fault_code~%uint8 electric_fault_code~%~%# tyre~%uint16 tyre_pressure_leftfront~%uint16 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <DisplayData>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
@@ -1188,6 +1356,20 @@
      4 (cl:length (cl:slot-value msg 'control_gear))
      4 (cl:length (cl:slot-value msg 'control_hang))
      4 (cl:length (cl:slot-value msg 'control_fsm_state))
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
+     1
      8
      8
      1
@@ -1253,6 +1435,20 @@
     (cl:cons ':control_gear (control_gear msg))
     (cl:cons ':control_hang (control_hang msg))
     (cl:cons ':control_fsm_state (control_fsm_state msg))
+    (cl:cons ':left (left msg))
+    (cl:cons ':right (right msg))
+    (cl:cons ':near (near msg))
+    (cl:cons ':far (far msg))
+    (cl:cons ':top_warn (top_warn msg))
+    (cl:cons ':control_air_beep (control_air_beep msg))
+    (cl:cons ':front_fog (front_fog msg))
+    (cl:cons ':front_work (front_work msg))
+    (cl:cons ':side (side msg))
+    (cl:cons ':position (position msg))
+    (cl:cons ':emergency (emergency msg))
+    (cl:cons ':brake (brake msg))
+    (cl:cons ':reverse (reverse msg))
+    (cl:cons ':back_work (back_work msg))
     (cl:cons ':target_x (target_x msg))
     (cl:cons ':target_y (target_y msg))
     (cl:cons ':NumSate (NumSate msg))

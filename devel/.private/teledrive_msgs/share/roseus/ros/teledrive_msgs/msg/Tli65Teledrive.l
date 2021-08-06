@@ -14,7 +14,7 @@
 
 (defclass teledrive_msgs::Tli65Teledrive
   :super ros::object
-  :slots (_control_type _steer _throttle_pedal _xbr _gear _epb _hang _air_beep _left_light _right_light _near_light _far_light _TL_rotate_warning_light _TL_front_fog_light _TL_front_work_light _TL_back_work_light _TL_side_light _TL_back_position_light _TL_hazard_indicator_light _TL_brake_light _TL_return_light ))
+  :slots (_control_type _steer _throttle_pedal _xbr _gear _epb _hang _air_beep _left_light _right_light _near_light _far_light _top_warning_light _front_fog_light _front_work_light _back_work_light _side_light _position_light _emergency_light _brake_light _reverse_light ))
 
 (defmethod teledrive_msgs::Tli65Teledrive
   (:init
@@ -31,15 +31,15 @@
     ((:right_light __right_light) nil)
     ((:near_light __near_light) nil)
     ((:far_light __far_light) nil)
-    ((:TL_rotate_warning_light __TL_rotate_warning_light) nil)
-    ((:TL_front_fog_light __TL_front_fog_light) nil)
-    ((:TL_front_work_light __TL_front_work_light) nil)
-    ((:TL_back_work_light __TL_back_work_light) nil)
-    ((:TL_side_light __TL_side_light) nil)
-    ((:TL_back_position_light __TL_back_position_light) nil)
-    ((:TL_hazard_indicator_light __TL_hazard_indicator_light) nil)
-    ((:TL_brake_light __TL_brake_light) nil)
-    ((:TL_return_light __TL_return_light) nil)
+    ((:top_warning_light __top_warning_light) nil)
+    ((:front_fog_light __front_fog_light) nil)
+    ((:front_work_light __front_work_light) nil)
+    ((:back_work_light __back_work_light) nil)
+    ((:side_light __side_light) nil)
+    ((:position_light __position_light) nil)
+    ((:emergency_light __emergency_light) nil)
+    ((:brake_light __brake_light) nil)
+    ((:reverse_light __reverse_light) nil)
     )
    (send-super :init)
    (setq _control_type (string __control_type))
@@ -54,15 +54,15 @@
    (setq _right_light __right_light)
    (setq _near_light __near_light)
    (setq _far_light __far_light)
-   (setq _TL_rotate_warning_light __TL_rotate_warning_light)
-   (setq _TL_front_fog_light __TL_front_fog_light)
-   (setq _TL_front_work_light __TL_front_work_light)
-   (setq _TL_back_work_light __TL_back_work_light)
-   (setq _TL_side_light __TL_side_light)
-   (setq _TL_back_position_light __TL_back_position_light)
-   (setq _TL_hazard_indicator_light __TL_hazard_indicator_light)
-   (setq _TL_brake_light __TL_brake_light)
-   (setq _TL_return_light __TL_return_light)
+   (setq _top_warning_light __top_warning_light)
+   (setq _front_fog_light __front_fog_light)
+   (setq _front_work_light __front_work_light)
+   (setq _back_work_light __back_work_light)
+   (setq _side_light __side_light)
+   (setq _position_light __position_light)
+   (setq _emergency_light __emergency_light)
+   (setq _brake_light __brake_light)
+   (setq _reverse_light __reverse_light)
    self)
   (:control_type
    (&optional __control_type)
@@ -100,33 +100,33 @@
   (:far_light
    (&optional __far_light)
    (if __far_light (setq _far_light __far_light)) _far_light)
-  (:TL_rotate_warning_light
-   (&optional __TL_rotate_warning_light)
-   (if __TL_rotate_warning_light (setq _TL_rotate_warning_light __TL_rotate_warning_light)) _TL_rotate_warning_light)
-  (:TL_front_fog_light
-   (&optional __TL_front_fog_light)
-   (if __TL_front_fog_light (setq _TL_front_fog_light __TL_front_fog_light)) _TL_front_fog_light)
-  (:TL_front_work_light
-   (&optional __TL_front_work_light)
-   (if __TL_front_work_light (setq _TL_front_work_light __TL_front_work_light)) _TL_front_work_light)
-  (:TL_back_work_light
-   (&optional __TL_back_work_light)
-   (if __TL_back_work_light (setq _TL_back_work_light __TL_back_work_light)) _TL_back_work_light)
-  (:TL_side_light
-   (&optional __TL_side_light)
-   (if __TL_side_light (setq _TL_side_light __TL_side_light)) _TL_side_light)
-  (:TL_back_position_light
-   (&optional __TL_back_position_light)
-   (if __TL_back_position_light (setq _TL_back_position_light __TL_back_position_light)) _TL_back_position_light)
-  (:TL_hazard_indicator_light
-   (&optional __TL_hazard_indicator_light)
-   (if __TL_hazard_indicator_light (setq _TL_hazard_indicator_light __TL_hazard_indicator_light)) _TL_hazard_indicator_light)
-  (:TL_brake_light
-   (&optional __TL_brake_light)
-   (if __TL_brake_light (setq _TL_brake_light __TL_brake_light)) _TL_brake_light)
-  (:TL_return_light
-   (&optional __TL_return_light)
-   (if __TL_return_light (setq _TL_return_light __TL_return_light)) _TL_return_light)
+  (:top_warning_light
+   (&optional __top_warning_light)
+   (if __top_warning_light (setq _top_warning_light __top_warning_light)) _top_warning_light)
+  (:front_fog_light
+   (&optional __front_fog_light)
+   (if __front_fog_light (setq _front_fog_light __front_fog_light)) _front_fog_light)
+  (:front_work_light
+   (&optional __front_work_light)
+   (if __front_work_light (setq _front_work_light __front_work_light)) _front_work_light)
+  (:back_work_light
+   (&optional __back_work_light)
+   (if __back_work_light (setq _back_work_light __back_work_light)) _back_work_light)
+  (:side_light
+   (&optional __side_light)
+   (if __side_light (setq _side_light __side_light)) _side_light)
+  (:position_light
+   (&optional __position_light)
+   (if __position_light (setq _position_light __position_light)) _position_light)
+  (:emergency_light
+   (&optional __emergency_light)
+   (if __emergency_light (setq _emergency_light __emergency_light)) _emergency_light)
+  (:brake_light
+   (&optional __brake_light)
+   (if __brake_light (setq _brake_light __brake_light)) _brake_light)
+  (:reverse_light
+   (&optional __reverse_light)
+   (if __reverse_light (setq _reverse_light __reverse_light)) _reverse_light)
   (:serialization-length
    ()
    (+
@@ -154,23 +154,23 @@
     1
     ;; bool _far_light
     1
-    ;; bool _TL_rotate_warning_light
+    ;; bool _top_warning_light
     1
-    ;; bool _TL_front_fog_light
+    ;; bool _front_fog_light
     1
-    ;; bool _TL_front_work_light
+    ;; bool _front_work_light
     1
-    ;; bool _TL_back_work_light
+    ;; bool _back_work_light
     1
-    ;; bool _TL_side_light
+    ;; bool _side_light
     1
-    ;; bool _TL_back_position_light
+    ;; bool _position_light
     1
-    ;; bool _TL_hazard_indicator_light
+    ;; bool _emergency_light
     1
-    ;; bool _TL_brake_light
+    ;; bool _brake_light
     1
-    ;; bool _TL_return_light
+    ;; bool _reverse_light
     1
     ))
   (:serialize
@@ -201,24 +201,24 @@
        (if _near_light (write-byte -1 s) (write-byte 0 s))
      ;; bool _far_light
        (if _far_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_rotate_warning_light
-       (if _TL_rotate_warning_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_front_fog_light
-       (if _TL_front_fog_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_front_work_light
-       (if _TL_front_work_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_back_work_light
-       (if _TL_back_work_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_side_light
-       (if _TL_side_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_back_position_light
-       (if _TL_back_position_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_hazard_indicator_light
-       (if _TL_hazard_indicator_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_brake_light
-       (if _TL_brake_light (write-byte -1 s) (write-byte 0 s))
-     ;; bool _TL_return_light
-       (if _TL_return_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _top_warning_light
+       (if _top_warning_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _front_fog_light
+       (if _front_fog_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _front_work_light
+       (if _front_work_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _back_work_light
+       (if _back_work_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _side_light
+       (if _side_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _position_light
+       (if _position_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _emergency_light
+       (if _emergency_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _brake_light
+       (if _brake_light (write-byte -1 s) (write-byte 0 s))
+     ;; bool _reverse_light
+       (if _reverse_light (write-byte -1 s) (write-byte 0 s))
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -247,29 +247,29 @@
      (setq _near_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;; bool _far_light
      (setq _far_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_rotate_warning_light
-     (setq _TL_rotate_warning_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_front_fog_light
-     (setq _TL_front_fog_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_front_work_light
-     (setq _TL_front_work_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_back_work_light
-     (setq _TL_back_work_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_side_light
-     (setq _TL_side_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_back_position_light
-     (setq _TL_back_position_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_hazard_indicator_light
-     (setq _TL_hazard_indicator_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_brake_light
-     (setq _TL_brake_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; bool _TL_return_light
-     (setq _TL_return_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _top_warning_light
+     (setq _top_warning_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _front_fog_light
+     (setq _front_fog_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _front_work_light
+     (setq _front_work_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _back_work_light
+     (setq _back_work_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _side_light
+     (setq _side_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _position_light
+     (setq _position_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _emergency_light
+     (setq _emergency_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _brake_light
+     (setq _brake_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _reverse_light
+     (setq _reverse_light (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get teledrive_msgs::Tli65Teledrive :md5sum-) "ff9fc773e79bfc906f0ea2de32f97922")
+(setf (get teledrive_msgs::Tli65Teledrive :md5sum-) "2039e574d82f1c10ec3f95ef9b8ec5ce")
 (setf (get teledrive_msgs::Tli65Teledrive :datatype-) "teledrive_msgs/Tli65Teledrive")
 (setf (get teledrive_msgs::Tli65Teledrive :definition-)
       "string control_type
@@ -287,19 +287,19 @@ bool near_light
 bool far_light
 
 #TL lights state
-bool TL_rotate_warning_light
-bool TL_front_fog_light
-bool TL_front_work_light
-bool TL_back_work_light
-bool TL_side_light
-bool TL_back_position_light
-bool TL_hazard_indicator_light
-bool TL_brake_light
-bool TL_return_light
+bool top_warning_light
+bool front_fog_light
+bool front_work_light
+bool back_work_light
+bool side_light
+bool position_light
+bool emergency_light
+bool brake_light
+bool reverse_light
 ")
 
 
 
-(provide :teledrive_msgs/Tli65Teledrive "ff9fc773e79bfc906f0ea2de32f97922")
+(provide :teledrive_msgs/Tli65Teledrive "2039e574d82f1c10ec3f95ef9b8ec5ce")
 
 

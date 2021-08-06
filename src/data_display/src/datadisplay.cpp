@@ -197,6 +197,21 @@ void DataDisplay::ProcControlLowspeed(
     default:
         break;
     }
+    global_data.left = msg.left;
+    global_data.right = msg.right;
+    global_data.near = msg.near;
+    global_data.far = msg.far;
+    global_data.top_warn = msg.top_warn;
+    global_data.control_air_beep = msg.air_beep;
+    global_data.front_fog = msg.front_fog;
+    global_data.front_work = msg.front_work;
+    global_data.side = msg.side;
+    global_data.position = msg.position;
+    global_data.emergency = msg.emergency;
+    global_data.brake = msg.brake;
+    global_data.reverse = msg.reverse;
+    global_data.back_work = msg.back_work;
+
 }
 
 void DataDisplay::ProcControlFsm(const control_msgs::ControlFSM &msg) {

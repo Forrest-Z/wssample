@@ -36,15 +36,15 @@ struct Tli65Teledrive_
     , right_light(false)
     , near_light(false)
     , far_light(false)
-    , TL_rotate_warning_light(false)
-    , TL_front_fog_light(false)
-    , TL_front_work_light(false)
-    , TL_back_work_light(false)
-    , TL_side_light(false)
-    , TL_back_position_light(false)
-    , TL_hazard_indicator_light(false)
-    , TL_brake_light(false)
-    , TL_return_light(false)  {
+    , top_warning_light(false)
+    , front_fog_light(false)
+    , front_work_light(false)
+    , back_work_light(false)
+    , side_light(false)
+    , position_light(false)
+    , emergency_light(false)
+    , brake_light(false)
+    , reverse_light(false)  {
     }
   Tli65Teledrive_(const ContainerAllocator& _alloc)
     : control_type(_alloc)
@@ -59,15 +59,15 @@ struct Tli65Teledrive_
     , right_light(false)
     , near_light(false)
     , far_light(false)
-    , TL_rotate_warning_light(false)
-    , TL_front_fog_light(false)
-    , TL_front_work_light(false)
-    , TL_back_work_light(false)
-    , TL_side_light(false)
-    , TL_back_position_light(false)
-    , TL_hazard_indicator_light(false)
-    , TL_brake_light(false)
-    , TL_return_light(false)  {
+    , top_warning_light(false)
+    , front_fog_light(false)
+    , front_work_light(false)
+    , back_work_light(false)
+    , side_light(false)
+    , position_light(false)
+    , emergency_light(false)
+    , brake_light(false)
+    , reverse_light(false)  {
   (void)_alloc;
     }
 
@@ -109,32 +109,32 @@ struct Tli65Teledrive_
    typedef uint8_t _far_light_type;
   _far_light_type far_light;
 
-   typedef uint8_t _TL_rotate_warning_light_type;
-  _TL_rotate_warning_light_type TL_rotate_warning_light;
+   typedef uint8_t _top_warning_light_type;
+  _top_warning_light_type top_warning_light;
 
-   typedef uint8_t _TL_front_fog_light_type;
-  _TL_front_fog_light_type TL_front_fog_light;
+   typedef uint8_t _front_fog_light_type;
+  _front_fog_light_type front_fog_light;
 
-   typedef uint8_t _TL_front_work_light_type;
-  _TL_front_work_light_type TL_front_work_light;
+   typedef uint8_t _front_work_light_type;
+  _front_work_light_type front_work_light;
 
-   typedef uint8_t _TL_back_work_light_type;
-  _TL_back_work_light_type TL_back_work_light;
+   typedef uint8_t _back_work_light_type;
+  _back_work_light_type back_work_light;
 
-   typedef uint8_t _TL_side_light_type;
-  _TL_side_light_type TL_side_light;
+   typedef uint8_t _side_light_type;
+  _side_light_type side_light;
 
-   typedef uint8_t _TL_back_position_light_type;
-  _TL_back_position_light_type TL_back_position_light;
+   typedef uint8_t _position_light_type;
+  _position_light_type position_light;
 
-   typedef uint8_t _TL_hazard_indicator_light_type;
-  _TL_hazard_indicator_light_type TL_hazard_indicator_light;
+   typedef uint8_t _emergency_light_type;
+  _emergency_light_type emergency_light;
 
-   typedef uint8_t _TL_brake_light_type;
-  _TL_brake_light_type TL_brake_light;
+   typedef uint8_t _brake_light_type;
+  _brake_light_type brake_light;
 
-   typedef uint8_t _TL_return_light_type;
-  _TL_return_light_type TL_return_light;
+   typedef uint8_t _reverse_light_type;
+  _reverse_light_type reverse_light;
 
 
 
@@ -214,12 +214,12 @@ struct MD5Sum< ::teledrive_msgs::Tli65Teledrive_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "ff9fc773e79bfc906f0ea2de32f97922";
+    return "2039e574d82f1c10ec3f95ef9b8ec5ce";
   }
 
   static const char* value(const ::teledrive_msgs::Tli65Teledrive_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xff9fc773e79bfc90ULL;
-  static const uint64_t static_value2 = 0x6f0ea2de32f97922ULL;
+  static const uint64_t static_value1 = 0x2039e574d82f1c10ULL;
+  static const uint64_t static_value2 = 0xec3f95ef9b8ec5ceULL;
 };
 
 template<class ContainerAllocator>
@@ -253,15 +253,15 @@ bool near_light\n\
 bool far_light\n\
 \n\
 #TL lights state\n\
-bool TL_rotate_warning_light\n\
-bool TL_front_fog_light\n\
-bool TL_front_work_light\n\
-bool TL_back_work_light\n\
-bool TL_side_light\n\
-bool TL_back_position_light\n\
-bool TL_hazard_indicator_light\n\
-bool TL_brake_light\n\
-bool TL_return_light\n\
+bool top_warning_light\n\
+bool front_fog_light\n\
+bool front_work_light\n\
+bool back_work_light\n\
+bool side_light\n\
+bool position_light\n\
+bool emergency_light\n\
+bool brake_light\n\
+bool reverse_light\n\
 ";
   }
 
@@ -292,15 +292,15 @@ namespace serialization
       stream.next(m.right_light);
       stream.next(m.near_light);
       stream.next(m.far_light);
-      stream.next(m.TL_rotate_warning_light);
-      stream.next(m.TL_front_fog_light);
-      stream.next(m.TL_front_work_light);
-      stream.next(m.TL_back_work_light);
-      stream.next(m.TL_side_light);
-      stream.next(m.TL_back_position_light);
-      stream.next(m.TL_hazard_indicator_light);
-      stream.next(m.TL_brake_light);
-      stream.next(m.TL_return_light);
+      stream.next(m.top_warning_light);
+      stream.next(m.front_fog_light);
+      stream.next(m.front_work_light);
+      stream.next(m.back_work_light);
+      stream.next(m.side_light);
+      stream.next(m.position_light);
+      stream.next(m.emergency_light);
+      stream.next(m.brake_light);
+      stream.next(m.reverse_light);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -343,24 +343,24 @@ struct Printer< ::teledrive_msgs::Tli65Teledrive_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.near_light);
     s << indent << "far_light: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.far_light);
-    s << indent << "TL_rotate_warning_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_rotate_warning_light);
-    s << indent << "TL_front_fog_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_front_fog_light);
-    s << indent << "TL_front_work_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_front_work_light);
-    s << indent << "TL_back_work_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_back_work_light);
-    s << indent << "TL_side_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_side_light);
-    s << indent << "TL_back_position_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_back_position_light);
-    s << indent << "TL_hazard_indicator_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_hazard_indicator_light);
-    s << indent << "TL_brake_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_brake_light);
-    s << indent << "TL_return_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_return_light);
+    s << indent << "top_warning_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.top_warning_light);
+    s << indent << "front_fog_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.front_fog_light);
+    s << indent << "front_work_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.front_work_light);
+    s << indent << "back_work_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.back_work_light);
+    s << indent << "side_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.side_light);
+    s << indent << "position_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.position_light);
+    s << indent << "emergency_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.emergency_light);
+    s << indent << "brake_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.brake_light);
+    s << indent << "reverse_light: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.reverse_light);
   }
 };
 

@@ -1,0 +1,16 @@
+[35m[1mScanning dependencies of target ros_kvaser_interface[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/ros_kvaser_interface.dir/src/kvaser_interface.cpp.o[0m
+[ 25%] [32m[1mLinking CXX shared library /home/oligay_61/zone3/devel/.private/kvaser_interface/lib/libros_kvaser_interface.so[0m
+[ 25%] Built target ros_kvaser_interface
+[35m[1mScanning dependencies of target list_channels[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/list_channels.dir/src/list_channels.cpp.o[0m
+[ 50%] [32m[1mLinking CXX executable /home/oligay_61/zone3/devel/.private/kvaser_interface/lib/kvaser_interface/list_channels[0m
+[ 50%] Built target list_channels
+[35m[1mScanning dependencies of target canmonitor[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/canmonitor.dir/src/canmonitor.cpp.o[0m
+[35m[1mScanning dependencies of target kvaser_can_bridge[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/kvaser_can_bridge.dir/src/kvaser_can_bridge.cpp.o[0m
+[ 87%] [32m[1mLinking CXX executable /home/oligay_61/zone3/devel/.private/kvaser_interface/lib/kvaser_interface/canmonitor[0m
+[ 87%] Built target canmonitor
+[100%] [32m[1mLinking CXX executable /home/oligay_61/zone3/devel/.private/kvaser_interface/lib/kvaser_interface/kvaser_can_bridge[0m
+[100%] Built target kvaser_can_bridge
