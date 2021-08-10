@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_teledrive_msgs/share/common-lisp/ros/g29_teledrive_msgs/msg/_package_G29_teledrive.lisp

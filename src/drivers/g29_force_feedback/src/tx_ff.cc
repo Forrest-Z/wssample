@@ -12,7 +12,7 @@ ros::Publisher pub_forcefeedback;
 void TimerCallback1(const ros::TimerEvent &event) {
     g29_force_feedback::ForceFeedback msg;
     msg.angle = 0;
-    msg.force = 1.0;
+    msg.force = 0.5;
     msg.pid_mode = true; 
     pub_forcefeedback.publish(msg);
 }

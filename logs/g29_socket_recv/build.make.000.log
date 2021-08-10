@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target g29_socket_recv[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/g29_socket_recv.dir/src/g29_socket_recv.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/oligay_61/zone3/devel/.private/g29_socket_recv/lib/g29_socket_recv/g29_socket_recv[0m
-[100%] Built target g29_socket_recv

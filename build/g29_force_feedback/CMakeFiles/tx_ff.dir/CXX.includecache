@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/oligay_61/zone3/devel/.private/g29_force_feedback/include/g29_force_feedback/ForceFeedback.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+
 /home/oligay_61/zone3/src/drivers/g29_force_feedback/src/tx_ff.cc
 fcntl.h
 -
@@ -228,6 +246,10 @@ boost/make_shared.hpp
 cstddef
 -
 memory
+-
+
+/opt/ros/kinetic/include/ros/message_operations.h
+ostream
 -
 
 /opt/ros/kinetic/include/ros/message_traits.h
@@ -663,6 +685,22 @@ ros/forwards.h
 /opt/ros/kinetic/include/ros/ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
+
+/opt/ros/kinetic/include/std_msgs/Header.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 ros/macros.h

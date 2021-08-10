@@ -1,4 +1,4 @@
 teledrive:
-  socket_send_ip: 127.0.0.1
+  socket_send_ip: 192.168.8.102
   socket_recv_ip: 127.0.0.1
-  socket_port: 2051
+  socket_port: 20520

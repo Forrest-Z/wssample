@@ -9,7 +9,7 @@ import struct
 import std_msgs.msg
 
 class DisplayData(genpy.Message):
-  _md5sum = "29de8c5bc2f5d30b1f3b83a6a6936749"
+  _md5sum = "1c2c24deeb8f7c8fd48a595b62f1ae73"
   _type = "displaydata_msgs/DisplayData"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
@@ -72,7 +72,7 @@ float64 control_xbr
 uint8 control_EPB
 string control_gear
 string control_hang
-string control_fsm_state
+int32 control_fsm_state
 uint8 left
 uint8 right
 uint8 near
@@ -137,7 +137,7 @@ time stamp
 string frame_id
 """
   __slots__ = ['header','rtk_state','lat','lng','alt','latlng_std','x_enu','y_enu','z_enu','xy_std_enu','speed','headingangle','current_steer','current_brake_pedal_pos','current_throttle_percentage','current_retarder_torque_percentage','current_EPB','current_gear','current_hangangle','auto_mode','left_light','right_light','near_light','far_light','air_beep','top_warning_light','front_fog_light','front_work_light','side_light','position_light','back_left_light','back_right_light','back_position_light','brake_light','reverse_light','back_work_light','control_steer','control_throttle_percentage','control_xbr','control_EPB','control_gear','control_hang','control_fsm_state','left','right','near','far','top_warn','control_air_beep','front_fog','front_work','side','position','emergency','brake','reverse','back_work','target_x','target_y','NumSate','engine_fault','gear_fault','EBS_fault','EPS_fault','EPB_fault','truck_fault_level','engine_fault_code','gear_fault_code','EPS_fault_code','EBS_fault_code','electric_fault_code','tyre_pressure_leftfront','tyre_pressure_rightfront','front_left_temperature','front_right_temperature']
-  _slot_types = ['std_msgs/Header','int8','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','int8','int8','uint8','string','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','float64','uint8','float64','uint8','string','string','string','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','float64','float64','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint16','uint16','float64','float64']
+  _slot_types = ['std_msgs/Header','int8','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','int8','int8','uint8','string','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','float64','uint8','float64','uint8','string','string','int32','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','float64','float64','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint8','uint16','uint16','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -241,7 +241,7 @@ string frame_id
       if self.control_hang is None:
         self.control_hang = ''
       if self.control_fsm_state is None:
-        self.control_fsm_state = ''
+        self.control_fsm_state = 0
       if self.left is None:
         self.left = 0
       if self.right is None:
@@ -349,7 +349,7 @@ string frame_id
       self.control_EPB = 0
       self.control_gear = ''
       self.control_hang = ''
-      self.control_fsm_state = ''
+      self.control_fsm_state = 0
       self.left = 0
       self.right = 0
       self.near = 0
@@ -425,14 +425,8 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.control_fsm_state
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_14B2d12B2H2d().pack(_x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
+      buff.write(_get_struct_i14B2d12B2H2d().pack(_x.control_fsm_state, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -494,19 +488,10 @@ string frame_id
         self.control_hang = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.control_hang = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.control_fsm_state = str[start:end].decode('utf-8', 'rosmsg')
-      else:
-        self.control_fsm_state = str[start:end]
       _x = self
       start = end
-      end += 62
-      (_x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_14B2d12B2H2d().unpack(str[start:end])
+      end += 66
+      (_x.control_fsm_state, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_i14B2d12B2H2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -549,14 +534,8 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.control_fsm_state
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_14B2d12B2H2d().pack(_x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
+      buff.write(_get_struct_i14B2d12B2H2d().pack(_x.control_fsm_state, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -619,19 +598,10 @@ string frame_id
         self.control_hang = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.control_hang = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.control_fsm_state = str[start:end].decode('utf-8', 'rosmsg')
-      else:
-        self.control_fsm_state = str[start:end]
       _x = self
       start = end
-      end += 62
-      (_x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_14B2d12B2H2d().unpack(str[start:end])
+      end += 66
+      (_x.control_fsm_state, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_i14B2d12B2H2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -640,12 +610,6 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_14B2d12B2H2d = None
-def _get_struct_14B2d12B2H2d():
-    global _struct_14B2d12B2H2d
-    if _struct_14B2d12B2H2d is None:
-        _struct_14B2d12B2H2d = struct.Struct("<14B2d12B2H2d")
-    return _struct_14B2d12B2H2d
 _struct_18BdBdB = None
 def _get_struct_18BdBdB():
     global _struct_18BdBdB
@@ -664,3 +628,9 @@ def _get_struct_b12d2bB():
     if _struct_b12d2bB is None:
         _struct_b12d2bB = struct.Struct("<b12d2bB")
     return _struct_b12d2bB
+_struct_i14B2d12B2H2d = None
+def _get_struct_i14B2d12B2H2d():
+    global _struct_i14B2d12B2H2d
+    if _struct_i14B2d12B2H2d is None:
+        _struct_i14B2d12B2H2d = struct.Struct("<i14B2d12B2H2d")
+    return _struct_i14B2d12B2H2d

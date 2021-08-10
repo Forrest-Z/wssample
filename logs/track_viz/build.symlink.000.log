@@ -1,8 +1,0 @@
-Symlinking /home/oligay_61/zone3/devel/share/track_viz/cmake/track_vizConfig.cmake
-Symlinking /home/oligay_61/zone3/devel/share/track_viz/cmake/track_vizConfig-version.cmake
-Symlinking /home/oligay_61/zone3/devel/lib/pkgconfig/track_viz.pc
-Symlinking /home/oligay_61/zone3/devel/lib/track_viz/tf
-Symlinking /home/oligay_61/zone3/devel/lib/track_viz/ego_box_viz
-Symlinking /home/oligay_61/zone3/devel/lib/track_viz/pose_viz
-Symlinking /home/oligay_61/zone3/devel/lib/track_viz/waypoints_viz
-Symlinking /home/oligay_61/zone3/devel/lib/track_viz/track_viz

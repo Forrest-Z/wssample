@@ -37,9 +37,12 @@ void SendCallback(const sensor_msgs::Joy::ConstPtr &msg) {
     }
     sendmsg.SerializeToString(&strsendmsg);
     int usize = strsendmsg.size();
-    send(sock, &usize, sizeof(usize), 0);
-    send(sock, strsendmsg.data(), strsendmsg.size(), 0);
-    // ROS_INFO_STREAM("Send!");
+    char chsize = usize - 140 + '0';
+    strsendmsg.append(149 - usize, '\0');
+    strsendmsg.append(1, chsize);
+    usize = strsendmsg.size();
+    // send(sock, &usize, sizeof(usize), 0);
+    send(sock, strsendmsg.data(), usize, 0);
 }
 
 int main(int argc, char **argv) {
@@ -69,10 +72,9 @@ int main(int argc, char **argv) {
     server.sin_addr.s_addr = inet_addr(socket_send_ip.c_str());
     if (connect(sock, (struct sockaddr *)&server, sizeof(server)) < 0) {
         ROS_ERROR_STREAM("[g29 socket send] G29 Socket Connect Failed!");
+    } else {
+        ROS_INFO_STREAM("[g29 socket send] G29 Socket Connect OK!");
     }
-
-    string name = "G29";
-    send(sock, (char *)name.c_str(), name.length(), 0);
 
     // ros spin
     ros::Rate loop_rate(10);

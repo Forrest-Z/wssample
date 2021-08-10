@@ -352,7 +352,7 @@ class DisplayData {
         this.control_fsm_state = initObj.control_fsm_state
       }
       else {
-        this.control_fsm_state = '';
+        this.control_fsm_state = 0;
       }
       if (initObj.hasOwnProperty('left')) {
         this.left = initObj.left
@@ -636,7 +636,7 @@ class DisplayData {
     // Serialize message field [control_hang]
     bufferOffset = _serializer.string(obj.control_hang, buffer, bufferOffset);
     // Serialize message field [control_fsm_state]
-    bufferOffset = _serializer.string(obj.control_fsm_state, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.control_fsm_state, buffer, bufferOffset);
     // Serialize message field [left]
     bufferOffset = _serializer.uint8(obj.left, buffer, bufferOffset);
     // Serialize message field [right]
@@ -793,7 +793,7 @@ class DisplayData {
     // Deserialize message field [control_hang]
     data.control_hang = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [control_fsm_state]
-    data.control_fsm_state = _deserializer.string(buffer, bufferOffset);
+    data.control_fsm_state = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [left]
     data.left = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [right]
@@ -867,7 +867,6 @@ class DisplayData {
     length += object.current_gear.length;
     length += object.control_gear.length;
     length += object.control_hang.length;
-    length += object.control_fsm_state.length;
     return length + 214;
   }
 
@@ -878,7 +877,7 @@ class DisplayData {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '29de8c5bc2f5d30b1f3b83a6a6936749';
+    return '1c2c24deeb8f7c8fd48a595b62f1ae73';
   }
 
   static messageDefinition() {
@@ -944,7 +943,7 @@ class DisplayData {
     uint8 control_EPB
     string control_gear
     string control_hang
-    string control_fsm_state
+    int32 control_fsm_state
     uint8 left
     uint8 right
     uint8 near
@@ -1315,7 +1314,7 @@ class DisplayData {
       resolved.control_fsm_state = msg.control_fsm_state;
     }
     else {
-      resolved.control_fsm_state = ''
+      resolved.control_fsm_state = 0
     }
 
     if (msg.left !== undefined) {

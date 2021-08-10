@@ -63,7 +63,7 @@
     ((:control_EPB __control_EPB) 0)
     ((:control_gear __control_gear) "")
     ((:control_hang __control_hang) "")
-    ((:control_fsm_state __control_fsm_state) "")
+    ((:control_fsm_state __control_fsm_state) 0)
     ((:left __left) 0)
     ((:right __right) 0)
     ((:near __near) 0)
@@ -140,7 +140,7 @@
    (setq _control_EPB (round __control_EPB))
    (setq _control_gear (string __control_gear))
    (setq _control_hang (string __control_hang))
-   (setq _control_fsm_state (string __control_fsm_state))
+   (setq _control_fsm_state (round __control_fsm_state))
    (setq _left (round __left))
    (setq _right (round __right))
    (setq _near (round __near))
@@ -490,8 +490,8 @@
     4 (length _control_gear)
     ;; string _control_hang
     4 (length _control_hang)
-    ;; string _control_fsm_state
-    4 (length _control_fsm_state)
+    ;; int32 _control_fsm_state
+    4
     ;; uint8 _left
     1
     ;; uint8 _right
@@ -645,8 +645,8 @@
        (write-long (length _control_gear) s) (princ _control_gear s)
      ;; string _control_hang
        (write-long (length _control_hang) s) (princ _control_hang s)
-     ;; string _control_fsm_state
-       (write-long (length _control_fsm_state) s) (princ _control_fsm_state s)
+     ;; int32 _control_fsm_state
+       (write-long _control_fsm_state s)
      ;; uint8 _left
        (write-byte _left s)
      ;; uint8 _right
@@ -802,8 +802,8 @@
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_gear (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;; string _control_hang
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_hang (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
-   ;; string _control_fsm_state
-     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_fsm_state (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; int32 _control_fsm_state
+     (setq _control_fsm_state (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; uint8 _left
      (setq _left (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; uint8 _right
@@ -872,7 +872,7 @@
    self)
   )
 
-(setf (get displaydata_msgs::DisplayData :md5sum-) "29de8c5bc2f5d30b1f3b83a6a6936749")
+(setf (get displaydata_msgs::DisplayData :md5sum-) "1c2c24deeb8f7c8fd48a595b62f1ae73")
 (setf (get displaydata_msgs::DisplayData :datatype-) "displaydata_msgs/DisplayData")
 (setf (get displaydata_msgs::DisplayData :definition-)
       "Header header
@@ -935,7 +935,7 @@ float64 control_xbr
 uint8 control_EPB
 string control_gear
 string control_hang
-string control_fsm_state
+int32 control_fsm_state
 uint8 left
 uint8 right
 uint8 near
@@ -1003,6 +1003,6 @@ string frame_id
 
 
 
-(provide :displaydata_msgs/DisplayData "29de8c5bc2f5d30b1f3b83a6a6936749")
+(provide :displaydata_msgs/DisplayData "1c2c24deeb8f7c8fd48a595b62f1ae73")
 
 

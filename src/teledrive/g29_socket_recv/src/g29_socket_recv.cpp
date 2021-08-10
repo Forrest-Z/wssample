@@ -21,7 +21,9 @@ ros::Publisher teledrive_pub;
 int start_up(const char *local_ip, int local_port) {
     int sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0) {
-        ROS_ERROR_STREAM("[g29 socket recv] Socket failed!");
+        ROS_ERROR_STREAM("[g29 socket recv] Socket init failed!");
+    } else {
+        ROS_INFO_STREAM("[g29 socket recv] Socket init OK!");
     }
     struct sockaddr_in local;
     local.sin_family = AF_INET;
@@ -31,9 +33,13 @@ int start_up(const char *local_ip, int local_port) {
     setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
     if (bind(sock, (struct sockaddr *)&local, sizeof(local)) < 0) {
         ROS_ERROR_STREAM("[g29 socket recv] Bind failed!");
+    } else {
+        ROS_INFO("[g29 socket recv] Bind OK!");
     }
     if (listen(sock, 100) < 0) {
         ROS_ERROR_STREAM("[g29 socket recv] Listen failed!");
+    } else {
+        ROS_INFO("[g29 socket recv] Listenning OK!");
     }
 
     return sock;
@@ -47,38 +53,42 @@ void *HandlerRequest(void *arg) {
     string idname = t->name;
     int uLen;
     int nRead;
-    char *uData;
+    char chsize;
+    char *uData = (char *)malloc(150);
     G29Socket::G29SocketPack g29_recv;
-
     while (true) {
-        if ((nRead = recv(new_sock, &uLen, sizeof(uLen), 0)) > 0) {
-            // ROS_INFO("sock : %d idname : %s", new_sock, idname.c_str());
-            // ROS_INFO("The length of the message is: %d", uLen);
-
-            uData = (char *)malloc(uLen);
-            recv(new_sock, uData, uLen, 0);
+        if ((nRead = recv(new_sock, uData, 150, 0)) > 0) {
+            chsize = uData[149];
+            uLen = chsize - '0' + 140;
+            ROS_INFO("[g29 socket recv] The length of the message is: %d",
+                     uLen);
             if (!g29_recv.ParseFromArray(uData, uLen)) {
-                ROS_ERROR_STREAM("[g29 socket recv] Parse failed!");
+                ROS_ERROR_STREAM(
+                    "[g29 socket recv] Parse socket Char* failed!");
+            } else {
+                ROS_INFO_STREAM("[g29 socket recv] Parse socket Char* OK!");
             }
-            free(uData);
-            uData = NULL;
-
-            g29_socket_msgs::G29Socket driver_recv;
-
-            driver_recv.header.seq = g29_recv.seq();
-            driver_recv.header.stamp.sec = g29_recv.secs();
-            driver_recv.header.stamp.nsec = g29_recv.nsecs();
-            driver_recv.header.frame_id = g29_recv.frame_id();
-
-            for (int i = 0; i < 6; i++) {
-                driver_recv.axes[i] = g29_recv.axes(i);
-            }
-            for (int j = 0; j < 25; j++) {
-                driver_recv.buttons[j] = g29_recv.buttons(j);
-            }
-            teledrive_pub.publish(driver_recv);
         }
+
+        g29_socket_msgs::G29Socket driver_recv;
+
+        driver_recv.header.seq = g29_recv.seq();
+        driver_recv.header.stamp.sec = g29_recv.secs();
+        driver_recv.header.stamp.nsec = g29_recv.nsecs();
+        driver_recv.header.frame_id = g29_recv.frame_id();
+
+        for (int i = 0; i < 6; i++) {
+            driver_recv.axes[i] = g29_recv.axes(i);
+        }
+        for (int j = 0; j < 25; j++) {
+            driver_recv.buttons[j] = g29_recv.buttons(j);
+        }
+        teledrive_pub.publish(driver_recv);
     }
+    close(new_sock);
+    // unlock
+    pthread_mutex_unlock(&mutex1);
+    pthread_exit(NULL);
 }
 
 int main(int argc, char **argv) {
@@ -91,7 +101,7 @@ int main(int argc, char **argv) {
     int socket_port;
 
     // load params
-    node.param<string>("/teledrive/socket_send_ip", socket_recv_ip, "default");
+    node.param<string>("/teledrive/socket_recv_ip", socket_recv_ip, "default");
     node.param<int>("/teledrive/socket_port", socket_port, 10);
 
     // get topic name
@@ -109,12 +119,13 @@ int main(int argc, char **argv) {
     ros::Rate loop_rate(10);
     while (ros::ok()) {
         pthread_mutex_init(&mutex1, NULL);
+        // accept new clients
         int new_sock = accept(sock, (struct sockaddr *)&client, &len);
         // ROS_INFO_STREAM("[g29 socket recv] accept!");
-        char recvBuf[2048] = {};
+        char recvBuf[10] = {};
         if (new_sock > 0) {
-            recv(new_sock, recvBuf, 2048, 0);
-            ROS_INFO("[g29 socket recv] %s is connect. ( socket: %d )", recvBuf,
+            // recv(new_sock, recvBuf, 10, 0);
+            ROS_INFO("[g29 socket recv] G29 is connect. ( socket id: %d )",
                      new_sock);
             socks.push_back(new_sock);
             int socks_size = socks.size();

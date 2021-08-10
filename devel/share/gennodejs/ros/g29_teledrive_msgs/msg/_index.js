@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_teledrive_msgs/share/gennodejs/ros/g29_teledrive_msgs/msg/_index.js

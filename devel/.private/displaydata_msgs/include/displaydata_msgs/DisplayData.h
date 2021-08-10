@@ -67,7 +67,7 @@ struct DisplayData_
     , control_EPB(0)
     , control_gear()
     , control_hang()
-    , control_fsm_state()
+    , control_fsm_state(0)
     , left(0)
     , right(0)
     , near(0)
@@ -144,7 +144,7 @@ struct DisplayData_
     , control_EPB(0)
     , control_gear(_alloc)
     , control_hang(_alloc)
-    , control_fsm_state(_alloc)
+    , control_fsm_state(0)
     , left(0)
     , right(0)
     , near(0)
@@ -308,7 +308,7 @@ struct DisplayData_
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _control_hang_type;
   _control_hang_type control_hang;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _control_fsm_state_type;
+   typedef int32_t _control_fsm_state_type;
   _control_fsm_state_type control_fsm_state;
 
    typedef uint8_t _left_type;
@@ -485,12 +485,12 @@ struct MD5Sum< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "29de8c5bc2f5d30b1f3b83a6a6936749";
+    return "1c2c24deeb8f7c8fd48a595b62f1ae73";
   }
 
   static const char* value(const ::displaydata_msgs::DisplayData_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x29de8c5bc2f5d30bULL;
-  static const uint64_t static_value2 = 0x1f3b83a6a6936749ULL;
+  static const uint64_t static_value1 = 0x1c2c24deeb8f7c8fULL;
+  static const uint64_t static_value2 = 0xd48a595b62f1ae73ULL;
 };
 
 template<class ContainerAllocator>
@@ -569,7 +569,7 @@ float64 control_xbr\n\
 uint8 control_EPB\n\
 string control_gear\n\
 string control_hang\n\
-string control_fsm_state\n\
+int32 control_fsm_state\n\
 uint8 left\n\
 uint8 right\n\
 uint8 near\n\
@@ -829,7 +829,7 @@ struct Printer< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
     s << indent << "control_hang: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_hang);
     s << indent << "control_fsm_state: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_fsm_state);
+    Printer<int32_t>::stream(s, indent + "  ", v.control_fsm_state);
     s << indent << "left: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.left);
     s << indent << "right: ";

@@ -58,7 +58,7 @@ float64 control_xbr
 uint8 control_EPB
 string control_gear
 string control_hang
-string control_fsm_state
+int32 control_fsm_state
 uint8 left
 uint8 right
 uint8 near

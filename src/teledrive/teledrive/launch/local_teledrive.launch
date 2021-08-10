@@ -4,11 +4,8 @@
 			<!-- sub -->
 			<param name="local_teledrive_topic" value="/G29/joy" />
 			<param name="socket_teledrive_topic" value="/zone3/null" />
-			<param name="state_lowspeed_topic" value="/zone3/chassis/rx/state_lowspeed" />
-			<param name="frontend_control_topic" value="/zone3" />
 			<!-- pub -->
 			<param name="teledrive_command" value="/zone3/teledrive/teledrive_command" />
-			<param name="frontend_display_topic" value="/zone3" />
 		</node>
 	</group>
 </launch>

@@ -8,8 +8,6 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   teledrive_msgs
   g29_socket_msgs
-  tli65_can_msgs
-  frontend_msgs
 )
 
 catkin_package()

@@ -1,5 +1,7 @@
 <launch>
 	<group ns="zone3">
+		<!-- launch args -->
+		<arg name="pre_dir" default="$(find teledrive)/../../../" />
 		<!-- parameters -->
 		<rosparam command="load" file="$(arg pre_dir)/config/config_teledrive.yaml"/>
 		<group>

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_teledrive/share/g29_teledrive/cmake/g29_teledriveConfig.cmake

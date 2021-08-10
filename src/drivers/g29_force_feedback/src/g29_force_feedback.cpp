@@ -49,8 +49,8 @@ class G29ForceFeedback {
 };
 
 G29ForceFeedback::G29ForceFeedback()
-    : m_device_name("/dev/input/event17"), m_Kp(0.1), m_Ki(0.01), m_Kd(-100.0),
-      m_offset(0.01), m_max_force(1.0), m_min_force(0.2), m_pub_rate(0.1),
+    : m_device_name("/dev/input/event19"), m_Kp(0.8), m_Ki(0.00), m_Kd(0.00),
+      m_offset(0.02), m_max_force(0.5), m_min_force(0.2), m_pub_rate(0.1),
       m_pid_mode(0) {
     ros::NodeHandle n;
     sub_target =
@@ -101,7 +101,7 @@ void G29ForceFeedback::updateFfDevice() {
     if (m_pid_mode) {
         force = fabs(m_Kp * diff + m_Ki * diff_i + m_Kd * diff_d) *
                 ((diff > 0.0) ? 1.0 : -1.0);
-
+        ROS_ERROR_STREAM("force"<<force);
         // if wheel angle reached to the target
         if (fabs(diff) < m_offset) {
             force = 0.0;
@@ -112,7 +112,9 @@ void G29ForceFeedback::updateFfDevice() {
             // set max force for safety
             force = (force > 0.0) ? std::min(force, m_max_force)
                                   : std::max(force, -m_max_force);
+            
         }
+        ROS_ERROR_STREAM("PID MODE");
     } else {
         force = fabs(m_target_force) * ((diff > 0.0) ? 1.0 : -1.0);
 
@@ -120,12 +122,17 @@ void G29ForceFeedback::updateFfDevice() {
         if (fabs(diff) < m_offset) {
             force = 0.0;
         }
+        ROS_ERROR_STREAM("FORCE_MODE");
     }
-
+    
+    
     // for safety
     force = (force > 0.0) ? std::min(force, m_max_force)
                           : std::max(force, -m_max_force);
-
+    ROS_ERROR_STREAM("final force"<<force);
+    ROS_ERROR_STREAM("diff"<<diff);
+    ROS_ERROR_STREAM("m_max_force"<<m_max_force);
+    ROS_ERROR_STREAM("m_min_force"<<m_min_force);
     // start effect
     m_effect.u.constant.level = (short)(force * 32767.0);
     m_effect.direction = 0xC000;

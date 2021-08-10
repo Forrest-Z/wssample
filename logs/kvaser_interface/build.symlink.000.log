@@ -1,7 +1,0 @@
-Symlinking /home/oligay_61/zone3/devel/share/kvaser_interface/cmake/kvaser_interfaceConfig-version.cmake
-Symlinking /home/oligay_61/zone3/devel/share/kvaser_interface/cmake/kvaser_interfaceConfig.cmake
-Symlinking /home/oligay_61/zone3/devel/lib/libros_kvaser_interface.so
-Symlinking /home/oligay_61/zone3/devel/lib/pkgconfig/kvaser_interface.pc
-Symlinking /home/oligay_61/zone3/devel/lib/kvaser_interface/kvaser_can_bridge
-Symlinking /home/oligay_61/zone3/devel/lib/kvaser_interface/list_channels
-Symlinking /home/oligay_61/zone3/devel/lib/kvaser_interface/canmonitor
