@@ -1,7 +1,7 @@
 <launch>
 	<group ns="zone3">
 		<group ns="drivers">
-			<node name="g29_socket_send" pkg="g29_socket_send" type="g29_socket_send">
+			<node name="g29_socket_send" pkg="g29_socket_send" type="g29_socket_send" output="screen">
 				<!-- sub -->
 				<param name="local_G29_topic" value="/G29/joy" />
 			</node>

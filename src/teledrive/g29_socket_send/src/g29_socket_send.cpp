@@ -37,12 +37,29 @@ void SendCallback(const sensor_msgs::Joy::ConstPtr &msg) {
     }
     sendmsg.SerializeToString(&strsendmsg);
     int usize = strsendmsg.size();
-    char chsize = usize - 140 + '0';
-    strsendmsg.append(149 - usize, '\0');
-    strsendmsg.append(1, chsize);
-    usize = strsendmsg.size();
-    // send(sock, &usize, sizeof(usize), 0);
-    send(sock, strsendmsg.data(), usize, 0);
+    ROS_INFO("The length of the msg is: %d", usize);
+    if(usize < 140 || usize > 150)
+    {
+        ROS_ERROR_STREAM("The length of the message is failed!");
+        ROS_ERROR_STREAM(strsendmsg);
+    }
+    else
+    {
+        char chsize = usize - 140 + '0';
+        strsendmsg.append(149 - usize, '\0');
+        strsendmsg.append(1, chsize);
+        send(sock, strsendmsg.data(), 150, 0);
+    }
+}
+
+void *Sendheartbeat(void *arg) {
+    while (true) {
+        string heartbeatmsg = "heartbeat";
+        heartbeatmsg.append(140, '\0');
+        heartbeatmsg.append(1, 'h');
+        send(sock, heartbeatmsg.data(), 150, 0);
+        usleep(50000);
+    }
 }
 
 int main(int argc, char **argv) {
@@ -75,6 +92,9 @@ int main(int argc, char **argv) {
     } else {
         ROS_INFO_STREAM("[g29 socket send] G29 Socket Connect OK!");
     }
+
+    pthread_t heartbeat;
+    pthread_create(&heartbeat, NULL, Sendheartbeat, NULL);
 
     // ros spin
     ros::Rate loop_rate(10);

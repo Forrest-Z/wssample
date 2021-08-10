@@ -53,37 +53,63 @@ void *HandlerRequest(void *arg) {
     string idname = t->name;
     int uLen;
     int nRead;
+    int recvsuccess = 0;
+    int recvfailed = 0;
+    int64_t heartbeattime = 0;
     char chsize;
     char *uData = (char *)malloc(150);
     G29Socket::G29SocketPack g29_recv;
     while (true) {
-        if ((nRead = recv(new_sock, uData, 150, 0)) > 0) {
+        int64_t localtime = chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now().time_since_epoch()).count();
+        if (heartbeattime == 0) {}
+        else if((localtime - heartbeattime) > 300)
+        {
+            g29_socket_msgs::G29Socket connect_recv;
+            connect_recv.connect = 0;
+            teledrive_pub.publish(connect_recv);
+            ROS_ERROR_STREAM("Connect Failed!");
+            return ((void *)0);
+        }
+        if ((nRead = recv(new_sock, uData, 150, 0)) > 0)
+        {
             chsize = uData[149];
-            uLen = chsize - '0' + 140;
-            ROS_INFO("[g29 socket recv] The length of the message is: %d",
-                     uLen);
-            if (!g29_recv.ParseFromArray(uData, uLen)) {
-                ROS_ERROR_STREAM(
-                    "[g29 socket recv] Parse socket Char* failed!");
-            } else {
-                ROS_INFO_STREAM("[g29 socket recv] Parse socket Char* OK!");
+            g29_socket_msgs::G29Socket driver_recv;
+            switch (chsize)
+            {
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+                uLen = chsize - '0' + 140;
+                ROS_INFO("The length of the message is: %d", uLen);
+                if (!g29_recv.ParseFromArray(uData, uLen)) {
+                    ROS_ERROR_STREAM("[g29 socket recv] Parse failed!");
+                }
+
+                driver_recv.header.seq = g29_recv.seq();
+                driver_recv.header.stamp.sec = g29_recv.secs();
+                driver_recv.header.stamp.nsec = g29_recv.nsecs();
+                driver_recv.header.frame_id = g29_recv.frame_id();
+
+                for (int i = 0; i < 6; i++) {
+                    driver_recv.axes[i] = g29_recv.axes(i);
+                }
+                for (int j = 0; j < 25; j++) {
+                    driver_recv.buttons[j] = g29_recv.buttons(j);
+                }
+                driver_recv.connect = 1;
+                teledrive_pub.publish(driver_recv);
+                recvsuccess ++;
+                ROS_INFO("recvsuccess is: %d , recvfailed is: %d.", recvsuccess, recvfailed);
+                break;
+            case 'h':
+                heartbeattime = chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now().time_since_epoch()).count();
+                break;
+            default:
+                recvfailed ++;
+                break;
             }
         }
-
-        g29_socket_msgs::G29Socket driver_recv;
-
-        driver_recv.header.seq = g29_recv.seq();
-        driver_recv.header.stamp.sec = g29_recv.secs();
-        driver_recv.header.stamp.nsec = g29_recv.nsecs();
-        driver_recv.header.frame_id = g29_recv.frame_id();
-
-        for (int i = 0; i < 6; i++) {
-            driver_recv.axes[i] = g29_recv.axes(i);
-        }
-        for (int j = 0; j < 25; j++) {
-            driver_recv.buttons[j] = g29_recv.buttons(j);
-        }
-        teledrive_pub.publish(driver_recv);
     }
     close(new_sock);
     // unlock
@@ -124,7 +150,6 @@ int main(int argc, char **argv) {
         // ROS_INFO_STREAM("[g29 socket recv] accept!");
         char recvBuf[10] = {};
         if (new_sock > 0) {
-            // recv(new_sock, recvBuf, 10, 0);
             ROS_INFO("[g29 socket recv] G29 is connect. ( socket id: %d )",
                      new_sock);
             socks.push_back(new_sock);
@@ -146,5 +171,5 @@ int main(int argc, char **argv) {
         loop_rate.sleep();
     }
 
-    return 0;
+    return 0; 
 }
