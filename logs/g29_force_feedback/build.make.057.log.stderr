@@ -1,0 +1,7 @@
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp:[m[K In member function ‘[01m[Kvoid G29ForceFeedback::updateFfDevice()[m[K’:
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp:113:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kg29_pid_tune[m[K’ was not declared in this scope
+         g29_pid_tune.
+[01;32m[K         ^[m[K
+make[2]: *** [CMakeFiles/g29_force_feedback_node.dir/src/g29_force_feedback.cpp.o] Error 1
+make[1]: *** [CMakeFiles/g29_force_feedback_node.dir/all] Error 2
+make: *** [all] Error 2

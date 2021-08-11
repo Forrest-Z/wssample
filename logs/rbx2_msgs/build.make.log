@@ -1,7 +1,7 @@
 [  0%] Built target _rbx2_msgs_generate_messages_check_deps_SetBatteryLevel
 [ 28%] Built target rbx2_msgs_generate_messages_py
 [ 42%] Built target rbx2_msgs_generate_messages_cpp
-[ 57%] Built target rbx2_msgs_generate_messages_lisp
-[ 85%] Built target rbx2_msgs_generate_messages_eus
+[ 71%] Built target rbx2_msgs_generate_messages_eus
+[ 85%] Built target rbx2_msgs_generate_messages_lisp
 [100%] Built target rbx2_msgs_generate_messages_nodejs
 [100%] Built target rbx2_msgs_generate_messages

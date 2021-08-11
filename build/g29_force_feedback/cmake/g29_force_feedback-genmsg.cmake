@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "g29_force_feedback: 1 messages, 0 services")
+message(STATUS "g29_force_feedback: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ig29_force_feedback:/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_g29_force_feedback_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "g29_force_feedback" "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg" "std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg" NAME_WE)
+add_custom_target(_g29_force_feedback_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "g29_force_feedback" "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg" "std_msgs/Header"
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -30,6 +35,12 @@ add_custom_target(_g29_force_feedback_generate_messages_check_deps_${_filename}
 ### Generating Messages
 _generate_msg_cpp(g29_force_feedback
   "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/g29_force_feedback
+)
+_generate_msg_cpp(g29_force_feedback
+  "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/g29_force_feedback
@@ -51,6 +62,8 @@ add_dependencies(g29_force_feedback_generate_messages g29_force_feedback_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg" NAME_WE)
 add_dependencies(g29_force_feedback_generate_messages_cpp _g29_force_feedback_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg" NAME_WE)
+add_dependencies(g29_force_feedback_generate_messages_cpp _g29_force_feedback_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(g29_force_feedback_gencpp)
@@ -63,6 +76,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS g29_force_feedback_generate_message
 ### Generating Messages
 _generate_msg_eus(g29_force_feedback
   "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/g29_force_feedback
+)
+_generate_msg_eus(g29_force_feedback
+  "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/g29_force_feedback
@@ -84,6 +103,8 @@ add_dependencies(g29_force_feedback_generate_messages g29_force_feedback_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg" NAME_WE)
 add_dependencies(g29_force_feedback_generate_messages_eus _g29_force_feedback_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg" NAME_WE)
+add_dependencies(g29_force_feedback_generate_messages_eus _g29_force_feedback_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(g29_force_feedback_geneus)
@@ -96,6 +117,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS g29_force_feedback_generate_message
 ### Generating Messages
 _generate_msg_lisp(g29_force_feedback
   "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/g29_force_feedback
+)
+_generate_msg_lisp(g29_force_feedback
+  "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/g29_force_feedback
@@ -117,6 +144,8 @@ add_dependencies(g29_force_feedback_generate_messages g29_force_feedback_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg" NAME_WE)
 add_dependencies(g29_force_feedback_generate_messages_lisp _g29_force_feedback_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg" NAME_WE)
+add_dependencies(g29_force_feedback_generate_messages_lisp _g29_force_feedback_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(g29_force_feedback_genlisp)
@@ -129,6 +158,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS g29_force_feedback_generate_message
 ### Generating Messages
 _generate_msg_nodejs(g29_force_feedback
   "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/g29_force_feedback
+)
+_generate_msg_nodejs(g29_force_feedback
+  "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/g29_force_feedback
@@ -150,6 +185,8 @@ add_dependencies(g29_force_feedback_generate_messages g29_force_feedback_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg" NAME_WE)
 add_dependencies(g29_force_feedback_generate_messages_nodejs _g29_force_feedback_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg" NAME_WE)
+add_dependencies(g29_force_feedback_generate_messages_nodejs _g29_force_feedback_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(g29_force_feedback_gennodejs)
@@ -162,6 +199,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS g29_force_feedback_generate_message
 ### Generating Messages
 _generate_msg_py(g29_force_feedback
   "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/g29_force_feedback
+)
+_generate_msg_py(g29_force_feedback
+  "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/g29_force_feedback
@@ -182,6 +225,8 @@ add_dependencies(g29_force_feedback_generate_messages g29_force_feedback_generat
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg" NAME_WE)
+add_dependencies(g29_force_feedback_generate_messages_py _g29_force_feedback_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg" NAME_WE)
 add_dependencies(g29_force_feedback_generate_messages_py _g29_force_feedback_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

@@ -5,4 +5,6 @@
           AXES
           BUTTONS-VAL
           BUTTONS
+          CONNECT-VAL
+          CONNECT
 ))

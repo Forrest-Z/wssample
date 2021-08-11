@@ -3,6 +3,7 @@
 
 CMakeFiles/g29_force_feedback_node.dir/src/g29_force_feedback.cpp.o
  /home/oligay_61/zone3/devel/.private/g29_force_feedback/include/g29_force_feedback/ForceFeedback.h
+ /home/oligay_61/zone3/devel/.private/g29_force_feedback/include/g29_force_feedback/TuneForceFeedback.h
  /home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h

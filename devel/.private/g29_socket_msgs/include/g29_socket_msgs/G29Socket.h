@@ -27,7 +27,8 @@ struct G29Socket_
   G29Socket_()
     : header()
     , axes()
-    , buttons()  {
+    , buttons()
+    , connect(false)  {
       axes.assign(0.0);
 
       buttons.assign(0.0);
@@ -35,7 +36,8 @@ struct G29Socket_
   G29Socket_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , axes()
-    , buttons()  {
+    , buttons()
+    , connect(false)  {
   (void)_alloc;
       axes.assign(0.0);
 
@@ -52,6 +54,9 @@ struct G29Socket_
 
    typedef boost::array<double, 25>  _buttons_type;
   _buttons_type buttons;
+
+   typedef uint8_t _connect_type;
+  _connect_type connect;
 
 
 
@@ -131,12 +136,12 @@ struct MD5Sum< ::g29_socket_msgs::G29Socket_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b8eb7f320e43cf539122a332e9191771";
+    return "db2ca71d5047b4c31b84cebca554669d";
   }
 
   static const char* value(const ::g29_socket_msgs::G29Socket_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb8eb7f320e43cf53ULL;
-  static const uint64_t static_value2 = 0x9122a332e9191771ULL;
+  static const uint64_t static_value1 = 0xdb2ca71d5047b4c3ULL;
+  static const uint64_t static_value2 = 0x1b84cebca554669dULL;
 };
 
 template<class ContainerAllocator>
@@ -159,6 +164,8 @@ struct Definition< ::g29_socket_msgs::G29Socket_<ContainerAllocator> >
 \n\
 float64[6] axes\n\
 float64[25] buttons\n\
+\n\
+bool connect\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
 # Standard metadata for higher-level stamped data types.\n\
@@ -197,6 +204,7 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.axes);
       stream.next(m.buttons);
+      stream.next(m.connect);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -230,6 +238,8 @@ struct Printer< ::g29_socket_msgs::G29Socket_<ContainerAllocator> >
       s << indent << "  buttons[" << i << "]: ";
       Printer<double>::stream(s, indent + "  ", v.buttons[i]);
     }
+    s << indent << "connect: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.connect);
   }
 };
 

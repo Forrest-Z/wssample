@@ -9,13 +9,15 @@ import struct
 import std_msgs.msg
 
 class G29Socket(genpy.Message):
-  _md5sum = "b8eb7f320e43cf539122a332e9191771"
+  _md5sum = "db2ca71d5047b4c31b84cebca554669d"
   _type = "g29_socket_msgs/G29Socket"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
 
 float64[6] axes
 float64[25] buttons
+
+bool connect
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -34,8 +36,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','axes','buttons']
-  _slot_types = ['std_msgs/Header','float64[6]','float64[25]']
+  __slots__ = ['header','axes','buttons','connect']
+  _slot_types = ['std_msgs/Header','float64[6]','float64[25]','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -45,7 +47,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,axes,buttons
+       header,axes,buttons,connect
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -60,10 +62,13 @@ string frame_id
         self.axes = [0.] * 6
       if self.buttons is None:
         self.buttons = [0.] * 25
+      if self.connect is None:
+        self.connect = False
     else:
       self.header = std_msgs.msg.Header()
       self.axes = [0.] * 6
       self.buttons = [0.] * 25
+      self.connect = False
 
   def _get_types(self):
     """
@@ -87,6 +92,8 @@ string frame_id
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       buff.write(_get_struct_6d().pack(*self.axes))
       buff.write(_get_struct_25d().pack(*self.buttons))
+      _x = self.connect
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -119,6 +126,10 @@ string frame_id
       start = end
       end += 200
       self.buttons = _get_struct_25d().unpack(str[start:end])
+      start = end
+      end += 1
+      (self.connect,) = _get_struct_B().unpack(str[start:end])
+      self.connect = bool(self.connect)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -141,6 +152,8 @@ string frame_id
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       buff.write(self.axes.tostring())
       buff.write(self.buttons.tostring())
+      _x = self.connect
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -174,6 +187,10 @@ string frame_id
       start = end
       end += 200
       self.buttons = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=25)
+      start = end
+      end += 1
+      (self.connect,) = _get_struct_B().unpack(str[start:end])
+      self.connect = bool(self.connect)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -200,3 +217,9 @@ def _get_struct_6d():
     if _struct_6d is None:
         _struct_6d = struct.Struct("<6d")
     return _struct_6d
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/g29_force_feedback_generate_messages_eus"
   "/home/oligay_61/zone3/devel/.private/g29_force_feedback/share/roseus/ros/g29_force_feedback/msg/ForceFeedback.l"
+  "/home/oligay_61/zone3/devel/.private/g29_force_feedback/share/roseus/ros/g29_force_feedback/msg/TuneForceFeedback.l"
   "/home/oligay_61/zone3/devel/.private/g29_force_feedback/share/roseus/ros/g29_force_feedback/manifest.l"
 )
 

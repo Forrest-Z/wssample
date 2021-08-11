@@ -16,7 +16,7 @@
 
 (defclass g29_socket_msgs::G29Socket
   :super ros::object
-  :slots (_header _axes _buttons ))
+  :slots (_header _axes _buttons _connect ))
 
 (defmethod g29_socket_msgs::G29Socket
   (:init
@@ -24,11 +24,13 @@
     ((:header __header) (instance std_msgs::Header :init))
     ((:axes __axes) (make-array 6 :initial-element 0.0 :element-type :float))
     ((:buttons __buttons) (make-array 25 :initial-element 0.0 :element-type :float))
+    ((:connect __connect) nil)
     )
    (send-super :init)
    (setq _header __header)
    (setq _axes __axes)
    (setq _buttons __buttons)
+   (setq _connect __connect)
    self)
   (:header
    (&rest __header)
@@ -43,6 +45,9 @@
   (:buttons
    (&optional __buttons)
    (if __buttons (setq _buttons __buttons)) _buttons)
+  (:connect
+   (&optional __connect)
+   (if __connect (setq _connect __connect)) _connect)
   (:serialization-length
    ()
    (+
@@ -52,6 +57,8 @@
     (* 8    6)
     ;; float64[25] _buttons
     (* 8    25)
+    ;; bool _connect
+    1
     ))
   (:serialize
    (&optional strm)
@@ -67,6 +74,8 @@
      (dotimes (i 25)
        (sys::poke (elt _buttons i) (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
        )
+     ;; bool _connect
+       (if _connect (write-byte -1 s) (write-byte 0 s))
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -81,17 +90,21 @@
    (dotimes (i (length _buttons))
      (setf (elt _buttons i) (sys::peek buf ptr- :double)) (incf ptr- 8)
      )
+   ;; bool _connect
+     (setq _connect (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get g29_socket_msgs::G29Socket :md5sum-) "b8eb7f320e43cf539122a332e9191771")
+(setf (get g29_socket_msgs::G29Socket :md5sum-) "db2ca71d5047b4c31b84cebca554669d")
 (setf (get g29_socket_msgs::G29Socket :datatype-) "g29_socket_msgs/G29Socket")
 (setf (get g29_socket_msgs::G29Socket :definition-)
       "Header header
 
 float64[6] axes
 float64[25] buttons
+
+bool connect
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -114,6 +127,6 @@ string frame_id
 
 
 
-(provide :g29_socket_msgs/G29Socket "b8eb7f320e43cf539122a332e9191771")
+(provide :g29_socket_msgs/G29Socket "db2ca71d5047b4c31b84cebca554669d")
 
 

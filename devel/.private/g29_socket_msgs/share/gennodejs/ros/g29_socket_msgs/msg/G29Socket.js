@@ -22,6 +22,7 @@ class G29Socket {
       this.header = null;
       this.axes = null;
       this.buttons = null;
+      this.connect = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -42,6 +43,12 @@ class G29Socket {
       else {
         this.buttons = new Array(25).fill(0);
       }
+      if (initObj.hasOwnProperty('connect')) {
+        this.connect = initObj.connect
+      }
+      else {
+        this.connect = false;
+      }
     }
   }
 
@@ -61,6 +68,8 @@ class G29Socket {
     }
     // Serialize message field [buttons]
     bufferOffset = _arraySerializer.float64(obj.buttons, buffer, bufferOffset, 25);
+    // Serialize message field [connect]
+    bufferOffset = _serializer.bool(obj.connect, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -74,13 +83,15 @@ class G29Socket {
     data.axes = _arrayDeserializer.float64(buffer, bufferOffset, 6)
     // Deserialize message field [buttons]
     data.buttons = _arrayDeserializer.float64(buffer, bufferOffset, 25)
+    // Deserialize message field [connect]
+    data.connect = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 248;
+    return length + 249;
   }
 
   static datatype() {
@@ -90,7 +101,7 @@ class G29Socket {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b8eb7f320e43cf539122a332e9191771';
+    return 'db2ca71d5047b4c31b84cebca554669d';
   }
 
   static messageDefinition() {
@@ -100,6 +111,8 @@ class G29Socket {
     
     float64[6] axes
     float64[25] buttons
+    
+    bool connect
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -146,6 +159,13 @@ class G29Socket {
     }
     else {
       resolved.buttons = new Array(25).fill(0)
+    }
+
+    if (msg.connect !== undefined) {
+      resolved.connect = msg.connect;
+    }
+    else {
+      resolved.connect = false
     }
 
     return resolved;

@@ -3,5 +3,7 @@
   (:export
    "<FORCEFEEDBACK>"
    "FORCEFEEDBACK"
+   "<TUNEFORCEFEEDBACK>"
+   "TUNEFORCEFEEDBACK"
   ))
 

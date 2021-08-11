@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg"
+messages_str = "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg;/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg"
 services_str = ""
 pkg_name = "g29_force_feedback"
 dependencies_str = "std_msgs"

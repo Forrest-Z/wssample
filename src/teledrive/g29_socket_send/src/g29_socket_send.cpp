@@ -9,7 +9,7 @@
 
 using namespace std;
 
-int sock;
+int32_t sock;
 
 // void *receive(void *arg) {
 //     int *temp = ((int *)arg);
@@ -29,24 +29,21 @@ void SendCallback(const sensor_msgs::Joy::ConstPtr &msg) {
     sendmsg.set_secs(msg->header.stamp.sec);
     sendmsg.set_nsecs(msg->header.stamp.nsec);
     sendmsg.set_frame_id(msg->header.frame_id);
-    for (int i = 0; i < 6; i++) {
+    for (int32_t i = 0; i < 6; i++) {
         sendmsg.add_axes(msg->axes[i]);
     }
-    for (int j = 0; j < 25; j++) {
+    for (int32_t j = 0; j < 25; j++) {
         sendmsg.add_buttons(msg->buttons[j]);
     }
     sendmsg.SerializeToString(&strsendmsg);
-    int usize = strsendmsg.size();
+    int32_t usize = strsendmsg.size();
     ROS_INFO("The length of the msg is: %d", usize);
-    if(usize < 140 || usize > 150)
-    {
+    if (usize < 140 || usize > 150) {
         ROS_ERROR_STREAM("The length of the message is failed!");
         ROS_ERROR_STREAM(strsendmsg);
-    }
-    else
-    {
+    } else {
         char chsize = usize - 140 + '0';
-        strsendmsg.append(149 - usize, '\0');
+        strsendmsg.append(149 - usize, '0');
         strsendmsg.append(1, chsize);
         send(sock, strsendmsg.data(), 150, 0);
     }
@@ -68,12 +65,12 @@ int main(int argc, char **argv) {
     ros::NodeHandle priv_nh("~");
 
     string socket_send_ip;
-    int socket_port;
+    int32_t socket_port;
     string local_G29_topic;
 
     // load params
     node.param<string>("/teledrive/socket_send_ip", socket_send_ip, "default");
-    node.param<int>("/teledrive/socket_port", socket_port, 10);
+    node.param<int32_t>("/teledrive/socket_port", socket_port, 10);
 
     // get topic name
     priv_nh.param<string>("local_G29_topic", local_G29_topic, "");

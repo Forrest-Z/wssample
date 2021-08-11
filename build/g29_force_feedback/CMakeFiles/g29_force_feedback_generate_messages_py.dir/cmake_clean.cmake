@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/g29_force_feedback_generate_messages_py"
   "/home/oligay_61/zone3/devel/.private/g29_force_feedback/lib/python2.7/dist-packages/g29_force_feedback/msg/_ForceFeedback.py"
+  "/home/oligay_61/zone3/devel/.private/g29_force_feedback/lib/python2.7/dist-packages/g29_force_feedback/msg/_TuneForceFeedback.py"
   "/home/oligay_61/zone3/devel/.private/g29_force_feedback/lib/python2.7/dist-packages/g29_force_feedback/msg/__init__.py"
 )
 

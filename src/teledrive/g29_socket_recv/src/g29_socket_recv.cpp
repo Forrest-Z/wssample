@@ -10,16 +10,16 @@ using namespace std;
 pthread_mutex_t mutex1;
 
 struct user {
-    int sock;
+    int32_t sock;
     string name;
 };
 
-vector<int> socks;
+vector<int32_t> socks;
 
 ros::Publisher teledrive_pub;
 
-int start_up(const char *local_ip, int local_port) {
-    int sock = socket(AF_INET, SOCK_STREAM, 0);
+int start_up(const char *local_ip, int32_t local_port) {
+    int32_t sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0) {
         ROS_ERROR_STREAM("[g29 socket recv] Socket init failed!");
     } else {
@@ -29,7 +29,7 @@ int start_up(const char *local_ip, int local_port) {
     local.sin_family = AF_INET;
     local.sin_port = htons(local_port);
     local.sin_addr.s_addr = inet_addr(local_ip);
-    const int on = 1;
+    const int32_t on = 1;
     setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
     if (bind(sock, (struct sockaddr *)&local, sizeof(local)) < 0) {
         ROS_ERROR_STREAM("[g29 socket recv] Bind failed!");
@@ -49,33 +49,33 @@ void *HandlerRequest(void *arg) {
     // lock
     pthread_mutex_lock(&mutex1);
     user *t = (user *)arg;
-    int new_sock = t->sock;
+    int32_t new_sock = t->sock;
     string idname = t->name;
-    int uLen;
-    int nRead;
-    int recvsuccess = 0;
-    int recvfailed = 0;
+    int32_t uLen;
+    int32_t nRead;
+    int32_t recvsuccess = 0;
+    int32_t recvfailed = 0;
     int64_t heartbeattime = 0;
     char chsize;
     char *uData = (char *)malloc(150);
     G29Socket::G29SocketPack g29_recv;
     while (true) {
-        int64_t localtime = chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now().time_since_epoch()).count();
-        if (heartbeattime == 0) {}
-        else if((localtime - heartbeattime) > 300)
-        {
+        int64_t localtime = chrono::duration_cast<chrono::milliseconds>(
+                                chrono::system_clock::now().time_since_epoch())
+                                .count();
+        if (heartbeattime == 0) {
+        } else if ((localtime - heartbeattime) > 300) {
             g29_socket_msgs::G29Socket connect_recv;
             connect_recv.connect = 0;
             teledrive_pub.publish(connect_recv);
             ROS_ERROR_STREAM("Connect Failed!");
             return ((void *)0);
         }
-        if ((nRead = recv(new_sock, uData, 150, 0)) > 0)
-        {
+        uData[149] = '0';
+        if ((nRead = recv(new_sock, uData, 150, MSG_DONTWAIT)) > 0) {
             chsize = uData[149];
             g29_socket_msgs::G29Socket driver_recv;
-            switch (chsize)
-            {
+            switch (chsize) {
             case '1':
             case '2':
             case '3':
@@ -91,22 +91,26 @@ void *HandlerRequest(void *arg) {
                 driver_recv.header.stamp.nsec = g29_recv.nsecs();
                 driver_recv.header.frame_id = g29_recv.frame_id();
 
-                for (int i = 0; i < 6; i++) {
+                for (int32_t i = 0; i < 6; i++) {
                     driver_recv.axes[i] = g29_recv.axes(i);
                 }
-                for (int j = 0; j < 25; j++) {
+                for (int32_t j = 0; j < 25; j++) {
                     driver_recv.buttons[j] = g29_recv.buttons(j);
                 }
                 driver_recv.connect = 1;
                 teledrive_pub.publish(driver_recv);
-                recvsuccess ++;
-                ROS_INFO("recvsuccess is: %d , recvfailed is: %d.", recvsuccess, recvfailed);
+                recvsuccess++;
+                ROS_INFO("recvsuccess is: %d , recvfailed is: %d.", recvsuccess,
+                         recvfailed);
                 break;
             case 'h':
-                heartbeattime = chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now().time_since_epoch()).count();
+                heartbeattime =
+                    chrono::duration_cast<chrono::milliseconds>(
+                        chrono::system_clock::now().time_since_epoch())
+                        .count();
                 break;
             default:
-                recvfailed ++;
+                recvfailed++;
                 break;
             }
         }
@@ -124,11 +128,11 @@ int main(int argc, char **argv) {
 
     string socket_recv_ip;
     string pub_topic;
-    int socket_port;
+    int32_t socket_port;
 
     // load params
     node.param<string>("/teledrive/socket_recv_ip", socket_recv_ip, "default");
-    node.param<int>("/teledrive/socket_port", socket_port, 10);
+    node.param<int32_t>("/teledrive/socket_port", socket_port, 10);
 
     // get topic name
     priv_nh.param<string>("teledrive_command", pub_topic, "");
@@ -137,7 +141,7 @@ int main(int argc, char **argv) {
     teledrive_pub = node.advertise<g29_socket_msgs::G29Socket>(pub_topic, 1);
 
     // socket init
-    int sock = start_up(socket_recv_ip.c_str(), socket_port);
+    int32_t sock = start_up(socket_recv_ip.c_str(), socket_port);
     struct sockaddr_in client;
     socklen_t len = sizeof(client);
 
@@ -171,5 +175,5 @@ int main(int argc, char **argv) {
         loop_rate.sleep();
     }
 
-    return 0; 
+    return 0;
 }

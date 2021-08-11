@@ -124,7 +124,10 @@ file(INSTALL DESTINATION "/home/oligay_61/zone3/install" TYPE FILE FILES "/home/
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/g29_force_feedback/msg" TYPE FILE FILES "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/g29_force_feedback/msg" TYPE FILE FILES
+    "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/ForceFeedback.msg"
+    "/home/oligay_61/zone3/src/drivers/g29_force_feedback/msg/TuneForceFeedback.msg"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

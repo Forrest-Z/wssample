@@ -1,0 +1,7 @@
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp:[m[K In constructor ‘[01m[KG29ForceFeedback::G29ForceFeedback()[m[K’:
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp:57:9:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kn[m[K’
+         n.subscribe("/ff_target", 1, &G29ForceFeedback::targetCallback, this);
+[01;32m[K         ^[m[K
+make[2]: *** [CMakeFiles/g29_force_feedback_node.dir/src/g29_force_feedback.cpp.o] Error 1
+make[1]: *** [CMakeFiles/g29_force_feedback_node.dir/all] Error 2
+make: *** [all] Error 2

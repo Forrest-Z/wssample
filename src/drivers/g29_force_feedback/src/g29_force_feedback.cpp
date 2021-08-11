@@ -6,10 +6,14 @@
 #include <unistd.h>
 
 #include "g29_force_feedback/ForceFeedback.h"
+#include "g29_force_feedback/TuneForceFeedback.h"
+
+g29_force_feedback::TuneForceFeedback g29_pid_tune;
 
 class G29ForceFeedback {
   private:
     ros::Subscriber sub_target;
+    ros::Publisher pub_pid_tune;
     ros::Timer timer;
     float m_pub_rate;
 
@@ -30,6 +34,9 @@ class G29ForceFeedback {
     double m_Ki;
     double m_Kd;
     double m_offset;
+    double pforce;
+    double iforce;
+    double dforce;
 
     // target and current state of the wheel
     bool m_pid_mode;
@@ -49,12 +56,14 @@ class G29ForceFeedback {
 };
 
 G29ForceFeedback::G29ForceFeedback()
-    : m_device_name("/dev/input/event19"), m_Kp(0.8), m_Ki(0.00), m_Kd(0.00),
-      m_offset(0.02), m_max_force(0.5), m_min_force(0.2), m_pub_rate(0.1),
+    : m_device_name("/dev/input/event19"), m_Kp(1), m_Ki(0.00), m_Kd(15.0),
+      m_offset(0.01), m_max_force(0.3), m_min_force(0.18), m_pub_rate(0.1),
       m_pid_mode(0) {
     ros::NodeHandle n;
     sub_target =
         n.subscribe("/ff_target", 1, &G29ForceFeedback::targetCallback, this);
+    pub_pid_tune =
+        n.advertise<g29_force_feedback::TuneForceFeedback>("/PID_tune", 10);
 
     n.getParam("device_name", m_device_name);
     n.getParam("Kp", m_Kp);
@@ -99,9 +108,17 @@ void G29ForceFeedback::updateFfDevice() {
     diff_d = diff - buf;
 
     if (m_pid_mode) {
-        force = fabs(m_Kp * diff + m_Ki * diff_i + m_Kd * diff_d) *
-                ((diff > 0.0) ? 1.0 : -1.0);
-        ROS_ERROR_STREAM("force"<<force);
+        pforce = m_Kp * diff;
+        iforce = m_Ki * diff_i;
+        dforce = m_Kd * diff_d;
+        dforce = (diff * diff_d > 0) ? dforce : 0;
+        g29_pid_tune.pforce = pforce;
+        g29_pid_tune.iforce = iforce;
+        g29_pid_tune.dforce = dforce;
+
+        force = fabs(pforce + iforce + dforce) * ((diff > 0.0) ? 1.0 : -1.0);
+        g29_pid_tune.calforce = force;
+        g29_pid_tune.current_angle = m_current_angle;
         // if wheel angle reached to the target
         if (fabs(diff) < m_offset) {
             force = 0.0;
@@ -112,7 +129,6 @@ void G29ForceFeedback::updateFfDevice() {
             // set max force for safety
             force = (force > 0.0) ? std::min(force, m_max_force)
                                   : std::max(force, -m_max_force);
-            
         }
         ROS_ERROR_STREAM("PID MODE");
     } else {
@@ -124,15 +140,14 @@ void G29ForceFeedback::updateFfDevice() {
         }
         ROS_ERROR_STREAM("FORCE_MODE");
     }
-    
-    
+
     // for safety
     force = (force > 0.0) ? std::min(force, m_max_force)
                           : std::max(force, -m_max_force);
-    ROS_ERROR_STREAM("final force"<<force);
-    ROS_ERROR_STREAM("diff"<<diff);
-    ROS_ERROR_STREAM("m_max_force"<<m_max_force);
-    ROS_ERROR_STREAM("m_min_force"<<m_min_force);
+    g29_pid_tune.finalforce = force;
+    g29_pid_tune.error = diff;
+    pub_pid_tune.publish(g29_pid_tune);
+
     // start effect
     m_effect.u.constant.level = (short)(force * 32767.0);
     m_effect.direction = 0xC000;
