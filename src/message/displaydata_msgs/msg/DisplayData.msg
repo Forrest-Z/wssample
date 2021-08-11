@@ -1,7 +1,7 @@
 Header header
 
 # RTK
-int8 rtk_state 
+int32 rtk_state 
 # -1 : no gnss
 # 0 : 2D or 3D gnss fix
 # 1 : SBAS or Starfire gnss fix
@@ -28,79 +28,80 @@ float64 headingangle
 # Tli65 vehicle parameters can_rx
 float64 current_steer
 float64 current_brake_pedal_pos
-int8 current_throttle_percentage
-int8 current_retarder_torque_percentage
-uint8 current_EPB
+int32 current_throttle_percentage
+int32 current_retarder_torque_percentage
+int32 current_EPB
 string current_gear
-uint8 current_hangangle
-uint8 auto_mode
-uint8 left_light
-uint8 right_light
-uint8 near_light
-uint8 far_light
-uint8 air_beep
-uint8 top_warning_light
-uint8 front_fog_light
-uint8 front_work_light
-uint8 side_light
-uint8 position_light
-uint8 back_left_light
-uint8 back_right_light
-uint8 back_position_light
-uint8 brake_light
-uint8 reverse_light
-uint8 back_work_light
+int32 current_hangangle
+int32 auto_mode
+int32 left_light
+int32 right_light
+int32 near_light
+int32 far_light
+int32 air_beep
+int32 top_warning_light
+int32 front_fog_light
+int32 front_work_light
+int32 side_light
+int32 position_light
+int32 back_left_light
+int32 back_right_light
+int32 back_position_light
+int32 brake_light
+int32 reverse_light
+int32 back_work_light
 
-# Tli65 control parameters control_msgs
+# Tli65 vehicle parameters can_rx
 float64 control_steer
-uint8 control_throttle_percentage
+int32 control_throttle_percentage
 float64 control_xbr
-uint8 control_EPB
+int32 control_EPB
 string control_gear
 string control_hang
 int32 control_fsm_state
-uint8 left
-uint8 right
-uint8 near
-uint8 far
-uint8 top_warn
-uint8 control_air_beep
-uint8 front_fog
-uint8 front_work
-uint8 side
-uint8 position
-uint8 emergency
-uint8 brake
-uint8 reverse
-uint8 back_work
+int32 vehicle_auto_mode
+int32 left
+int32 right
+int32 near
+int32 far
+int32 top_warn
+int32 control_air_beep
+int32 front_fog
+int32 front_work
+int32 side
+int32 position
+int32 emergency
+int32 brake
+int32 reverse
+int32 back_work
 
 # waypoints planning 
 float64 target_x
 float64 target_y
 
 # number of satellite
-uint8 NumSate
+int32 NumSate
 
 # VEHICLE Fault Information 
 # ft1
-uint8 engine_fault
-uint8 gear_fault
-uint8 EBS_fault
-uint8 EPS_fault
-uint8 EPB_fault
+int32 engine_fault
+int32 gear_fault
+int32 EBS_fault
+int32 EPS_fault
+int32 EPB_fault
 
 # ft2
-uint8 truck_fault_level
-uint8 engine_fault_code
-uint8 gear_fault_code
+int32 truck_fault_level
+int32 engine_fault_code
+int32 gear_fault_code
 
 # ft3
-uint8 EPS_fault_code
-uint8 EBS_fault_code
-uint8 electric_fault_code
+int32 EPS_fault_code
+int32 EBS_fault_code
+int32 electric_fault_code
 
 # tyre
-uint16 tyre_pressure_leftfront
-uint16 tyre_pressure_rightfront
+int32 tyre_pressure_leftfront
+int32 tyre_pressure_rightfront
 float64 front_left_temperature
 float64 front_right_temperature

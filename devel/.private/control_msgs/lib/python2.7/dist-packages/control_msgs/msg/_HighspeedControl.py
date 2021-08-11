@@ -9,10 +9,14 @@ import struct
 import std_msgs.msg
 
 class HighspeedControl(genpy.Message):
-  _md5sum = "fac4952cee492c2dbb8a7e1036809584"
+  _md5sum = "091494fefb0d9d1769b9b0a619a55e53"
   _type = "control_msgs/HighspeedControl"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
+
+string control_type
+string control_fsm
+float64 lat_error
 
 uint8 ignition 
 uint8 throttle_active
@@ -23,12 +27,6 @@ float64 XBR
 uint8 steer_active
 float64 steer
 float64 steer_angle_rate
-# for Tli90
-#uint8 steer_active
-#uint8 steer_mode
-#float64 steer
-#float64 steer1
-#uint8 steer_mode1
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -47,8 +45,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','ignition','throttle_active','throttle_precentage','XBR_active','XBR','steer_active','steer','steer_angle_rate']
-  _slot_types = ['std_msgs/Header','uint8','uint8','uint8','uint8','float64','uint8','float64','float64']
+  __slots__ = ['header','control_type','control_fsm','lat_error','ignition','throttle_active','throttle_precentage','XBR_active','XBR','steer_active','steer','steer_angle_rate']
+  _slot_types = ['std_msgs/Header','string','string','float64','uint8','uint8','uint8','uint8','float64','uint8','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -58,7 +56,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,ignition,throttle_active,throttle_precentage,XBR_active,XBR,steer_active,steer,steer_angle_rate
+       header,control_type,control_fsm,lat_error,ignition,throttle_active,throttle_precentage,XBR_active,XBR,steer_active,steer,steer_angle_rate
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -69,6 +67,12 @@ string frame_id
       # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.control_type is None:
+        self.control_type = ''
+      if self.control_fsm is None:
+        self.control_fsm = ''
+      if self.lat_error is None:
+        self.lat_error = 0.
       if self.ignition is None:
         self.ignition = 0
       if self.throttle_active is None:
@@ -87,6 +91,9 @@ string frame_id
         self.steer_angle_rate = 0.
     else:
       self.header = std_msgs.msg.Header()
+      self.control_type = ''
+      self.control_fsm = ''
+      self.lat_error = 0.
       self.ignition = 0
       self.throttle_active = 0
       self.throttle_precentage = 0
@@ -116,8 +123,20 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.control_type
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.control_fsm
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_4BdB2d().pack(_x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate))
+      buff.write(_get_struct_d4BdB2d().pack(_x.lat_error, _x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -144,10 +163,28 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.header.frame_id = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.control_type = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.control_type = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.control_fsm = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.control_fsm = str[start:end]
       _x = self
       start = end
-      end += 29
-      (_x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate,) = _get_struct_4BdB2d().unpack(str[start:end])
+      end += 37
+      (_x.lat_error, _x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate,) = _get_struct_d4BdB2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -168,8 +205,20 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.control_type
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.control_fsm
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_4BdB2d().pack(_x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate))
+      buff.write(_get_struct_d4BdB2d().pack(_x.lat_error, _x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -197,10 +246,28 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.header.frame_id = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.control_type = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.control_type = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.control_fsm = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.control_fsm = str[start:end]
       _x = self
       start = end
-      end += 29
-      (_x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate,) = _get_struct_4BdB2d().unpack(str[start:end])
+      end += 37
+      (_x.lat_error, _x.ignition, _x.throttle_active, _x.throttle_precentage, _x.XBR_active, _x.XBR, _x.steer_active, _x.steer, _x.steer_angle_rate,) = _get_struct_d4BdB2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -215,9 +282,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_4BdB2d = None
-def _get_struct_4BdB2d():
-    global _struct_4BdB2d
-    if _struct_4BdB2d is None:
-        _struct_4BdB2d = struct.Struct("<4BdB2d")
-    return _struct_4BdB2d
+_struct_d4BdB2d = None
+def _get_struct_d4BdB2d():
+    global _struct_d4BdB2d
+    if _struct_d4BdB2d is None:
+        _struct_d4BdB2d = struct.Struct("<d4BdB2d")
+    return _struct_d4BdB2d

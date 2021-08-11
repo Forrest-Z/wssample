@@ -15,4 +15,6 @@
           ERROR
           CURRENT_ANGLE-VAL
           CURRENT_ANGLE
+          DERROR-VAL
+          DERROR
 ))

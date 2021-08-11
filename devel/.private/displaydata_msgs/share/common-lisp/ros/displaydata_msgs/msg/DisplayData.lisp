@@ -15,7 +15,7 @@
    (rtk_state
     :reader rtk_state
     :initarg :rtk_state
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (lat
     :reader lat
@@ -80,17 +80,17 @@
    (current_throttle_percentage
     :reader current_throttle_percentage
     :initarg :current_throttle_percentage
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (current_retarder_torque_percentage
     :reader current_retarder_torque_percentage
     :initarg :current_retarder_torque_percentage
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (current_EPB
     :reader current_EPB
     :initarg :current_EPB
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (current_gear
     :reader current_gear
@@ -100,92 +100,92 @@
    (current_hangangle
     :reader current_hangangle
     :initarg :current_hangangle
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (auto_mode
     :reader auto_mode
     :initarg :auto_mode
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (left_light
     :reader left_light
     :initarg :left_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (right_light
     :reader right_light
     :initarg :right_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (near_light
     :reader near_light
     :initarg :near_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (far_light
     :reader far_light
     :initarg :far_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (air_beep
     :reader air_beep
     :initarg :air_beep
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (top_warning_light
     :reader top_warning_light
     :initarg :top_warning_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (front_fog_light
     :reader front_fog_light
     :initarg :front_fog_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (front_work_light
     :reader front_work_light
     :initarg :front_work_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (side_light
     :reader side_light
     :initarg :side_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (position_light
     :reader position_light
     :initarg :position_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (back_left_light
     :reader back_left_light
     :initarg :back_left_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (back_right_light
     :reader back_right_light
     :initarg :back_right_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (back_position_light
     :reader back_position_light
     :initarg :back_position_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (brake_light
     :reader brake_light
     :initarg :brake_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (reverse_light
     :reader reverse_light
     :initarg :reverse_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (back_work_light
     :reader back_work_light
     :initarg :back_work_light
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (control_steer
     :reader control_steer
@@ -195,7 +195,7 @@
    (control_throttle_percentage
     :reader control_throttle_percentage
     :initarg :control_throttle_percentage
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (control_xbr
     :reader control_xbr
@@ -205,7 +205,7 @@
    (control_EPB
     :reader control_EPB
     :initarg :control_EPB
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (control_gear
     :reader control_gear
@@ -222,75 +222,80 @@
     :initarg :control_fsm_state
     :type cl:integer
     :initform 0)
+   (vehicle_auto_mode
+    :reader vehicle_auto_mode
+    :initarg :vehicle_auto_mode
+    :type cl:integer
+    :initform 0)
    (left
     :reader left
     :initarg :left
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (right
     :reader right
     :initarg :right
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (near
     :reader near
     :initarg :near
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (far
     :reader far
     :initarg :far
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (top_warn
     :reader top_warn
     :initarg :top_warn
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (control_air_beep
     :reader control_air_beep
     :initarg :control_air_beep
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (front_fog
     :reader front_fog
     :initarg :front_fog
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (front_work
     :reader front_work
     :initarg :front_work
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (side
     :reader side
     :initarg :side
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (position
     :reader position
     :initarg :position
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (emergency
     :reader emergency
     :initarg :emergency
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (brake
     :reader brake
     :initarg :brake
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (reverse
     :reader reverse
     :initarg :reverse
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (back_work
     :reader back_work
     :initarg :back_work
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (target_x
     :reader target_x
@@ -305,72 +310,72 @@
    (NumSate
     :reader NumSate
     :initarg :NumSate
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (engine_fault
     :reader engine_fault
     :initarg :engine_fault
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (gear_fault
     :reader gear_fault
     :initarg :gear_fault
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (EBS_fault
     :reader EBS_fault
     :initarg :EBS_fault
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (EPS_fault
     :reader EPS_fault
     :initarg :EPS_fault
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (EPB_fault
     :reader EPB_fault
     :initarg :EPB_fault
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (truck_fault_level
     :reader truck_fault_level
     :initarg :truck_fault_level
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (engine_fault_code
     :reader engine_fault_code
     :initarg :engine_fault_code
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (gear_fault_code
     :reader gear_fault_code
     :initarg :gear_fault_code
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (EPS_fault_code
     :reader EPS_fault_code
     :initarg :EPS_fault_code
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (EBS_fault_code
     :reader EBS_fault_code
     :initarg :EBS_fault_code
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (electric_fault_code
     :reader electric_fault_code
     :initarg :electric_fault_code
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (tyre_pressure_leftfront
     :reader tyre_pressure_leftfront
     :initarg :tyre_pressure_leftfront
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (tyre_pressure_rightfront
     :reader tyre_pressure_rightfront
     :initarg :tyre_pressure_rightfront
-    :type cl:fixnum
+    :type cl:integer
     :initform 0)
    (front_left_temperature
     :reader front_left_temperature
@@ -607,6 +612,11 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:control_fsm_state-val is deprecated.  Use displaydata_msgs-msg:control_fsm_state instead.")
   (control_fsm_state m))
 
+(cl:ensure-generic-function 'vehicle_auto_mode-val :lambda-list '(m))
+(cl:defmethod vehicle_auto_mode-val ((m <DisplayData>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:vehicle_auto_mode-val is deprecated.  Use displaydata_msgs-msg:vehicle_auto_mode instead.")
+  (vehicle_auto_mode m))
+
 (cl:ensure-generic-function 'left-val :lambda-list '(m))
 (cl:defmethod left-val ((m <DisplayData>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader displaydata_msgs-msg:left-val is deprecated.  Use displaydata_msgs-msg:left instead.")
@@ -769,8 +779,11 @@
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <DisplayData>) ostream)
   "Serializes a message object of type '<DisplayData>"
   (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
-  (cl:let* ((signed (cl:slot-value msg 'rtk_state)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'rtk_state)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
     )
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'lat))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
@@ -880,37 +893,138 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let* ((signed (cl:slot-value msg 'current_throttle_percentage)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'current_throttle_percentage)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
     )
-  (cl:let* ((signed (cl:slot-value msg 'current_retarder_torque_percentage)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'current_retarder_torque_percentage)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
     )
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'current_EPB)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'current_EPB)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
   (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'current_gear))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
   (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'current_gear))
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'current_hangangle)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'auto_mode)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'left_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'right_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'near_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'far_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'air_beep)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'top_warning_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_fog_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_work_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'side_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'position_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_left_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_right_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_position_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'brake_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'reverse_light)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_work_light)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'current_hangangle)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'auto_mode)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'left_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'right_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'near_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'far_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'air_beep)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'top_warning_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'front_fog_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'front_work_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'side_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'position_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'back_left_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'back_right_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'back_position_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'brake_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'reverse_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'back_work_light)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'control_steer))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
@@ -920,7 +1034,12 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_throttle_percentage)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'control_throttle_percentage)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'control_xbr))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
@@ -930,7 +1049,12 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_EPB)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'control_EPB)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
   (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'control_gear))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
@@ -949,20 +1073,96 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
     )
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'left)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'right)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'near)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'far)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'top_warn)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_air_beep)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_fog)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_work)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'side)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'position)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'emergency)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'brake)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'reverse)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_work)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'vehicle_auto_mode)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'left)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'right)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'near)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'far)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'top_warn)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'control_air_beep)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'front_fog)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'front_work)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'side)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'position)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'emergency)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'brake)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'reverse)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'back_work)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'target_x))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
@@ -981,22 +1181,90 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'NumSate)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'engine_fault)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'gear_fault)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EBS_fault)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EPS_fault)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EPB_fault)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'truck_fault_level)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'engine_fault_code)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'gear_fault_code)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EPS_fault_code)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EBS_fault_code)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'electric_fault_code)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'tyre_pressure_leftfront)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'tyre_pressure_leftfront)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'tyre_pressure_rightfront)) ostream)
-  (cl:write-byte (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'tyre_pressure_rightfront)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'NumSate)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'engine_fault)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'gear_fault)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'EBS_fault)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'EPS_fault)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'EPB_fault)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'truck_fault_level)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'engine_fault_code)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'gear_fault_code)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'EPS_fault_code)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'EBS_fault_code)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'electric_fault_code)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'tyre_pressure_leftfront)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
+  (cl:let* ((signed (cl:slot-value msg 'tyre_pressure_rightfront)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    )
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'front_left_temperature))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
@@ -1021,7 +1289,10 @@
   (roslisp-msg-protocol:deserialize (cl:slot-value msg 'header) istream)
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'rtk_state) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'rtk_state) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -1144,11 +1415,22 @@
     (cl:setf (cl:slot-value msg 'current_brake_pedal_pos) (roslisp-utils:decode-double-float-bits bits)))
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'current_throttle_percentage) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'current_throttle_percentage) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'current_retarder_torque_percentage) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'current_EPB)) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'current_retarder_torque_percentage) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'current_EPB) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((__ros_str_len 0))
       (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
@@ -1157,24 +1439,114 @@
       (cl:setf (cl:slot-value msg 'current_gear) (cl:make-string __ros_str_len))
       (cl:dotimes (__ros_str_idx __ros_str_len msg)
         (cl:setf (cl:char (cl:slot-value msg 'current_gear) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'current_hangangle)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'auto_mode)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'left_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'right_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'near_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'far_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'air_beep)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'top_warning_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_fog_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_work_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'side_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'position_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_left_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_right_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_position_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'brake_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'reverse_light)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_work_light)) (cl:read-byte istream))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'current_hangangle) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'auto_mode) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'left_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'right_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'near_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'far_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'air_beep) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'top_warning_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'front_fog_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'front_work_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'side_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'position_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'back_left_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'back_right_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'back_position_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'brake_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'reverse_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'back_work_light) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -1185,7 +1557,12 @@
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'control_steer) (roslisp-utils:decode-double-float-bits bits)))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_throttle_percentage)) (cl:read-byte istream))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'control_throttle_percentage) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -1196,7 +1573,12 @@
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'control_xbr) (roslisp-utils:decode-double-float-bits bits)))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_EPB)) (cl:read-byte istream))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'control_EPB) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((__ros_str_len 0))
       (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
@@ -1219,20 +1601,96 @@
       (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
       (cl:setf (cl:slot-value msg 'control_fsm_state) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'left)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'right)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'near)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'far)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'top_warn)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'control_air_beep)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_fog)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'front_work)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'side)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'position)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'emergency)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'brake)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'reverse)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'back_work)) (cl:read-byte istream))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'vehicle_auto_mode) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'left) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'right) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'near) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'far) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'top_warn) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'control_air_beep) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'front_fog) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'front_work) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'side) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'position) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'emergency) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'brake) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'reverse) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'back_work) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -1253,22 +1711,90 @@
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'target_y) (roslisp-utils:decode-double-float-bits bits)))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'NumSate)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'engine_fault)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'gear_fault)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EBS_fault)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EPS_fault)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EPB_fault)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'truck_fault_level)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'engine_fault_code)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'gear_fault_code)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EPS_fault_code)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'EBS_fault_code)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'electric_fault_code)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'tyre_pressure_leftfront)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'tyre_pressure_leftfront)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'tyre_pressure_rightfront)) (cl:read-byte istream))
-    (cl:setf (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'tyre_pressure_rightfront)) (cl:read-byte istream))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'NumSate) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'engine_fault) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'gear_fault) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'EBS_fault) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'EPS_fault) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'EPB_fault) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'truck_fault_level) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'engine_fault_code) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'gear_fault_code) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'EPS_fault_code) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'EBS_fault_code) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'electric_fault_code) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'tyre_pressure_leftfront) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'tyre_pressure_rightfront) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -1299,20 +1825,20 @@
   "displaydata_msgs/DisplayData")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<DisplayData>)))
   "Returns md5sum for a message object of type '<DisplayData>"
-  "1c2c24deeb8f7c8fd48a595b62f1ae73")
+  "46adc89bdab4634e8fe445e04537579f")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'DisplayData)))
   "Returns md5sum for a message object of type 'DisplayData"
-  "1c2c24deeb8f7c8fd48a595b62f1ae73")
+  "46adc89bdab4634e8fe445e04537579f")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<DisplayData>)))
   "Returns full string definition for message of type '<DisplayData>"
-  (cl:format cl:nil "Header header~%~%# RTK~%int8 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int8 current_throttle_percentage~%int8 current_retarder_torque_percentage~%uint8 current_EPB~%string current_gear~%uint8 current_hangangle~%uint8 auto_mode~%uint8 left_light~%uint8 right_light~%uint8 near_light~%uint8 far_light~%uint8 air_beep~%uint8 top_warning_light~%uint8 front_fog_light~%uint8 front_work_light~%uint8 side_light~%uint8 position_light~%uint8 back_left_light~%uint8 back_right_light~%uint8 back_position_light~%uint8 brake_light~%uint8 reverse_light~%uint8 back_work_light~%~%# Tli65 control parameters control_msgs~%float64 control_steer~%uint8 control_throttle_percentage~%float64 control_xbr~%uint8 control_EPB~%string control_gear~%string control_hang~%int32 control_fsm_state~%uint8 left~%uint8 right~%uint8 near~%uint8 far~%uint8 top_warn~%uint8 control_air_beep~%uint8 front_fog~%uint8 front_work~%uint8 side~%uint8 position~%uint8 emergency~%uint8 brake~%uint8 reverse~%uint8 back_work~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%uint8 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%uint8 engine_fault~%uint8 gear_fault~%uint8 EBS_fault~%uint8 EPS_fault~%uint8 EPB_fault~%~%# ft2~%uint8 truck_fault_level~%uint8 engine_fault_code~%uint8 gear_fault_code~%~%# ft3~%uint8 EPS_fault_code~%uint8 EBS_fault_code~%uint8 electric_fault_code~%~%# tyre~%uint16 tyre_pressure_leftfront~%uint16 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%~%# RTK~%int32 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int32 current_throttle_percentage~%int32 current_retarder_torque_percentage~%int32 current_EPB~%string current_gear~%int32 current_hangangle~%int32 auto_mode~%int32 left_light~%int32 right_light~%int32 near_light~%int32 far_light~%int32 air_beep~%int32 top_warning_light~%int32 front_fog_light~%int32 front_work_light~%int32 side_light~%int32 position_light~%int32 back_left_light~%int32 back_right_light~%int32 back_position_light~%int32 brake_light~%int32 reverse_light~%int32 back_work_light~%~%# Tli65 vehicle parameters can_rx~%float64 control_steer~%int32 control_throttle_percentage~%float64 control_xbr~%int32 control_EPB~%string control_gear~%string control_hang~%int32 control_fsm_state~%int32 vehicle_auto_mode~%int32 left~%int32 right~%int32 near~%int32 far~%int32 top_warn~%int32 control_air_beep~%int32 front_fog~%int32 front_work~%int32 side~%int32 position~%int32 emergency~%int32 brake~%int32 reverse~%int32 back_work~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%int32 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%int32 engine_fault~%int32 gear_fault~%int32 EBS_fault~%int32 EPS_fault~%int32 EPB_fault~%~%# ft2~%int32 truck_fault_level~%int32 engine_fault_code~%int32 gear_fault_code~%~%# ft3~%int32 EPS_fault_code~%int32 EBS_fault_code~%int32 electric_fault_code~%~%# tyre~%int32 tyre_pressure_leftfront~%int32 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'DisplayData)))
   "Returns full string definition for message of type 'DisplayData"
-  (cl:format cl:nil "Header header~%~%# RTK~%int8 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int8 current_throttle_percentage~%int8 current_retarder_torque_percentage~%uint8 current_EPB~%string current_gear~%uint8 current_hangangle~%uint8 auto_mode~%uint8 left_light~%uint8 right_light~%uint8 near_light~%uint8 far_light~%uint8 air_beep~%uint8 top_warning_light~%uint8 front_fog_light~%uint8 front_work_light~%uint8 side_light~%uint8 position_light~%uint8 back_left_light~%uint8 back_right_light~%uint8 back_position_light~%uint8 brake_light~%uint8 reverse_light~%uint8 back_work_light~%~%# Tli65 control parameters control_msgs~%float64 control_steer~%uint8 control_throttle_percentage~%float64 control_xbr~%uint8 control_EPB~%string control_gear~%string control_hang~%int32 control_fsm_state~%uint8 left~%uint8 right~%uint8 near~%uint8 far~%uint8 top_warn~%uint8 control_air_beep~%uint8 front_fog~%uint8 front_work~%uint8 side~%uint8 position~%uint8 emergency~%uint8 brake~%uint8 reverse~%uint8 back_work~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%uint8 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%uint8 engine_fault~%uint8 gear_fault~%uint8 EBS_fault~%uint8 EPS_fault~%uint8 EPB_fault~%~%# ft2~%uint8 truck_fault_level~%uint8 engine_fault_code~%uint8 gear_fault_code~%~%# ft3~%uint8 EPS_fault_code~%uint8 EBS_fault_code~%uint8 electric_fault_code~%~%# tyre~%uint16 tyre_pressure_leftfront~%uint16 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%~%# RTK~%int32 rtk_state ~%# -1 : no gnss~%# 0 : 2D or 3D gnss fix~%# 1 : SBAS or Starfire gnss fix~%# 2 : Diff or rtk fix~%~%# wgs84~%float64 lat~%float64 lng~%float64 alt~%float64 latlng_std~%~%# enu coord~%float64 x_enu~%float64 y_enu~%float64 z_enu~%float64 xy_std_enu~%~%# kalman speed~%float64 speed~%~%#GPS HEADING ~%float64 headingangle~%~%# Tli65 vehicle parameters can_rx~%float64 current_steer~%float64 current_brake_pedal_pos~%int32 current_throttle_percentage~%int32 current_retarder_torque_percentage~%int32 current_EPB~%string current_gear~%int32 current_hangangle~%int32 auto_mode~%int32 left_light~%int32 right_light~%int32 near_light~%int32 far_light~%int32 air_beep~%int32 top_warning_light~%int32 front_fog_light~%int32 front_work_light~%int32 side_light~%int32 position_light~%int32 back_left_light~%int32 back_right_light~%int32 back_position_light~%int32 brake_light~%int32 reverse_light~%int32 back_work_light~%~%# Tli65 vehicle parameters can_rx~%float64 control_steer~%int32 control_throttle_percentage~%float64 control_xbr~%int32 control_EPB~%string control_gear~%string control_hang~%int32 control_fsm_state~%int32 vehicle_auto_mode~%int32 left~%int32 right~%int32 near~%int32 far~%int32 top_warn~%int32 control_air_beep~%int32 front_fog~%int32 front_work~%int32 side~%int32 position~%int32 emergency~%int32 brake~%int32 reverse~%int32 back_work~%~%# waypoints planning ~%float64 target_x~%float64 target_y~%~%# number of satellite~%int32 NumSate~%~%# VEHICLE Fault Information ~%# ft1~%int32 engine_fault~%int32 gear_fault~%int32 EBS_fault~%int32 EPS_fault~%int32 EPB_fault~%~%# ft2~%int32 truck_fault_level~%int32 engine_fault_code~%int32 gear_fault_code~%~%# ft3~%int32 EPS_fault_code~%int32 EBS_fault_code~%int32 electric_fault_code~%~%# tyre~%int32 tyre_pressure_leftfront~%int32 tyre_pressure_rightfront~%float64 front_left_temperature~%float64 front_right_temperature~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <DisplayData>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
-     1
+     4
      8
      8
      8
@@ -1325,65 +1851,66 @@
      8
      8
      8
-     1
-     1
-     1
+     4
+     4
+     4
      4 (cl:length (cl:slot-value msg 'current_gear))
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
      8
-     1
+     4
      8
-     1
+     4
      4 (cl:length (cl:slot-value msg 'control_gear))
      4 (cl:length (cl:slot-value msg 'control_hang))
      4
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
      8
      8
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     1
-     2
-     2
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
      8
      8
 ))
@@ -1433,6 +1960,7 @@
     (cl:cons ':control_gear (control_gear msg))
     (cl:cons ':control_hang (control_hang msg))
     (cl:cons ':control_fsm_state (control_fsm_state msg))
+    (cl:cons ':vehicle_auto_mode (vehicle_auto_mode msg))
     (cl:cons ':left (left msg))
     (cl:cons ':right (right msg))
     (cl:cons ':near (near msg))

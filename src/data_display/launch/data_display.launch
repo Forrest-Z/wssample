@@ -15,7 +15,7 @@
 			<param name="control_lowspeed_topic" value="/zone3/control/lowspeed_command" />
 			<param name="pose_topic" value="/zone3/localization/pose" />
 			<!-- pub -->
-			<param name="display_topic" value="/zone3/data_display/data_display" />
+			<param name="display_topic" value="/zone3/data_display" />
 		</node>
 	</group>
 </launch>

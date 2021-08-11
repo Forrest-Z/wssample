@@ -85,6 +85,8 @@
           CONTROL_HANG
           CONTROL_FSM_STATE-VAL
           CONTROL_FSM_STATE
+          VEHICLE_AUTO_MODE-VAL
+          VEHICLE_AUTO_MODE
           LEFT-VAL
           LEFT
           RIGHT-VAL

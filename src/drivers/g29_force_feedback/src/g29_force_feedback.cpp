@@ -76,7 +76,7 @@ G29ForceFeedback::G29ForceFeedback()
 
     initFfDevice();
 
-    ros::Duration(1).sleep();
+    ros::Duration(0.03).sleep();
     timer = n.createTimer(ros::Duration(m_pub_rate),
                           &G29ForceFeedback::timerCallback, this);
 }
@@ -106,6 +106,7 @@ void G29ForceFeedback::updateFfDevice() {
     diff = m_target_angle - m_current_angle;
     diff_i += diff;
     diff_d = diff - buf;
+    g29_pid_tune.derror = diff_d;
 
     if (m_pid_mode) {
         pforce = m_Kp * diff;

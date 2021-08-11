@@ -26,6 +26,9 @@ struct HighspeedControl_
 
   HighspeedControl_()
     : header()
+    , control_type()
+    , control_fsm()
+    , lat_error(0.0)
     , ignition(0)
     , throttle_active(0)
     , throttle_precentage(0)
@@ -37,6 +40,9 @@ struct HighspeedControl_
     }
   HighspeedControl_(const ContainerAllocator& _alloc)
     : header(_alloc)
+    , control_type(_alloc)
+    , control_fsm(_alloc)
+    , lat_error(0.0)
     , ignition(0)
     , throttle_active(0)
     , throttle_precentage(0)
@@ -52,6 +58,15 @@ struct HighspeedControl_
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _control_type_type;
+  _control_type_type control_type;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _control_fsm_type;
+  _control_fsm_type control_fsm;
+
+   typedef double _lat_error_type;
+  _lat_error_type lat_error;
 
    typedef uint8_t _ignition_type;
   _ignition_type ignition;
@@ -155,12 +170,12 @@ struct MD5Sum< ::control_msgs::HighspeedControl_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "fac4952cee492c2dbb8a7e1036809584";
+    return "091494fefb0d9d1769b9b0a619a55e53";
   }
 
   static const char* value(const ::control_msgs::HighspeedControl_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xfac4952cee492c2dULL;
-  static const uint64_t static_value2 = 0xbb8a7e1036809584ULL;
+  static const uint64_t static_value1 = 0x091494fefb0d9d17ULL;
+  static const uint64_t static_value2 = 0x69b9b0a619a55e53ULL;
 };
 
 template<class ContainerAllocator>
@@ -181,6 +196,10 @@ struct Definition< ::control_msgs::HighspeedControl_<ContainerAllocator> >
   {
     return "Header header\n\
 \n\
+string control_type\n\
+string control_fsm\n\
+float64 lat_error\n\
+\n\
 uint8 ignition \n\
 uint8 throttle_active\n\
 uint8 throttle_precentage\n\
@@ -190,12 +209,6 @@ float64 XBR\n\
 uint8 steer_active\n\
 float64 steer\n\
 float64 steer_angle_rate\n\
-# for Tli90\n\
-#uint8 steer_active\n\
-#uint8 steer_mode\n\
-#float64 steer\n\
-#float64 steer1\n\
-#uint8 steer_mode1\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
 # Standard metadata for higher-level stamped data types.\n\
@@ -232,6 +245,9 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
+      stream.next(m.control_type);
+      stream.next(m.control_fsm);
+      stream.next(m.lat_error);
       stream.next(m.ignition);
       stream.next(m.throttle_active);
       stream.next(m.throttle_precentage);
@@ -261,6 +277,12 @@ struct Printer< ::control_msgs::HighspeedControl_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
+    s << indent << "control_type: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_type);
+    s << indent << "control_fsm: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_fsm);
+    s << indent << "lat_error: ";
+    Printer<double>::stream(s, indent + "  ", v.lat_error);
     s << indent << "ignition: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.ignition);
     s << indent << "throttle_active: ";

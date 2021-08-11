@@ -51,4 +51,4 @@ collect different node information and pub to frontend display.
 
 **Output Topics**
 
-1. /zone3/data_display/data_display
+1. /zone3/data_display

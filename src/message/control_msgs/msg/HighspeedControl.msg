@@ -1,5 +1,9 @@
 Header header
 
+string control_type
+string control_fsm
+float64 lat_error
+
 uint8 ignition 
 uint8 throttle_active
 uint8 throttle_precentage
@@ -9,9 +13,3 @@ float64 XBR
 uint8 steer_active
 float64 steer
 float64 steer_angle_rate
-# for Tli90
-#uint8 steer_active
-#uint8 steer_mode
-#float64 steer
-#float64 steer1
-#uint8 steer_mode1

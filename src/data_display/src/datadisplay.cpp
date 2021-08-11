@@ -65,11 +65,12 @@ void DataDisplay::ProcKalman(const kalman_msgs::Kinematics &msg) {
 
 void DataDisplay::ProcStHighspeed(const tli65_can_msgs::RxStHighspeed &msg) {
     global_data.current_steer = msg.steer_angle;
-    global_data.current_throttle_percentage = msg.actual_throttle_pedal_pos;
+    global_data.current_throttle_percentage = msg.throttle_pedal_pos;
     global_data.current_brake_pedal_pos = msg.brake_pedal_pos;
-    global_data.current_retarder_torque_percentage =msg.retarder_torque_percentage;
+    global_data.current_retarder_torque_percentage =
+        msg.retarder_torque_percentage;
     switch (msg.gear) {
-        case -1:
+    case -1:
         global_data.control_gear = "Return";
         break;
     case 0:
@@ -96,7 +97,6 @@ void DataDisplay::ProcStHighspeed(const tli65_can_msgs::RxStHighspeed &msg) {
     default:
         break;
     }
-    
 }
 
 void DataDisplay::ProcStLowspeed(const tli65_can_msgs::RxStLowspeed &msg) {
@@ -172,13 +172,13 @@ void DataDisplay::ProcControlLowspeed(
     global_data.control_EPB = msg.EPB;
     switch (msg.gear) {
     case 0x44:
-        global_data.current_gear = "Drive";
+        global_data.control_gear = "Drive";
         break;
     case 0x52:
-        global_data.current_gear = "Return";
+        global_data.control_gear = "Return";
         break;
     case 0x4e:
-        global_data.current_gear = "Null";
+        global_data.control_gear = "Null";
         break;
     default:
         break;
@@ -211,7 +211,6 @@ void DataDisplay::ProcControlLowspeed(
     global_data.brake = msg.brake;
     global_data.reverse = msg.reverse;
     global_data.back_work = msg.back_work;
-
 }
 
 void DataDisplay::ProcControlFsm(const control_msgs::ControlFSM &msg) {

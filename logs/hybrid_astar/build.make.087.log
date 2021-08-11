@@ -1,0 +1,4 @@
+[ 34%] Built target tst_lookup
+[ 50%] Built target HYAS
+[ 93%] Built target hybrid_astar
+[100%] Built target tf_broadcaster

@@ -27,6 +27,7 @@ class TuneForceFeedback {
       this.dforce = null;
       this.error = null;
       this.current_angle = null;
+      this.derror = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -77,6 +78,12 @@ class TuneForceFeedback {
       else {
         this.current_angle = 0.0;
       }
+      if (initObj.hasOwnProperty('derror')) {
+        this.derror = initObj.derror
+      }
+      else {
+        this.derror = 0.0;
+      }
     }
   }
 
@@ -98,6 +105,8 @@ class TuneForceFeedback {
     bufferOffset = _serializer.float64(obj.error, buffer, bufferOffset);
     // Serialize message field [current_angle]
     bufferOffset = _serializer.float64(obj.current_angle, buffer, bufferOffset);
+    // Serialize message field [derror]
+    bufferOffset = _serializer.float64(obj.derror, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -121,13 +130,15 @@ class TuneForceFeedback {
     data.error = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [current_angle]
     data.current_angle = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [derror]
+    data.derror = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 56;
+    return length + 64;
   }
 
   static datatype() {
@@ -137,7 +148,7 @@ class TuneForceFeedback {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '75d82f66d771fc3961daa29af4f7949f';
+    return '73b36ed61cebe17e58dd228f2395a9f7';
   }
 
   static messageDefinition() {
@@ -151,6 +162,7 @@ class TuneForceFeedback {
     float64 dforce
     float64 error
     float64 current_angle
+    float64 derror
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -232,6 +244,13 @@ class TuneForceFeedback {
     }
     else {
       resolved.current_angle = 0.0
+    }
+
+    if (msg.derror !== undefined) {
+      resolved.derror = msg.derror;
+    }
+    else {
+      resolved.derror = 0.0
     }
 
     return resolved;

@@ -32,7 +32,8 @@ struct TuneForceFeedback_
     , iforce(0.0)
     , dforce(0.0)
     , error(0.0)
-    , current_angle(0.0)  {
+    , current_angle(0.0)
+    , derror(0.0)  {
     }
   TuneForceFeedback_(const ContainerAllocator& _alloc)
     : header(_alloc)
@@ -42,7 +43,8 @@ struct TuneForceFeedback_
     , iforce(0.0)
     , dforce(0.0)
     , error(0.0)
-    , current_angle(0.0)  {
+    , current_angle(0.0)
+    , derror(0.0)  {
   (void)_alloc;
     }
 
@@ -71,6 +73,9 @@ struct TuneForceFeedback_
 
    typedef double _current_angle_type;
   _current_angle_type current_angle;
+
+   typedef double _derror_type;
+  _derror_type derror;
 
 
 
@@ -150,12 +155,12 @@ struct MD5Sum< ::g29_force_feedback::TuneForceFeedback_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "75d82f66d771fc3961daa29af4f7949f";
+    return "73b36ed61cebe17e58dd228f2395a9f7";
   }
 
   static const char* value(const ::g29_force_feedback::TuneForceFeedback_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x75d82f66d771fc39ULL;
-  static const uint64_t static_value2 = 0x61daa29af4f7949fULL;
+  static const uint64_t static_value1 = 0x73b36ed61cebe17eULL;
+  static const uint64_t static_value2 = 0x58dd228f2395a9f7ULL;
 };
 
 template<class ContainerAllocator>
@@ -182,6 +187,7 @@ float64 iforce\n\
 float64 dforce\n\
 float64 error\n\
 float64 current_angle\n\
+float64 derror\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
 # Standard metadata for higher-level stamped data types.\n\
@@ -225,6 +231,7 @@ namespace serialization
       stream.next(m.dforce);
       stream.next(m.error);
       stream.next(m.current_angle);
+      stream.next(m.derror);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -260,6 +267,8 @@ struct Printer< ::g29_force_feedback::TuneForceFeedback_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.error);
     s << indent << "current_angle: ";
     Printer<double>::stream(s, indent + "  ", v.current_angle);
+    s << indent << "derror: ";
+    Printer<double>::stream(s, indent + "  ", v.derror);
   }
 };
 

@@ -62,6 +62,7 @@ class DisplayData {
       this.control_gear = null;
       this.control_hang = null;
       this.control_fsm_state = null;
+      this.vehicle_auto_mode = null;
       this.left = null;
       this.right = null;
       this.near = null;
@@ -354,6 +355,12 @@ class DisplayData {
       else {
         this.control_fsm_state = 0;
       }
+      if (initObj.hasOwnProperty('vehicle_auto_mode')) {
+        this.vehicle_auto_mode = initObj.vehicle_auto_mode
+      }
+      else {
+        this.vehicle_auto_mode = 0;
+      }
       if (initObj.hasOwnProperty('left')) {
         this.left = initObj.left
       }
@@ -554,7 +561,7 @@ class DisplayData {
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
     // Serialize message field [rtk_state]
-    bufferOffset = _serializer.int8(obj.rtk_state, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.rtk_state, buffer, bufferOffset);
     // Serialize message field [lat]
     bufferOffset = _serializer.float64(obj.lat, buffer, bufferOffset);
     // Serialize message field [lng]
@@ -580,123 +587,125 @@ class DisplayData {
     // Serialize message field [current_brake_pedal_pos]
     bufferOffset = _serializer.float64(obj.current_brake_pedal_pos, buffer, bufferOffset);
     // Serialize message field [current_throttle_percentage]
-    bufferOffset = _serializer.int8(obj.current_throttle_percentage, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.current_throttle_percentage, buffer, bufferOffset);
     // Serialize message field [current_retarder_torque_percentage]
-    bufferOffset = _serializer.int8(obj.current_retarder_torque_percentage, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.current_retarder_torque_percentage, buffer, bufferOffset);
     // Serialize message field [current_EPB]
-    bufferOffset = _serializer.uint8(obj.current_EPB, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.current_EPB, buffer, bufferOffset);
     // Serialize message field [current_gear]
     bufferOffset = _serializer.string(obj.current_gear, buffer, bufferOffset);
     // Serialize message field [current_hangangle]
-    bufferOffset = _serializer.uint8(obj.current_hangangle, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.current_hangangle, buffer, bufferOffset);
     // Serialize message field [auto_mode]
-    bufferOffset = _serializer.uint8(obj.auto_mode, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.auto_mode, buffer, bufferOffset);
     // Serialize message field [left_light]
-    bufferOffset = _serializer.uint8(obj.left_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.left_light, buffer, bufferOffset);
     // Serialize message field [right_light]
-    bufferOffset = _serializer.uint8(obj.right_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.right_light, buffer, bufferOffset);
     // Serialize message field [near_light]
-    bufferOffset = _serializer.uint8(obj.near_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.near_light, buffer, bufferOffset);
     // Serialize message field [far_light]
-    bufferOffset = _serializer.uint8(obj.far_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.far_light, buffer, bufferOffset);
     // Serialize message field [air_beep]
-    bufferOffset = _serializer.uint8(obj.air_beep, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.air_beep, buffer, bufferOffset);
     // Serialize message field [top_warning_light]
-    bufferOffset = _serializer.uint8(obj.top_warning_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.top_warning_light, buffer, bufferOffset);
     // Serialize message field [front_fog_light]
-    bufferOffset = _serializer.uint8(obj.front_fog_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.front_fog_light, buffer, bufferOffset);
     // Serialize message field [front_work_light]
-    bufferOffset = _serializer.uint8(obj.front_work_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.front_work_light, buffer, bufferOffset);
     // Serialize message field [side_light]
-    bufferOffset = _serializer.uint8(obj.side_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.side_light, buffer, bufferOffset);
     // Serialize message field [position_light]
-    bufferOffset = _serializer.uint8(obj.position_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.position_light, buffer, bufferOffset);
     // Serialize message field [back_left_light]
-    bufferOffset = _serializer.uint8(obj.back_left_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.back_left_light, buffer, bufferOffset);
     // Serialize message field [back_right_light]
-    bufferOffset = _serializer.uint8(obj.back_right_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.back_right_light, buffer, bufferOffset);
     // Serialize message field [back_position_light]
-    bufferOffset = _serializer.uint8(obj.back_position_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.back_position_light, buffer, bufferOffset);
     // Serialize message field [brake_light]
-    bufferOffset = _serializer.uint8(obj.brake_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.brake_light, buffer, bufferOffset);
     // Serialize message field [reverse_light]
-    bufferOffset = _serializer.uint8(obj.reverse_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.reverse_light, buffer, bufferOffset);
     // Serialize message field [back_work_light]
-    bufferOffset = _serializer.uint8(obj.back_work_light, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.back_work_light, buffer, bufferOffset);
     // Serialize message field [control_steer]
     bufferOffset = _serializer.float64(obj.control_steer, buffer, bufferOffset);
     // Serialize message field [control_throttle_percentage]
-    bufferOffset = _serializer.uint8(obj.control_throttle_percentage, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.control_throttle_percentage, buffer, bufferOffset);
     // Serialize message field [control_xbr]
     bufferOffset = _serializer.float64(obj.control_xbr, buffer, bufferOffset);
     // Serialize message field [control_EPB]
-    bufferOffset = _serializer.uint8(obj.control_EPB, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.control_EPB, buffer, bufferOffset);
     // Serialize message field [control_gear]
     bufferOffset = _serializer.string(obj.control_gear, buffer, bufferOffset);
     // Serialize message field [control_hang]
     bufferOffset = _serializer.string(obj.control_hang, buffer, bufferOffset);
     // Serialize message field [control_fsm_state]
     bufferOffset = _serializer.int32(obj.control_fsm_state, buffer, bufferOffset);
+    // Serialize message field [vehicle_auto_mode]
+    bufferOffset = _serializer.int32(obj.vehicle_auto_mode, buffer, bufferOffset);
     // Serialize message field [left]
-    bufferOffset = _serializer.uint8(obj.left, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.left, buffer, bufferOffset);
     // Serialize message field [right]
-    bufferOffset = _serializer.uint8(obj.right, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.right, buffer, bufferOffset);
     // Serialize message field [near]
-    bufferOffset = _serializer.uint8(obj.near, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.near, buffer, bufferOffset);
     // Serialize message field [far]
-    bufferOffset = _serializer.uint8(obj.far, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.far, buffer, bufferOffset);
     // Serialize message field [top_warn]
-    bufferOffset = _serializer.uint8(obj.top_warn, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.top_warn, buffer, bufferOffset);
     // Serialize message field [control_air_beep]
-    bufferOffset = _serializer.uint8(obj.control_air_beep, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.control_air_beep, buffer, bufferOffset);
     // Serialize message field [front_fog]
-    bufferOffset = _serializer.uint8(obj.front_fog, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.front_fog, buffer, bufferOffset);
     // Serialize message field [front_work]
-    bufferOffset = _serializer.uint8(obj.front_work, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.front_work, buffer, bufferOffset);
     // Serialize message field [side]
-    bufferOffset = _serializer.uint8(obj.side, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.side, buffer, bufferOffset);
     // Serialize message field [position]
-    bufferOffset = _serializer.uint8(obj.position, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.position, buffer, bufferOffset);
     // Serialize message field [emergency]
-    bufferOffset = _serializer.uint8(obj.emergency, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.emergency, buffer, bufferOffset);
     // Serialize message field [brake]
-    bufferOffset = _serializer.uint8(obj.brake, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.brake, buffer, bufferOffset);
     // Serialize message field [reverse]
-    bufferOffset = _serializer.uint8(obj.reverse, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.reverse, buffer, bufferOffset);
     // Serialize message field [back_work]
-    bufferOffset = _serializer.uint8(obj.back_work, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.back_work, buffer, bufferOffset);
     // Serialize message field [target_x]
     bufferOffset = _serializer.float64(obj.target_x, buffer, bufferOffset);
     // Serialize message field [target_y]
     bufferOffset = _serializer.float64(obj.target_y, buffer, bufferOffset);
     // Serialize message field [NumSate]
-    bufferOffset = _serializer.uint8(obj.NumSate, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.NumSate, buffer, bufferOffset);
     // Serialize message field [engine_fault]
-    bufferOffset = _serializer.uint8(obj.engine_fault, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.engine_fault, buffer, bufferOffset);
     // Serialize message field [gear_fault]
-    bufferOffset = _serializer.uint8(obj.gear_fault, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.gear_fault, buffer, bufferOffset);
     // Serialize message field [EBS_fault]
-    bufferOffset = _serializer.uint8(obj.EBS_fault, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.EBS_fault, buffer, bufferOffset);
     // Serialize message field [EPS_fault]
-    bufferOffset = _serializer.uint8(obj.EPS_fault, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.EPS_fault, buffer, bufferOffset);
     // Serialize message field [EPB_fault]
-    bufferOffset = _serializer.uint8(obj.EPB_fault, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.EPB_fault, buffer, bufferOffset);
     // Serialize message field [truck_fault_level]
-    bufferOffset = _serializer.uint8(obj.truck_fault_level, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.truck_fault_level, buffer, bufferOffset);
     // Serialize message field [engine_fault_code]
-    bufferOffset = _serializer.uint8(obj.engine_fault_code, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.engine_fault_code, buffer, bufferOffset);
     // Serialize message field [gear_fault_code]
-    bufferOffset = _serializer.uint8(obj.gear_fault_code, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.gear_fault_code, buffer, bufferOffset);
     // Serialize message field [EPS_fault_code]
-    bufferOffset = _serializer.uint8(obj.EPS_fault_code, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.EPS_fault_code, buffer, bufferOffset);
     // Serialize message field [EBS_fault_code]
-    bufferOffset = _serializer.uint8(obj.EBS_fault_code, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.EBS_fault_code, buffer, bufferOffset);
     // Serialize message field [electric_fault_code]
-    bufferOffset = _serializer.uint8(obj.electric_fault_code, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.electric_fault_code, buffer, bufferOffset);
     // Serialize message field [tyre_pressure_leftfront]
-    bufferOffset = _serializer.uint16(obj.tyre_pressure_leftfront, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.tyre_pressure_leftfront, buffer, bufferOffset);
     // Serialize message field [tyre_pressure_rightfront]
-    bufferOffset = _serializer.uint16(obj.tyre_pressure_rightfront, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.tyre_pressure_rightfront, buffer, bufferOffset);
     // Serialize message field [front_left_temperature]
     bufferOffset = _serializer.float64(obj.front_left_temperature, buffer, bufferOffset);
     // Serialize message field [front_right_temperature]
@@ -711,7 +720,7 @@ class DisplayData {
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
     // Deserialize message field [rtk_state]
-    data.rtk_state = _deserializer.int8(buffer, bufferOffset);
+    data.rtk_state = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [lat]
     data.lat = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [lng]
@@ -737,123 +746,125 @@ class DisplayData {
     // Deserialize message field [current_brake_pedal_pos]
     data.current_brake_pedal_pos = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [current_throttle_percentage]
-    data.current_throttle_percentage = _deserializer.int8(buffer, bufferOffset);
+    data.current_throttle_percentage = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [current_retarder_torque_percentage]
-    data.current_retarder_torque_percentage = _deserializer.int8(buffer, bufferOffset);
+    data.current_retarder_torque_percentage = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [current_EPB]
-    data.current_EPB = _deserializer.uint8(buffer, bufferOffset);
+    data.current_EPB = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [current_gear]
     data.current_gear = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [current_hangangle]
-    data.current_hangangle = _deserializer.uint8(buffer, bufferOffset);
+    data.current_hangangle = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [auto_mode]
-    data.auto_mode = _deserializer.uint8(buffer, bufferOffset);
+    data.auto_mode = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [left_light]
-    data.left_light = _deserializer.uint8(buffer, bufferOffset);
+    data.left_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [right_light]
-    data.right_light = _deserializer.uint8(buffer, bufferOffset);
+    data.right_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [near_light]
-    data.near_light = _deserializer.uint8(buffer, bufferOffset);
+    data.near_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [far_light]
-    data.far_light = _deserializer.uint8(buffer, bufferOffset);
+    data.far_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [air_beep]
-    data.air_beep = _deserializer.uint8(buffer, bufferOffset);
+    data.air_beep = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [top_warning_light]
-    data.top_warning_light = _deserializer.uint8(buffer, bufferOffset);
+    data.top_warning_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [front_fog_light]
-    data.front_fog_light = _deserializer.uint8(buffer, bufferOffset);
+    data.front_fog_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [front_work_light]
-    data.front_work_light = _deserializer.uint8(buffer, bufferOffset);
+    data.front_work_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [side_light]
-    data.side_light = _deserializer.uint8(buffer, bufferOffset);
+    data.side_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [position_light]
-    data.position_light = _deserializer.uint8(buffer, bufferOffset);
+    data.position_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [back_left_light]
-    data.back_left_light = _deserializer.uint8(buffer, bufferOffset);
+    data.back_left_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [back_right_light]
-    data.back_right_light = _deserializer.uint8(buffer, bufferOffset);
+    data.back_right_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [back_position_light]
-    data.back_position_light = _deserializer.uint8(buffer, bufferOffset);
+    data.back_position_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [brake_light]
-    data.brake_light = _deserializer.uint8(buffer, bufferOffset);
+    data.brake_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [reverse_light]
-    data.reverse_light = _deserializer.uint8(buffer, bufferOffset);
+    data.reverse_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [back_work_light]
-    data.back_work_light = _deserializer.uint8(buffer, bufferOffset);
+    data.back_work_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [control_steer]
     data.control_steer = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [control_throttle_percentage]
-    data.control_throttle_percentage = _deserializer.uint8(buffer, bufferOffset);
+    data.control_throttle_percentage = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [control_xbr]
     data.control_xbr = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [control_EPB]
-    data.control_EPB = _deserializer.uint8(buffer, bufferOffset);
+    data.control_EPB = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [control_gear]
     data.control_gear = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [control_hang]
     data.control_hang = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [control_fsm_state]
     data.control_fsm_state = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [vehicle_auto_mode]
+    data.vehicle_auto_mode = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [left]
-    data.left = _deserializer.uint8(buffer, bufferOffset);
+    data.left = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [right]
-    data.right = _deserializer.uint8(buffer, bufferOffset);
+    data.right = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [near]
-    data.near = _deserializer.uint8(buffer, bufferOffset);
+    data.near = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [far]
-    data.far = _deserializer.uint8(buffer, bufferOffset);
+    data.far = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [top_warn]
-    data.top_warn = _deserializer.uint8(buffer, bufferOffset);
+    data.top_warn = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [control_air_beep]
-    data.control_air_beep = _deserializer.uint8(buffer, bufferOffset);
+    data.control_air_beep = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [front_fog]
-    data.front_fog = _deserializer.uint8(buffer, bufferOffset);
+    data.front_fog = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [front_work]
-    data.front_work = _deserializer.uint8(buffer, bufferOffset);
+    data.front_work = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [side]
-    data.side = _deserializer.uint8(buffer, bufferOffset);
+    data.side = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [position]
-    data.position = _deserializer.uint8(buffer, bufferOffset);
+    data.position = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [emergency]
-    data.emergency = _deserializer.uint8(buffer, bufferOffset);
+    data.emergency = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [brake]
-    data.brake = _deserializer.uint8(buffer, bufferOffset);
+    data.brake = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [reverse]
-    data.reverse = _deserializer.uint8(buffer, bufferOffset);
+    data.reverse = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [back_work]
-    data.back_work = _deserializer.uint8(buffer, bufferOffset);
+    data.back_work = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [target_x]
     data.target_x = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [target_y]
     data.target_y = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [NumSate]
-    data.NumSate = _deserializer.uint8(buffer, bufferOffset);
+    data.NumSate = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [engine_fault]
-    data.engine_fault = _deserializer.uint8(buffer, bufferOffset);
+    data.engine_fault = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [gear_fault]
-    data.gear_fault = _deserializer.uint8(buffer, bufferOffset);
+    data.gear_fault = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [EBS_fault]
-    data.EBS_fault = _deserializer.uint8(buffer, bufferOffset);
+    data.EBS_fault = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [EPS_fault]
-    data.EPS_fault = _deserializer.uint8(buffer, bufferOffset);
+    data.EPS_fault = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [EPB_fault]
-    data.EPB_fault = _deserializer.uint8(buffer, bufferOffset);
+    data.EPB_fault = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [truck_fault_level]
-    data.truck_fault_level = _deserializer.uint8(buffer, bufferOffset);
+    data.truck_fault_level = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [engine_fault_code]
-    data.engine_fault_code = _deserializer.uint8(buffer, bufferOffset);
+    data.engine_fault_code = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [gear_fault_code]
-    data.gear_fault_code = _deserializer.uint8(buffer, bufferOffset);
+    data.gear_fault_code = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [EPS_fault_code]
-    data.EPS_fault_code = _deserializer.uint8(buffer, bufferOffset);
+    data.EPS_fault_code = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [EBS_fault_code]
-    data.EBS_fault_code = _deserializer.uint8(buffer, bufferOffset);
+    data.EBS_fault_code = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [electric_fault_code]
-    data.electric_fault_code = _deserializer.uint8(buffer, bufferOffset);
+    data.electric_fault_code = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [tyre_pressure_leftfront]
-    data.tyre_pressure_leftfront = _deserializer.uint16(buffer, bufferOffset);
+    data.tyre_pressure_leftfront = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [tyre_pressure_rightfront]
-    data.tyre_pressure_rightfront = _deserializer.uint16(buffer, bufferOffset);
+    data.tyre_pressure_rightfront = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [front_left_temperature]
     data.front_left_temperature = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [front_right_temperature]
@@ -867,7 +878,7 @@ class DisplayData {
     length += object.current_gear.length;
     length += object.control_gear.length;
     length += object.control_hang.length;
-    return length + 214;
+    return length + 372;
   }
 
   static datatype() {
@@ -877,7 +888,7 @@ class DisplayData {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '1c2c24deeb8f7c8fd48a595b62f1ae73';
+    return '46adc89bdab4634e8fe445e04537579f';
   }
 
   static messageDefinition() {
@@ -886,7 +897,7 @@ class DisplayData {
     Header header
     
     # RTK
-    int8 rtk_state 
+    int32 rtk_state 
     # -1 : no gnss
     # 0 : 2D or 3D gnss fix
     # 1 : SBAS or Starfire gnss fix
@@ -913,80 +924,81 @@ class DisplayData {
     # Tli65 vehicle parameters can_rx
     float64 current_steer
     float64 current_brake_pedal_pos
-    int8 current_throttle_percentage
-    int8 current_retarder_torque_percentage
-    uint8 current_EPB
+    int32 current_throttle_percentage
+    int32 current_retarder_torque_percentage
+    int32 current_EPB
     string current_gear
-    uint8 current_hangangle
-    uint8 auto_mode
-    uint8 left_light
-    uint8 right_light
-    uint8 near_light
-    uint8 far_light
-    uint8 air_beep
-    uint8 top_warning_light
-    uint8 front_fog_light
-    uint8 front_work_light
-    uint8 side_light
-    uint8 position_light
-    uint8 back_left_light
-    uint8 back_right_light
-    uint8 back_position_light
-    uint8 brake_light
-    uint8 reverse_light
-    uint8 back_work_light
+    int32 current_hangangle
+    int32 auto_mode
+    int32 left_light
+    int32 right_light
+    int32 near_light
+    int32 far_light
+    int32 air_beep
+    int32 top_warning_light
+    int32 front_fog_light
+    int32 front_work_light
+    int32 side_light
+    int32 position_light
+    int32 back_left_light
+    int32 back_right_light
+    int32 back_position_light
+    int32 brake_light
+    int32 reverse_light
+    int32 back_work_light
     
-    # Tli65 control parameters control_msgs
+    # Tli65 vehicle parameters can_rx
     float64 control_steer
-    uint8 control_throttle_percentage
+    int32 control_throttle_percentage
     float64 control_xbr
-    uint8 control_EPB
+    int32 control_EPB
     string control_gear
     string control_hang
     int32 control_fsm_state
-    uint8 left
-    uint8 right
-    uint8 near
-    uint8 far
-    uint8 top_warn
-    uint8 control_air_beep
-    uint8 front_fog
-    uint8 front_work
-    uint8 side
-    uint8 position
-    uint8 emergency
-    uint8 brake
-    uint8 reverse
-    uint8 back_work
+    int32 vehicle_auto_mode
+    int32 left
+    int32 right
+    int32 near
+    int32 far
+    int32 top_warn
+    int32 control_air_beep
+    int32 front_fog
+    int32 front_work
+    int32 side
+    int32 position
+    int32 emergency
+    int32 brake
+    int32 reverse
+    int32 back_work
     
     # waypoints planning 
     float64 target_x
     float64 target_y
     
     # number of satellite
-    uint8 NumSate
+    int32 NumSate
     
     # VEHICLE Fault Information 
     # ft1
-    uint8 engine_fault
-    uint8 gear_fault
-    uint8 EBS_fault
-    uint8 EPS_fault
-    uint8 EPB_fault
+    int32 engine_fault
+    int32 gear_fault
+    int32 EBS_fault
+    int32 EPS_fault
+    int32 EPB_fault
     
     # ft2
-    uint8 truck_fault_level
-    uint8 engine_fault_code
-    uint8 gear_fault_code
+    int32 truck_fault_level
+    int32 engine_fault_code
+    int32 gear_fault_code
     
     # ft3
-    uint8 EPS_fault_code
-    uint8 EBS_fault_code
-    uint8 electric_fault_code
+    int32 EPS_fault_code
+    int32 EBS_fault_code
+    int32 electric_fault_code
     
     # tyre
-    uint16 tyre_pressure_leftfront
-    uint16 tyre_pressure_rightfront
+    int32 tyre_pressure_leftfront
+    int32 tyre_pressure_rightfront
     float64 front_left_temperature
     float64 front_right_temperature
     ================================================================================
@@ -1315,6 +1327,13 @@ class DisplayData {
     }
     else {
       resolved.control_fsm_state = 0
+    }
+
+    if (msg.vehicle_auto_mode !== undefined) {
+      resolved.vehicle_auto_mode = msg.vehicle_auto_mode;
+    }
+    else {
+      resolved.vehicle_auto_mode = 0
     }
 
     if (msg.left !== undefined) {

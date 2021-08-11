@@ -1,6 +1,12 @@
 (cl:in-package control_msgs-msg)
 (cl:export '(HEADER-VAL
           HEADER
+          CONTROL_TYPE-VAL
+          CONTROL_TYPE
+          CONTROL_FSM-VAL
+          CONTROL_FSM
+          LAT_ERROR-VAL
+          LAT_ERROR
           IGNITION-VAL
           IGNITION
           THROTTLE_ACTIVE-VAL

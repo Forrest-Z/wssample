@@ -20,6 +20,9 @@ class HighspeedControl {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
+      this.control_type = null;
+      this.control_fsm = null;
+      this.lat_error = null;
       this.ignition = null;
       this.throttle_active = null;
       this.throttle_precentage = null;
@@ -35,6 +38,24 @@ class HighspeedControl {
       }
       else {
         this.header = new std_msgs.msg.Header();
+      }
+      if (initObj.hasOwnProperty('control_type')) {
+        this.control_type = initObj.control_type
+      }
+      else {
+        this.control_type = '';
+      }
+      if (initObj.hasOwnProperty('control_fsm')) {
+        this.control_fsm = initObj.control_fsm
+      }
+      else {
+        this.control_fsm = '';
+      }
+      if (initObj.hasOwnProperty('lat_error')) {
+        this.lat_error = initObj.lat_error
+      }
+      else {
+        this.lat_error = 0.0;
       }
       if (initObj.hasOwnProperty('ignition')) {
         this.ignition = initObj.ignition
@@ -91,6 +112,12 @@ class HighspeedControl {
     // Serializes a message object of type HighspeedControl
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
+    // Serialize message field [control_type]
+    bufferOffset = _serializer.string(obj.control_type, buffer, bufferOffset);
+    // Serialize message field [control_fsm]
+    bufferOffset = _serializer.string(obj.control_fsm, buffer, bufferOffset);
+    // Serialize message field [lat_error]
+    bufferOffset = _serializer.float64(obj.lat_error, buffer, bufferOffset);
     // Serialize message field [ignition]
     bufferOffset = _serializer.uint8(obj.ignition, buffer, bufferOffset);
     // Serialize message field [throttle_active]
@@ -116,6 +143,12 @@ class HighspeedControl {
     let data = new HighspeedControl(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
+    // Deserialize message field [control_type]
+    data.control_type = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [control_fsm]
+    data.control_fsm = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [lat_error]
+    data.lat_error = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [ignition]
     data.ignition = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [throttle_active]
@@ -138,7 +171,9 @@ class HighspeedControl {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 29;
+    length += object.control_type.length;
+    length += object.control_fsm.length;
+    return length + 45;
   }
 
   static datatype() {
@@ -148,13 +183,17 @@ class HighspeedControl {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'fac4952cee492c2dbb8a7e1036809584';
+    return '091494fefb0d9d1769b9b0a619a55e53';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     Header header
+    
+    string control_type
+    string control_fsm
+    float64 lat_error
     
     uint8 ignition 
     uint8 throttle_active
@@ -165,12 +204,6 @@ class HighspeedControl {
     uint8 steer_active
     float64 steer
     float64 steer_angle_rate
-    # for Tli90
-    #uint8 steer_active
-    #uint8 steer_mode
-    #float64 steer
-    #float64 steer1
-    #uint8 steer_mode1
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -203,6 +236,27 @@ class HighspeedControl {
     }
     else {
       resolved.header = new std_msgs.msg.Header()
+    }
+
+    if (msg.control_type !== undefined) {
+      resolved.control_type = msg.control_type;
+    }
+    else {
+      resolved.control_type = ''
+    }
+
+    if (msg.control_fsm !== undefined) {
+      resolved.control_fsm = msg.control_fsm;
+    }
+    else {
+      resolved.control_fsm = ''
+    }
+
+    if (msg.lat_error !== undefined) {
+      resolved.lat_error = msg.lat_error;
+    }
+    else {
+      resolved.lat_error = 0.0
     }
 
     if (msg.ignition !== undefined) {

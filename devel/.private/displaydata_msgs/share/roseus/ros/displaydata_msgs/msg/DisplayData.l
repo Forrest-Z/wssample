@@ -16,7 +16,7 @@
 
 (defclass displaydata_msgs::DisplayData
   :super ros::object
-  :slots (_header _rtk_state _lat _lng _alt _latlng_std _x_enu _y_enu _z_enu _xy_std_enu _speed _headingangle _current_steer _current_brake_pedal_pos _current_throttle_percentage _current_retarder_torque_percentage _current_EPB _current_gear _current_hangangle _auto_mode _left_light _right_light _near_light _far_light _air_beep _top_warning_light _front_fog_light _front_work_light _side_light _position_light _back_left_light _back_right_light _back_position_light _brake_light _reverse_light _back_work_light _control_steer _control_throttle_percentage _control_xbr _control_EPB _control_gear _control_hang _control_fsm_state _left _right _near _far _top_warn _control_air_beep _front_fog _front_work _side _position _emergency _brake _reverse _back_work _target_x _target_y _NumSate _engine_fault _gear_fault _EBS_fault _EPS_fault _EPB_fault _truck_fault_level _engine_fault_code _gear_fault_code _EPS_fault_code _EBS_fault_code _electric_fault_code _tyre_pressure_leftfront _tyre_pressure_rightfront _front_left_temperature _front_right_temperature ))
+  :slots (_header _rtk_state _lat _lng _alt _latlng_std _x_enu _y_enu _z_enu _xy_std_enu _speed _headingangle _current_steer _current_brake_pedal_pos _current_throttle_percentage _current_retarder_torque_percentage _current_EPB _current_gear _current_hangangle _auto_mode _left_light _right_light _near_light _far_light _air_beep _top_warning_light _front_fog_light _front_work_light _side_light _position_light _back_left_light _back_right_light _back_position_light _brake_light _reverse_light _back_work_light _control_steer _control_throttle_percentage _control_xbr _control_EPB _control_gear _control_hang _control_fsm_state _vehicle_auto_mode _left _right _near _far _top_warn _control_air_beep _front_fog _front_work _side _position _emergency _brake _reverse _back_work _target_x _target_y _NumSate _engine_fault _gear_fault _EBS_fault _EPS_fault _EPB_fault _truck_fault_level _engine_fault_code _gear_fault_code _EPS_fault_code _EBS_fault_code _electric_fault_code _tyre_pressure_leftfront _tyre_pressure_rightfront _front_left_temperature _front_right_temperature ))
 
 (defmethod displaydata_msgs::DisplayData
   (:init
@@ -64,6 +64,7 @@
     ((:control_gear __control_gear) "")
     ((:control_hang __control_hang) "")
     ((:control_fsm_state __control_fsm_state) 0)
+    ((:vehicle_auto_mode __vehicle_auto_mode) 0)
     ((:left __left) 0)
     ((:right __right) 0)
     ((:near __near) 0)
@@ -141,6 +142,7 @@
    (setq _control_gear (string __control_gear))
    (setq _control_hang (string __control_hang))
    (setq _control_fsm_state (round __control_fsm_state))
+   (setq _vehicle_auto_mode (round __vehicle_auto_mode))
    (setq _left (round __left))
    (setq _right (round __right))
    (setq _near (round __near))
@@ -307,6 +309,9 @@
   (:control_fsm_state
    (&optional __control_fsm_state)
    (if __control_fsm_state (setq _control_fsm_state __control_fsm_state)) _control_fsm_state)
+  (:vehicle_auto_mode
+   (&optional __vehicle_auto_mode)
+   (if __vehicle_auto_mode (setq _vehicle_auto_mode __vehicle_auto_mode)) _vehicle_auto_mode)
   (:left
    (&optional __left)
    (if __left (setq _left __left)) _left)
@@ -408,8 +413,8 @@
    (+
     ;; std_msgs/Header _header
     (send _header :serialization-length)
-    ;; int8 _rtk_state
-    1
+    ;; int32 _rtk_state
+    4
     ;; float64 _lat
     8
     ;; float64 _lng
@@ -434,124 +439,126 @@
     8
     ;; float64 _current_brake_pedal_pos
     8
-    ;; int8 _current_throttle_percentage
-    1
-    ;; int8 _current_retarder_torque_percentage
-    1
-    ;; uint8 _current_EPB
-    1
+    ;; int32 _current_throttle_percentage
+    4
+    ;; int32 _current_retarder_torque_percentage
+    4
+    ;; int32 _current_EPB
+    4
     ;; string _current_gear
     4 (length _current_gear)
-    ;; uint8 _current_hangangle
-    1
-    ;; uint8 _auto_mode
-    1
-    ;; uint8 _left_light
-    1
-    ;; uint8 _right_light
-    1
-    ;; uint8 _near_light
-    1
-    ;; uint8 _far_light
-    1
-    ;; uint8 _air_beep
-    1
-    ;; uint8 _top_warning_light
-    1
-    ;; uint8 _front_fog_light
-    1
-    ;; uint8 _front_work_light
-    1
-    ;; uint8 _side_light
-    1
-    ;; uint8 _position_light
-    1
-    ;; uint8 _back_left_light
-    1
-    ;; uint8 _back_right_light
-    1
-    ;; uint8 _back_position_light
-    1
-    ;; uint8 _brake_light
-    1
-    ;; uint8 _reverse_light
-    1
-    ;; uint8 _back_work_light
-    1
+    ;; int32 _current_hangangle
+    4
+    ;; int32 _auto_mode
+    4
+    ;; int32 _left_light
+    4
+    ;; int32 _right_light
+    4
+    ;; int32 _near_light
+    4
+    ;; int32 _far_light
+    4
+    ;; int32 _air_beep
+    4
+    ;; int32 _top_warning_light
+    4
+    ;; int32 _front_fog_light
+    4
+    ;; int32 _front_work_light
+    4
+    ;; int32 _side_light
+    4
+    ;; int32 _position_light
+    4
+    ;; int32 _back_left_light
+    4
+    ;; int32 _back_right_light
+    4
+    ;; int32 _back_position_light
+    4
+    ;; int32 _brake_light
+    4
+    ;; int32 _reverse_light
+    4
+    ;; int32 _back_work_light
+    4
     ;; float64 _control_steer
     8
-    ;; uint8 _control_throttle_percentage
-    1
+    ;; int32 _control_throttle_percentage
+    4
     ;; float64 _control_xbr
     8
-    ;; uint8 _control_EPB
-    1
+    ;; int32 _control_EPB
+    4
     ;; string _control_gear
     4 (length _control_gear)
     ;; string _control_hang
     4 (length _control_hang)
     ;; int32 _control_fsm_state
     4
-    ;; uint8 _left
-    1
-    ;; uint8 _right
-    1
-    ;; uint8 _near
-    1
-    ;; uint8 _far
-    1
-    ;; uint8 _top_warn
-    1
-    ;; uint8 _control_air_beep
-    1
-    ;; uint8 _front_fog
-    1
-    ;; uint8 _front_work
-    1
-    ;; uint8 _side
-    1
-    ;; uint8 _position
-    1
-    ;; uint8 _emergency
-    1
-    ;; uint8 _brake
-    1
-    ;; uint8 _reverse
-    1
-    ;; uint8 _back_work
-    1
+    ;; int32 _vehicle_auto_mode
+    4
+    ;; int32 _left
+    4
+    ;; int32 _right
+    4
+    ;; int32 _near
+    4
+    ;; int32 _far
+    4
+    ;; int32 _top_warn
+    4
+    ;; int32 _control_air_beep
+    4
+    ;; int32 _front_fog
+    4
+    ;; int32 _front_work
+    4
+    ;; int32 _side
+    4
+    ;; int32 _position
+    4
+    ;; int32 _emergency
+    4
+    ;; int32 _brake
+    4
+    ;; int32 _reverse
+    4
+    ;; int32 _back_work
+    4
     ;; float64 _target_x
     8
     ;; float64 _target_y
     8
-    ;; uint8 _NumSate
-    1
-    ;; uint8 _engine_fault
-    1
-    ;; uint8 _gear_fault
-    1
-    ;; uint8 _EBS_fault
-    1
-    ;; uint8 _EPS_fault
-    1
-    ;; uint8 _EPB_fault
-    1
-    ;; uint8 _truck_fault_level
-    1
-    ;; uint8 _engine_fault_code
-    1
-    ;; uint8 _gear_fault_code
-    1
-    ;; uint8 _EPS_fault_code
-    1
-    ;; uint8 _EBS_fault_code
-    1
-    ;; uint8 _electric_fault_code
-    1
-    ;; uint16 _tyre_pressure_leftfront
-    2
-    ;; uint16 _tyre_pressure_rightfront
-    2
+    ;; int32 _NumSate
+    4
+    ;; int32 _engine_fault
+    4
+    ;; int32 _gear_fault
+    4
+    ;; int32 _EBS_fault
+    4
+    ;; int32 _EPS_fault
+    4
+    ;; int32 _EPB_fault
+    4
+    ;; int32 _truck_fault_level
+    4
+    ;; int32 _engine_fault_code
+    4
+    ;; int32 _gear_fault_code
+    4
+    ;; int32 _EPS_fault_code
+    4
+    ;; int32 _EBS_fault_code
+    4
+    ;; int32 _electric_fault_code
+    4
+    ;; int32 _tyre_pressure_leftfront
+    4
+    ;; int32 _tyre_pressure_rightfront
+    4
     ;; float64 _front_left_temperature
     8
     ;; float64 _front_right_temperature
@@ -563,8 +570,8 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; std_msgs/Header _header
        (send _header :serialize s)
-     ;; int8 _rtk_state
-       (write-byte _rtk_state s)
+     ;; int32 _rtk_state
+       (write-long _rtk_state s)
      ;; float64 _lat
        (sys::poke _lat (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _lng
@@ -589,124 +596,126 @@
        (sys::poke _current_steer (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _current_brake_pedal_pos
        (sys::poke _current_brake_pedal_pos (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; int8 _current_throttle_percentage
-       (write-byte _current_throttle_percentage s)
-     ;; int8 _current_retarder_torque_percentage
-       (write-byte _current_retarder_torque_percentage s)
-     ;; uint8 _current_EPB
-       (write-byte _current_EPB s)
+     ;; int32 _current_throttle_percentage
+       (write-long _current_throttle_percentage s)
+     ;; int32 _current_retarder_torque_percentage
+       (write-long _current_retarder_torque_percentage s)
+     ;; int32 _current_EPB
+       (write-long _current_EPB s)
      ;; string _current_gear
        (write-long (length _current_gear) s) (princ _current_gear s)
-     ;; uint8 _current_hangangle
-       (write-byte _current_hangangle s)
-     ;; uint8 _auto_mode
-       (write-byte _auto_mode s)
-     ;; uint8 _left_light
-       (write-byte _left_light s)
-     ;; uint8 _right_light
-       (write-byte _right_light s)
-     ;; uint8 _near_light
-       (write-byte _near_light s)
-     ;; uint8 _far_light
-       (write-byte _far_light s)
-     ;; uint8 _air_beep
-       (write-byte _air_beep s)
-     ;; uint8 _top_warning_light
-       (write-byte _top_warning_light s)
-     ;; uint8 _front_fog_light
-       (write-byte _front_fog_light s)
-     ;; uint8 _front_work_light
-       (write-byte _front_work_light s)
-     ;; uint8 _side_light
-       (write-byte _side_light s)
-     ;; uint8 _position_light
-       (write-byte _position_light s)
-     ;; uint8 _back_left_light
-       (write-byte _back_left_light s)
-     ;; uint8 _back_right_light
-       (write-byte _back_right_light s)
-     ;; uint8 _back_position_light
-       (write-byte _back_position_light s)
-     ;; uint8 _brake_light
-       (write-byte _brake_light s)
-     ;; uint8 _reverse_light
-       (write-byte _reverse_light s)
-     ;; uint8 _back_work_light
-       (write-byte _back_work_light s)
+     ;; int32 _current_hangangle
+       (write-long _current_hangangle s)
+     ;; int32 _auto_mode
+       (write-long _auto_mode s)
+     ;; int32 _left_light
+       (write-long _left_light s)
+     ;; int32 _right_light
+       (write-long _right_light s)
+     ;; int32 _near_light
+       (write-long _near_light s)
+     ;; int32 _far_light
+       (write-long _far_light s)
+     ;; int32 _air_beep
+       (write-long _air_beep s)
+     ;; int32 _top_warning_light
+       (write-long _top_warning_light s)
+     ;; int32 _front_fog_light
+       (write-long _front_fog_light s)
+     ;; int32 _front_work_light
+       (write-long _front_work_light s)
+     ;; int32 _side_light
+       (write-long _side_light s)
+     ;; int32 _position_light
+       (write-long _position_light s)
+     ;; int32 _back_left_light
+       (write-long _back_left_light s)
+     ;; int32 _back_right_light
+       (write-long _back_right_light s)
+     ;; int32 _back_position_light
+       (write-long _back_position_light s)
+     ;; int32 _brake_light
+       (write-long _brake_light s)
+     ;; int32 _reverse_light
+       (write-long _reverse_light s)
+     ;; int32 _back_work_light
+       (write-long _back_work_light s)
      ;; float64 _control_steer
        (sys::poke _control_steer (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; uint8 _control_throttle_percentage
-       (write-byte _control_throttle_percentage s)
+     ;; int32 _control_throttle_percentage
+       (write-long _control_throttle_percentage s)
      ;; float64 _control_xbr
        (sys::poke _control_xbr (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; uint8 _control_EPB
-       (write-byte _control_EPB s)
+     ;; int32 _control_EPB
+       (write-long _control_EPB s)
      ;; string _control_gear
        (write-long (length _control_gear) s) (princ _control_gear s)
      ;; string _control_hang
        (write-long (length _control_hang) s) (princ _control_hang s)
      ;; int32 _control_fsm_state
        (write-long _control_fsm_state s)
-     ;; uint8 _left
-       (write-byte _left s)
-     ;; uint8 _right
-       (write-byte _right s)
-     ;; uint8 _near
-       (write-byte _near s)
-     ;; uint8 _far
-       (write-byte _far s)
-     ;; uint8 _top_warn
-       (write-byte _top_warn s)
-     ;; uint8 _control_air_beep
-       (write-byte _control_air_beep s)
-     ;; uint8 _front_fog
-       (write-byte _front_fog s)
-     ;; uint8 _front_work
-       (write-byte _front_work s)
-     ;; uint8 _side
-       (write-byte _side s)
-     ;; uint8 _position
-       (write-byte _position s)
-     ;; uint8 _emergency
-       (write-byte _emergency s)
-     ;; uint8 _brake
-       (write-byte _brake s)
-     ;; uint8 _reverse
-       (write-byte _reverse s)
-     ;; uint8 _back_work
-       (write-byte _back_work s)
+     ;; int32 _vehicle_auto_mode
+       (write-long _vehicle_auto_mode s)
+     ;; int32 _left
+       (write-long _left s)
+     ;; int32 _right
+       (write-long _right s)
+     ;; int32 _near
+       (write-long _near s)
+     ;; int32 _far
+       (write-long _far s)
+     ;; int32 _top_warn
+       (write-long _top_warn s)
+     ;; int32 _control_air_beep
+       (write-long _control_air_beep s)
+     ;; int32 _front_fog
+       (write-long _front_fog s)
+     ;; int32 _front_work
+       (write-long _front_work s)
+     ;; int32 _side
+       (write-long _side s)
+     ;; int32 _position
+       (write-long _position s)
+     ;; int32 _emergency
+       (write-long _emergency s)
+     ;; int32 _brake
+       (write-long _brake s)
+     ;; int32 _reverse
+       (write-long _reverse s)
+     ;; int32 _back_work
+       (write-long _back_work s)
      ;; float64 _target_x
        (sys::poke _target_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _target_y
        (sys::poke _target_y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; uint8 _NumSate
-       (write-byte _NumSate s)
-     ;; uint8 _engine_fault
-       (write-byte _engine_fault s)
-     ;; uint8 _gear_fault
-       (write-byte _gear_fault s)
-     ;; uint8 _EBS_fault
-       (write-byte _EBS_fault s)
-     ;; uint8 _EPS_fault
-       (write-byte _EPS_fault s)
-     ;; uint8 _EPB_fault
-       (write-byte _EPB_fault s)
-     ;; uint8 _truck_fault_level
-       (write-byte _truck_fault_level s)
-     ;; uint8 _engine_fault_code
-       (write-byte _engine_fault_code s)
-     ;; uint8 _gear_fault_code
-       (write-byte _gear_fault_code s)
-     ;; uint8 _EPS_fault_code
-       (write-byte _EPS_fault_code s)
-     ;; uint8 _EBS_fault_code
-       (write-byte _EBS_fault_code s)
-     ;; uint8 _electric_fault_code
-       (write-byte _electric_fault_code s)
-     ;; uint16 _tyre_pressure_leftfront
-       (write-word _tyre_pressure_leftfront s)
-     ;; uint16 _tyre_pressure_rightfront
-       (write-word _tyre_pressure_rightfront s)
+     ;; int32 _NumSate
+       (write-long _NumSate s)
+     ;; int32 _engine_fault
+       (write-long _engine_fault s)
+     ;; int32 _gear_fault
+       (write-long _gear_fault s)
+     ;; int32 _EBS_fault
+       (write-long _EBS_fault s)
+     ;; int32 _EPS_fault
+       (write-long _EPS_fault s)
+     ;; int32 _EPB_fault
+       (write-long _EPB_fault s)
+     ;; int32 _truck_fault_level
+       (write-long _truck_fault_level s)
+     ;; int32 _engine_fault_code
+       (write-long _engine_fault_code s)
+     ;; int32 _gear_fault_code
+       (write-long _gear_fault_code s)
+     ;; int32 _EPS_fault_code
+       (write-long _EPS_fault_code s)
+     ;; int32 _EBS_fault_code
+       (write-long _EBS_fault_code s)
+     ;; int32 _electric_fault_code
+       (write-long _electric_fault_code s)
+     ;; int32 _tyre_pressure_leftfront
+       (write-long _tyre_pressure_leftfront s)
+     ;; int32 _tyre_pressure_rightfront
+       (write-long _tyre_pressure_rightfront s)
      ;; float64 _front_left_temperature
        (sys::poke _front_left_temperature (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _front_right_temperature
@@ -717,9 +726,8 @@
    (buf &optional (ptr- 0))
    ;; std_msgs/Header _header
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
-   ;; int8 _rtk_state
-     (setq _rtk_state (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _rtk_state 127) (setq _rtk_state (- _rtk_state 256)))
+   ;; int32 _rtk_state
+     (setq _rtk_state (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _lat
      (setq _lat (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _lng
@@ -744,126 +752,126 @@
      (setq _current_steer (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _current_brake_pedal_pos
      (setq _current_brake_pedal_pos (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; int8 _current_throttle_percentage
-     (setq _current_throttle_percentage (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _current_throttle_percentage 127) (setq _current_throttle_percentage (- _current_throttle_percentage 256)))
-   ;; int8 _current_retarder_torque_percentage
-     (setq _current_retarder_torque_percentage (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _current_retarder_torque_percentage 127) (setq _current_retarder_torque_percentage (- _current_retarder_torque_percentage 256)))
-   ;; uint8 _current_EPB
-     (setq _current_EPB (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; int32 _current_throttle_percentage
+     (setq _current_throttle_percentage (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _current_retarder_torque_percentage
+     (setq _current_retarder_torque_percentage (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _current_EPB
+     (setq _current_EPB (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; string _current_gear
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _current_gear (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
-   ;; uint8 _current_hangangle
-     (setq _current_hangangle (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _auto_mode
-     (setq _auto_mode (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _left_light
-     (setq _left_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _right_light
-     (setq _right_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _near_light
-     (setq _near_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _far_light
-     (setq _far_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _air_beep
-     (setq _air_beep (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _top_warning_light
-     (setq _top_warning_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _front_fog_light
-     (setq _front_fog_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _front_work_light
-     (setq _front_work_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _side_light
-     (setq _side_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _position_light
-     (setq _position_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _back_left_light
-     (setq _back_left_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _back_right_light
-     (setq _back_right_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _back_position_light
-     (setq _back_position_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _brake_light
-     (setq _brake_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _reverse_light
-     (setq _reverse_light (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _back_work_light
-     (setq _back_work_light (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; int32 _current_hangangle
+     (setq _current_hangangle (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _auto_mode
+     (setq _auto_mode (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _left_light
+     (setq _left_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _right_light
+     (setq _right_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _near_light
+     (setq _near_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _far_light
+     (setq _far_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _air_beep
+     (setq _air_beep (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _top_warning_light
+     (setq _top_warning_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _front_fog_light
+     (setq _front_fog_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _front_work_light
+     (setq _front_work_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _side_light
+     (setq _side_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _position_light
+     (setq _position_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _back_left_light
+     (setq _back_left_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _back_right_light
+     (setq _back_right_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _back_position_light
+     (setq _back_position_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _brake_light
+     (setq _brake_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _reverse_light
+     (setq _reverse_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _back_work_light
+     (setq _back_work_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _control_steer
      (setq _control_steer (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; uint8 _control_throttle_percentage
-     (setq _control_throttle_percentage (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; int32 _control_throttle_percentage
+     (setq _control_throttle_percentage (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _control_xbr
      (setq _control_xbr (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; uint8 _control_EPB
-     (setq _control_EPB (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; int32 _control_EPB
+     (setq _control_EPB (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; string _control_gear
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_gear (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;; string _control_hang
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_hang (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;; int32 _control_fsm_state
      (setq _control_fsm_state (sys::peek buf ptr- :integer)) (incf ptr- 4)
-   ;; uint8 _left
-     (setq _left (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _right
-     (setq _right (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _near
-     (setq _near (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _far
-     (setq _far (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _top_warn
-     (setq _top_warn (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _control_air_beep
-     (setq _control_air_beep (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _front_fog
-     (setq _front_fog (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _front_work
-     (setq _front_work (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _side
-     (setq _side (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _position
-     (setq _position (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _emergency
-     (setq _emergency (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _brake
-     (setq _brake (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _reverse
-     (setq _reverse (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _back_work
-     (setq _back_work (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; int32 _vehicle_auto_mode
+     (setq _vehicle_auto_mode (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _left
+     (setq _left (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _right
+     (setq _right (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _near
+     (setq _near (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _far
+     (setq _far (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _top_warn
+     (setq _top_warn (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _control_air_beep
+     (setq _control_air_beep (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _front_fog
+     (setq _front_fog (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _front_work
+     (setq _front_work (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _side
+     (setq _side (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _position
+     (setq _position (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _emergency
+     (setq _emergency (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _brake
+     (setq _brake (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _reverse
+     (setq _reverse (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _back_work
+     (setq _back_work (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _target_x
      (setq _target_x (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _target_y
      (setq _target_y (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; uint8 _NumSate
-     (setq _NumSate (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _engine_fault
-     (setq _engine_fault (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _gear_fault
-     (setq _gear_fault (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _EBS_fault
-     (setq _EBS_fault (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _EPS_fault
-     (setq _EPS_fault (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _EPB_fault
-     (setq _EPB_fault (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _truck_fault_level
-     (setq _truck_fault_level (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _engine_fault_code
-     (setq _engine_fault_code (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _gear_fault_code
-     (setq _gear_fault_code (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _EPS_fault_code
-     (setq _EPS_fault_code (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _EBS_fault_code
-     (setq _EBS_fault_code (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint8 _electric_fault_code
-     (setq _electric_fault_code (sys::peek buf ptr- :char)) (incf ptr- 1)
-   ;; uint16 _tyre_pressure_leftfront
-     (setq _tyre_pressure_leftfront (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; uint16 _tyre_pressure_rightfront
-     (setq _tyre_pressure_rightfront (sys::peek buf ptr- :short)) (incf ptr- 2)
+   ;; int32 _NumSate
+     (setq _NumSate (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _engine_fault
+     (setq _engine_fault (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _gear_fault
+     (setq _gear_fault (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _EBS_fault
+     (setq _EBS_fault (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _EPS_fault
+     (setq _EPS_fault (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _EPB_fault
+     (setq _EPB_fault (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _truck_fault_level
+     (setq _truck_fault_level (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _engine_fault_code
+     (setq _engine_fault_code (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _gear_fault_code
+     (setq _gear_fault_code (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _EPS_fault_code
+     (setq _EPS_fault_code (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _EBS_fault_code
+     (setq _EBS_fault_code (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _electric_fault_code
+     (setq _electric_fault_code (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _tyre_pressure_leftfront
+     (setq _tyre_pressure_leftfront (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _tyre_pressure_rightfront
+     (setq _tyre_pressure_rightfront (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _front_left_temperature
      (setq _front_left_temperature (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _front_right_temperature
@@ -872,13 +880,13 @@
    self)
   )
 
-(setf (get displaydata_msgs::DisplayData :md5sum-) "1c2c24deeb8f7c8fd48a595b62f1ae73")
+(setf (get displaydata_msgs::DisplayData :md5sum-) "46adc89bdab4634e8fe445e04537579f")
 (setf (get displaydata_msgs::DisplayData :datatype-) "displaydata_msgs/DisplayData")
 (setf (get displaydata_msgs::DisplayData :definition-)
       "Header header
 
 # RTK
-int8 rtk_state 
+int32 rtk_state 
 # -1 : no gnss
 # 0 : 2D or 3D gnss fix
 # 1 : SBAS or Starfire gnss fix
@@ -905,80 +913,81 @@ float64 headingangle
 # Tli65 vehicle parameters can_rx
 float64 current_steer
 float64 current_brake_pedal_pos
-int8 current_throttle_percentage
-int8 current_retarder_torque_percentage
-uint8 current_EPB
+int32 current_throttle_percentage
+int32 current_retarder_torque_percentage
+int32 current_EPB
 string current_gear
-uint8 current_hangangle
-uint8 auto_mode
-uint8 left_light
-uint8 right_light
-uint8 near_light
-uint8 far_light
-uint8 air_beep
-uint8 top_warning_light
-uint8 front_fog_light
-uint8 front_work_light
-uint8 side_light
-uint8 position_light
-uint8 back_left_light
-uint8 back_right_light
-uint8 back_position_light
-uint8 brake_light
-uint8 reverse_light
-uint8 back_work_light
+int32 current_hangangle
+int32 auto_mode
+int32 left_light
+int32 right_light
+int32 near_light
+int32 far_light
+int32 air_beep
+int32 top_warning_light
+int32 front_fog_light
+int32 front_work_light
+int32 side_light
+int32 position_light
+int32 back_left_light
+int32 back_right_light
+int32 back_position_light
+int32 brake_light
+int32 reverse_light
+int32 back_work_light
 
-# Tli65 control parameters control_msgs
+# Tli65 vehicle parameters can_rx
 float64 control_steer
-uint8 control_throttle_percentage
+int32 control_throttle_percentage
 float64 control_xbr
-uint8 control_EPB
+int32 control_EPB
 string control_gear
 string control_hang
 int32 control_fsm_state
-uint8 left
-uint8 right
-uint8 near
-uint8 far
-uint8 top_warn
-uint8 control_air_beep
-uint8 front_fog
-uint8 front_work
-uint8 side
-uint8 position
-uint8 emergency
-uint8 brake
-uint8 reverse
-uint8 back_work
+int32 vehicle_auto_mode
+int32 left
+int32 right
+int32 near
+int32 far
+int32 top_warn
+int32 control_air_beep
+int32 front_fog
+int32 front_work
+int32 side
+int32 position
+int32 emergency
+int32 brake
+int32 reverse
+int32 back_work
 
 # waypoints planning 
 float64 target_x
 float64 target_y
 
 # number of satellite
-uint8 NumSate
+int32 NumSate
 
 # VEHICLE Fault Information 
 # ft1
-uint8 engine_fault
-uint8 gear_fault
-uint8 EBS_fault
-uint8 EPS_fault
-uint8 EPB_fault
+int32 engine_fault
+int32 gear_fault
+int32 EBS_fault
+int32 EPS_fault
+int32 EPB_fault
 
 # ft2
-uint8 truck_fault_level
-uint8 engine_fault_code
-uint8 gear_fault_code
+int32 truck_fault_level
+int32 engine_fault_code
+int32 gear_fault_code
 
 # ft3
-uint8 EPS_fault_code
-uint8 EBS_fault_code
-uint8 electric_fault_code
+int32 EPS_fault_code
+int32 EBS_fault_code
+int32 electric_fault_code
 
 # tyre
-uint16 tyre_pressure_leftfront
-uint16 tyre_pressure_rightfront
+int32 tyre_pressure_leftfront
+int32 tyre_pressure_rightfront
 float64 front_left_temperature
 float64 front_right_temperature
 ================================================================================
@@ -1003,6 +1012,6 @@ string frame_id
 
 
 
-(provide :displaydata_msgs/DisplayData "1c2c24deeb8f7c8fd48a595b62f1ae73")
+(provide :displaydata_msgs/DisplayData "46adc89bdab4634e8fe445e04537579f")
 
 

@@ -16,12 +16,15 @@
 
 (defclass control_msgs::HighspeedControl
   :super ros::object
-  :slots (_header _ignition _throttle_active _throttle_precentage _XBR_active _XBR _steer_active _steer _steer_angle_rate ))
+  :slots (_header _control_type _control_fsm _lat_error _ignition _throttle_active _throttle_precentage _XBR_active _XBR _steer_active _steer _steer_angle_rate ))
 
 (defmethod control_msgs::HighspeedControl
   (:init
    (&key
     ((:header __header) (instance std_msgs::Header :init))
+    ((:control_type __control_type) "")
+    ((:control_fsm __control_fsm) "")
+    ((:lat_error __lat_error) 0.0)
     ((:ignition __ignition) 0)
     ((:throttle_active __throttle_active) 0)
     ((:throttle_precentage __throttle_precentage) 0)
@@ -33,6 +36,9 @@
     )
    (send-super :init)
    (setq _header __header)
+   (setq _control_type (string __control_type))
+   (setq _control_fsm (string __control_fsm))
+   (setq _lat_error (float __lat_error))
    (setq _ignition (round __ignition))
    (setq _throttle_active (round __throttle_active))
    (setq _throttle_precentage (round __throttle_precentage))
@@ -49,6 +55,15 @@
      (progn
        (if __header (setq _header (car __header)))
        _header)))
+  (:control_type
+   (&optional __control_type)
+   (if __control_type (setq _control_type __control_type)) _control_type)
+  (:control_fsm
+   (&optional __control_fsm)
+   (if __control_fsm (setq _control_fsm __control_fsm)) _control_fsm)
+  (:lat_error
+   (&optional __lat_error)
+   (if __lat_error (setq _lat_error __lat_error)) _lat_error)
   (:ignition
    (&optional __ignition)
    (if __ignition (setq _ignition __ignition)) _ignition)
@@ -78,6 +93,12 @@
    (+
     ;; std_msgs/Header _header
     (send _header :serialization-length)
+    ;; string _control_type
+    4 (length _control_type)
+    ;; string _control_fsm
+    4 (length _control_fsm)
+    ;; float64 _lat_error
+    8
     ;; uint8 _ignition
     1
     ;; uint8 _throttle_active
@@ -101,6 +122,12 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; std_msgs/Header _header
        (send _header :serialize s)
+     ;; string _control_type
+       (write-long (length _control_type) s) (princ _control_type s)
+     ;; string _control_fsm
+       (write-long (length _control_fsm) s) (princ _control_fsm s)
+     ;; float64 _lat_error
+       (sys::poke _lat_error (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; uint8 _ignition
        (write-byte _ignition s)
      ;; uint8 _throttle_active
@@ -123,6 +150,12 @@
    (buf &optional (ptr- 0))
    ;; std_msgs/Header _header
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
+   ;; string _control_type
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_type (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; string _control_fsm
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_fsm (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; float64 _lat_error
+     (setq _lat_error (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; uint8 _ignition
      (setq _ignition (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; uint8 _throttle_active
@@ -143,10 +176,14 @@
    self)
   )
 
-(setf (get control_msgs::HighspeedControl :md5sum-) "fac4952cee492c2dbb8a7e1036809584")
+(setf (get control_msgs::HighspeedControl :md5sum-) "091494fefb0d9d1769b9b0a619a55e53")
 (setf (get control_msgs::HighspeedControl :datatype-) "control_msgs/HighspeedControl")
 (setf (get control_msgs::HighspeedControl :definition-)
       "Header header
+
+string control_type
+string control_fsm
+float64 lat_error
 
 uint8 ignition 
 uint8 throttle_active
@@ -157,12 +194,6 @@ float64 XBR
 uint8 steer_active
 float64 steer
 float64 steer_angle_rate
-# for Tli90
-#uint8 steer_active
-#uint8 steer_mode
-#float64 steer
-#float64 steer1
-#uint8 steer_mode1
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -185,6 +216,6 @@ string frame_id
 
 
 
-(provide :control_msgs/HighspeedControl "fac4952cee492c2dbb8a7e1036809584")
+(provide :control_msgs/HighspeedControl "091494fefb0d9d1769b9b0a619a55e53")
 
 

@@ -4,3 +4,4 @@ int32 control_fsm
 int32 last_control_fsm
 bool flag_follow_tracks_plannerON
 int32 gear
+int32 planner_fsm

@@ -68,6 +68,7 @@ struct DisplayData_
     , control_gear()
     , control_hang()
     , control_fsm_state(0)
+    , vehicle_auto_mode(0)
     , left(0)
     , right(0)
     , near(0)
@@ -145,6 +146,7 @@ struct DisplayData_
     , control_gear(_alloc)
     , control_hang(_alloc)
     , control_fsm_state(0)
+    , vehicle_auto_mode(0)
     , left(0)
     , right(0)
     , near(0)
@@ -185,7 +187,7 @@ struct DisplayData_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef int8_t _rtk_state_type;
+   typedef int32_t _rtk_state_type;
   _rtk_state_type rtk_state;
 
    typedef double _lat_type;
@@ -224,82 +226,82 @@ struct DisplayData_
    typedef double _current_brake_pedal_pos_type;
   _current_brake_pedal_pos_type current_brake_pedal_pos;
 
-   typedef int8_t _current_throttle_percentage_type;
+   typedef int32_t _current_throttle_percentage_type;
   _current_throttle_percentage_type current_throttle_percentage;
 
-   typedef int8_t _current_retarder_torque_percentage_type;
+   typedef int32_t _current_retarder_torque_percentage_type;
   _current_retarder_torque_percentage_type current_retarder_torque_percentage;
 
-   typedef uint8_t _current_EPB_type;
+   typedef int32_t _current_EPB_type;
   _current_EPB_type current_EPB;
 
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _current_gear_type;
   _current_gear_type current_gear;
 
-   typedef uint8_t _current_hangangle_type;
+   typedef int32_t _current_hangangle_type;
   _current_hangangle_type current_hangangle;
 
-   typedef uint8_t _auto_mode_type;
+   typedef int32_t _auto_mode_type;
   _auto_mode_type auto_mode;
 
-   typedef uint8_t _left_light_type;
+   typedef int32_t _left_light_type;
   _left_light_type left_light;
 
-   typedef uint8_t _right_light_type;
+   typedef int32_t _right_light_type;
   _right_light_type right_light;
 
-   typedef uint8_t _near_light_type;
+   typedef int32_t _near_light_type;
   _near_light_type near_light;
 
-   typedef uint8_t _far_light_type;
+   typedef int32_t _far_light_type;
   _far_light_type far_light;
 
-   typedef uint8_t _air_beep_type;
+   typedef int32_t _air_beep_type;
   _air_beep_type air_beep;
 
-   typedef uint8_t _top_warning_light_type;
+   typedef int32_t _top_warning_light_type;
   _top_warning_light_type top_warning_light;
 
-   typedef uint8_t _front_fog_light_type;
+   typedef int32_t _front_fog_light_type;
   _front_fog_light_type front_fog_light;
 
-   typedef uint8_t _front_work_light_type;
+   typedef int32_t _front_work_light_type;
   _front_work_light_type front_work_light;
 
-   typedef uint8_t _side_light_type;
+   typedef int32_t _side_light_type;
   _side_light_type side_light;
 
-   typedef uint8_t _position_light_type;
+   typedef int32_t _position_light_type;
   _position_light_type position_light;
 
-   typedef uint8_t _back_left_light_type;
+   typedef int32_t _back_left_light_type;
   _back_left_light_type back_left_light;
 
-   typedef uint8_t _back_right_light_type;
+   typedef int32_t _back_right_light_type;
   _back_right_light_type back_right_light;
 
-   typedef uint8_t _back_position_light_type;
+   typedef int32_t _back_position_light_type;
   _back_position_light_type back_position_light;
 
-   typedef uint8_t _brake_light_type;
+   typedef int32_t _brake_light_type;
   _brake_light_type brake_light;
 
-   typedef uint8_t _reverse_light_type;
+   typedef int32_t _reverse_light_type;
   _reverse_light_type reverse_light;
 
-   typedef uint8_t _back_work_light_type;
+   typedef int32_t _back_work_light_type;
   _back_work_light_type back_work_light;
 
    typedef double _control_steer_type;
   _control_steer_type control_steer;
 
-   typedef uint8_t _control_throttle_percentage_type;
+   typedef int32_t _control_throttle_percentage_type;
   _control_throttle_percentage_type control_throttle_percentage;
 
    typedef double _control_xbr_type;
   _control_xbr_type control_xbr;
 
-   typedef uint8_t _control_EPB_type;
+   typedef int32_t _control_EPB_type;
   _control_EPB_type control_EPB;
 
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _control_gear_type;
@@ -311,46 +313,49 @@ struct DisplayData_
    typedef int32_t _control_fsm_state_type;
   _control_fsm_state_type control_fsm_state;
 
-   typedef uint8_t _left_type;
+   typedef int32_t _vehicle_auto_mode_type;
+  _vehicle_auto_mode_type vehicle_auto_mode;
+
+   typedef int32_t _left_type;
   _left_type left;
 
-   typedef uint8_t _right_type;
+   typedef int32_t _right_type;
   _right_type right;
 
-   typedef uint8_t _near_type;
+   typedef int32_t _near_type;
   _near_type near;
 
-   typedef uint8_t _far_type;
+   typedef int32_t _far_type;
   _far_type far;
 
-   typedef uint8_t _top_warn_type;
+   typedef int32_t _top_warn_type;
   _top_warn_type top_warn;
 
-   typedef uint8_t _control_air_beep_type;
+   typedef int32_t _control_air_beep_type;
   _control_air_beep_type control_air_beep;
 
-   typedef uint8_t _front_fog_type;
+   typedef int32_t _front_fog_type;
   _front_fog_type front_fog;
 
-   typedef uint8_t _front_work_type;
+   typedef int32_t _front_work_type;
   _front_work_type front_work;
 
-   typedef uint8_t _side_type;
+   typedef int32_t _side_type;
   _side_type side;
 
-   typedef uint8_t _position_type;
+   typedef int32_t _position_type;
   _position_type position;
 
-   typedef uint8_t _emergency_type;
+   typedef int32_t _emergency_type;
   _emergency_type emergency;
 
-   typedef uint8_t _brake_type;
+   typedef int32_t _brake_type;
   _brake_type brake;
 
-   typedef uint8_t _reverse_type;
+   typedef int32_t _reverse_type;
   _reverse_type reverse;
 
-   typedef uint8_t _back_work_type;
+   typedef int32_t _back_work_type;
   _back_work_type back_work;
 
    typedef double _target_x_type;
@@ -359,46 +364,46 @@ struct DisplayData_
    typedef double _target_y_type;
   _target_y_type target_y;
 
-   typedef uint8_t _NumSate_type;
+   typedef int32_t _NumSate_type;
   _NumSate_type NumSate;
 
-   typedef uint8_t _engine_fault_type;
+   typedef int32_t _engine_fault_type;
   _engine_fault_type engine_fault;
 
-   typedef uint8_t _gear_fault_type;
+   typedef int32_t _gear_fault_type;
   _gear_fault_type gear_fault;
 
-   typedef uint8_t _EBS_fault_type;
+   typedef int32_t _EBS_fault_type;
   _EBS_fault_type EBS_fault;
 
-   typedef uint8_t _EPS_fault_type;
+   typedef int32_t _EPS_fault_type;
   _EPS_fault_type EPS_fault;
 
-   typedef uint8_t _EPB_fault_type;
+   typedef int32_t _EPB_fault_type;
   _EPB_fault_type EPB_fault;
 
-   typedef uint8_t _truck_fault_level_type;
+   typedef int32_t _truck_fault_level_type;
   _truck_fault_level_type truck_fault_level;
 
-   typedef uint8_t _engine_fault_code_type;
+   typedef int32_t _engine_fault_code_type;
   _engine_fault_code_type engine_fault_code;
 
-   typedef uint8_t _gear_fault_code_type;
+   typedef int32_t _gear_fault_code_type;
   _gear_fault_code_type gear_fault_code;
 
-   typedef uint8_t _EPS_fault_code_type;
+   typedef int32_t _EPS_fault_code_type;
   _EPS_fault_code_type EPS_fault_code;
 
-   typedef uint8_t _EBS_fault_code_type;
+   typedef int32_t _EBS_fault_code_type;
   _EBS_fault_code_type EBS_fault_code;
 
-   typedef uint8_t _electric_fault_code_type;
+   typedef int32_t _electric_fault_code_type;
   _electric_fault_code_type electric_fault_code;
 
-   typedef uint16_t _tyre_pressure_leftfront_type;
+   typedef int32_t _tyre_pressure_leftfront_type;
   _tyre_pressure_leftfront_type tyre_pressure_leftfront;
 
-   typedef uint16_t _tyre_pressure_rightfront_type;
+   typedef int32_t _tyre_pressure_rightfront_type;
   _tyre_pressure_rightfront_type tyre_pressure_rightfront;
 
    typedef double _front_left_temperature_type;
@@ -485,12 +490,12 @@ struct MD5Sum< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "1c2c24deeb8f7c8fd48a595b62f1ae73";
+    return "46adc89bdab4634e8fe445e04537579f";
   }
 
   static const char* value(const ::displaydata_msgs::DisplayData_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x1c2c24deeb8f7c8fULL;
-  static const uint64_t static_value2 = 0xd48a595b62f1ae73ULL;
+  static const uint64_t static_value1 = 0x46adc89bdab4634eULL;
+  static const uint64_t static_value2 = 0x8fe445e04537579fULL;
 };
 
 template<class ContainerAllocator>
@@ -512,7 +517,7 @@ struct Definition< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
     return "Header header\n\
 \n\
 # RTK\n\
-int8 rtk_state \n\
+int32 rtk_state \n\
 # -1 : no gnss\n\
 # 0 : 2D or 3D gnss fix\n\
 # 1 : SBAS or Starfire gnss fix\n\
@@ -539,80 +544,81 @@ float64 headingangle\n\
 # Tli65 vehicle parameters can_rx\n\
 float64 current_steer\n\
 float64 current_brake_pedal_pos\n\
-int8 current_throttle_percentage\n\
-int8 current_retarder_torque_percentage\n\
-uint8 current_EPB\n\
+int32 current_throttle_percentage\n\
+int32 current_retarder_torque_percentage\n\
+int32 current_EPB\n\
 string current_gear\n\
-uint8 current_hangangle\n\
-uint8 auto_mode\n\
-uint8 left_light\n\
-uint8 right_light\n\
-uint8 near_light\n\
-uint8 far_light\n\
-uint8 air_beep\n\
-uint8 top_warning_light\n\
-uint8 front_fog_light\n\
-uint8 front_work_light\n\
-uint8 side_light\n\
-uint8 position_light\n\
-uint8 back_left_light\n\
-uint8 back_right_light\n\
-uint8 back_position_light\n\
-uint8 brake_light\n\
-uint8 reverse_light\n\
-uint8 back_work_light\n\
+int32 current_hangangle\n\
+int32 auto_mode\n\
+int32 left_light\n\
+int32 right_light\n\
+int32 near_light\n\
+int32 far_light\n\
+int32 air_beep\n\
+int32 top_warning_light\n\
+int32 front_fog_light\n\
+int32 front_work_light\n\
+int32 side_light\n\
+int32 position_light\n\
+int32 back_left_light\n\
+int32 back_right_light\n\
+int32 back_position_light\n\
+int32 brake_light\n\
+int32 reverse_light\n\
+int32 back_work_light\n\
 \n\
-# Tli65 control parameters control_msgs\n\
+# Tli65 vehicle parameters can_rx\n\
 float64 control_steer\n\
-uint8 control_throttle_percentage\n\
+int32 control_throttle_percentage\n\
 float64 control_xbr\n\
-uint8 control_EPB\n\
+int32 control_EPB\n\
 string control_gear\n\
 string control_hang\n\
 int32 control_fsm_state\n\
-uint8 left\n\
-uint8 right\n\
-uint8 near\n\
-uint8 far\n\
-uint8 top_warn\n\
-uint8 control_air_beep\n\
-uint8 front_fog\n\
-uint8 front_work\n\
-uint8 side\n\
-uint8 position\n\
-uint8 emergency\n\
-uint8 brake\n\
-uint8 reverse\n\
-uint8 back_work\n\
+int32 vehicle_auto_mode\n\
+int32 left\n\
+int32 right\n\
+int32 near\n\
+int32 far\n\
+int32 top_warn\n\
+int32 control_air_beep\n\
+int32 front_fog\n\
+int32 front_work\n\
+int32 side\n\
+int32 position\n\
+int32 emergency\n\
+int32 brake\n\
+int32 reverse\n\
+int32 back_work\n\
 \n\
 # waypoints planning \n\
 float64 target_x\n\
 float64 target_y\n\
 \n\
 # number of satellite\n\
-uint8 NumSate\n\
+int32 NumSate\n\
 \n\
 # VEHICLE Fault Information \n\
 # ft1\n\
-uint8 engine_fault\n\
-uint8 gear_fault\n\
-uint8 EBS_fault\n\
-uint8 EPS_fault\n\
-uint8 EPB_fault\n\
+int32 engine_fault\n\
+int32 gear_fault\n\
+int32 EBS_fault\n\
+int32 EPS_fault\n\
+int32 EPB_fault\n\
 \n\
 # ft2\n\
-uint8 truck_fault_level\n\
-uint8 engine_fault_code\n\
-uint8 gear_fault_code\n\
+int32 truck_fault_level\n\
+int32 engine_fault_code\n\
+int32 gear_fault_code\n\
 \n\
 # ft3\n\
-uint8 EPS_fault_code\n\
-uint8 EBS_fault_code\n\
-uint8 electric_fault_code\n\
+int32 EPS_fault_code\n\
+int32 EBS_fault_code\n\
+int32 electric_fault_code\n\
 \n\
 # tyre\n\
-uint16 tyre_pressure_leftfront\n\
-uint16 tyre_pressure_rightfront\n\
+int32 tyre_pressure_leftfront\n\
+int32 tyre_pressure_rightfront\n\
 float64 front_left_temperature\n\
 float64 front_right_temperature\n\
 ================================================================================\n\
@@ -693,6 +699,7 @@ namespace serialization
       stream.next(m.control_gear);
       stream.next(m.control_hang);
       stream.next(m.control_fsm_state);
+      stream.next(m.vehicle_auto_mode);
       stream.next(m.left);
       stream.next(m.right);
       stream.next(m.near);
@@ -747,7 +754,7 @@ struct Printer< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "rtk_state: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.rtk_state);
+    Printer<int32_t>::stream(s, indent + "  ", v.rtk_state);
     s << indent << "lat: ";
     Printer<double>::stream(s, indent + "  ", v.lat);
     s << indent << "lng: ";
@@ -773,123 +780,125 @@ struct Printer< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
     s << indent << "current_brake_pedal_pos: ";
     Printer<double>::stream(s, indent + "  ", v.current_brake_pedal_pos);
     s << indent << "current_throttle_percentage: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.current_throttle_percentage);
+    Printer<int32_t>::stream(s, indent + "  ", v.current_throttle_percentage);
     s << indent << "current_retarder_torque_percentage: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.current_retarder_torque_percentage);
+    Printer<int32_t>::stream(s, indent + "  ", v.current_retarder_torque_percentage);
     s << indent << "current_EPB: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.current_EPB);
+    Printer<int32_t>::stream(s, indent + "  ", v.current_EPB);
     s << indent << "current_gear: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.current_gear);
     s << indent << "current_hangangle: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.current_hangangle);
+    Printer<int32_t>::stream(s, indent + "  ", v.current_hangangle);
     s << indent << "auto_mode: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.auto_mode);
+    Printer<int32_t>::stream(s, indent + "  ", v.auto_mode);
     s << indent << "left_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.left_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.left_light);
     s << indent << "right_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.right_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.right_light);
     s << indent << "near_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.near_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.near_light);
     s << indent << "far_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.far_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.far_light);
     s << indent << "air_beep: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.air_beep);
+    Printer<int32_t>::stream(s, indent + "  ", v.air_beep);
     s << indent << "top_warning_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.top_warning_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.top_warning_light);
     s << indent << "front_fog_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.front_fog_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.front_fog_light);
     s << indent << "front_work_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.front_work_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.front_work_light);
     s << indent << "side_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.side_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.side_light);
     s << indent << "position_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.position_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.position_light);
     s << indent << "back_left_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.back_left_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.back_left_light);
     s << indent << "back_right_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.back_right_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.back_right_light);
     s << indent << "back_position_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.back_position_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.back_position_light);
     s << indent << "brake_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.brake_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.brake_light);
     s << indent << "reverse_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.reverse_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.reverse_light);
     s << indent << "back_work_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.back_work_light);
+    Printer<int32_t>::stream(s, indent + "  ", v.back_work_light);
     s << indent << "control_steer: ";
     Printer<double>::stream(s, indent + "  ", v.control_steer);
     s << indent << "control_throttle_percentage: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.control_throttle_percentage);
+    Printer<int32_t>::stream(s, indent + "  ", v.control_throttle_percentage);
     s << indent << "control_xbr: ";
     Printer<double>::stream(s, indent + "  ", v.control_xbr);
     s << indent << "control_EPB: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.control_EPB);
+    Printer<int32_t>::stream(s, indent + "  ", v.control_EPB);
     s << indent << "control_gear: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_gear);
     s << indent << "control_hang: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_hang);
     s << indent << "control_fsm_state: ";
     Printer<int32_t>::stream(s, indent + "  ", v.control_fsm_state);
+    s << indent << "vehicle_auto_mode: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.vehicle_auto_mode);
     s << indent << "left: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.left);
+    Printer<int32_t>::stream(s, indent + "  ", v.left);
     s << indent << "right: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.right);
+    Printer<int32_t>::stream(s, indent + "  ", v.right);
     s << indent << "near: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.near);
+    Printer<int32_t>::stream(s, indent + "  ", v.near);
     s << indent << "far: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.far);
+    Printer<int32_t>::stream(s, indent + "  ", v.far);
     s << indent << "top_warn: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.top_warn);
+    Printer<int32_t>::stream(s, indent + "  ", v.top_warn);
     s << indent << "control_air_beep: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.control_air_beep);
+    Printer<int32_t>::stream(s, indent + "  ", v.control_air_beep);
     s << indent << "front_fog: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.front_fog);
+    Printer<int32_t>::stream(s, indent + "  ", v.front_fog);
     s << indent << "front_work: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.front_work);
+    Printer<int32_t>::stream(s, indent + "  ", v.front_work);
     s << indent << "side: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.side);
+    Printer<int32_t>::stream(s, indent + "  ", v.side);
     s << indent << "position: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.position);
+    Printer<int32_t>::stream(s, indent + "  ", v.position);
     s << indent << "emergency: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.emergency);
+    Printer<int32_t>::stream(s, indent + "  ", v.emergency);
     s << indent << "brake: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.brake);
+    Printer<int32_t>::stream(s, indent + "  ", v.brake);
     s << indent << "reverse: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.reverse);
+    Printer<int32_t>::stream(s, indent + "  ", v.reverse);
     s << indent << "back_work: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.back_work);
+    Printer<int32_t>::stream(s, indent + "  ", v.back_work);
     s << indent << "target_x: ";
     Printer<double>::stream(s, indent + "  ", v.target_x);
     s << indent << "target_y: ";
     Printer<double>::stream(s, indent + "  ", v.target_y);
     s << indent << "NumSate: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.NumSate);
+    Printer<int32_t>::stream(s, indent + "  ", v.NumSate);
     s << indent << "engine_fault: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.engine_fault);
+    Printer<int32_t>::stream(s, indent + "  ", v.engine_fault);
     s << indent << "gear_fault: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.gear_fault);
+    Printer<int32_t>::stream(s, indent + "  ", v.gear_fault);
     s << indent << "EBS_fault: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.EBS_fault);
+    Printer<int32_t>::stream(s, indent + "  ", v.EBS_fault);
     s << indent << "EPS_fault: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.EPS_fault);
+    Printer<int32_t>::stream(s, indent + "  ", v.EPS_fault);
     s << indent << "EPB_fault: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.EPB_fault);
+    Printer<int32_t>::stream(s, indent + "  ", v.EPB_fault);
     s << indent << "truck_fault_level: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.truck_fault_level);
+    Printer<int32_t>::stream(s, indent + "  ", v.truck_fault_level);
     s << indent << "engine_fault_code: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.engine_fault_code);
+    Printer<int32_t>::stream(s, indent + "  ", v.engine_fault_code);
     s << indent << "gear_fault_code: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.gear_fault_code);
+    Printer<int32_t>::stream(s, indent + "  ", v.gear_fault_code);
     s << indent << "EPS_fault_code: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.EPS_fault_code);
+    Printer<int32_t>::stream(s, indent + "  ", v.EPS_fault_code);
     s << indent << "EBS_fault_code: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.EBS_fault_code);
+    Printer<int32_t>::stream(s, indent + "  ", v.EBS_fault_code);
     s << indent << "electric_fault_code: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.electric_fault_code);
+    Printer<int32_t>::stream(s, indent + "  ", v.electric_fault_code);
     s << indent << "tyre_pressure_leftfront: ";
-    Printer<uint16_t>::stream(s, indent + "  ", v.tyre_pressure_leftfront);
+    Printer<int32_t>::stream(s, indent + "  ", v.tyre_pressure_leftfront);
     s << indent << "tyre_pressure_rightfront: ";
-    Printer<uint16_t>::stream(s, indent + "  ", v.tyre_pressure_rightfront);
+    Printer<int32_t>::stream(s, indent + "  ", v.tyre_pressure_rightfront);
     s << indent << "front_left_temperature: ";
     Printer<double>::stream(s, indent + "  ", v.front_left_temperature);
     s << indent << "front_right_temperature: ";
