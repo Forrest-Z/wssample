@@ -9,7 +9,7 @@ import struct
 import std_msgs.msg
 
 class Kinematics(genpy.Message):
-  _md5sum = "d8265f549b6eafa5bb69f5a95dd77e28"
+  _md5sum = "067f61bc5c7b18e4250103299afbefa6"
   _type = "kalman_msgs/Kinematics"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
@@ -17,6 +17,10 @@ class Kinematics(genpy.Message):
 # kalman_vx
 #  >0 for forward, <0 for backward
 float64 k_vx
+
+# kalman_ax
+#  >0 for vx up, <0 for vx down
+float64 k_ax
 
 # kalman_yawrate
 float64 k_yawrate 
@@ -39,8 +43,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','k_vx','k_yawrate']
-  _slot_types = ['std_msgs/Header','float64','float64']
+  __slots__ = ['header','k_vx','k_ax','k_yawrate']
+  _slot_types = ['std_msgs/Header','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -50,7 +54,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,k_vx,k_yawrate
+       header,k_vx,k_ax,k_yawrate
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -63,11 +67,14 @@ string frame_id
         self.header = std_msgs.msg.Header()
       if self.k_vx is None:
         self.k_vx = 0.
+      if self.k_ax is None:
+        self.k_ax = 0.
       if self.k_yawrate is None:
         self.k_yawrate = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.k_vx = 0.
+      self.k_ax = 0.
       self.k_yawrate = 0.
 
   def _get_types(self):
@@ -91,7 +98,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d().pack(_x.k_vx, _x.k_yawrate))
+      buff.write(_get_struct_3d().pack(_x.k_vx, _x.k_ax, _x.k_yawrate))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -120,8 +127,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 16
-      (_x.k_vx, _x.k_yawrate,) = _get_struct_2d().unpack(str[start:end])
+      end += 24
+      (_x.k_vx, _x.k_ax, _x.k_yawrate,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -143,7 +150,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2d().pack(_x.k_vx, _x.k_yawrate))
+      buff.write(_get_struct_3d().pack(_x.k_vx, _x.k_ax, _x.k_yawrate))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -173,8 +180,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 16
-      (_x.k_vx, _x.k_yawrate,) = _get_struct_2d().unpack(str[start:end])
+      end += 24
+      (_x.k_vx, _x.k_ax, _x.k_yawrate,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -183,15 +190,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2d = None
-def _get_struct_2d():
-    global _struct_2d
-    if _struct_2d is None:
-        _struct_2d = struct.Struct("<2d")
-    return _struct_2d
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
+_struct_3d = None
+def _get_struct_3d():
+    global _struct_3d
+    if _struct_3d is None:
+        _struct_3d = struct.Struct("<3d")
+    return _struct_3d

@@ -21,6 +21,7 @@ class Kinematics {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
       this.k_vx = null;
+      this.k_ax = null;
       this.k_yawrate = null;
     }
     else {
@@ -35,6 +36,12 @@ class Kinematics {
       }
       else {
         this.k_vx = 0.0;
+      }
+      if (initObj.hasOwnProperty('k_ax')) {
+        this.k_ax = initObj.k_ax
+      }
+      else {
+        this.k_ax = 0.0;
       }
       if (initObj.hasOwnProperty('k_yawrate')) {
         this.k_yawrate = initObj.k_yawrate
@@ -51,6 +58,8 @@ class Kinematics {
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
     // Serialize message field [k_vx]
     bufferOffset = _serializer.float64(obj.k_vx, buffer, bufferOffset);
+    // Serialize message field [k_ax]
+    bufferOffset = _serializer.float64(obj.k_ax, buffer, bufferOffset);
     // Serialize message field [k_yawrate]
     bufferOffset = _serializer.float64(obj.k_yawrate, buffer, bufferOffset);
     return bufferOffset;
@@ -64,6 +73,8 @@ class Kinematics {
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
     // Deserialize message field [k_vx]
     data.k_vx = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [k_ax]
+    data.k_ax = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [k_yawrate]
     data.k_yawrate = _deserializer.float64(buffer, bufferOffset);
     return data;
@@ -72,7 +83,7 @@ class Kinematics {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 16;
+    return length + 24;
   }
 
   static datatype() {
@@ -82,7 +93,7 @@ class Kinematics {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'd8265f549b6eafa5bb69f5a95dd77e28';
+    return '067f61bc5c7b18e4250103299afbefa6';
   }
 
   static messageDefinition() {
@@ -93,6 +104,10 @@ class Kinematics {
     # kalman_vx
     #  >0 for forward, <0 for backward
     float64 k_vx
+    
+    # kalman_ax
+    #  >0 for vx up, <0 for vx down
+    float64 k_ax
     
     # kalman_yawrate
     float64 k_yawrate 
@@ -136,6 +151,13 @@ class Kinematics {
     }
     else {
       resolved.k_vx = 0.0
+    }
+
+    if (msg.k_ax !== undefined) {
+      resolved.k_ax = msg.k_ax;
+    }
+    else {
+      resolved.k_ax = 0.0
     }
 
     if (msg.k_yawrate !== undefined) {

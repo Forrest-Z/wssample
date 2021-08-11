@@ -29,14 +29,16 @@ struct ControlFSM_
     , control_fsm(0)
     , last_control_fsm(0)
     , flag_follow_tracks_plannerON(false)
-    , gear(0)  {
+    , gear(0)
+    , planner_fsm(0)  {
     }
   ControlFSM_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , control_fsm(0)
     , last_control_fsm(0)
     , flag_follow_tracks_plannerON(false)
-    , gear(0)  {
+    , gear(0)
+    , planner_fsm(0)  {
   (void)_alloc;
     }
 
@@ -56,6 +58,9 @@ struct ControlFSM_
 
    typedef int32_t _gear_type;
   _gear_type gear;
+
+   typedef int32_t _planner_fsm_type;
+  _planner_fsm_type planner_fsm;
 
 
 
@@ -135,12 +140,12 @@ struct MD5Sum< ::control_msgs::ControlFSM_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "4353b0fdc9925690d7828bb3cf2071c5";
+    return "03aa97f9d8b6f93933703b58d329f026";
   }
 
   static const char* value(const ::control_msgs::ControlFSM_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x4353b0fdc9925690ULL;
-  static const uint64_t static_value2 = 0xd7828bb3cf2071c5ULL;
+  static const uint64_t static_value1 = 0x03aa97f9d8b6f939ULL;
+  static const uint64_t static_value2 = 0x33703b58d329f026ULL;
 };
 
 template<class ContainerAllocator>
@@ -165,6 +170,7 @@ int32 control_fsm\n\
 int32 last_control_fsm\n\
 bool flag_follow_tracks_plannerON\n\
 int32 gear\n\
+int32 planner_fsm\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
 # Standard metadata for higher-level stamped data types.\n\
@@ -205,6 +211,7 @@ namespace serialization
       stream.next(m.last_control_fsm);
       stream.next(m.flag_follow_tracks_plannerON);
       stream.next(m.gear);
+      stream.next(m.planner_fsm);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -234,6 +241,8 @@ struct Printer< ::control_msgs::ControlFSM_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.flag_follow_tracks_plannerON);
     s << indent << "gear: ";
     Printer<int32_t>::stream(s, indent + "  ", v.gear);
+    s << indent << "planner_fsm: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.planner_fsm);
   }
 };
 

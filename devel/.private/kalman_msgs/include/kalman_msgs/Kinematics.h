@@ -27,11 +27,13 @@ struct Kinematics_
   Kinematics_()
     : header()
     , k_vx(0.0)
+    , k_ax(0.0)
     , k_yawrate(0.0)  {
     }
   Kinematics_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , k_vx(0.0)
+    , k_ax(0.0)
     , k_yawrate(0.0)  {
   (void)_alloc;
     }
@@ -43,6 +45,9 @@ struct Kinematics_
 
    typedef double _k_vx_type;
   _k_vx_type k_vx;
+
+   typedef double _k_ax_type;
+  _k_ax_type k_ax;
 
    typedef double _k_yawrate_type;
   _k_yawrate_type k_yawrate;
@@ -125,12 +130,12 @@ struct MD5Sum< ::kalman_msgs::Kinematics_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "d8265f549b6eafa5bb69f5a95dd77e28";
+    return "067f61bc5c7b18e4250103299afbefa6";
   }
 
   static const char* value(const ::kalman_msgs::Kinematics_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd8265f549b6eafa5ULL;
-  static const uint64_t static_value2 = 0xbb69f5a95dd77e28ULL;
+  static const uint64_t static_value1 = 0x067f61bc5c7b18e4ULL;
+  static const uint64_t static_value2 = 0x250103299afbefa6ULL;
 };
 
 template<class ContainerAllocator>
@@ -154,6 +159,10 @@ struct Definition< ::kalman_msgs::Kinematics_<ContainerAllocator> >
 # kalman_vx\n\
 #  >0 for forward, <0 for backward\n\
 float64 k_vx\n\
+\n\
+# kalman_ax\n\
+#  >0 for vx up, <0 for vx down\n\
+float64 k_ax\n\
 \n\
 # kalman_yawrate\n\
 float64 k_yawrate \n\
@@ -195,6 +204,7 @@ namespace serialization
     {
       stream.next(m.header);
       stream.next(m.k_vx);
+      stream.next(m.k_ax);
       stream.next(m.k_yawrate);
     }
 
@@ -219,6 +229,8 @@ struct Printer< ::kalman_msgs::Kinematics_<ContainerAllocator> >
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "k_vx: ";
     Printer<double>::stream(s, indent + "  ", v.k_vx);
+    s << indent << "k_ax: ";
+    Printer<double>::stream(s, indent + "  ", v.k_ax);
     s << indent << "k_yawrate: ";
     Printer<double>::stream(s, indent + "  ", v.k_yawrate);
   }

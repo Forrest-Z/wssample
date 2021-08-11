@@ -24,6 +24,7 @@ class ControlFSM {
       this.last_control_fsm = null;
       this.flag_follow_tracks_plannerON = null;
       this.gear = null;
+      this.planner_fsm = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -56,6 +57,12 @@ class ControlFSM {
       else {
         this.gear = 0;
       }
+      if (initObj.hasOwnProperty('planner_fsm')) {
+        this.planner_fsm = initObj.planner_fsm
+      }
+      else {
+        this.planner_fsm = 0;
+      }
     }
   }
 
@@ -71,6 +78,8 @@ class ControlFSM {
     bufferOffset = _serializer.bool(obj.flag_follow_tracks_plannerON, buffer, bufferOffset);
     // Serialize message field [gear]
     bufferOffset = _serializer.int32(obj.gear, buffer, bufferOffset);
+    // Serialize message field [planner_fsm]
+    bufferOffset = _serializer.int32(obj.planner_fsm, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -88,13 +97,15 @@ class ControlFSM {
     data.flag_follow_tracks_plannerON = _deserializer.bool(buffer, bufferOffset);
     // Deserialize message field [gear]
     data.gear = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [planner_fsm]
+    data.planner_fsm = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 13;
+    return length + 17;
   }
 
   static datatype() {
@@ -104,7 +115,7 @@ class ControlFSM {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '4353b0fdc9925690d7828bb3cf2071c5';
+    return '03aa97f9d8b6f93933703b58d329f026';
   }
 
   static messageDefinition() {
@@ -116,6 +127,7 @@ class ControlFSM {
     int32 last_control_fsm
     bool flag_follow_tracks_plannerON
     int32 gear
+    int32 planner_fsm
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -176,6 +188,13 @@ class ControlFSM {
     }
     else {
       resolved.gear = 0
+    }
+
+    if (msg.planner_fsm !== undefined) {
+      resolved.planner_fsm = msg.planner_fsm;
+    }
+    else {
+      resolved.planner_fsm = 0
     }
 
     return resolved;

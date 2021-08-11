@@ -9,7 +9,7 @@ import struct
 import std_msgs.msg
 
 class ControlFSM(genpy.Message):
-  _md5sum = "4353b0fdc9925690d7828bb3cf2071c5"
+  _md5sum = "03aa97f9d8b6f93933703b58d329f026"
   _type = "control_msgs/ControlFSM"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
@@ -18,6 +18,7 @@ int32 control_fsm
 int32 last_control_fsm
 bool flag_follow_tracks_plannerON
 int32 gear
+int32 planner_fsm
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -36,8 +37,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','control_fsm','last_control_fsm','flag_follow_tracks_plannerON','gear']
-  _slot_types = ['std_msgs/Header','int32','int32','bool','int32']
+  __slots__ = ['header','control_fsm','last_control_fsm','flag_follow_tracks_plannerON','gear','planner_fsm']
+  _slot_types = ['std_msgs/Header','int32','int32','bool','int32','int32']
 
   def __init__(self, *args, **kwds):
     """
@@ -47,7 +48,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,control_fsm,last_control_fsm,flag_follow_tracks_plannerON,gear
+       header,control_fsm,last_control_fsm,flag_follow_tracks_plannerON,gear,planner_fsm
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -66,12 +67,15 @@ string frame_id
         self.flag_follow_tracks_plannerON = False
       if self.gear is None:
         self.gear = 0
+      if self.planner_fsm is None:
+        self.planner_fsm = 0
     else:
       self.header = std_msgs.msg.Header()
       self.control_fsm = 0
       self.last_control_fsm = 0
       self.flag_follow_tracks_plannerON = False
       self.gear = 0
+      self.planner_fsm = 0
 
   def _get_types(self):
     """
@@ -94,7 +98,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2iBi().pack(_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear))
+      buff.write(_get_struct_2iB2i().pack(_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear, _x.planner_fsm))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -123,8 +127,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 13
-      (_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear,) = _get_struct_2iBi().unpack(str[start:end])
+      end += 17
+      (_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear, _x.planner_fsm,) = _get_struct_2iB2i().unpack(str[start:end])
       self.flag_follow_tracks_plannerON = bool(self.flag_follow_tracks_plannerON)
       return self
     except struct.error as e:
@@ -147,7 +151,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_2iBi().pack(_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear))
+      buff.write(_get_struct_2iB2i().pack(_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear, _x.planner_fsm))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -177,8 +181,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 13
-      (_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear,) = _get_struct_2iBi().unpack(str[start:end])
+      end += 17
+      (_x.control_fsm, _x.last_control_fsm, _x.flag_follow_tracks_plannerON, _x.gear, _x.planner_fsm,) = _get_struct_2iB2i().unpack(str[start:end])
       self.flag_follow_tracks_plannerON = bool(self.flag_follow_tracks_plannerON)
       return self
     except struct.error as e:
@@ -188,12 +192,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2iBi = None
-def _get_struct_2iBi():
-    global _struct_2iBi
-    if _struct_2iBi is None:
-        _struct_2iBi = struct.Struct("<2iBi")
-    return _struct_2iBi
+_struct_2iB2i = None
+def _get_struct_2iB2i():
+    global _struct_2iB2i
+    if _struct_2iB2i is None:
+        _struct_2iB2i = struct.Struct("<2iB2i")
+    return _struct_2iB2i
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I

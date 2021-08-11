@@ -16,18 +16,20 @@
 
 (defclass kalman_msgs::Kinematics
   :super ros::object
-  :slots (_header _k_vx _k_yawrate ))
+  :slots (_header _k_vx _k_ax _k_yawrate ))
 
 (defmethod kalman_msgs::Kinematics
   (:init
    (&key
     ((:header __header) (instance std_msgs::Header :init))
     ((:k_vx __k_vx) 0.0)
+    ((:k_ax __k_ax) 0.0)
     ((:k_yawrate __k_yawrate) 0.0)
     )
    (send-super :init)
    (setq _header __header)
    (setq _k_vx (float __k_vx))
+   (setq _k_ax (float __k_ax))
    (setq _k_yawrate (float __k_yawrate))
    self)
   (:header
@@ -40,6 +42,9 @@
   (:k_vx
    (&optional __k_vx)
    (if __k_vx (setq _k_vx __k_vx)) _k_vx)
+  (:k_ax
+   (&optional __k_ax)
+   (if __k_ax (setq _k_ax __k_ax)) _k_ax)
   (:k_yawrate
    (&optional __k_yawrate)
    (if __k_yawrate (setq _k_yawrate __k_yawrate)) _k_yawrate)
@@ -49,6 +54,8 @@
     ;; std_msgs/Header _header
     (send _header :serialization-length)
     ;; float64 _k_vx
+    8
+    ;; float64 _k_ax
     8
     ;; float64 _k_yawrate
     8
@@ -61,6 +68,8 @@
        (send _header :serialize s)
      ;; float64 _k_vx
        (sys::poke _k_vx (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _k_ax
+       (sys::poke _k_ax (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _k_yawrate
        (sys::poke _k_yawrate (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
@@ -71,13 +80,15 @@
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
    ;; float64 _k_vx
      (setq _k_vx (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _k_ax
+     (setq _k_ax (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _k_yawrate
      (setq _k_yawrate (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get kalman_msgs::Kinematics :md5sum-) "d8265f549b6eafa5bb69f5a95dd77e28")
+(setf (get kalman_msgs::Kinematics :md5sum-) "067f61bc5c7b18e4250103299afbefa6")
 (setf (get kalman_msgs::Kinematics :datatype-) "kalman_msgs/Kinematics")
 (setf (get kalman_msgs::Kinematics :definition-)
       "Header header
@@ -85,6 +96,10 @@
 # kalman_vx
 #  >0 for forward, <0 for backward
 float64 k_vx
+
+# kalman_ax
+#  >0 for vx up, <0 for vx down
+float64 k_ax
 
 # kalman_yawrate
 float64 k_yawrate 
@@ -111,6 +126,6 @@ string frame_id
 
 
 
-(provide :kalman_msgs/Kinematics "d8265f549b6eafa5bb69f5a95dd77e28")
+(provide :kalman_msgs/Kinematics "067f61bc5c7b18e4250103299afbefa6")
 
 

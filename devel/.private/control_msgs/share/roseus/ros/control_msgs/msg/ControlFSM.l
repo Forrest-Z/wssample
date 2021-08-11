@@ -16,7 +16,7 @@
 
 (defclass control_msgs::ControlFSM
   :super ros::object
-  :slots (_header _control_fsm _last_control_fsm _flag_follow_tracks_plannerON _gear ))
+  :slots (_header _control_fsm _last_control_fsm _flag_follow_tracks_plannerON _gear _planner_fsm ))
 
 (defmethod control_msgs::ControlFSM
   (:init
@@ -26,6 +26,7 @@
     ((:last_control_fsm __last_control_fsm) 0)
     ((:flag_follow_tracks_plannerON __flag_follow_tracks_plannerON) nil)
     ((:gear __gear) 0)
+    ((:planner_fsm __planner_fsm) 0)
     )
    (send-super :init)
    (setq _header __header)
@@ -33,6 +34,7 @@
    (setq _last_control_fsm (round __last_control_fsm))
    (setq _flag_follow_tracks_plannerON __flag_follow_tracks_plannerON)
    (setq _gear (round __gear))
+   (setq _planner_fsm (round __planner_fsm))
    self)
   (:header
    (&rest __header)
@@ -53,6 +55,9 @@
   (:gear
    (&optional __gear)
    (if __gear (setq _gear __gear)) _gear)
+  (:planner_fsm
+   (&optional __planner_fsm)
+   (if __planner_fsm (setq _planner_fsm __planner_fsm)) _planner_fsm)
   (:serialization-length
    ()
    (+
@@ -65,6 +70,8 @@
     ;; bool _flag_follow_tracks_plannerON
     1
     ;; int32 _gear
+    4
+    ;; int32 _planner_fsm
     4
     ))
   (:serialize
@@ -81,6 +88,8 @@
        (if _flag_follow_tracks_plannerON (write-byte -1 s) (write-byte 0 s))
      ;; int32 _gear
        (write-long _gear s)
+     ;; int32 _planner_fsm
+       (write-long _planner_fsm s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -95,11 +104,13 @@
      (setq _flag_follow_tracks_plannerON (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;; int32 _gear
      (setq _gear (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _planner_fsm
+     (setq _planner_fsm (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get control_msgs::ControlFSM :md5sum-) "4353b0fdc9925690d7828bb3cf2071c5")
+(setf (get control_msgs::ControlFSM :md5sum-) "03aa97f9d8b6f93933703b58d329f026")
 (setf (get control_msgs::ControlFSM :datatype-) "control_msgs/ControlFSM")
 (setf (get control_msgs::ControlFSM :definition-)
       "Header header
@@ -108,6 +119,7 @@ int32 control_fsm
 int32 last_control_fsm
 bool flag_follow_tracks_plannerON
 int32 gear
+int32 planner_fsm
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -130,6 +142,6 @@ string frame_id
 
 
 
-(provide :control_msgs/ControlFSM "4353b0fdc9925690d7828bb3cf2071c5")
+(provide :control_msgs/ControlFSM "03aa97f9d8b6f93933703b58d329f026")
 
 

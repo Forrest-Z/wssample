@@ -9,4 +9,6 @@
           FLAG_FOLLOW_TRACKS_PLANNERON
           GEAR-VAL
           GEAR
+          PLANNER_FSM-VAL
+          PLANNER_FSM
 ))

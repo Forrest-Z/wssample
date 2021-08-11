@@ -3,6 +3,8 @@
           HEADER
           K_VX-VAL
           K_VX
+          K_AX-VAL
+          K_AX
           K_YAWRATE-VAL
           K_YAWRATE
 ))
