@@ -9,7 +9,7 @@ import struct
 import std_msgs.msg
 
 class TuneForceFeedback(genpy.Message):
-  _md5sum = "73b36ed61cebe17e58dd228f2395a9f7"
+  _md5sum = "bf7818849acfc8f3815bdde80fa9e88c"
   _type = "g29_force_feedback/TuneForceFeedback"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """std_msgs/Header header
@@ -21,6 +21,7 @@ float64 dforce
 float64 error
 float64 current_angle
 float64 derror
+float64 force2
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -39,8 +40,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','calforce','finalforce','pforce','iforce','dforce','error','current_angle','derror']
-  _slot_types = ['std_msgs/Header','float64','float64','float64','float64','float64','float64','float64','float64']
+  __slots__ = ['header','calforce','finalforce','pforce','iforce','dforce','error','current_angle','derror','force2']
+  _slot_types = ['std_msgs/Header','float64','float64','float64','float64','float64','float64','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -50,7 +51,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,calforce,finalforce,pforce,iforce,dforce,error,current_angle,derror
+       header,calforce,finalforce,pforce,iforce,dforce,error,current_angle,derror,force2
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -77,6 +78,8 @@ string frame_id
         self.current_angle = 0.
       if self.derror is None:
         self.derror = 0.
+      if self.force2 is None:
+        self.force2 = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.calforce = 0.
@@ -87,6 +90,7 @@ string frame_id
       self.error = 0.
       self.current_angle = 0.
       self.derror = 0.
+      self.force2 = 0.
 
   def _get_types(self):
     """
@@ -109,7 +113,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_8d().pack(_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror))
+      buff.write(_get_struct_9d().pack(_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror, _x.force2))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -138,8 +142,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 64
-      (_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror,) = _get_struct_8d().unpack(str[start:end])
+      end += 72
+      (_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror, _x.force2,) = _get_struct_9d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -161,7 +165,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_8d().pack(_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror))
+      buff.write(_get_struct_9d().pack(_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror, _x.force2))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -191,8 +195,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 64
-      (_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror,) = _get_struct_8d().unpack(str[start:end])
+      end += 72
+      (_x.calforce, _x.finalforce, _x.pforce, _x.iforce, _x.dforce, _x.error, _x.current_angle, _x.derror, _x.force2,) = _get_struct_9d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -207,9 +211,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_8d = None
-def _get_struct_8d():
-    global _struct_8d
-    if _struct_8d is None:
-        _struct_8d = struct.Struct("<8d")
-    return _struct_8d
+_struct_9d = None
+def _get_struct_9d():
+    global _struct_9d
+    if _struct_9d is None:
+        _struct_9d = struct.Struct("<9d")
+    return _struct_9d

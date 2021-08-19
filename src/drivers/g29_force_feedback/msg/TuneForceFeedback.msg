@@ -7,3 +7,4 @@ float64 dforce
 float64 error
 float64 current_angle
 float64 derror
+float64 force2

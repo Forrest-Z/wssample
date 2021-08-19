@@ -28,6 +28,7 @@ class TuneForceFeedback {
       this.error = null;
       this.current_angle = null;
       this.derror = null;
+      this.force2 = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -84,6 +85,12 @@ class TuneForceFeedback {
       else {
         this.derror = 0.0;
       }
+      if (initObj.hasOwnProperty('force2')) {
+        this.force2 = initObj.force2
+      }
+      else {
+        this.force2 = 0.0;
+      }
     }
   }
 
@@ -107,6 +114,8 @@ class TuneForceFeedback {
     bufferOffset = _serializer.float64(obj.current_angle, buffer, bufferOffset);
     // Serialize message field [derror]
     bufferOffset = _serializer.float64(obj.derror, buffer, bufferOffset);
+    // Serialize message field [force2]
+    bufferOffset = _serializer.float64(obj.force2, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -132,13 +141,15 @@ class TuneForceFeedback {
     data.current_angle = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [derror]
     data.derror = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [force2]
+    data.force2 = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 64;
+    return length + 72;
   }
 
   static datatype() {
@@ -148,7 +159,7 @@ class TuneForceFeedback {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '73b36ed61cebe17e58dd228f2395a9f7';
+    return 'bf7818849acfc8f3815bdde80fa9e88c';
   }
 
   static messageDefinition() {
@@ -163,6 +174,7 @@ class TuneForceFeedback {
     float64 error
     float64 current_angle
     float64 derror
+    float64 force2
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -251,6 +263,13 @@ class TuneForceFeedback {
     }
     else {
       resolved.derror = 0.0
+    }
+
+    if (msg.force2 !== undefined) {
+      resolved.force2 = msg.force2;
+    }
+    else {
+      resolved.force2 = 0.0
     }
 
     return resolved;

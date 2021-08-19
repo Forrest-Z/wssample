@@ -17,4 +17,6 @@
           CURRENT_ANGLE
           DERROR-VAL
           DERROR
+          FORCE2-VAL
+          FORCE2
 ))

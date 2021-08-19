@@ -1,0 +1,10 @@
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp:[m[K In member function ‘[01m[Kvoid G29ForceFeedback::updateFfDevice()[m[K’:
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp:157:26:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kright_coeff[m[K’ in ‘[01m[K((G29ForceFeedback*)this)->G29ForceFeedback::m_effect.ff_effect::u.ff_effect::<anonymous union>::condition[m[K’, which is of non-class type ‘[01m[Kff_condition_effect [2][m[K’
+     m_effect.u.condition.right_coeff = (short)(0.4 * 32767.0);
+[01;32m[K                          ^[m[K
+[01m[K/home/oligay_61/zone3/src/drivers/g29_force_feedback/src/g29_force_feedback.cpp:158:26:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kleft_coeff[m[K’ in ‘[01m[K((G29ForceFeedback*)this)->G29ForceFeedback::m_effect.ff_effect::u.ff_effect::<anonymous union>::condition[m[K’, which is of non-class type ‘[01m[Kff_condition_effect [2][m[K’
+     m_effect.u.condition.left_coeff = (short)(0.2 * 32767.0);
+[01;32m[K                          ^[m[K
+make[2]: *** [CMakeFiles/g29_force_feedback_node.dir/src/g29_force_feedback.cpp.o] Error 1
+make[1]: *** [CMakeFiles/g29_force_feedback_node.dir/all] Error 2
+make: *** [all] Error 2

@@ -56,8 +56,8 @@ class G29ForceFeedback {
 };
 
 G29ForceFeedback::G29ForceFeedback()
-    : m_device_name("/dev/input/event19"), m_Kp(1), m_Ki(0.00), m_Kd(15.0),
-      m_offset(0.01), m_max_force(0.3), m_min_force(0.18), m_pub_rate(0.1),
+    : m_device_name("/dev/input/event19"), m_Kp(50), m_Ki(0.00), m_Kd(10.0),
+      m_offset(0.008), m_max_force(0.24), m_min_force(0.2), m_pub_rate(0.01),
       m_pid_mode(0) {
     ros::NodeHandle n;
     sub_target =
@@ -113,17 +113,38 @@ void G29ForceFeedback::updateFfDevice() {
         iforce = m_Ki * diff_i;
         dforce = m_Kd * diff_d;
         dforce = (diff * diff_d > 0) ? dforce : 0;
+
         g29_pid_tune.pforce = pforce;
         g29_pid_tune.iforce = iforce;
         g29_pid_tune.dforce = dforce;
 
         force = fabs(pforce + iforce + dforce) * ((diff > 0.0) ? 1.0 : -1.0);
+
         g29_pid_tune.calforce = force;
         g29_pid_tune.current_angle = m_current_angle;
+
         // if wheel angle reached to the target
         if (fabs(diff) < m_offset) {
             force = 0.0;
+            // } else if (fabs(diff) < 0.25) {
+            //     // force less than 0.2 cannot turn the wheel
+            //     force = (force > 0.0) ? std::max(force, m_min_force)
+            //                           : std::min(force, -m_min_force);
+            //     // set max force for safety
+            //     force =
+            //         (force > 0.0) ? std::min(force, 0.25) : std::max(force,
+            //         -0.25);
         } else {
+
+            // double error3 = (fabs(diff) - 0.25) * ((diff > 0.0) ? 1.0 :
+            // -1.0); double kcp = 10; double force2 = (0.25 * ((diff > 0.0)
+            // ? 1.0 : -1.0) + kcp * error3); g29_pid_tune.force2 = force2;
+            // // force less than 0.2 cannot turn the wheel
+            // force = (force > 0.0) ? std::max(force2, m_min_force)
+            //                       : std::min(force2, -m_min_force);
+            // // set max force for safety
+            // force = (force > 0.0) ? std::min(force2, m_max_force)
+            //                       : std::max(force2, -m_max_force);
             // force less than 0.2 cannot turn the wheel
             force = (force > 0.0) ? std::max(force, m_min_force)
                                   : std::min(force, -m_min_force);
@@ -152,8 +173,10 @@ void G29ForceFeedback::updateFfDevice() {
     // start effect
     m_effect.u.constant.level = (short)(force * 32767.0);
     m_effect.direction = 0xC000;
-    m_effect.u.constant.envelope.attack_level = (short)(force * 32767.0);
-    m_effect.u.constant.envelope.fade_level = (short)(force * 32767.0);
+    // m_effect.u.constant.envelope.attack_level = (short)(force * 32767.0);
+    // m_effect.u.constant.envelope.fade_level = (short)(force * 32767.0);
+    // m_effect.u.condition[2].right_coeff = (short)(force * 32767.0);
+    // m_effect.u.condition[2].left_coeff = (short)(force * 32767.0);
     // apply force
     if (ioctl(m_device_handle, EVIOCSFF, &m_effect) < 0) {
         std::cout << "failed to upload m_effect" << std::endl;

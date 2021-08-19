@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target teledrive[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/teledrive.dir/src/teledrive.cc.o[0m
-[100%] [32m[1mLinking CXX executable /home/oligay_61/zone3/devel/.private/teledrive/lib/teledrive/teledrive[0m
-[100%] Built target teledrive

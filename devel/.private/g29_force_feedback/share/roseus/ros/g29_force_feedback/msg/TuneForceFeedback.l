@@ -16,7 +16,7 @@
 
 (defclass g29_force_feedback::TuneForceFeedback
   :super ros::object
-  :slots (_header _calforce _finalforce _pforce _iforce _dforce _error _current_angle _derror ))
+  :slots (_header _calforce _finalforce _pforce _iforce _dforce _error _current_angle _derror _force2 ))
 
 (defmethod g29_force_feedback::TuneForceFeedback
   (:init
@@ -30,6 +30,7 @@
     ((:error __error) 0.0)
     ((:current_angle __current_angle) 0.0)
     ((:derror __derror) 0.0)
+    ((:force2 __force2) 0.0)
     )
    (send-super :init)
    (setq _header __header)
@@ -41,6 +42,7 @@
    (setq _error (float __error))
    (setq _current_angle (float __current_angle))
    (setq _derror (float __derror))
+   (setq _force2 (float __force2))
    self)
   (:header
    (&rest __header)
@@ -73,6 +75,9 @@
   (:derror
    (&optional __derror)
    (if __derror (setq _derror __derror)) _derror)
+  (:force2
+   (&optional __force2)
+   (if __force2 (setq _force2 __force2)) _force2)
   (:serialization-length
    ()
    (+
@@ -93,6 +98,8 @@
     ;; float64 _current_angle
     8
     ;; float64 _derror
+    8
+    ;; float64 _force2
     8
     ))
   (:serialize
@@ -117,6 +124,8 @@
        (sys::poke _current_angle (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _derror
        (sys::poke _derror (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _force2
+       (sys::poke _force2 (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -139,11 +148,13 @@
      (setq _current_angle (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _derror
      (setq _derror (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _force2
+     (setq _force2 (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get g29_force_feedback::TuneForceFeedback :md5sum-) "73b36ed61cebe17e58dd228f2395a9f7")
+(setf (get g29_force_feedback::TuneForceFeedback :md5sum-) "bf7818849acfc8f3815bdde80fa9e88c")
 (setf (get g29_force_feedback::TuneForceFeedback :datatype-) "g29_force_feedback/TuneForceFeedback")
 (setf (get g29_force_feedback::TuneForceFeedback :definition-)
       "std_msgs/Header header
@@ -155,6 +166,7 @@ float64 dforce
 float64 error
 float64 current_angle
 float64 derror
+float64 force2
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -177,6 +189,6 @@ string frame_id
 
 
 
-(provide :g29_force_feedback/TuneForceFeedback "73b36ed61cebe17e58dd228f2395a9f7")
+(provide :g29_force_feedback/TuneForceFeedback "bf7818849acfc8f3815bdde80fa9e88c")
 
 

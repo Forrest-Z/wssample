@@ -1,5 +1,0 @@
-[ 33%] Built target dynamic_can_gencfg
-[35m[1mScanning dependencies of target dynamic_can[0m
-[ 66%] [32mBuilding CXX object CMakeFiles/dynamic_can.dir/src/dynamic_can.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/oligay_61/zone3/devel/.private/dynamic_can/lib/dynamic_can/dynamic_can[0m
-[100%] Built target dynamic_can
