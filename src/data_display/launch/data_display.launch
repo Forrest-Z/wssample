@@ -9,11 +9,13 @@
 			<param name="EPB_topic" value="/zone3/chassis/rx/EPB" />
 			<param name="Ft_topic" value="/zone3/chassis/rx/fault" />
 			<param name="tyre_topic" value="/zone3/chassis/rx/tyre" />
+			<param name="fuel_topic" value="/zone3/chassis/rx/fuel" />
 			<param name="waypoints_topic" value="/zone3/planner/follow_tracks/way_points" />
 			<param name="control_fsm_topic" value="/zone3/control/control_fsm" />
 			<param name="control_highspeed_topic" value="/zone3/control/highspeed_command" />
 			<param name="control_lowspeed_topic" value="/zone3/control/lowspeed_command" />
 			<param name="pose_topic" value="/zone3/localization/pose" />
+
 			<!-- pub -->
 			<param name="display_topic" value="/zone3/data_display" />
 		</node>

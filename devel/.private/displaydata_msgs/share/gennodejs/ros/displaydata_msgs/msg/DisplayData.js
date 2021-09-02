@@ -55,6 +55,7 @@ class DisplayData {
       this.brake_light = null;
       this.reverse_light = null;
       this.back_work_light = null;
+      this.fuel_consumption = null;
       this.control_steer = null;
       this.control_throttle_percentage = null;
       this.control_xbr = null;
@@ -79,6 +80,7 @@ class DisplayData {
       this.back_work = null;
       this.target_x = null;
       this.target_y = null;
+      this.planner_fsm = null;
       this.NumSate = null;
       this.engine_fault = null;
       this.gear_fault = null;
@@ -313,6 +315,12 @@ class DisplayData {
       else {
         this.back_work_light = 0;
       }
+      if (initObj.hasOwnProperty('fuel_consumption')) {
+        this.fuel_consumption = initObj.fuel_consumption
+      }
+      else {
+        this.fuel_consumption = 0;
+      }
       if (initObj.hasOwnProperty('control_steer')) {
         this.control_steer = initObj.control_steer
       }
@@ -456,6 +464,12 @@ class DisplayData {
       }
       else {
         this.target_y = 0.0;
+      }
+      if (initObj.hasOwnProperty('planner_fsm')) {
+        this.planner_fsm = initObj.planner_fsm
+      }
+      else {
+        this.planner_fsm = 0;
       }
       if (initObj.hasOwnProperty('NumSate')) {
         this.NumSate = initObj.NumSate
@@ -630,6 +644,8 @@ class DisplayData {
     bufferOffset = _serializer.int32(obj.reverse_light, buffer, bufferOffset);
     // Serialize message field [back_work_light]
     bufferOffset = _serializer.int32(obj.back_work_light, buffer, bufferOffset);
+    // Serialize message field [fuel_consumption]
+    bufferOffset = _serializer.int32(obj.fuel_consumption, buffer, bufferOffset);
     // Serialize message field [control_steer]
     bufferOffset = _serializer.float64(obj.control_steer, buffer, bufferOffset);
     // Serialize message field [control_throttle_percentage]
@@ -678,6 +694,8 @@ class DisplayData {
     bufferOffset = _serializer.float64(obj.target_x, buffer, bufferOffset);
     // Serialize message field [target_y]
     bufferOffset = _serializer.float64(obj.target_y, buffer, bufferOffset);
+    // Serialize message field [planner_fsm]
+    bufferOffset = _serializer.int32(obj.planner_fsm, buffer, bufferOffset);
     // Serialize message field [NumSate]
     bufferOffset = _serializer.int32(obj.NumSate, buffer, bufferOffset);
     // Serialize message field [engine_fault]
@@ -789,6 +807,8 @@ class DisplayData {
     data.reverse_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [back_work_light]
     data.back_work_light = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [fuel_consumption]
+    data.fuel_consumption = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [control_steer]
     data.control_steer = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [control_throttle_percentage]
@@ -837,6 +857,8 @@ class DisplayData {
     data.target_x = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [target_y]
     data.target_y = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [planner_fsm]
+    data.planner_fsm = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [NumSate]
     data.NumSate = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [engine_fault]
@@ -878,7 +900,7 @@ class DisplayData {
     length += object.current_gear.length;
     length += object.control_gear.length;
     length += object.control_hang.length;
-    return length + 372;
+    return length + 380;
   }
 
   static datatype() {
@@ -888,7 +910,7 @@ class DisplayData {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '46adc89bdab4634e8fe445e04537579f';
+    return '75ffc4b8292bc3aabb3225b01b095200';
   }
 
   static messageDefinition() {
@@ -946,6 +968,7 @@ class DisplayData {
     int32 brake_light
     int32 reverse_light
     int32 back_work_light
+    int32 fuel_consumption
     
     # Tli65 vehicle parameters can_rx
     float64 control_steer
@@ -974,6 +997,7 @@ class DisplayData {
     # waypoints planning 
     float64 target_x
     float64 target_y
+    int32 planner_fsm
     
     # number of satellite
     int32 NumSate
@@ -1280,6 +1304,13 @@ class DisplayData {
       resolved.back_work_light = 0
     }
 
+    if (msg.fuel_consumption !== undefined) {
+      resolved.fuel_consumption = msg.fuel_consumption;
+    }
+    else {
+      resolved.fuel_consumption = 0
+    }
+
     if (msg.control_steer !== undefined) {
       resolved.control_steer = msg.control_steer;
     }
@@ -1446,6 +1477,13 @@ class DisplayData {
     }
     else {
       resolved.target_y = 0.0
+    }
+
+    if (msg.planner_fsm !== undefined) {
+      resolved.planner_fsm = msg.planner_fsm;
+    }
+    else {
+      resolved.planner_fsm = 0
     }
 
     if (msg.NumSate !== undefined) {

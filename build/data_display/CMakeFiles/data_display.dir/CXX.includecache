@@ -206,6 +206,24 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
+/home/oligay_61/zone3/devel/.private/tli65_can_msgs/include/tli65_can_msgs/RxFuel.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+
 /home/oligay_61/zone3/devel/.private/tli65_can_msgs/include/tli65_can_msgs/RxStHighspeed.h
 string
 -
@@ -289,6 +307,8 @@ tli65_can_msgs/RxEPB.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxEPB.h
 tli65_can_msgs/RxFt.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxFt.h
+tli65_can_msgs/RxFuel.h
+/home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxFuel.h
 tli65_can_msgs/RxStHighspeed.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxStHighspeed.h
 tli65_can_msgs/RxStLowspeed.h

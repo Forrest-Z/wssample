@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/frontend_msgs_generate_messages_nodejs"
-  "/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend.js"
+  "/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_control.js"
+  "/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_TLdisplay.js"
 )
 
 # Per-language clean rules from dependency scanning.

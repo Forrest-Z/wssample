@@ -50,6 +50,7 @@ int32 back_position_light
 int32 brake_light
 int32 reverse_light
 int32 back_work_light
+int32 fuel_consumption
 
 # Tli65 vehicle parameters can_rx
 float64 control_steer
@@ -78,6 +79,7 @@ int32 back_work
 # waypoints planning 
 float64 target_x
 float64 target_y
+int32 planner_fsm
 
 # number of satellite
 int32 NumSate

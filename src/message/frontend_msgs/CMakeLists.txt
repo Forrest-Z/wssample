@@ -7,7 +7,8 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 add_message_files(FILES
-  Frontend.msg
+  Frontend_TLdisplay.msg
+  Frontend_control.msg
 )
 
 generate_messages(DEPENDENCIES

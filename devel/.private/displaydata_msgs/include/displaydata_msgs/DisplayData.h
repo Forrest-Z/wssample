@@ -61,6 +61,7 @@ struct DisplayData_
     , brake_light(0)
     , reverse_light(0)
     , back_work_light(0)
+    , fuel_consumption(0)
     , control_steer(0.0)
     , control_throttle_percentage(0)
     , control_xbr(0.0)
@@ -85,6 +86,7 @@ struct DisplayData_
     , back_work(0)
     , target_x(0.0)
     , target_y(0.0)
+    , planner_fsm(0)
     , NumSate(0)
     , engine_fault(0)
     , gear_fault(0)
@@ -139,6 +141,7 @@ struct DisplayData_
     , brake_light(0)
     , reverse_light(0)
     , back_work_light(0)
+    , fuel_consumption(0)
     , control_steer(0.0)
     , control_throttle_percentage(0)
     , control_xbr(0.0)
@@ -163,6 +166,7 @@ struct DisplayData_
     , back_work(0)
     , target_x(0.0)
     , target_y(0.0)
+    , planner_fsm(0)
     , NumSate(0)
     , engine_fault(0)
     , gear_fault(0)
@@ -292,6 +296,9 @@ struct DisplayData_
    typedef int32_t _back_work_light_type;
   _back_work_light_type back_work_light;
 
+   typedef int32_t _fuel_consumption_type;
+  _fuel_consumption_type fuel_consumption;
+
    typedef double _control_steer_type;
   _control_steer_type control_steer;
 
@@ -363,6 +370,9 @@ struct DisplayData_
 
    typedef double _target_y_type;
   _target_y_type target_y;
+
+   typedef int32_t _planner_fsm_type;
+  _planner_fsm_type planner_fsm;
 
    typedef int32_t _NumSate_type;
   _NumSate_type NumSate;
@@ -490,12 +500,12 @@ struct MD5Sum< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "46adc89bdab4634e8fe445e04537579f";
+    return "75ffc4b8292bc3aabb3225b01b095200";
   }
 
   static const char* value(const ::displaydata_msgs::DisplayData_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x46adc89bdab4634eULL;
-  static const uint64_t static_value2 = 0x8fe445e04537579fULL;
+  static const uint64_t static_value1 = 0x75ffc4b8292bc3aaULL;
+  static const uint64_t static_value2 = 0xbb3225b01b095200ULL;
 };
 
 template<class ContainerAllocator>
@@ -566,6 +576,7 @@ int32 back_position_light\n\
 int32 brake_light\n\
 int32 reverse_light\n\
 int32 back_work_light\n\
+int32 fuel_consumption\n\
 \n\
 # Tli65 vehicle parameters can_rx\n\
 float64 control_steer\n\
@@ -594,6 +605,7 @@ int32 back_work\n\
 # waypoints planning \n\
 float64 target_x\n\
 float64 target_y\n\
+int32 planner_fsm\n\
 \n\
 # number of satellite\n\
 int32 NumSate\n\
@@ -692,6 +704,7 @@ namespace serialization
       stream.next(m.brake_light);
       stream.next(m.reverse_light);
       stream.next(m.back_work_light);
+      stream.next(m.fuel_consumption);
       stream.next(m.control_steer);
       stream.next(m.control_throttle_percentage);
       stream.next(m.control_xbr);
@@ -716,6 +729,7 @@ namespace serialization
       stream.next(m.back_work);
       stream.next(m.target_x);
       stream.next(m.target_y);
+      stream.next(m.planner_fsm);
       stream.next(m.NumSate);
       stream.next(m.engine_fault);
       stream.next(m.gear_fault);
@@ -823,6 +837,8 @@ struct Printer< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
     Printer<int32_t>::stream(s, indent + "  ", v.reverse_light);
     s << indent << "back_work_light: ";
     Printer<int32_t>::stream(s, indent + "  ", v.back_work_light);
+    s << indent << "fuel_consumption: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.fuel_consumption);
     s << indent << "control_steer: ";
     Printer<double>::stream(s, indent + "  ", v.control_steer);
     s << indent << "control_throttle_percentage: ";
@@ -871,6 +887,8 @@ struct Printer< ::displaydata_msgs::DisplayData_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.target_x);
     s << indent << "target_y: ";
     Printer<double>::stream(s, indent + "  ", v.target_y);
+    s << indent << "planner_fsm: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.planner_fsm);
     s << indent << "NumSate: ";
     Printer<int32_t>::stream(s, indent + "  ", v.NumSate);
     s << indent << "engine_fault: ";

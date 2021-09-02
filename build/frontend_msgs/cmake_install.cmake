@@ -124,7 +124,10 @@ file(INSTALL DESTINATION "/home/oligay_61/zone3/install" TYPE FILE FILES "/home/
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/frontend_msgs/msg" TYPE FILE FILES "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/frontend_msgs/msg" TYPE FILE FILES
+    "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg"
+    "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

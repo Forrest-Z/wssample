@@ -15,6 +15,7 @@
 #include "tli65_can_msgs/ContainerCalib.h"
 #include "tli65_can_msgs/RxEPB.h"
 #include "tli65_can_msgs/RxFt.h"
+#include "tli65_can_msgs/RxFuel.h"
 #include "tli65_can_msgs/RxStHighspeed.h"
 #include "tli65_can_msgs/RxStLowspeed.h"
 #include "tli65_can_msgs/RxTyre.h"
@@ -35,6 +36,7 @@ class DataDisplay {
     string EPB_topic_;
     string Ft_topic_;
     string tyre_topic_;
+    string fuel_topic_;
     string waypoints_topic_;
     string control_fsm_topic_;
     string control_highspeed_topic_;
@@ -50,6 +52,7 @@ class DataDisplay {
     ros::Subscriber sub_data_epb_;
     ros::Subscriber sub_data_fault_;
     ros::Subscriber sub_data_tyre_;
+    ros::Subscriber sub_data_fuel_;
     ros::Subscriber sub_data_waypoints_;
     ros::Subscriber sub_data_fsm_;
     ros::Subscriber sub_data_control_highspeed_;
@@ -69,6 +72,7 @@ class DataDisplay {
     void ProcEPB(const tli65_can_msgs::RxEPB &msg);
     void ProcFault(const tli65_can_msgs::RxFt &msg);
     void ProcTyre(const tli65_can_msgs::RxTyre &msg);
+    void ProcFuel(const tli65_can_msgs::RxFuel &msg);
     void ProcWaypoints(const planner_msgs::WayPoints &msg);
     void ProcControlFsm(const control_msgs::ControlFSM &msg);
     void ProcControlHighspeed(const control_msgs::HighspeedControl &msg);

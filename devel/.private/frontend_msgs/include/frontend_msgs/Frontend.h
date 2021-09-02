@@ -24,92 +24,97 @@ struct Frontend_
   typedef Frontend_<ContainerAllocator> Type;
 
   Frontend_()
-    : TL_left_light(false)
-    , TL_right_light(false)
-    , TL_near_light(false)
-    , TL_far_light(false)
-    , TL_top_warning_light(false)
-    , TL_front_fog_light(false)
-    , TL_front_work_light(false)
-    , TL_back_work_light(false)
-    , TL_side_light(false)
-    , TL_position_light(false)
-    , TL_back_left_light(false)
-    , TL_back_right_light(false)
-    , emergency_light(false)
-    , TL_back_position_light(false)
-    , TL_brake_light(false)
-    , TL_reverse_light(false)  {
+    : left_light(0)
+    , right_light(0)
+    , near_light(0)
+    , far_light(0)
+    , top_warning_light(0)
+    , air_beep(0)
+    , front_fog_light(0)
+    , front_work_light(0)
+    , side_light(0)
+    , position_light(0)
+    , back_left_light(0)
+    , back_right_light(0)
+    , back_position_light(0)
+    , brake_light(0)
+    , reverse_light(0)
+    , back_work_light(0)
+    , emergency_light(0)  {
     }
   Frontend_(const ContainerAllocator& _alloc)
-    : TL_left_light(false)
-    , TL_right_light(false)
-    , TL_near_light(false)
-    , TL_far_light(false)
-    , TL_top_warning_light(false)
-    , TL_front_fog_light(false)
-    , TL_front_work_light(false)
-    , TL_back_work_light(false)
-    , TL_side_light(false)
-    , TL_position_light(false)
-    , TL_back_left_light(false)
-    , TL_back_right_light(false)
-    , emergency_light(false)
-    , TL_back_position_light(false)
-    , TL_brake_light(false)
-    , TL_reverse_light(false)  {
+    : left_light(0)
+    , right_light(0)
+    , near_light(0)
+    , far_light(0)
+    , top_warning_light(0)
+    , air_beep(0)
+    , front_fog_light(0)
+    , front_work_light(0)
+    , side_light(0)
+    , position_light(0)
+    , back_left_light(0)
+    , back_right_light(0)
+    , back_position_light(0)
+    , brake_light(0)
+    , reverse_light(0)
+    , back_work_light(0)
+    , emergency_light(0)  {
   (void)_alloc;
     }
 
 
 
-   typedef uint8_t _TL_left_light_type;
-  _TL_left_light_type TL_left_light;
+   typedef int32_t _left_light_type;
+  _left_light_type left_light;
 
-   typedef uint8_t _TL_right_light_type;
-  _TL_right_light_type TL_right_light;
+   typedef int32_t _right_light_type;
+  _right_light_type right_light;
 
-   typedef uint8_t _TL_near_light_type;
-  _TL_near_light_type TL_near_light;
+   typedef int32_t _near_light_type;
+  _near_light_type near_light;
 
-   typedef uint8_t _TL_far_light_type;
-  _TL_far_light_type TL_far_light;
+   typedef int32_t _far_light_type;
+  _far_light_type far_light;
 
-   typedef uint8_t _TL_top_warning_light_type;
-  _TL_top_warning_light_type TL_top_warning_light;
+   typedef int32_t _top_warning_light_type;
+  _top_warning_light_type top_warning_light;
 
-   typedef uint8_t _TL_front_fog_light_type;
-  _TL_front_fog_light_type TL_front_fog_light;
+   typedef int32_t _air_beep_type;
+  _air_beep_type air_beep;
 
-   typedef uint8_t _TL_front_work_light_type;
-  _TL_front_work_light_type TL_front_work_light;
+   typedef int32_t _front_fog_light_type;
+  _front_fog_light_type front_fog_light;
 
-   typedef uint8_t _TL_back_work_light_type;
-  _TL_back_work_light_type TL_back_work_light;
+   typedef int32_t _front_work_light_type;
+  _front_work_light_type front_work_light;
 
-   typedef uint8_t _TL_side_light_type;
-  _TL_side_light_type TL_side_light;
+   typedef int32_t _side_light_type;
+  _side_light_type side_light;
 
-   typedef uint8_t _TL_position_light_type;
-  _TL_position_light_type TL_position_light;
+   typedef int32_t _position_light_type;
+  _position_light_type position_light;
 
-   typedef uint8_t _TL_back_left_light_type;
-  _TL_back_left_light_type TL_back_left_light;
+   typedef int32_t _back_left_light_type;
+  _back_left_light_type back_left_light;
 
-   typedef uint8_t _TL_back_right_light_type;
-  _TL_back_right_light_type TL_back_right_light;
+   typedef int32_t _back_right_light_type;
+  _back_right_light_type back_right_light;
 
-   typedef uint8_t _emergency_light_type;
+   typedef int32_t _back_position_light_type;
+  _back_position_light_type back_position_light;
+
+   typedef int32_t _brake_light_type;
+  _brake_light_type brake_light;
+
+   typedef int32_t _reverse_light_type;
+  _reverse_light_type reverse_light;
+
+   typedef int32_t _back_work_light_type;
+  _back_work_light_type back_work_light;
+
+   typedef uint32_t _emergency_light_type;
   _emergency_light_type emergency_light;
-
-   typedef uint8_t _TL_back_position_light_type;
-  _TL_back_position_light_type TL_back_position_light;
-
-   typedef uint8_t _TL_brake_light_type;
-  _TL_brake_light_type TL_brake_light;
-
-   typedef uint8_t _TL_reverse_light_type;
-  _TL_reverse_light_type TL_reverse_light;
 
 
 
@@ -189,12 +194,12 @@ struct MD5Sum< ::frontend_msgs::Frontend_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "6d69890661b416e2254fb5f08a7e73e1";
+    return "4b5bd2883c6474dfc70615b662bea589";
   }
 
   static const char* value(const ::frontend_msgs::Frontend_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x6d69890661b416e2ULL;
-  static const uint64_t static_value2 = 0x254fb5f08a7e73e1ULL;
+  static const uint64_t static_value1 = 0x4b5bd2883c6474dfULL;
+  static const uint64_t static_value2 = 0xc70615b662bea589ULL;
 };
 
 template<class ContainerAllocator>
@@ -213,23 +218,27 @@ struct Definition< ::frontend_msgs::Frontend_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bool TL_left_light\n\
-bool TL_right_light\n\
-bool TL_near_light\n\
-bool TL_far_light\n\
+    return "#TL lights feedback\n\
+int32 left_light\n\
+int32 right_light\n\
+int32 near_light\n\
+int32 far_light\n\
 \n\
-bool TL_top_warning_light\n\
-bool TL_front_fog_light\n\
-bool TL_front_work_light\n\
-bool TL_back_work_light\n\
-bool TL_side_light\n\
-bool TL_position_light\n\
-bool TL_back_left_light\n\
-bool TL_back_right_light\n\
-bool emergency_light\n\
-bool TL_back_position_light\n\
-bool TL_brake_light\n\
-bool TL_reverse_light\n\
+int32 top_warning_light\n\
+int32 air_beep\n\
+int32 front_fog_light\n\
+int32 front_work_light\n\
+int32 side_light\n\
+int32 position_light\n\
+int32 back_left_light\n\
+int32 back_right_light\n\
+int32 back_position_light\n\
+int32 brake_light\n\
+int32 reverse_light\n\
+int32 back_work_light\n\
+\n\
+# frontend lights control\n\
+uint32 emergency_light\n\
 ";
   }
 
@@ -248,22 +257,23 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.TL_left_light);
-      stream.next(m.TL_right_light);
-      stream.next(m.TL_near_light);
-      stream.next(m.TL_far_light);
-      stream.next(m.TL_top_warning_light);
-      stream.next(m.TL_front_fog_light);
-      stream.next(m.TL_front_work_light);
-      stream.next(m.TL_back_work_light);
-      stream.next(m.TL_side_light);
-      stream.next(m.TL_position_light);
-      stream.next(m.TL_back_left_light);
-      stream.next(m.TL_back_right_light);
+      stream.next(m.left_light);
+      stream.next(m.right_light);
+      stream.next(m.near_light);
+      stream.next(m.far_light);
+      stream.next(m.top_warning_light);
+      stream.next(m.air_beep);
+      stream.next(m.front_fog_light);
+      stream.next(m.front_work_light);
+      stream.next(m.side_light);
+      stream.next(m.position_light);
+      stream.next(m.back_left_light);
+      stream.next(m.back_right_light);
+      stream.next(m.back_position_light);
+      stream.next(m.brake_light);
+      stream.next(m.reverse_light);
+      stream.next(m.back_work_light);
       stream.next(m.emergency_light);
-      stream.next(m.TL_back_position_light);
-      stream.next(m.TL_brake_light);
-      stream.next(m.TL_reverse_light);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -282,38 +292,40 @@ struct Printer< ::frontend_msgs::Frontend_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::frontend_msgs::Frontend_<ContainerAllocator>& v)
   {
-    s << indent << "TL_left_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_left_light);
-    s << indent << "TL_right_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_right_light);
-    s << indent << "TL_near_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_near_light);
-    s << indent << "TL_far_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_far_light);
-    s << indent << "TL_top_warning_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_top_warning_light);
-    s << indent << "TL_front_fog_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_front_fog_light);
-    s << indent << "TL_front_work_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_front_work_light);
-    s << indent << "TL_back_work_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_back_work_light);
-    s << indent << "TL_side_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_side_light);
-    s << indent << "TL_position_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_position_light);
-    s << indent << "TL_back_left_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_back_left_light);
-    s << indent << "TL_back_right_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_back_right_light);
+    s << indent << "left_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.left_light);
+    s << indent << "right_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.right_light);
+    s << indent << "near_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.near_light);
+    s << indent << "far_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.far_light);
+    s << indent << "top_warning_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.top_warning_light);
+    s << indent << "air_beep: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.air_beep);
+    s << indent << "front_fog_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.front_fog_light);
+    s << indent << "front_work_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.front_work_light);
+    s << indent << "side_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.side_light);
+    s << indent << "position_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.position_light);
+    s << indent << "back_left_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.back_left_light);
+    s << indent << "back_right_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.back_right_light);
+    s << indent << "back_position_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.back_position_light);
+    s << indent << "brake_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.brake_light);
+    s << indent << "reverse_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.reverse_light);
+    s << indent << "back_work_light: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.back_work_light);
     s << indent << "emergency_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.emergency_light);
-    s << indent << "TL_back_position_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_back_position_light);
-    s << indent << "TL_brake_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_brake_light);
-    s << indent << "TL_reverse_light: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.TL_reverse_light);
+    Printer<uint32_t>::stream(s, indent + "  ", v.emergency_light);
   }
 };
 

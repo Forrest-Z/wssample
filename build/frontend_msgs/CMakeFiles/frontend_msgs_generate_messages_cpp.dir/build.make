@@ -53,17 +53,25 @@ CMAKE_BINARY_DIR = /home/oligay_61/zone3/build/frontend_msgs
 # Include the progress variables for this target.
 include CMakeFiles/frontend_msgs_generate_messages_cpp.dir/progress.make
 
-CMakeFiles/frontend_msgs_generate_messages_cpp: /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend.h
+CMakeFiles/frontend_msgs_generate_messages_cpp: /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_control.h
+CMakeFiles/frontend_msgs_generate_messages_cpp: /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_TLdisplay.h
 
 
-/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend.h: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg
-/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from frontend_msgs/Frontend.msg"
-	cd /home/oligay_61/zone3/src/message/frontend_msgs && /home/oligay_61/zone3/build/frontend_msgs/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_control.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_control.h: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg
+/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_control.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from frontend_msgs/Frontend_control.msg"
+	cd /home/oligay_61/zone3/src/message/frontend_msgs && /home/oligay_61/zone3/build/frontend_msgs/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_TLdisplay.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_TLdisplay.h: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg
+/home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_TLdisplay.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from frontend_msgs/Frontend_TLdisplay.msg"
+	cd /home/oligay_61/zone3/src/message/frontend_msgs && /home/oligay_61/zone3/build/frontend_msgs/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 frontend_msgs_generate_messages_cpp: CMakeFiles/frontend_msgs_generate_messages_cpp
-frontend_msgs_generate_messages_cpp: /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend.h
+frontend_msgs_generate_messages_cpp: /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_control.h
+frontend_msgs_generate_messages_cpp: /home/oligay_61/zone3/devel/.private/frontend_msgs/include/frontend_msgs/Frontend_TLdisplay.h
 frontend_msgs_generate_messages_cpp: CMakeFiles/frontend_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : frontend_msgs_generate_messages_cpp

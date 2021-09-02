@@ -71,6 +71,8 @@
           REVERSE_LIGHT
           BACK_WORK_LIGHT-VAL
           BACK_WORK_LIGHT
+          FUEL_CONSUMPTION-VAL
+          FUEL_CONSUMPTION
           CONTROL_STEER-VAL
           CONTROL_STEER
           CONTROL_THROTTLE_PERCENTAGE-VAL
@@ -119,6 +121,8 @@
           TARGET_X
           TARGET_Y-VAL
           TARGET_Y
+          PLANNER_FSM-VAL
+          PLANNER_FSM
           NUMSATE-VAL
           NUMSATE
           ENGINE_FAULT-VAL

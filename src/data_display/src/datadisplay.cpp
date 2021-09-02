@@ -16,6 +16,7 @@ DataDisplay::DataDisplay(ros::NodeHandle &node, ros::NodeHandle &priv_nh) {
     priv_nh.param<string>("EPB_topic", EPB_topic_, "");
     priv_nh.param<string>("Ft_topic", Ft_topic_, "");
     priv_nh.param<string>("tyre_topic", tyre_topic_, "");
+    priv_nh.param<string>("fuel_topic", fuel_topic_, "");
     priv_nh.param<string>("waypoints_topic", waypoints_topic_, "");
     priv_nh.param<string>("control_fsm_topic", control_fsm_topic_, "");
     priv_nh.param<string>("control_highspeed_topic", control_highspeed_topic_,
@@ -39,6 +40,8 @@ DataDisplay::DataDisplay(ros::NodeHandle &node, ros::NodeHandle &priv_nh) {
         node.subscribe(Ft_topic_, 1, &DataDisplay::ProcFault, this);
     sub_data_tyre_ =
         node.subscribe(tyre_topic_, 1, &DataDisplay::ProcTyre, this);
+    sub_data_fuel_ =
+        node.subscribe(fuel_topic_, 1, &DataDisplay::ProcFuel, this);
     sub_data_waypoints_ =
         node.subscribe(waypoints_topic_, 1, &DataDisplay::ProcWaypoints, this);
     sub_data_fsm_ = node.subscribe(control_fsm_topic_, 1,
@@ -153,6 +156,9 @@ void DataDisplay::ProcTyre(const tli65_can_msgs::RxTyre &msg) {
     global_data.tyre_pressure_rightfront = msg.front_right_pressure;
     global_data.front_left_temperature = msg.front_left_temperature;
     global_data.front_right_temperature = msg.front_right_temperature;
+}
+void DataDisplay::ProcFuel(const tli65_can_msgs::RxFuel &msg) {
+    global_data.fuel_consumption = msg.fuel_consumption;
 }
 
 void DataDisplay::ProcWaypoints(const planner_msgs::WayPoints &msg) {

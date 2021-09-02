@@ -1,0 +1,15 @@
+[35m[1mScanning dependencies of target teledrive[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/teledrive.dir/src/teledrive.cc.o[0m
+[01m[K/home/oligay_61/zone3/src/teledrive/teledrive/src/teledrive.cc:25:16:[m[K [01;31m[Kerror: [m[K‘[01m[KFrontend_TLdispaly[m[K’ in namespace ‘[01m[Kfrontend_msgs[m[K’ does not name a type
+ frontend_msgs::Frontend_TLdispaly frontend_msg;
+[01;32m[K                ^[m[K
+[01m[K/home/oligay_61/zone3/src/teledrive/teledrive/src/teledrive.cc:[m[K In function ‘[01m[Kvoid zone3::teledrive::ProcStLowspeed(const RxStLowspeed&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/teledrive/teledrive/src/teledrive.cc:153:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontend_msg[m[K’ was not declared in this scope
+     frontend_msg.left_light = msg.left_light;
+[01;32m[K     ^[m[K
+CMakeFiles/teledrive.dir/build.make:62: recipe for target 'CMakeFiles/teledrive.dir/src/teledrive.cc.o' failed
+make[2]: *** [CMakeFiles/teledrive.dir/src/teledrive.cc.o] Error 1
+CMakeFiles/Makefile2:1507: recipe for target 'CMakeFiles/teledrive.dir/all' failed
+make[1]: *** [CMakeFiles/teledrive.dir/all] Error 2
+Makefile:138: recipe for target 'all' failed
+make: *** [all] Error 2

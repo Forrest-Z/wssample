@@ -53,16 +53,23 @@ CMAKE_BINARY_DIR = /home/oligay_61/zone3/build/frontend_msgs
 # Include the progress variables for this target.
 include CMakeFiles/frontend_msgs_generate_messages_nodejs.dir/progress.make
 
-CMakeFiles/frontend_msgs_generate_messages_nodejs: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend.js
+CMakeFiles/frontend_msgs_generate_messages_nodejs: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_control.js
+CMakeFiles/frontend_msgs_generate_messages_nodejs: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_TLdisplay.js
 
 
-/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend.js: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from frontend_msgs/Frontend.msg"
-	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_control.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_control.js: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from frontend_msgs/Frontend_control.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg
+
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_TLdisplay.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_TLdisplay.js: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from frontend_msgs/Frontend_TLdisplay.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg
 
 frontend_msgs_generate_messages_nodejs: CMakeFiles/frontend_msgs_generate_messages_nodejs
-frontend_msgs_generate_messages_nodejs: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend.js
+frontend_msgs_generate_messages_nodejs: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_control.js
+frontend_msgs_generate_messages_nodejs: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/gennodejs/ros/frontend_msgs/msg/Frontend_TLdisplay.js
 frontend_msgs_generate_messages_nodejs: CMakeFiles/frontend_msgs_generate_messages_nodejs.dir/build.make
 
 .PHONY : frontend_msgs_generate_messages_nodejs

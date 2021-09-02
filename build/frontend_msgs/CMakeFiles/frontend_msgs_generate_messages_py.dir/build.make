@@ -53,22 +53,30 @@ CMAKE_BINARY_DIR = /home/oligay_61/zone3/build/frontend_msgs
 # Include the progress variables for this target.
 include CMakeFiles/frontend_msgs_generate_messages_py.dir/progress.make
 
-CMakeFiles/frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend.py
+CMakeFiles/frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_control.py
+CMakeFiles/frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_TLdisplay.py
 CMakeFiles/frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/__init__.py
 
 
-/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend.py: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG frontend_msgs/Frontend"
-	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg
+/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_control.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_control.py: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG frontend_msgs/Frontend_control"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg
+
+/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_TLdisplay.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_TLdisplay.py: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG frontend_msgs/Frontend_TLdisplay"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg
 
 /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/__init__.py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for frontend_msgs"
+/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/__init__.py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_control.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/__init__.py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_TLdisplay.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for frontend_msgs"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg --initpy
 
 frontend_msgs_generate_messages_py: CMakeFiles/frontend_msgs_generate_messages_py
-frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend.py
+frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_control.py
+frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/_Frontend_TLdisplay.py
 frontend_msgs_generate_messages_py: /home/oligay_61/zone3/devel/.private/frontend_msgs/lib/python2.7/dist-packages/frontend_msgs/msg/__init__.py
 frontend_msgs_generate_messages_py: CMakeFiles/frontend_msgs_generate_messages_py.dir/build.make
 

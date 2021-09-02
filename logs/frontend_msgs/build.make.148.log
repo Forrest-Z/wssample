@@ -1,0 +1,26 @@
+[35m[1mScanning dependencies of target _frontend_msgs_generate_messages_check_deps_Frontend_TLdisplay[0m
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _frontend_msgs_generate_messages_check_deps_Frontend_TLdisplay
+[35m[1mScanning dependencies of target _frontend_msgs_generate_messages_check_deps_Frontend_control[0m
+[  0%] Built target _frontend_msgs_generate_messages_check_deps_Frontend_control
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_eus
+[  8%] [34m[1mGenerating Javascript code from frontend_msgs/Frontend_control.msg[0m
+[ 16%] [34m[1mGenerating Javascript code from frontend_msgs/Frontend_TLdisplay.msg[0m
+[ 25%] [34m[1mGenerating Lisp code from frontend_msgs/Frontend_control.msg[0m
+[ 25%] Built target frontend_msgs_generate_messages_nodejs
+[ 41%] [34m[1mGenerating Python from MSG frontend_msgs/Frontend_control[0m
+[ 41%] [34m[1mGenerating Lisp code from frontend_msgs/Frontend_TLdisplay.msg[0m
+[ 50%] [34m[1mGenerating Python from MSG frontend_msgs/Frontend_TLdisplay[0m
+[ 58%] [34m[1mGenerating C++ code from frontend_msgs/Frontend_control.msg[0m
+[ 58%] Built target frontend_msgs_generate_messages_lisp
+[ 66%] [34m[1mGenerating EusLisp code from frontend_msgs/Frontend_control.msg[0m
+[ 75%] [34m[1mGenerating EusLisp code from frontend_msgs/Frontend_TLdisplay.msg[0m
+[ 83%] [34m[1mGenerating C++ code from frontend_msgs/Frontend_TLdisplay.msg[0m
+[ 91%] [34m[1mGenerating Python msg __init__.py for frontend_msgs[0m
+[100%] Built target frontend_msgs_generate_messages_eus
+[100%] Built target frontend_msgs_generate_messages_cpp
+[100%] Built target frontend_msgs_generate_messages_py
+[100%] Built target frontend_msgs_generate_messages

@@ -9,7 +9,7 @@ import struct
 import std_msgs.msg
 
 class DisplayData(genpy.Message):
-  _md5sum = "46adc89bdab4634e8fe445e04537579f"
+  _md5sum = "75ffc4b8292bc3aabb3225b01b095200"
   _type = "displaydata_msgs/DisplayData"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
@@ -64,6 +64,7 @@ int32 back_position_light
 int32 brake_light
 int32 reverse_light
 int32 back_work_light
+int32 fuel_consumption
 
 # Tli65 vehicle parameters can_rx
 float64 control_steer
@@ -92,6 +93,7 @@ int32 back_work
 # waypoints planning 
 float64 target_x
 float64 target_y
+int32 planner_fsm
 
 # number of satellite
 int32 NumSate
@@ -137,8 +139,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','rtk_state','lat','lng','alt','latlng_std','x_enu','y_enu','z_enu','xy_std_enu','speed','headingangle','current_steer','current_brake_pedal_pos','current_throttle_percentage','current_retarder_torque_percentage','current_EPB','current_gear','current_hangangle','auto_mode','left_light','right_light','near_light','far_light','air_beep','top_warning_light','front_fog_light','front_work_light','side_light','position_light','back_left_light','back_right_light','back_position_light','brake_light','reverse_light','back_work_light','control_steer','control_throttle_percentage','control_xbr','control_EPB','control_gear','control_hang','control_fsm_state','vehicle_auto_mode','left','right','near','far','top_warn','control_air_beep','front_fog','front_work','side','position','emergency','brake','reverse','back_work','target_x','target_y','NumSate','engine_fault','gear_fault','EBS_fault','EPS_fault','EPB_fault','truck_fault_level','engine_fault_code','gear_fault_code','EPS_fault_code','EBS_fault_code','electric_fault_code','tyre_pressure_leftfront','tyre_pressure_rightfront','front_left_temperature','front_right_temperature']
-  _slot_types = ['std_msgs/Header','int32','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','int32','int32','int32','string','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','float64','int32','float64','int32','string','string','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','float64','float64','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','float64','float64']
+  __slots__ = ['header','rtk_state','lat','lng','alt','latlng_std','x_enu','y_enu','z_enu','xy_std_enu','speed','headingangle','current_steer','current_brake_pedal_pos','current_throttle_percentage','current_retarder_torque_percentage','current_EPB','current_gear','current_hangangle','auto_mode','left_light','right_light','near_light','far_light','air_beep','top_warning_light','front_fog_light','front_work_light','side_light','position_light','back_left_light','back_right_light','back_position_light','brake_light','reverse_light','back_work_light','fuel_consumption','control_steer','control_throttle_percentage','control_xbr','control_EPB','control_gear','control_hang','control_fsm_state','vehicle_auto_mode','left','right','near','far','top_warn','control_air_beep','front_fog','front_work','side','position','emergency','brake','reverse','back_work','target_x','target_y','planner_fsm','NumSate','engine_fault','gear_fault','EBS_fault','EPS_fault','EPB_fault','truck_fault_level','engine_fault_code','gear_fault_code','EPS_fault_code','EBS_fault_code','electric_fault_code','tyre_pressure_leftfront','tyre_pressure_rightfront','front_left_temperature','front_right_temperature']
+  _slot_types = ['std_msgs/Header','int32','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','int32','int32','int32','string','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','float64','int32','float64','int32','string','string','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','float64','float64','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -148,7 +150,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,rtk_state,lat,lng,alt,latlng_std,x_enu,y_enu,z_enu,xy_std_enu,speed,headingangle,current_steer,current_brake_pedal_pos,current_throttle_percentage,current_retarder_torque_percentage,current_EPB,current_gear,current_hangangle,auto_mode,left_light,right_light,near_light,far_light,air_beep,top_warning_light,front_fog_light,front_work_light,side_light,position_light,back_left_light,back_right_light,back_position_light,brake_light,reverse_light,back_work_light,control_steer,control_throttle_percentage,control_xbr,control_EPB,control_gear,control_hang,control_fsm_state,vehicle_auto_mode,left,right,near,far,top_warn,control_air_beep,front_fog,front_work,side,position,emergency,brake,reverse,back_work,target_x,target_y,NumSate,engine_fault,gear_fault,EBS_fault,EPS_fault,EPB_fault,truck_fault_level,engine_fault_code,gear_fault_code,EPS_fault_code,EBS_fault_code,electric_fault_code,tyre_pressure_leftfront,tyre_pressure_rightfront,front_left_temperature,front_right_temperature
+       header,rtk_state,lat,lng,alt,latlng_std,x_enu,y_enu,z_enu,xy_std_enu,speed,headingangle,current_steer,current_brake_pedal_pos,current_throttle_percentage,current_retarder_torque_percentage,current_EPB,current_gear,current_hangangle,auto_mode,left_light,right_light,near_light,far_light,air_beep,top_warning_light,front_fog_light,front_work_light,side_light,position_light,back_left_light,back_right_light,back_position_light,brake_light,reverse_light,back_work_light,fuel_consumption,control_steer,control_throttle_percentage,control_xbr,control_EPB,control_gear,control_hang,control_fsm_state,vehicle_auto_mode,left,right,near,far,top_warn,control_air_beep,front_fog,front_work,side,position,emergency,brake,reverse,back_work,target_x,target_y,planner_fsm,NumSate,engine_fault,gear_fault,EBS_fault,EPS_fault,EPB_fault,truck_fault_level,engine_fault_code,gear_fault_code,EPS_fault_code,EBS_fault_code,electric_fault_code,tyre_pressure_leftfront,tyre_pressure_rightfront,front_left_temperature,front_right_temperature
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -229,6 +231,8 @@ string frame_id
         self.reverse_light = 0
       if self.back_work_light is None:
         self.back_work_light = 0
+      if self.fuel_consumption is None:
+        self.fuel_consumption = 0
       if self.control_steer is None:
         self.control_steer = 0.
       if self.control_throttle_percentage is None:
@@ -277,6 +281,8 @@ string frame_id
         self.target_x = 0.
       if self.target_y is None:
         self.target_y = 0.
+      if self.planner_fsm is None:
+        self.planner_fsm = 0
       if self.NumSate is None:
         self.NumSate = 0
       if self.engine_fault is None:
@@ -346,6 +352,7 @@ string frame_id
       self.brake_light = 0
       self.reverse_light = 0
       self.back_work_light = 0
+      self.fuel_consumption = 0
       self.control_steer = 0.
       self.control_throttle_percentage = 0
       self.control_xbr = 0.
@@ -370,6 +377,7 @@ string frame_id
       self.back_work = 0
       self.target_x = 0.
       self.target_y = 0.
+      self.planner_fsm = 0
       self.NumSate = 0
       self.engine_fault = 0
       self.gear_fault = 0
@@ -416,7 +424,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_18ididi().pack(_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB))
+      buff.write(_get_struct_19ididi().pack(_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.fuel_consumption, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB))
       _x = self.control_gear
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -430,7 +438,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_16i2d14i2d().pack(_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
+      buff.write(_get_struct_16i2d15i2d().pack(_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.planner_fsm, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -472,8 +480,8 @@ string frame_id
         self.current_gear = str[start:end]
       _x = self
       start = end
-      end += 96
-      (_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB,) = _get_struct_18ididi().unpack(str[start:end])
+      end += 100
+      (_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.fuel_consumption, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB,) = _get_struct_19ididi().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -494,8 +502,8 @@ string frame_id
         self.control_hang = str[start:end]
       _x = self
       start = end
-      end += 152
-      (_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_16i2d14i2d().unpack(str[start:end])
+      end += 156
+      (_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.planner_fsm, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_16i2d15i2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -525,7 +533,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_18ididi().pack(_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB))
+      buff.write(_get_struct_19ididi().pack(_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.fuel_consumption, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB))
       _x = self.control_gear
       length = len(_x)
       if python3 or type(_x) == unicode:
@@ -539,7 +547,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_16i2d14i2d().pack(_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
+      buff.write(_get_struct_16i2d15i2d().pack(_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.planner_fsm, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -582,8 +590,8 @@ string frame_id
         self.current_gear = str[start:end]
       _x = self
       start = end
-      end += 96
-      (_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB,) = _get_struct_18ididi().unpack(str[start:end])
+      end += 100
+      (_x.current_hangangle, _x.auto_mode, _x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.air_beep, _x.top_warning_light, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.fuel_consumption, _x.control_steer, _x.control_throttle_percentage, _x.control_xbr, _x.control_EPB,) = _get_struct_19ididi().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -604,8 +612,8 @@ string frame_id
         self.control_hang = str[start:end]
       _x = self
       start = end
-      end += 152
-      (_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_16i2d14i2d().unpack(str[start:end])
+      end += 156
+      (_x.control_fsm_state, _x.vehicle_auto_mode, _x.left, _x.right, _x.near, _x.far, _x.top_warn, _x.control_air_beep, _x.front_fog, _x.front_work, _x.side, _x.position, _x.emergency, _x.brake, _x.reverse, _x.back_work, _x.target_x, _x.target_y, _x.planner_fsm, _x.NumSate, _x.engine_fault, _x.gear_fault, _x.EBS_fault, _x.EPS_fault, _x.EPB_fault, _x.truck_fault_level, _x.engine_fault_code, _x.gear_fault_code, _x.EPS_fault_code, _x.EBS_fault_code, _x.electric_fault_code, _x.tyre_pressure_leftfront, _x.tyre_pressure_rightfront, _x.front_left_temperature, _x.front_right_temperature,) = _get_struct_16i2d15i2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -614,18 +622,18 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_16i2d14i2d = None
-def _get_struct_16i2d14i2d():
-    global _struct_16i2d14i2d
-    if _struct_16i2d14i2d is None:
-        _struct_16i2d14i2d = struct.Struct("<16i2d14i2d")
-    return _struct_16i2d14i2d
-_struct_18ididi = None
-def _get_struct_18ididi():
-    global _struct_18ididi
-    if _struct_18ididi is None:
-        _struct_18ididi = struct.Struct("<18ididi")
-    return _struct_18ididi
+_struct_16i2d15i2d = None
+def _get_struct_16i2d15i2d():
+    global _struct_16i2d15i2d
+    if _struct_16i2d15i2d is None:
+        _struct_16i2d15i2d = struct.Struct("<16i2d15i2d")
+    return _struct_16i2d15i2d
+_struct_19ididi = None
+def _get_struct_19ididi():
+    global _struct_19ididi
+    if _struct_19ididi is None:
+        _struct_19ididi = struct.Struct("<19ididi")
+    return _struct_19ididi
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I

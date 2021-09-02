@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg"
+messages_str = "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg;/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg"
 services_str = ""
 pkg_name = "frontend_msgs"
 dependencies_str = "std_msgs"

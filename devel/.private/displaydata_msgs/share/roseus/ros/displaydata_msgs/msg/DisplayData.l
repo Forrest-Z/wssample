@@ -16,7 +16,7 @@
 
 (defclass displaydata_msgs::DisplayData
   :super ros::object
-  :slots (_header _rtk_state _lat _lng _alt _latlng_std _x_enu _y_enu _z_enu _xy_std_enu _speed _headingangle _current_steer _current_brake_pedal_pos _current_throttle_percentage _current_retarder_torque_percentage _current_EPB _current_gear _current_hangangle _auto_mode _left_light _right_light _near_light _far_light _air_beep _top_warning_light _front_fog_light _front_work_light _side_light _position_light _back_left_light _back_right_light _back_position_light _brake_light _reverse_light _back_work_light _control_steer _control_throttle_percentage _control_xbr _control_EPB _control_gear _control_hang _control_fsm_state _vehicle_auto_mode _left _right _near _far _top_warn _control_air_beep _front_fog _front_work _side _position _emergency _brake _reverse _back_work _target_x _target_y _NumSate _engine_fault _gear_fault _EBS_fault _EPS_fault _EPB_fault _truck_fault_level _engine_fault_code _gear_fault_code _EPS_fault_code _EBS_fault_code _electric_fault_code _tyre_pressure_leftfront _tyre_pressure_rightfront _front_left_temperature _front_right_temperature ))
+  :slots (_header _rtk_state _lat _lng _alt _latlng_std _x_enu _y_enu _z_enu _xy_std_enu _speed _headingangle _current_steer _current_brake_pedal_pos _current_throttle_percentage _current_retarder_torque_percentage _current_EPB _current_gear _current_hangangle _auto_mode _left_light _right_light _near_light _far_light _air_beep _top_warning_light _front_fog_light _front_work_light _side_light _position_light _back_left_light _back_right_light _back_position_light _brake_light _reverse_light _back_work_light _fuel_consumption _control_steer _control_throttle_percentage _control_xbr _control_EPB _control_gear _control_hang _control_fsm_state _vehicle_auto_mode _left _right _near _far _top_warn _control_air_beep _front_fog _front_work _side _position _emergency _brake _reverse _back_work _target_x _target_y _planner_fsm _NumSate _engine_fault _gear_fault _EBS_fault _EPS_fault _EPB_fault _truck_fault_level _engine_fault_code _gear_fault_code _EPS_fault_code _EBS_fault_code _electric_fault_code _tyre_pressure_leftfront _tyre_pressure_rightfront _front_left_temperature _front_right_temperature ))
 
 (defmethod displaydata_msgs::DisplayData
   (:init
@@ -57,6 +57,7 @@
     ((:brake_light __brake_light) 0)
     ((:reverse_light __reverse_light) 0)
     ((:back_work_light __back_work_light) 0)
+    ((:fuel_consumption __fuel_consumption) 0)
     ((:control_steer __control_steer) 0.0)
     ((:control_throttle_percentage __control_throttle_percentage) 0)
     ((:control_xbr __control_xbr) 0.0)
@@ -81,6 +82,7 @@
     ((:back_work __back_work) 0)
     ((:target_x __target_x) 0.0)
     ((:target_y __target_y) 0.0)
+    ((:planner_fsm __planner_fsm) 0)
     ((:NumSate __NumSate) 0)
     ((:engine_fault __engine_fault) 0)
     ((:gear_fault __gear_fault) 0)
@@ -135,6 +137,7 @@
    (setq _brake_light (round __brake_light))
    (setq _reverse_light (round __reverse_light))
    (setq _back_work_light (round __back_work_light))
+   (setq _fuel_consumption (round __fuel_consumption))
    (setq _control_steer (float __control_steer))
    (setq _control_throttle_percentage (round __control_throttle_percentage))
    (setq _control_xbr (float __control_xbr))
@@ -159,6 +162,7 @@
    (setq _back_work (round __back_work))
    (setq _target_x (float __target_x))
    (setq _target_y (float __target_y))
+   (setq _planner_fsm (round __planner_fsm))
    (setq _NumSate (round __NumSate))
    (setq _engine_fault (round __engine_fault))
    (setq _gear_fault (round __gear_fault))
@@ -288,6 +292,9 @@
   (:back_work_light
    (&optional __back_work_light)
    (if __back_work_light (setq _back_work_light __back_work_light)) _back_work_light)
+  (:fuel_consumption
+   (&optional __fuel_consumption)
+   (if __fuel_consumption (setq _fuel_consumption __fuel_consumption)) _fuel_consumption)
   (:control_steer
    (&optional __control_steer)
    (if __control_steer (setq _control_steer __control_steer)) _control_steer)
@@ -360,6 +367,9 @@
   (:target_y
    (&optional __target_y)
    (if __target_y (setq _target_y __target_y)) _target_y)
+  (:planner_fsm
+   (&optional __planner_fsm)
+   (if __planner_fsm (setq _planner_fsm __planner_fsm)) _planner_fsm)
   (:NumSate
    (&optional __NumSate)
    (if __NumSate (setq _NumSate __NumSate)) _NumSate)
@@ -483,6 +493,8 @@
     4
     ;; int32 _back_work_light
     4
+    ;; int32 _fuel_consumption
+    4
     ;; float64 _control_steer
     8
     ;; int32 _control_throttle_percentage
@@ -531,6 +543,8 @@
     8
     ;; float64 _target_y
     8
+    ;; int32 _planner_fsm
+    4
     ;; int32 _NumSate
     4
     ;; int32 _engine_fault
@@ -640,6 +654,8 @@
        (write-long _reverse_light s)
      ;; int32 _back_work_light
        (write-long _back_work_light s)
+     ;; int32 _fuel_consumption
+       (write-long _fuel_consumption s)
      ;; float64 _control_steer
        (sys::poke _control_steer (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; int32 _control_throttle_percentage
@@ -688,6 +704,8 @@
        (sys::poke _target_x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _target_y
        (sys::poke _target_y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; int32 _planner_fsm
+       (write-long _planner_fsm s)
      ;; int32 _NumSate
        (write-long _NumSate s)
      ;; int32 _engine_fault
@@ -796,6 +814,8 @@
      (setq _reverse_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; int32 _back_work_light
      (setq _back_work_light (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _fuel_consumption
+     (setq _fuel_consumption (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _control_steer
      (setq _control_steer (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; int32 _control_throttle_percentage
@@ -844,6 +864,8 @@
      (setq _target_x (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _target_y
      (setq _target_y (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; int32 _planner_fsm
+     (setq _planner_fsm (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; int32 _NumSate
      (setq _NumSate (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; int32 _engine_fault
@@ -880,7 +902,7 @@
    self)
   )
 
-(setf (get displaydata_msgs::DisplayData :md5sum-) "46adc89bdab4634e8fe445e04537579f")
+(setf (get displaydata_msgs::DisplayData :md5sum-) "75ffc4b8292bc3aabb3225b01b095200")
 (setf (get displaydata_msgs::DisplayData :datatype-) "displaydata_msgs/DisplayData")
 (setf (get displaydata_msgs::DisplayData :definition-)
       "Header header
@@ -935,6 +957,7 @@ int32 back_position_light
 int32 brake_light
 int32 reverse_light
 int32 back_work_light
+int32 fuel_consumption
 
 # Tli65 vehicle parameters can_rx
 float64 control_steer
@@ -963,6 +986,7 @@ int32 back_work
 # waypoints planning 
 float64 target_x
 float64 target_y
+int32 planner_fsm
 
 # number of satellite
 int32 NumSate
@@ -1012,6 +1036,6 @@ string frame_id
 
 
 
-(provide :displaydata_msgs/DisplayData "46adc89bdab4634e8fe445e04537579f")
+(provide :displaydata_msgs/DisplayData "75ffc4b8292bc3aabb3225b01b095200")
 
 

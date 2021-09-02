@@ -8,28 +8,33 @@ import struct
 
 
 class Frontend(genpy.Message):
-  _md5sum = "6d69890661b416e2254fb5f08a7e73e1"
+  _md5sum = "4b5bd2883c6474dfc70615b662bea589"
   _type = "frontend_msgs/Frontend"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """bool TL_left_light
-bool TL_right_light
-bool TL_near_light
-bool TL_far_light
+  _full_text = """#TL lights feedback
+int32 left_light
+int32 right_light
+int32 near_light
+int32 far_light
 
-bool TL_top_warning_light
-bool TL_front_fog_light
-bool TL_front_work_light
-bool TL_back_work_light
-bool TL_side_light
-bool TL_position_light
-bool TL_back_left_light
-bool TL_back_right_light
-bool emergency_light
-bool TL_back_position_light
-bool TL_brake_light
-bool TL_reverse_light"""
-  __slots__ = ['TL_left_light','TL_right_light','TL_near_light','TL_far_light','TL_top_warning_light','TL_front_fog_light','TL_front_work_light','TL_back_work_light','TL_side_light','TL_position_light','TL_back_left_light','TL_back_right_light','emergency_light','TL_back_position_light','TL_brake_light','TL_reverse_light']
-  _slot_types = ['bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool','bool']
+int32 top_warning_light
+int32 air_beep
+int32 front_fog_light
+int32 front_work_light
+int32 side_light
+int32 position_light
+int32 back_left_light
+int32 back_right_light
+int32 back_position_light
+int32 brake_light
+int32 reverse_light
+int32 back_work_light
+
+# frontend lights control
+uint32 emergency_light
+"""
+  __slots__ = ['left_light','right_light','near_light','far_light','top_warning_light','air_beep','front_fog_light','front_work_light','side_light','position_light','back_left_light','back_right_light','back_position_light','brake_light','reverse_light','back_work_light','emergency_light']
+  _slot_types = ['int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','int32','uint32']
 
   def __init__(self, *args, **kwds):
     """
@@ -39,7 +44,7 @@ bool TL_reverse_light"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       TL_left_light,TL_right_light,TL_near_light,TL_far_light,TL_top_warning_light,TL_front_fog_light,TL_front_work_light,TL_back_work_light,TL_side_light,TL_position_light,TL_back_left_light,TL_back_right_light,emergency_light,TL_back_position_light,TL_brake_light,TL_reverse_light
+       left_light,right_light,near_light,far_light,top_warning_light,air_beep,front_fog_light,front_work_light,side_light,position_light,back_left_light,back_right_light,back_position_light,brake_light,reverse_light,back_work_light,emergency_light
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -48,55 +53,58 @@ bool TL_reverse_light"""
     if args or kwds:
       super(Frontend, self).__init__(*args, **kwds)
       # message fields cannot be None, assign default values for those that are
-      if self.TL_left_light is None:
-        self.TL_left_light = False
-      if self.TL_right_light is None:
-        self.TL_right_light = False
-      if self.TL_near_light is None:
-        self.TL_near_light = False
-      if self.TL_far_light is None:
-        self.TL_far_light = False
-      if self.TL_top_warning_light is None:
-        self.TL_top_warning_light = False
-      if self.TL_front_fog_light is None:
-        self.TL_front_fog_light = False
-      if self.TL_front_work_light is None:
-        self.TL_front_work_light = False
-      if self.TL_back_work_light is None:
-        self.TL_back_work_light = False
-      if self.TL_side_light is None:
-        self.TL_side_light = False
-      if self.TL_position_light is None:
-        self.TL_position_light = False
-      if self.TL_back_left_light is None:
-        self.TL_back_left_light = False
-      if self.TL_back_right_light is None:
-        self.TL_back_right_light = False
+      if self.left_light is None:
+        self.left_light = 0
+      if self.right_light is None:
+        self.right_light = 0
+      if self.near_light is None:
+        self.near_light = 0
+      if self.far_light is None:
+        self.far_light = 0
+      if self.top_warning_light is None:
+        self.top_warning_light = 0
+      if self.air_beep is None:
+        self.air_beep = 0
+      if self.front_fog_light is None:
+        self.front_fog_light = 0
+      if self.front_work_light is None:
+        self.front_work_light = 0
+      if self.side_light is None:
+        self.side_light = 0
+      if self.position_light is None:
+        self.position_light = 0
+      if self.back_left_light is None:
+        self.back_left_light = 0
+      if self.back_right_light is None:
+        self.back_right_light = 0
+      if self.back_position_light is None:
+        self.back_position_light = 0
+      if self.brake_light is None:
+        self.brake_light = 0
+      if self.reverse_light is None:
+        self.reverse_light = 0
+      if self.back_work_light is None:
+        self.back_work_light = 0
       if self.emergency_light is None:
-        self.emergency_light = False
-      if self.TL_back_position_light is None:
-        self.TL_back_position_light = False
-      if self.TL_brake_light is None:
-        self.TL_brake_light = False
-      if self.TL_reverse_light is None:
-        self.TL_reverse_light = False
+        self.emergency_light = 0
     else:
-      self.TL_left_light = False
-      self.TL_right_light = False
-      self.TL_near_light = False
-      self.TL_far_light = False
-      self.TL_top_warning_light = False
-      self.TL_front_fog_light = False
-      self.TL_front_work_light = False
-      self.TL_back_work_light = False
-      self.TL_side_light = False
-      self.TL_position_light = False
-      self.TL_back_left_light = False
-      self.TL_back_right_light = False
-      self.emergency_light = False
-      self.TL_back_position_light = False
-      self.TL_brake_light = False
-      self.TL_reverse_light = False
+      self.left_light = 0
+      self.right_light = 0
+      self.near_light = 0
+      self.far_light = 0
+      self.top_warning_light = 0
+      self.air_beep = 0
+      self.front_fog_light = 0
+      self.front_work_light = 0
+      self.side_light = 0
+      self.position_light = 0
+      self.back_left_light = 0
+      self.back_right_light = 0
+      self.back_position_light = 0
+      self.brake_light = 0
+      self.reverse_light = 0
+      self.back_work_light = 0
+      self.emergency_light = 0
 
   def _get_types(self):
     """
@@ -111,7 +119,7 @@ bool TL_reverse_light"""
     """
     try:
       _x = self
-      buff.write(_get_struct_16B().pack(_x.TL_left_light, _x.TL_right_light, _x.TL_near_light, _x.TL_far_light, _x.TL_top_warning_light, _x.TL_front_fog_light, _x.TL_front_work_light, _x.TL_back_work_light, _x.TL_side_light, _x.TL_position_light, _x.TL_back_left_light, _x.TL_back_right_light, _x.emergency_light, _x.TL_back_position_light, _x.TL_brake_light, _x.TL_reverse_light))
+      buff.write(_get_struct_16iI().pack(_x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.top_warning_light, _x.air_beep, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.emergency_light))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -125,24 +133,8 @@ bool TL_reverse_light"""
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.TL_left_light, _x.TL_right_light, _x.TL_near_light, _x.TL_far_light, _x.TL_top_warning_light, _x.TL_front_fog_light, _x.TL_front_work_light, _x.TL_back_work_light, _x.TL_side_light, _x.TL_position_light, _x.TL_back_left_light, _x.TL_back_right_light, _x.emergency_light, _x.TL_back_position_light, _x.TL_brake_light, _x.TL_reverse_light,) = _get_struct_16B().unpack(str[start:end])
-      self.TL_left_light = bool(self.TL_left_light)
-      self.TL_right_light = bool(self.TL_right_light)
-      self.TL_near_light = bool(self.TL_near_light)
-      self.TL_far_light = bool(self.TL_far_light)
-      self.TL_top_warning_light = bool(self.TL_top_warning_light)
-      self.TL_front_fog_light = bool(self.TL_front_fog_light)
-      self.TL_front_work_light = bool(self.TL_front_work_light)
-      self.TL_back_work_light = bool(self.TL_back_work_light)
-      self.TL_side_light = bool(self.TL_side_light)
-      self.TL_position_light = bool(self.TL_position_light)
-      self.TL_back_left_light = bool(self.TL_back_left_light)
-      self.TL_back_right_light = bool(self.TL_back_right_light)
-      self.emergency_light = bool(self.emergency_light)
-      self.TL_back_position_light = bool(self.TL_back_position_light)
-      self.TL_brake_light = bool(self.TL_brake_light)
-      self.TL_reverse_light = bool(self.TL_reverse_light)
+      end += 68
+      (_x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.top_warning_light, _x.air_beep, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.emergency_light,) = _get_struct_16iI().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -156,7 +148,7 @@ bool TL_reverse_light"""
     """
     try:
       _x = self
-      buff.write(_get_struct_16B().pack(_x.TL_left_light, _x.TL_right_light, _x.TL_near_light, _x.TL_far_light, _x.TL_top_warning_light, _x.TL_front_fog_light, _x.TL_front_work_light, _x.TL_back_work_light, _x.TL_side_light, _x.TL_position_light, _x.TL_back_left_light, _x.TL_back_right_light, _x.emergency_light, _x.TL_back_position_light, _x.TL_brake_light, _x.TL_reverse_light))
+      buff.write(_get_struct_16iI().pack(_x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.top_warning_light, _x.air_beep, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.emergency_light))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -171,24 +163,8 @@ bool TL_reverse_light"""
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.TL_left_light, _x.TL_right_light, _x.TL_near_light, _x.TL_far_light, _x.TL_top_warning_light, _x.TL_front_fog_light, _x.TL_front_work_light, _x.TL_back_work_light, _x.TL_side_light, _x.TL_position_light, _x.TL_back_left_light, _x.TL_back_right_light, _x.emergency_light, _x.TL_back_position_light, _x.TL_brake_light, _x.TL_reverse_light,) = _get_struct_16B().unpack(str[start:end])
-      self.TL_left_light = bool(self.TL_left_light)
-      self.TL_right_light = bool(self.TL_right_light)
-      self.TL_near_light = bool(self.TL_near_light)
-      self.TL_far_light = bool(self.TL_far_light)
-      self.TL_top_warning_light = bool(self.TL_top_warning_light)
-      self.TL_front_fog_light = bool(self.TL_front_fog_light)
-      self.TL_front_work_light = bool(self.TL_front_work_light)
-      self.TL_back_work_light = bool(self.TL_back_work_light)
-      self.TL_side_light = bool(self.TL_side_light)
-      self.TL_position_light = bool(self.TL_position_light)
-      self.TL_back_left_light = bool(self.TL_back_left_light)
-      self.TL_back_right_light = bool(self.TL_back_right_light)
-      self.emergency_light = bool(self.emergency_light)
-      self.TL_back_position_light = bool(self.TL_back_position_light)
-      self.TL_brake_light = bool(self.TL_brake_light)
-      self.TL_reverse_light = bool(self.TL_reverse_light)
+      end += 68
+      (_x.left_light, _x.right_light, _x.near_light, _x.far_light, _x.top_warning_light, _x.air_beep, _x.front_fog_light, _x.front_work_light, _x.side_light, _x.position_light, _x.back_left_light, _x.back_right_light, _x.back_position_light, _x.brake_light, _x.reverse_light, _x.back_work_light, _x.emergency_light,) = _get_struct_16iI().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -197,9 +173,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_16B = None
-def _get_struct_16B():
-    global _struct_16B
-    if _struct_16B is None:
-        _struct_16B = struct.Struct("<16B")
-    return _struct_16B
+_struct_16iI = None
+def _get_struct_16iI():
+    global _struct_16iI
+    if _struct_16iI is None:
+        _struct_16iI = struct.Struct("<16iI")
+    return _struct_16iI

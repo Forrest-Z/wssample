@@ -1,0 +1,11 @@
+[01m[K/home/oligay_61/zone3/src/teledrive/teledrive/src/teledrive.cc:[m[K In function ‘[01m[Kvoid zone3::teledrive::ProcStFrontend(const Frontend&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/teledrive/teledrive/src/teledrive.cc:144:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst Frontend {aka const struct frontend_msgs::Frontend_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kemergency_light[m[K’
+     teledrive_msg1.emergency_light = msg.emergency_light;
+[01;32m[K                                          ^[m[K
+[01m[K/home/oligay_61/zone3/src/teledrive/teledrive/src/teledrive.cc:[m[K In function ‘[01m[Kvoid zone3::teledrive::ProcStLowspeed(const RxStLowspeed&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/teledrive/teledrive/src/teledrive.cc:173:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontend_msgs::Frontend {aka struct frontend_msgs::Frontend_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kemergency_light[m[K’
+         frontend_msg.emergency_light = 1;
+[01;32m[K                      ^[m[K
+make[2]: *** [CMakeFiles/teledrive.dir/src/teledrive.cc.o] Error 1
+make[1]: *** [CMakeFiles/teledrive.dir/all] Error 2
+make: *** [all] Error 2

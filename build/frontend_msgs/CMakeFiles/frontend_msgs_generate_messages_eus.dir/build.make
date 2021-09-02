@@ -53,21 +53,28 @@ CMAKE_BINARY_DIR = /home/oligay_61/zone3/build/frontend_msgs
 # Include the progress variables for this target.
 include CMakeFiles/frontend_msgs_generate_messages_eus.dir/progress.make
 
-CMakeFiles/frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend.l
+CMakeFiles/frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_control.l
+CMakeFiles/frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_TLdisplay.l
 CMakeFiles/frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/manifest.l
 
 
-/home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend.l: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from frontend_msgs/Frontend.msg"
-	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_control.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_control.l: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from frontend_msgs/Frontend_control.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg
+
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_TLdisplay.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_TLdisplay.l: /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from frontend_msgs/Frontend_TLdisplay.msg"
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg -Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p frontend_msgs -o /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg
 
 /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for frontend_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oligay_61/zone3/build/frontend_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for frontend_msgs"
 	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs frontend_msgs std_msgs
 
 frontend_msgs_generate_messages_eus: CMakeFiles/frontend_msgs_generate_messages_eus
-frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend.l
+frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_control.l
+frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/msg/Frontend_TLdisplay.l
 frontend_msgs_generate_messages_eus: /home/oligay_61/zone3/devel/.private/frontend_msgs/share/roseus/ros/frontend_msgs/manifest.l
 frontend_msgs_generate_messages_eus: CMakeFiles/frontend_msgs_generate_messages_eus.dir/build.make
 

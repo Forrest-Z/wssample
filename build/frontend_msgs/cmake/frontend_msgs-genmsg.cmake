@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "frontend_msgs: 1 messages, 0 services")
+message(STATUS "frontend_msgs: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ifrontend_msgs:/home/oligay_61/zone3/src/message/frontend_msgs/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -17,9 +17,14 @@ add_custom_target(frontend_msgs_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg" NAME_WE)
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg" NAME_WE)
 add_custom_target(_frontend_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontend_msgs" "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontend_msgs" "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg" ""
+)
+
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg" NAME_WE)
+add_custom_target(_frontend_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontend_msgs" "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg" ""
 )
 
 #
@@ -29,7 +34,13 @@ add_custom_target(_frontend_msgs_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(frontend_msgs
-  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg"
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontend_msgs
+)
+_generate_msg_cpp(frontend_msgs
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontend_msgs
@@ -49,7 +60,9 @@ add_custom_target(frontend_msgs_generate_messages_cpp
 add_dependencies(frontend_msgs_generate_messages frontend_msgs_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg" NAME_WE)
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg" NAME_WE)
+add_dependencies(frontend_msgs_generate_messages_cpp _frontend_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg" NAME_WE)
 add_dependencies(frontend_msgs_generate_messages_cpp _frontend_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +75,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS frontend_msgs_generate_messages_cpp
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(frontend_msgs
-  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg"
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontend_msgs
+)
+_generate_msg_eus(frontend_msgs
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontend_msgs
@@ -82,7 +101,9 @@ add_custom_target(frontend_msgs_generate_messages_eus
 add_dependencies(frontend_msgs_generate_messages frontend_msgs_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg" NAME_WE)
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg" NAME_WE)
+add_dependencies(frontend_msgs_generate_messages_eus _frontend_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg" NAME_WE)
 add_dependencies(frontend_msgs_generate_messages_eus _frontend_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +116,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS frontend_msgs_generate_messages_eus
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(frontend_msgs
-  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg"
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontend_msgs
+)
+_generate_msg_lisp(frontend_msgs
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontend_msgs
@@ -115,7 +142,9 @@ add_custom_target(frontend_msgs_generate_messages_lisp
 add_dependencies(frontend_msgs_generate_messages frontend_msgs_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg" NAME_WE)
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg" NAME_WE)
+add_dependencies(frontend_msgs_generate_messages_lisp _frontend_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg" NAME_WE)
 add_dependencies(frontend_msgs_generate_messages_lisp _frontend_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +157,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS frontend_msgs_generate_messages_lis
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(frontend_msgs
-  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg"
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontend_msgs
+)
+_generate_msg_nodejs(frontend_msgs
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontend_msgs
@@ -148,7 +183,9 @@ add_custom_target(frontend_msgs_generate_messages_nodejs
 add_dependencies(frontend_msgs_generate_messages frontend_msgs_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg" NAME_WE)
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg" NAME_WE)
+add_dependencies(frontend_msgs_generate_messages_nodejs _frontend_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg" NAME_WE)
 add_dependencies(frontend_msgs_generate_messages_nodejs _frontend_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +198,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS frontend_msgs_generate_messages_nod
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(frontend_msgs
-  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg"
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontend_msgs
+)
+_generate_msg_py(frontend_msgs
+  "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontend_msgs
@@ -181,7 +224,9 @@ add_custom_target(frontend_msgs_generate_messages_py
 add_dependencies(frontend_msgs_generate_messages frontend_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend.msg" NAME_WE)
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_control.msg" NAME_WE)
+add_dependencies(frontend_msgs_generate_messages_py _frontend_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oligay_61/zone3/src/message/frontend_msgs/msg/Frontend_TLdisplay.msg" NAME_WE)
 add_dependencies(frontend_msgs_generate_messages_py _frontend_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
