@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/data_display.dir/src/datadisplay.cpp.o"
+  "CMakeFiles/data_display.dir/src/data_display.cpp.o"
   "/home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display.pdb"
   "/home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display"
 )

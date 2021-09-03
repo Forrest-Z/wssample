@@ -25,7 +25,7 @@ struct WayPoint_
 
   WayPoint_()
     : lock_down_index(0)
-    , aim_pt_index(0)
+    , pt_index(0)
     , x(0.0)
     , y(0.0)
     , z(0.0)
@@ -44,11 +44,12 @@ struct WayPoint_
     , air_beep(0)
     , time_to_last_point(0.0)
     , current_lat_error(0.0)
+    , current_lng_error(0.0)
     , flag_lock_down_index_offload(false)  {
     }
   WayPoint_(const ContainerAllocator& _alloc)
     : lock_down_index(0)
-    , aim_pt_index(0)
+    , pt_index(0)
     , x(0.0)
     , y(0.0)
     , z(0.0)
@@ -67,6 +68,7 @@ struct WayPoint_
     , air_beep(0)
     , time_to_last_point(0.0)
     , current_lat_error(0.0)
+    , current_lng_error(0.0)
     , flag_lock_down_index_offload(false)  {
   (void)_alloc;
     }
@@ -76,8 +78,8 @@ struct WayPoint_
    typedef int32_t _lock_down_index_type;
   _lock_down_index_type lock_down_index;
 
-   typedef int32_t _aim_pt_index_type;
-  _aim_pt_index_type aim_pt_index;
+   typedef int32_t _pt_index_type;
+  _pt_index_type pt_index;
 
    typedef double _x_type;
   _x_type x;
@@ -132,6 +134,9 @@ struct WayPoint_
 
    typedef double _current_lat_error_type;
   _current_lat_error_type current_lat_error;
+
+   typedef double _current_lng_error_type;
+  _current_lng_error_type current_lng_error;
 
    typedef uint8_t _flag_lock_down_index_offload_type;
   _flag_lock_down_index_offload_type flag_lock_down_index_offload;
@@ -214,12 +219,12 @@ struct MD5Sum< ::planner_msgs::WayPoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "347035a0432cd4d05535eedeba88125a";
+    return "183ef1b6b55bba411952818555169ea4";
   }
 
   static const char* value(const ::planner_msgs::WayPoint_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x347035a0432cd4d0ULL;
-  static const uint64_t static_value2 = 0x5535eedeba88125aULL;
+  static const uint64_t static_value1 = 0x183ef1b6b55bba41ULL;
+  static const uint64_t static_value2 = 0x1952818555169ea4ULL;
 };
 
 template<class ContainerAllocator>
@@ -241,7 +246,7 @@ struct Definition< ::planner_msgs::WayPoint_<ContainerAllocator> >
     return "# point has no Header\n\
 \n\
 int32 lock_down_index\n\
-int32 aim_pt_index\n\
+int32 pt_index\n\
 \n\
 float64 x\n\
 float64 y \n\
@@ -268,6 +273,7 @@ uint8 air_beep\n\
 \n\
 float64 time_to_last_point\n\
 float64 current_lat_error\n\
+float64 current_lng_error\n\
 bool flag_lock_down_index_offload\n\
 ";
   }
@@ -288,7 +294,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.lock_down_index);
-      stream.next(m.aim_pt_index);
+      stream.next(m.pt_index);
       stream.next(m.x);
       stream.next(m.y);
       stream.next(m.z);
@@ -307,6 +313,7 @@ namespace serialization
       stream.next(m.air_beep);
       stream.next(m.time_to_last_point);
       stream.next(m.current_lat_error);
+      stream.next(m.current_lng_error);
       stream.next(m.flag_lock_down_index_offload);
     }
 
@@ -328,8 +335,8 @@ struct Printer< ::planner_msgs::WayPoint_<ContainerAllocator> >
   {
     s << indent << "lock_down_index: ";
     Printer<int32_t>::stream(s, indent + "  ", v.lock_down_index);
-    s << indent << "aim_pt_index: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.aim_pt_index);
+    s << indent << "pt_index: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.pt_index);
     s << indent << "x: ";
     Printer<double>::stream(s, indent + "  ", v.x);
     s << indent << "y: ";
@@ -366,6 +373,8 @@ struct Printer< ::planner_msgs::WayPoint_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.time_to_last_point);
     s << indent << "current_lat_error: ";
     Printer<double>::stream(s, indent + "  ", v.current_lat_error);
+    s << indent << "current_lng_error: ";
+    Printer<double>::stream(s, indent + "  ", v.current_lng_error);
     s << indent << "flag_lock_down_index_offload: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.flag_lock_down_index_offload);
   }

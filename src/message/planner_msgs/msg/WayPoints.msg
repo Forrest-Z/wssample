@@ -6,8 +6,7 @@ Header header
 # coord_type = "enu"
 string coord_type
 
-# teledrive
-# follow_tracks
+# "teledrive" or "follow_tracks"
 string control_type
 
 string planner_fsm

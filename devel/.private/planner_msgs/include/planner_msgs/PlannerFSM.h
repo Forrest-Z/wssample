@@ -26,12 +26,14 @@ struct PlannerFSM_
 
   PlannerFSM_()
     : header()
+    , planner_fsm_string()
     , gear(0)
     , planner_fsm(0)
     , last_planner_fsm(0)  {
     }
   PlannerFSM_(const ContainerAllocator& _alloc)
     : header(_alloc)
+    , planner_fsm_string(_alloc)
     , gear(0)
     , planner_fsm(0)
     , last_planner_fsm(0)  {
@@ -42,6 +44,9 @@ struct PlannerFSM_
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _planner_fsm_string_type;
+  _planner_fsm_string_type planner_fsm_string;
 
    typedef int32_t _gear_type;
   _gear_type gear;
@@ -130,12 +135,12 @@ struct MD5Sum< ::planner_msgs::PlannerFSM_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "6df5be79c813c24a6414911b5ba25621";
+    return "17792b6358bfdffcd755358b31a0d229";
   }
 
   static const char* value(const ::planner_msgs::PlannerFSM_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x6df5be79c813c24aULL;
-  static const uint64_t static_value2 = 0x6414911b5ba25621ULL;
+  static const uint64_t static_value1 = 0x17792b6358bfdffcULL;
+  static const uint64_t static_value2 = 0xd755358b31a0d229ULL;
 };
 
 template<class ContainerAllocator>
@@ -156,6 +161,7 @@ struct Definition< ::planner_msgs::PlannerFSM_<ContainerAllocator> >
   {
     return "Header header\n\
 \n\
+string planner_fsm_string\n\
 int32 gear\n\
 int32 planner_fsm\n\
 int32 last_planner_fsm\n\
@@ -195,6 +201,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
+      stream.next(m.planner_fsm_string);
       stream.next(m.gear);
       stream.next(m.planner_fsm);
       stream.next(m.last_planner_fsm);
@@ -219,6 +226,8 @@ struct Printer< ::planner_msgs::PlannerFSM_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
+    s << indent << "planner_fsm_string: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.planner_fsm_string);
     s << indent << "gear: ";
     Printer<int32_t>::stream(s, indent + "  ", v.gear);
     s << indent << "planner_fsm: ";

@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_msgs/share/gennodejs/ros/g29_msgs/msg/ForceFeedback.js

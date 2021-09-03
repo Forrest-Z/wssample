@@ -107,7 +107,7 @@ class WayPoints {
     length += object.coord_type.length;
     length += object.control_type.length;
     length += object.planner_fsm.length;
-    length += 125 * object.points.length;
+    length += 133 * object.points.length;
     return length + 16;
   }
 
@@ -118,7 +118,7 @@ class WayPoints {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '573e1dc003839203bc6a8d30ca76058b';
+    return '5fe65fd9eca45e86d5dc3de0bdfc36bc';
   }
 
   static messageDefinition() {
@@ -132,8 +132,7 @@ class WayPoints {
     # coord_type = "enu"
     string coord_type
     
-    # teledrive
-    # follow_tracks
+    # "teledrive" or "follow_tracks"
     string control_type
     
     string planner_fsm
@@ -162,7 +161,7 @@ class WayPoints {
     # point has no Header
     
     int32 lock_down_index
-    int32 aim_pt_index
+    int32 pt_index
     
     float64 x
     float64 y 
@@ -189,6 +188,7 @@ class WayPoints {
     
     float64 time_to_last_point
     float64 current_lat_error
+    float64 current_lng_error
     bool flag_lock_down_index_offload
     `;
   }

@@ -20,7 +20,7 @@ class StopGo {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
-      this.stop_or_go = null;
+      this.follow_tracks_ON = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -29,11 +29,11 @@ class StopGo {
       else {
         this.header = new std_msgs.msg.Header();
       }
-      if (initObj.hasOwnProperty('stop_or_go')) {
-        this.stop_or_go = initObj.stop_or_go
+      if (initObj.hasOwnProperty('follow_tracks_ON')) {
+        this.follow_tracks_ON = initObj.follow_tracks_ON
       }
       else {
-        this.stop_or_go = '';
+        this.follow_tracks_ON = false;
       }
     }
   }
@@ -42,8 +42,8 @@ class StopGo {
     // Serializes a message object of type StopGo
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
-    // Serialize message field [stop_or_go]
-    bufferOffset = _serializer.string(obj.stop_or_go, buffer, bufferOffset);
+    // Serialize message field [follow_tracks_ON]
+    bufferOffset = _serializer.bool(obj.follow_tracks_ON, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -53,16 +53,15 @@ class StopGo {
     let data = new StopGo(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
-    // Deserialize message field [stop_or_go]
-    data.stop_or_go = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [follow_tracks_ON]
+    data.follow_tracks_ON = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    length += object.stop_or_go.length;
-    return length + 4;
+    return length + 1;
   }
 
   static datatype() {
@@ -72,7 +71,7 @@ class StopGo {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'baf7a56f493b276b6a53976d92a68e99';
+    return 'da3d4a046e4f68c9d40c962a1492bab3';
   }
 
   static messageDefinition() {
@@ -80,8 +79,8 @@ class StopGo {
     return `
     Header header
     
-    # stop or go
-    string stop_or_go
+    # follow tracks planner on/off
+    bool follow_tracks_ON
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -116,11 +115,11 @@ class StopGo {
       resolved.header = new std_msgs.msg.Header()
     }
 
-    if (msg.stop_or_go !== undefined) {
-      resolved.stop_or_go = msg.stop_or_go;
+    if (msg.follow_tracks_ON !== undefined) {
+      resolved.follow_tracks_ON = msg.follow_tracks_ON;
     }
     else {
-      resolved.stop_or_go = ''
+      resolved.follow_tracks_ON = false
     }
 
     return resolved;

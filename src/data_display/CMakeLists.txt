@@ -5,13 +5,12 @@ set(CMAKE_CXX_FLAGS "-std=c++11 -O3 -Wall ${CMAKE_CXX_FLAGS}")
 add_compile_options(-DCMAKE_BUILD_TYPE=Release)
 
 find_package(catkin REQUIRED COMPONENTS
-  displaydata_msgs
-  control_msgs
   roscpp
-  rospy
+  displaydata_msgs
+  localization_msgs
   tli65_can_msgs
   planner_msgs
-  localization_msgs
+  control_msgs
   kalman_msgs
 )
 
@@ -23,7 +22,7 @@ include_directories(
 )
 
 add_executable(${PROJECT_NAME} 
-  src/datadisplay.cpp
+  src/${PROJECT_NAME}.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} 
@@ -31,7 +30,7 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
-    DEBUG_FLAG
+  DEBUG_FLAG
 )
 
 add_dependencies(${PROJECT_NAME} 

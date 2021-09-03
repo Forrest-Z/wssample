@@ -24,21 +24,23 @@ class DisplayData {
       this.lat = null;
       this.lng = null;
       this.alt = null;
-      this.latlng_std = null;
       this.x_enu = null;
       this.y_enu = null;
       this.z_enu = null;
       this.xy_std_enu = null;
-      this.speed = null;
-      this.headingangle = null;
+      this.heading_angle = null;
+      this.NumSate = null;
+      this.vx = null;
+      this.auto_mode = null;
       this.current_steer = null;
       this.current_brake_pedal_pos = null;
       this.current_throttle_percentage = null;
       this.current_retarder_torque_percentage = null;
       this.current_EPB = null;
       this.current_gear = null;
-      this.current_hangangle = null;
-      this.auto_mode = null;
+      this.current_hang_angle = null;
+      this.air_pressure1 = null;
+      this.air_pressure2 = null;
       this.left_light = null;
       this.right_light = null;
       this.near_light = null;
@@ -56,43 +58,23 @@ class DisplayData {
       this.reverse_light = null;
       this.back_work_light = null;
       this.fuel_consumption = null;
+      this.planner_fsm_state = null;
+      this.lock_down_index = null;
+      this.pt_index = null;
+      this.wpt_x = null;
+      this.wpt_y = null;
+      this.control_fsm_state = null;
       this.control_steer = null;
       this.control_throttle_percentage = null;
       this.control_xbr = null;
       this.control_EPB = null;
       this.control_gear = null;
       this.control_hang = null;
-      this.control_fsm_state = null;
-      this.vehicle_auto_mode = null;
-      this.left = null;
-      this.right = null;
-      this.near = null;
-      this.far = null;
-      this.top_warn = null;
-      this.control_air_beep = null;
-      this.front_fog = null;
-      this.front_work = null;
-      this.side = null;
-      this.position = null;
-      this.emergency = null;
-      this.brake = null;
-      this.reverse = null;
-      this.back_work = null;
-      this.target_x = null;
-      this.target_y = null;
-      this.planner_fsm = null;
-      this.NumSate = null;
       this.engine_fault = null;
       this.gear_fault = null;
       this.EBS_fault = null;
       this.EPS_fault = null;
       this.EPB_fault = null;
-      this.truck_fault_level = null;
-      this.engine_fault_code = null;
-      this.gear_fault_code = null;
-      this.EPS_fault_code = null;
-      this.EBS_fault_code = null;
-      this.electric_fault_code = null;
       this.tyre_pressure_leftfront = null;
       this.tyre_pressure_rightfront = null;
       this.front_left_temperature = null;
@@ -129,12 +111,6 @@ class DisplayData {
       else {
         this.alt = 0.0;
       }
-      if (initObj.hasOwnProperty('latlng_std')) {
-        this.latlng_std = initObj.latlng_std
-      }
-      else {
-        this.latlng_std = 0.0;
-      }
       if (initObj.hasOwnProperty('x_enu')) {
         this.x_enu = initObj.x_enu
       }
@@ -159,17 +135,29 @@ class DisplayData {
       else {
         this.xy_std_enu = 0.0;
       }
-      if (initObj.hasOwnProperty('speed')) {
-        this.speed = initObj.speed
+      if (initObj.hasOwnProperty('heading_angle')) {
+        this.heading_angle = initObj.heading_angle
       }
       else {
-        this.speed = 0.0;
+        this.heading_angle = 0.0;
       }
-      if (initObj.hasOwnProperty('headingangle')) {
-        this.headingangle = initObj.headingangle
+      if (initObj.hasOwnProperty('NumSate')) {
+        this.NumSate = initObj.NumSate
       }
       else {
-        this.headingangle = 0.0;
+        this.NumSate = 0;
+      }
+      if (initObj.hasOwnProperty('vx')) {
+        this.vx = initObj.vx
+      }
+      else {
+        this.vx = 0.0;
+      }
+      if (initObj.hasOwnProperty('auto_mode')) {
+        this.auto_mode = initObj.auto_mode
+      }
+      else {
+        this.auto_mode = 0;
       }
       if (initObj.hasOwnProperty('current_steer')) {
         this.current_steer = initObj.current_steer
@@ -205,19 +193,25 @@ class DisplayData {
         this.current_gear = initObj.current_gear
       }
       else {
-        this.current_gear = '';
+        this.current_gear = 0;
       }
-      if (initObj.hasOwnProperty('current_hangangle')) {
-        this.current_hangangle = initObj.current_hangangle
-      }
-      else {
-        this.current_hangangle = 0;
-      }
-      if (initObj.hasOwnProperty('auto_mode')) {
-        this.auto_mode = initObj.auto_mode
+      if (initObj.hasOwnProperty('current_hang_angle')) {
+        this.current_hang_angle = initObj.current_hang_angle
       }
       else {
-        this.auto_mode = 0;
+        this.current_hang_angle = 0;
+      }
+      if (initObj.hasOwnProperty('air_pressure1')) {
+        this.air_pressure1 = initObj.air_pressure1
+      }
+      else {
+        this.air_pressure1 = 0;
+      }
+      if (initObj.hasOwnProperty('air_pressure2')) {
+        this.air_pressure2 = initObj.air_pressure2
+      }
+      else {
+        this.air_pressure2 = 0;
       }
       if (initObj.hasOwnProperty('left_light')) {
         this.left_light = initObj.left_light
@@ -321,6 +315,42 @@ class DisplayData {
       else {
         this.fuel_consumption = 0;
       }
+      if (initObj.hasOwnProperty('planner_fsm_state')) {
+        this.planner_fsm_state = initObj.planner_fsm_state
+      }
+      else {
+        this.planner_fsm_state = '';
+      }
+      if (initObj.hasOwnProperty('lock_down_index')) {
+        this.lock_down_index = initObj.lock_down_index
+      }
+      else {
+        this.lock_down_index = 0;
+      }
+      if (initObj.hasOwnProperty('pt_index')) {
+        this.pt_index = initObj.pt_index
+      }
+      else {
+        this.pt_index = [];
+      }
+      if (initObj.hasOwnProperty('wpt_x')) {
+        this.wpt_x = initObj.wpt_x
+      }
+      else {
+        this.wpt_x = [];
+      }
+      if (initObj.hasOwnProperty('wpt_y')) {
+        this.wpt_y = initObj.wpt_y
+      }
+      else {
+        this.wpt_y = [];
+      }
+      if (initObj.hasOwnProperty('control_fsm_state')) {
+        this.control_fsm_state = initObj.control_fsm_state
+      }
+      else {
+        this.control_fsm_state = '';
+      }
       if (initObj.hasOwnProperty('control_steer')) {
         this.control_steer = initObj.control_steer
       }
@@ -357,126 +387,6 @@ class DisplayData {
       else {
         this.control_hang = '';
       }
-      if (initObj.hasOwnProperty('control_fsm_state')) {
-        this.control_fsm_state = initObj.control_fsm_state
-      }
-      else {
-        this.control_fsm_state = 0;
-      }
-      if (initObj.hasOwnProperty('vehicle_auto_mode')) {
-        this.vehicle_auto_mode = initObj.vehicle_auto_mode
-      }
-      else {
-        this.vehicle_auto_mode = 0;
-      }
-      if (initObj.hasOwnProperty('left')) {
-        this.left = initObj.left
-      }
-      else {
-        this.left = 0;
-      }
-      if (initObj.hasOwnProperty('right')) {
-        this.right = initObj.right
-      }
-      else {
-        this.right = 0;
-      }
-      if (initObj.hasOwnProperty('near')) {
-        this.near = initObj.near
-      }
-      else {
-        this.near = 0;
-      }
-      if (initObj.hasOwnProperty('far')) {
-        this.far = initObj.far
-      }
-      else {
-        this.far = 0;
-      }
-      if (initObj.hasOwnProperty('top_warn')) {
-        this.top_warn = initObj.top_warn
-      }
-      else {
-        this.top_warn = 0;
-      }
-      if (initObj.hasOwnProperty('control_air_beep')) {
-        this.control_air_beep = initObj.control_air_beep
-      }
-      else {
-        this.control_air_beep = 0;
-      }
-      if (initObj.hasOwnProperty('front_fog')) {
-        this.front_fog = initObj.front_fog
-      }
-      else {
-        this.front_fog = 0;
-      }
-      if (initObj.hasOwnProperty('front_work')) {
-        this.front_work = initObj.front_work
-      }
-      else {
-        this.front_work = 0;
-      }
-      if (initObj.hasOwnProperty('side')) {
-        this.side = initObj.side
-      }
-      else {
-        this.side = 0;
-      }
-      if (initObj.hasOwnProperty('position')) {
-        this.position = initObj.position
-      }
-      else {
-        this.position = 0;
-      }
-      if (initObj.hasOwnProperty('emergency')) {
-        this.emergency = initObj.emergency
-      }
-      else {
-        this.emergency = 0;
-      }
-      if (initObj.hasOwnProperty('brake')) {
-        this.brake = initObj.brake
-      }
-      else {
-        this.brake = 0;
-      }
-      if (initObj.hasOwnProperty('reverse')) {
-        this.reverse = initObj.reverse
-      }
-      else {
-        this.reverse = 0;
-      }
-      if (initObj.hasOwnProperty('back_work')) {
-        this.back_work = initObj.back_work
-      }
-      else {
-        this.back_work = 0;
-      }
-      if (initObj.hasOwnProperty('target_x')) {
-        this.target_x = initObj.target_x
-      }
-      else {
-        this.target_x = 0.0;
-      }
-      if (initObj.hasOwnProperty('target_y')) {
-        this.target_y = initObj.target_y
-      }
-      else {
-        this.target_y = 0.0;
-      }
-      if (initObj.hasOwnProperty('planner_fsm')) {
-        this.planner_fsm = initObj.planner_fsm
-      }
-      else {
-        this.planner_fsm = 0;
-      }
-      if (initObj.hasOwnProperty('NumSate')) {
-        this.NumSate = initObj.NumSate
-      }
-      else {
-        this.NumSate = 0;
-      }
       if (initObj.hasOwnProperty('engine_fault')) {
         this.engine_fault = initObj.engine_fault
       }
@@ -506,42 +416,6 @@ class DisplayData {
       }
       else {
         this.EPB_fault = 0;
-      }
-      if (initObj.hasOwnProperty('truck_fault_level')) {
-        this.truck_fault_level = initObj.truck_fault_level
-      }
-      else {
-        this.truck_fault_level = 0;
-      }
-      if (initObj.hasOwnProperty('engine_fault_code')) {
-        this.engine_fault_code = initObj.engine_fault_code
-      }
-      else {
-        this.engine_fault_code = 0;
-      }
-      if (initObj.hasOwnProperty('gear_fault_code')) {
-        this.gear_fault_code = initObj.gear_fault_code
-      }
-      else {
-        this.gear_fault_code = 0;
-      }
-      if (initObj.hasOwnProperty('EPS_fault_code')) {
-        this.EPS_fault_code = initObj.EPS_fault_code
-      }
-      else {
-        this.EPS_fault_code = 0;
-      }
-      if (initObj.hasOwnProperty('EBS_fault_code')) {
-        this.EBS_fault_code = initObj.EBS_fault_code
-      }
-      else {
-        this.EBS_fault_code = 0;
-      }
-      if (initObj.hasOwnProperty('electric_fault_code')) {
-        this.electric_fault_code = initObj.electric_fault_code
-      }
-      else {
-        this.electric_fault_code = 0;
       }
       if (initObj.hasOwnProperty('tyre_pressure_leftfront')) {
         this.tyre_pressure_leftfront = initObj.tyre_pressure_leftfront
@@ -582,8 +456,6 @@ class DisplayData {
     bufferOffset = _serializer.float64(obj.lng, buffer, bufferOffset);
     // Serialize message field [alt]
     bufferOffset = _serializer.float64(obj.alt, buffer, bufferOffset);
-    // Serialize message field [latlng_std]
-    bufferOffset = _serializer.float64(obj.latlng_std, buffer, bufferOffset);
     // Serialize message field [x_enu]
     bufferOffset = _serializer.float64(obj.x_enu, buffer, bufferOffset);
     // Serialize message field [y_enu]
@@ -592,10 +464,14 @@ class DisplayData {
     bufferOffset = _serializer.float64(obj.z_enu, buffer, bufferOffset);
     // Serialize message field [xy_std_enu]
     bufferOffset = _serializer.float64(obj.xy_std_enu, buffer, bufferOffset);
-    // Serialize message field [speed]
-    bufferOffset = _serializer.float64(obj.speed, buffer, bufferOffset);
-    // Serialize message field [headingangle]
-    bufferOffset = _serializer.float64(obj.headingangle, buffer, bufferOffset);
+    // Serialize message field [heading_angle]
+    bufferOffset = _serializer.float64(obj.heading_angle, buffer, bufferOffset);
+    // Serialize message field [NumSate]
+    bufferOffset = _serializer.int32(obj.NumSate, buffer, bufferOffset);
+    // Serialize message field [vx]
+    bufferOffset = _serializer.float64(obj.vx, buffer, bufferOffset);
+    // Serialize message field [auto_mode]
+    bufferOffset = _serializer.int32(obj.auto_mode, buffer, bufferOffset);
     // Serialize message field [current_steer]
     bufferOffset = _serializer.float64(obj.current_steer, buffer, bufferOffset);
     // Serialize message field [current_brake_pedal_pos]
@@ -607,11 +483,13 @@ class DisplayData {
     // Serialize message field [current_EPB]
     bufferOffset = _serializer.int32(obj.current_EPB, buffer, bufferOffset);
     // Serialize message field [current_gear]
-    bufferOffset = _serializer.string(obj.current_gear, buffer, bufferOffset);
-    // Serialize message field [current_hangangle]
-    bufferOffset = _serializer.int32(obj.current_hangangle, buffer, bufferOffset);
-    // Serialize message field [auto_mode]
-    bufferOffset = _serializer.int32(obj.auto_mode, buffer, bufferOffset);
+    bufferOffset = _serializer.int32(obj.current_gear, buffer, bufferOffset);
+    // Serialize message field [current_hang_angle]
+    bufferOffset = _serializer.int32(obj.current_hang_angle, buffer, bufferOffset);
+    // Serialize message field [air_pressure1]
+    bufferOffset = _serializer.int32(obj.air_pressure1, buffer, bufferOffset);
+    // Serialize message field [air_pressure2]
+    bufferOffset = _serializer.int32(obj.air_pressure2, buffer, bufferOffset);
     // Serialize message field [left_light]
     bufferOffset = _serializer.int32(obj.left_light, buffer, bufferOffset);
     // Serialize message field [right_light]
@@ -646,6 +524,18 @@ class DisplayData {
     bufferOffset = _serializer.int32(obj.back_work_light, buffer, bufferOffset);
     // Serialize message field [fuel_consumption]
     bufferOffset = _serializer.int32(obj.fuel_consumption, buffer, bufferOffset);
+    // Serialize message field [planner_fsm_state]
+    bufferOffset = _serializer.string(obj.planner_fsm_state, buffer, bufferOffset);
+    // Serialize message field [lock_down_index]
+    bufferOffset = _serializer.int32(obj.lock_down_index, buffer, bufferOffset);
+    // Serialize message field [pt_index]
+    bufferOffset = _arraySerializer.int32(obj.pt_index, buffer, bufferOffset, null);
+    // Serialize message field [wpt_x]
+    bufferOffset = _arraySerializer.float64(obj.wpt_x, buffer, bufferOffset, null);
+    // Serialize message field [wpt_y]
+    bufferOffset = _arraySerializer.float64(obj.wpt_y, buffer, bufferOffset, null);
+    // Serialize message field [control_fsm_state]
+    bufferOffset = _serializer.string(obj.control_fsm_state, buffer, bufferOffset);
     // Serialize message field [control_steer]
     bufferOffset = _serializer.float64(obj.control_steer, buffer, bufferOffset);
     // Serialize message field [control_throttle_percentage]
@@ -658,46 +548,6 @@ class DisplayData {
     bufferOffset = _serializer.string(obj.control_gear, buffer, bufferOffset);
     // Serialize message field [control_hang]
     bufferOffset = _serializer.string(obj.control_hang, buffer, bufferOffset);
-    // Serialize message field [control_fsm_state]
-    bufferOffset = _serializer.int32(obj.control_fsm_state, buffer, bufferOffset);
-    // Serialize message field [vehicle_auto_mode]
-    bufferOffset = _serializer.int32(obj.vehicle_auto_mode, buffer, bufferOffset);
-    // Serialize message field [left]
-    bufferOffset = _serializer.int32(obj.left, buffer, bufferOffset);
-    // Serialize message field [right]
-    bufferOffset = _serializer.int32(obj.right, buffer, bufferOffset);
-    // Serialize message field [near]
-    bufferOffset = _serializer.int32(obj.near, buffer, bufferOffset);
-    // Serialize message field [far]
-    bufferOffset = _serializer.int32(obj.far, buffer, bufferOffset);
-    // Serialize message field [top_warn]
-    bufferOffset = _serializer.int32(obj.top_warn, buffer, bufferOffset);
-    // Serialize message field [control_air_beep]
-    bufferOffset = _serializer.int32(obj.control_air_beep, buffer, bufferOffset);
-    // Serialize message field [front_fog]
-    bufferOffset = _serializer.int32(obj.front_fog, buffer, bufferOffset);
-    // Serialize message field [front_work]
-    bufferOffset = _serializer.int32(obj.front_work, buffer, bufferOffset);
-    // Serialize message field [side]
-    bufferOffset = _serializer.int32(obj.side, buffer, bufferOffset);
-    // Serialize message field [position]
-    bufferOffset = _serializer.int32(obj.position, buffer, bufferOffset);
-    // Serialize message field [emergency]
-    bufferOffset = _serializer.int32(obj.emergency, buffer, bufferOffset);
-    // Serialize message field [brake]
-    bufferOffset = _serializer.int32(obj.brake, buffer, bufferOffset);
-    // Serialize message field [reverse]
-    bufferOffset = _serializer.int32(obj.reverse, buffer, bufferOffset);
-    // Serialize message field [back_work]
-    bufferOffset = _serializer.int32(obj.back_work, buffer, bufferOffset);
-    // Serialize message field [target_x]
-    bufferOffset = _serializer.float64(obj.target_x, buffer, bufferOffset);
-    // Serialize message field [target_y]
-    bufferOffset = _serializer.float64(obj.target_y, buffer, bufferOffset);
-    // Serialize message field [planner_fsm]
-    bufferOffset = _serializer.int32(obj.planner_fsm, buffer, bufferOffset);
-    // Serialize message field [NumSate]
-    bufferOffset = _serializer.int32(obj.NumSate, buffer, bufferOffset);
     // Serialize message field [engine_fault]
     bufferOffset = _serializer.int32(obj.engine_fault, buffer, bufferOffset);
     // Serialize message field [gear_fault]
@@ -708,18 +558,6 @@ class DisplayData {
     bufferOffset = _serializer.int32(obj.EPS_fault, buffer, bufferOffset);
     // Serialize message field [EPB_fault]
     bufferOffset = _serializer.int32(obj.EPB_fault, buffer, bufferOffset);
-    // Serialize message field [truck_fault_level]
-    bufferOffset = _serializer.int32(obj.truck_fault_level, buffer, bufferOffset);
-    // Serialize message field [engine_fault_code]
-    bufferOffset = _serializer.int32(obj.engine_fault_code, buffer, bufferOffset);
-    // Serialize message field [gear_fault_code]
-    bufferOffset = _serializer.int32(obj.gear_fault_code, buffer, bufferOffset);
-    // Serialize message field [EPS_fault_code]
-    bufferOffset = _serializer.int32(obj.EPS_fault_code, buffer, bufferOffset);
-    // Serialize message field [EBS_fault_code]
-    bufferOffset = _serializer.int32(obj.EBS_fault_code, buffer, bufferOffset);
-    // Serialize message field [electric_fault_code]
-    bufferOffset = _serializer.int32(obj.electric_fault_code, buffer, bufferOffset);
     // Serialize message field [tyre_pressure_leftfront]
     bufferOffset = _serializer.int32(obj.tyre_pressure_leftfront, buffer, bufferOffset);
     // Serialize message field [tyre_pressure_rightfront]
@@ -745,8 +583,6 @@ class DisplayData {
     data.lng = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [alt]
     data.alt = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [latlng_std]
-    data.latlng_std = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [x_enu]
     data.x_enu = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [y_enu]
@@ -755,10 +591,14 @@ class DisplayData {
     data.z_enu = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [xy_std_enu]
     data.xy_std_enu = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [speed]
-    data.speed = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [headingangle]
-    data.headingangle = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [heading_angle]
+    data.heading_angle = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [NumSate]
+    data.NumSate = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [vx]
+    data.vx = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [auto_mode]
+    data.auto_mode = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [current_steer]
     data.current_steer = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [current_brake_pedal_pos]
@@ -770,11 +610,13 @@ class DisplayData {
     // Deserialize message field [current_EPB]
     data.current_EPB = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [current_gear]
-    data.current_gear = _deserializer.string(buffer, bufferOffset);
-    // Deserialize message field [current_hangangle]
-    data.current_hangangle = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [auto_mode]
-    data.auto_mode = _deserializer.int32(buffer, bufferOffset);
+    data.current_gear = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [current_hang_angle]
+    data.current_hang_angle = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [air_pressure1]
+    data.air_pressure1 = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [air_pressure2]
+    data.air_pressure2 = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [left_light]
     data.left_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [right_light]
@@ -809,6 +651,18 @@ class DisplayData {
     data.back_work_light = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [fuel_consumption]
     data.fuel_consumption = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [planner_fsm_state]
+    data.planner_fsm_state = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [lock_down_index]
+    data.lock_down_index = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [pt_index]
+    data.pt_index = _arrayDeserializer.int32(buffer, bufferOffset, null)
+    // Deserialize message field [wpt_x]
+    data.wpt_x = _arrayDeserializer.float64(buffer, bufferOffset, null)
+    // Deserialize message field [wpt_y]
+    data.wpt_y = _arrayDeserializer.float64(buffer, bufferOffset, null)
+    // Deserialize message field [control_fsm_state]
+    data.control_fsm_state = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [control_steer]
     data.control_steer = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [control_throttle_percentage]
@@ -821,46 +675,6 @@ class DisplayData {
     data.control_gear = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [control_hang]
     data.control_hang = _deserializer.string(buffer, bufferOffset);
-    // Deserialize message field [control_fsm_state]
-    data.control_fsm_state = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [vehicle_auto_mode]
-    data.vehicle_auto_mode = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [left]
-    data.left = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [right]
-    data.right = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [near]
-    data.near = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [far]
-    data.far = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [top_warn]
-    data.top_warn = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [control_air_beep]
-    data.control_air_beep = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [front_fog]
-    data.front_fog = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [front_work]
-    data.front_work = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [side]
-    data.side = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [position]
-    data.position = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [emergency]
-    data.emergency = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [brake]
-    data.brake = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [reverse]
-    data.reverse = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [back_work]
-    data.back_work = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [target_x]
-    data.target_x = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [target_y]
-    data.target_y = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [planner_fsm]
-    data.planner_fsm = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [NumSate]
-    data.NumSate = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [engine_fault]
     data.engine_fault = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [gear_fault]
@@ -871,18 +685,6 @@ class DisplayData {
     data.EPS_fault = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [EPB_fault]
     data.EPB_fault = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [truck_fault_level]
-    data.truck_fault_level = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [engine_fault_code]
-    data.engine_fault_code = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [gear_fault_code]
-    data.gear_fault_code = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [EPS_fault_code]
-    data.EPS_fault_code = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [EBS_fault_code]
-    data.EBS_fault_code = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [electric_fault_code]
-    data.electric_fault_code = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [tyre_pressure_leftfront]
     data.tyre_pressure_leftfront = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [tyre_pressure_rightfront]
@@ -897,10 +699,14 @@ class DisplayData {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    length += object.current_gear.length;
+    length += object.planner_fsm_state.length;
+    length += 4 * object.pt_index.length;
+    length += 8 * object.wpt_x.length;
+    length += 8 * object.wpt_y.length;
+    length += object.control_fsm_state.length;
     length += object.control_gear.length;
     length += object.control_hang.length;
-    return length + 380;
+    return length + 296;
   }
 
   static datatype() {
@@ -910,7 +716,7 @@ class DisplayData {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '75ffc4b8292bc3aabb3225b01b095200';
+    return '4ffa05f2036a9bdc4fea667a8a91fa8a';
   }
 
   static messageDefinition() {
@@ -918,18 +724,16 @@ class DisplayData {
     return `
     Header header
     
-    # RTK
-    int32 rtk_state 
+    # RTK state
     # -1 : no gnss
     # 0 : 2D or 3D gnss fix
     # 1 : SBAS or Starfire gnss fix
     # 2 : Diff or rtk fix
+    int32 rtk_state 
     
-    # wgs84
     float64 lat
     float64 lng
     float64 alt
-    float64 latlng_std
     
     # enu coord
     float64 x_enu
@@ -937,21 +741,28 @@ class DisplayData {
     float64 z_enu
     float64 xy_std_enu
     
-    # kalman speed
-    float64 speed
-    
     #GPS HEADING 
-    float64 headingangle
+    float64 heading_angle
     
-    # Tli65 vehicle parameters can_rx
+    # number of satellite
+    int32 NumSate
+    
+    # kalman velocity
+    float64 vx
+    
+    # Tli65 vehicle can_rx
+    int32 auto_mode
     float64 current_steer
     float64 current_brake_pedal_pos
     int32 current_throttle_percentage
     int32 current_retarder_torque_percentage
     int32 current_EPB
-    string current_gear
-    int32 current_hangangle
-    int32 auto_mode
+    int32 current_gear
+    int32 current_hang_angle
+    
+    int32 air_pressure1
+    int32 air_pressure2
+    
     int32 left_light
     int32 right_light
     int32 near_light
@@ -970,55 +781,28 @@ class DisplayData {
     int32 back_work_light
     int32 fuel_consumption
     
-    # Tli65 vehicle parameters can_rx
+    # planner waypoints
+    string planner_fsm_state
+    int32 lock_down_index
+    int32[] pt_index
+    float64[] wpt_x
+    float64[] wpt_y
+    
+    # control
+    string control_fsm_state
     float64 control_steer
     int32 control_throttle_percentage
     float64 control_xbr
     int32 control_EPB
     string control_gear
     string control_hang
-    int32 control_fsm_state
-    int32 vehicle_auto_mode
-    int32 left
-    int32 right
-    int32 near
-    int32 far
-    int32 top_warn
-    int32 control_air_beep
-    int32 front_fog
-    int32 front_work
-    int32 side
-    int32 position
-    int32 emergency
-    int32 brake
-    int32 reverse
-    int32 back_work
-    
-    # waypoints planning 
-    float64 target_x
-    float64 target_y
-    int32 planner_fsm
-    
-    # number of satellite
-    int32 NumSate
-    
-    # VEHICLE Fault Information 
+     
     # ft1
     int32 engine_fault
     int32 gear_fault
     int32 EBS_fault
     int32 EPS_fault
     int32 EPB_fault
-    
-    # ft2
-    int32 truck_fault_level
-    int32 engine_fault_code
-    int32 gear_fault_code
-    
-    # ft3
-    int32 EPS_fault_code
-    int32 EBS_fault_code
-    int32 electric_fault_code
     
     # tyre
     int32 tyre_pressure_leftfront
@@ -1087,13 +871,6 @@ class DisplayData {
       resolved.alt = 0.0
     }
 
-    if (msg.latlng_std !== undefined) {
-      resolved.latlng_std = msg.latlng_std;
-    }
-    else {
-      resolved.latlng_std = 0.0
-    }
-
     if (msg.x_enu !== undefined) {
       resolved.x_enu = msg.x_enu;
     }
@@ -1122,18 +899,32 @@ class DisplayData {
       resolved.xy_std_enu = 0.0
     }
 
-    if (msg.speed !== undefined) {
-      resolved.speed = msg.speed;
+    if (msg.heading_angle !== undefined) {
+      resolved.heading_angle = msg.heading_angle;
     }
     else {
-      resolved.speed = 0.0
+      resolved.heading_angle = 0.0
     }
 
-    if (msg.headingangle !== undefined) {
-      resolved.headingangle = msg.headingangle;
+    if (msg.NumSate !== undefined) {
+      resolved.NumSate = msg.NumSate;
     }
     else {
-      resolved.headingangle = 0.0
+      resolved.NumSate = 0
+    }
+
+    if (msg.vx !== undefined) {
+      resolved.vx = msg.vx;
+    }
+    else {
+      resolved.vx = 0.0
+    }
+
+    if (msg.auto_mode !== undefined) {
+      resolved.auto_mode = msg.auto_mode;
+    }
+    else {
+      resolved.auto_mode = 0
     }
 
     if (msg.current_steer !== undefined) {
@@ -1175,21 +966,28 @@ class DisplayData {
       resolved.current_gear = msg.current_gear;
     }
     else {
-      resolved.current_gear = ''
+      resolved.current_gear = 0
     }
 
-    if (msg.current_hangangle !== undefined) {
-      resolved.current_hangangle = msg.current_hangangle;
+    if (msg.current_hang_angle !== undefined) {
+      resolved.current_hang_angle = msg.current_hang_angle;
     }
     else {
-      resolved.current_hangangle = 0
+      resolved.current_hang_angle = 0
     }
 
-    if (msg.auto_mode !== undefined) {
-      resolved.auto_mode = msg.auto_mode;
+    if (msg.air_pressure1 !== undefined) {
+      resolved.air_pressure1 = msg.air_pressure1;
     }
     else {
-      resolved.auto_mode = 0
+      resolved.air_pressure1 = 0
+    }
+
+    if (msg.air_pressure2 !== undefined) {
+      resolved.air_pressure2 = msg.air_pressure2;
+    }
+    else {
+      resolved.air_pressure2 = 0
     }
 
     if (msg.left_light !== undefined) {
@@ -1311,6 +1109,48 @@ class DisplayData {
       resolved.fuel_consumption = 0
     }
 
+    if (msg.planner_fsm_state !== undefined) {
+      resolved.planner_fsm_state = msg.planner_fsm_state;
+    }
+    else {
+      resolved.planner_fsm_state = ''
+    }
+
+    if (msg.lock_down_index !== undefined) {
+      resolved.lock_down_index = msg.lock_down_index;
+    }
+    else {
+      resolved.lock_down_index = 0
+    }
+
+    if (msg.pt_index !== undefined) {
+      resolved.pt_index = msg.pt_index;
+    }
+    else {
+      resolved.pt_index = []
+    }
+
+    if (msg.wpt_x !== undefined) {
+      resolved.wpt_x = msg.wpt_x;
+    }
+    else {
+      resolved.wpt_x = []
+    }
+
+    if (msg.wpt_y !== undefined) {
+      resolved.wpt_y = msg.wpt_y;
+    }
+    else {
+      resolved.wpt_y = []
+    }
+
+    if (msg.control_fsm_state !== undefined) {
+      resolved.control_fsm_state = msg.control_fsm_state;
+    }
+    else {
+      resolved.control_fsm_state = ''
+    }
+
     if (msg.control_steer !== undefined) {
       resolved.control_steer = msg.control_steer;
     }
@@ -1353,146 +1193,6 @@ class DisplayData {
       resolved.control_hang = ''
     }
 
-    if (msg.control_fsm_state !== undefined) {
-      resolved.control_fsm_state = msg.control_fsm_state;
-    }
-    else {
-      resolved.control_fsm_state = 0
-    }
-
-    if (msg.vehicle_auto_mode !== undefined) {
-      resolved.vehicle_auto_mode = msg.vehicle_auto_mode;
-    }
-    else {
-      resolved.vehicle_auto_mode = 0
-    }
-
-    if (msg.left !== undefined) {
-      resolved.left = msg.left;
-    }
-    else {
-      resolved.left = 0
-    }
-
-    if (msg.right !== undefined) {
-      resolved.right = msg.right;
-    }
-    else {
-      resolved.right = 0
-    }
-
-    if (msg.near !== undefined) {
-      resolved.near = msg.near;
-    }
-    else {
-      resolved.near = 0
-    }
-
-    if (msg.far !== undefined) {
-      resolved.far = msg.far;
-    }
-    else {
-      resolved.far = 0
-    }
-
-    if (msg.top_warn !== undefined) {
-      resolved.top_warn = msg.top_warn;
-    }
-    else {
-      resolved.top_warn = 0
-    }
-
-    if (msg.control_air_beep !== undefined) {
-      resolved.control_air_beep = msg.control_air_beep;
-    }
-    else {
-      resolved.control_air_beep = 0
-    }
-
-    if (msg.front_fog !== undefined) {
-      resolved.front_fog = msg.front_fog;
-    }
-    else {
-      resolved.front_fog = 0
-    }
-
-    if (msg.front_work !== undefined) {
-      resolved.front_work = msg.front_work;
-    }
-    else {
-      resolved.front_work = 0
-    }
-
-    if (msg.side !== undefined) {
-      resolved.side = msg.side;
-    }
-    else {
-      resolved.side = 0
-    }
-
-    if (msg.position !== undefined) {
-      resolved.position = msg.position;
-    }
-    else {
-      resolved.position = 0
-    }
-
-    if (msg.emergency !== undefined) {
-      resolved.emergency = msg.emergency;
-    }
-    else {
-      resolved.emergency = 0
-    }
-
-    if (msg.brake !== undefined) {
-      resolved.brake = msg.brake;
-    }
-    else {
-      resolved.brake = 0
-    }
-
-    if (msg.reverse !== undefined) {
-      resolved.reverse = msg.reverse;
-    }
-    else {
-      resolved.reverse = 0
-    }
-
-    if (msg.back_work !== undefined) {
-      resolved.back_work = msg.back_work;
-    }
-    else {
-      resolved.back_work = 0
-    }
-
-    if (msg.target_x !== undefined) {
-      resolved.target_x = msg.target_x;
-    }
-    else {
-      resolved.target_x = 0.0
-    }
-
-    if (msg.target_y !== undefined) {
-      resolved.target_y = msg.target_y;
-    }
-    else {
-      resolved.target_y = 0.0
-    }
-
-    if (msg.planner_fsm !== undefined) {
-      resolved.planner_fsm = msg.planner_fsm;
-    }
-    else {
-      resolved.planner_fsm = 0
-    }
-
-    if (msg.NumSate !== undefined) {
-      resolved.NumSate = msg.NumSate;
-    }
-    else {
-      resolved.NumSate = 0
-    }
-
     if (msg.engine_fault !== undefined) {
       resolved.engine_fault = msg.engine_fault;
     }
@@ -1526,48 +1226,6 @@ class DisplayData {
     }
     else {
       resolved.EPB_fault = 0
-    }
-
-    if (msg.truck_fault_level !== undefined) {
-      resolved.truck_fault_level = msg.truck_fault_level;
-    }
-    else {
-      resolved.truck_fault_level = 0
-    }
-
-    if (msg.engine_fault_code !== undefined) {
-      resolved.engine_fault_code = msg.engine_fault_code;
-    }
-    else {
-      resolved.engine_fault_code = 0
-    }
-
-    if (msg.gear_fault_code !== undefined) {
-      resolved.gear_fault_code = msg.gear_fault_code;
-    }
-    else {
-      resolved.gear_fault_code = 0
-    }
-
-    if (msg.EPS_fault_code !== undefined) {
-      resolved.EPS_fault_code = msg.EPS_fault_code;
-    }
-    else {
-      resolved.EPS_fault_code = 0
-    }
-
-    if (msg.EBS_fault_code !== undefined) {
-      resolved.EBS_fault_code = msg.EBS_fault_code;
-    }
-    else {
-      resolved.EBS_fault_code = 0
-    }
-
-    if (msg.electric_fault_code !== undefined) {
-      resolved.electric_fault_code = msg.electric_fault_code;
-    }
-    else {
-      resolved.electric_fault_code = 0
     }
 
     if (msg.tyre_pressure_leftfront !== undefined) {

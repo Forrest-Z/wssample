@@ -20,6 +20,7 @@ class ControlFSM {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
+      this.control_fsm_string = null;
       this.control_fsm = null;
       this.last_control_fsm = null;
       this.flag_follow_tracks_plannerON = null;
@@ -32,6 +33,12 @@ class ControlFSM {
       }
       else {
         this.header = new std_msgs.msg.Header();
+      }
+      if (initObj.hasOwnProperty('control_fsm_string')) {
+        this.control_fsm_string = initObj.control_fsm_string
+      }
+      else {
+        this.control_fsm_string = '';
       }
       if (initObj.hasOwnProperty('control_fsm')) {
         this.control_fsm = initObj.control_fsm
@@ -70,6 +77,8 @@ class ControlFSM {
     // Serializes a message object of type ControlFSM
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
+    // Serialize message field [control_fsm_string]
+    bufferOffset = _serializer.string(obj.control_fsm_string, buffer, bufferOffset);
     // Serialize message field [control_fsm]
     bufferOffset = _serializer.int32(obj.control_fsm, buffer, bufferOffset);
     // Serialize message field [last_control_fsm]
@@ -89,6 +98,8 @@ class ControlFSM {
     let data = new ControlFSM(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
+    // Deserialize message field [control_fsm_string]
+    data.control_fsm_string = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [control_fsm]
     data.control_fsm = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [last_control_fsm]
@@ -105,7 +116,8 @@ class ControlFSM {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 17;
+    length += object.control_fsm_string.length;
+    return length + 21;
   }
 
   static datatype() {
@@ -115,7 +127,7 @@ class ControlFSM {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '03aa97f9d8b6f93933703b58d329f026';
+    return '647cc2d394b5c38d5889eb02edd12f97';
   }
 
   static messageDefinition() {
@@ -123,6 +135,7 @@ class ControlFSM {
     return `
     Header header
     
+    string control_fsm_string
     int32 control_fsm
     int32 last_control_fsm
     bool flag_follow_tracks_plannerON
@@ -160,6 +173,13 @@ class ControlFSM {
     }
     else {
       resolved.header = new std_msgs.msg.Header()
+    }
+
+    if (msg.control_fsm_string !== undefined) {
+      resolved.control_fsm_string = msg.control_fsm_string;
+    }
+    else {
+      resolved.control_fsm_string = ''
     }
 
     if (msg.control_fsm !== undefined) {

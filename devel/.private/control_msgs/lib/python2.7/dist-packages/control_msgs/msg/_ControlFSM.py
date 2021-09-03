@@ -9,11 +9,12 @@ import struct
 import std_msgs.msg
 
 class ControlFSM(genpy.Message):
-  _md5sum = "03aa97f9d8b6f93933703b58d329f026"
+  _md5sum = "647cc2d394b5c38d5889eb02edd12f97"
   _type = "control_msgs/ControlFSM"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
 
+string control_fsm_string
 int32 control_fsm
 int32 last_control_fsm
 bool flag_follow_tracks_plannerON
@@ -37,8 +38,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','control_fsm','last_control_fsm','flag_follow_tracks_plannerON','gear','planner_fsm']
-  _slot_types = ['std_msgs/Header','int32','int32','bool','int32','int32']
+  __slots__ = ['header','control_fsm_string','control_fsm','last_control_fsm','flag_follow_tracks_plannerON','gear','planner_fsm']
+  _slot_types = ['std_msgs/Header','string','int32','int32','bool','int32','int32']
 
   def __init__(self, *args, **kwds):
     """
@@ -48,7 +49,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,control_fsm,last_control_fsm,flag_follow_tracks_plannerON,gear,planner_fsm
+       header,control_fsm_string,control_fsm,last_control_fsm,flag_follow_tracks_plannerON,gear,planner_fsm
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -59,6 +60,8 @@ string frame_id
       # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.control_fsm_string is None:
+        self.control_fsm_string = ''
       if self.control_fsm is None:
         self.control_fsm = 0
       if self.last_control_fsm is None:
@@ -71,6 +74,7 @@ string frame_id
         self.planner_fsm = 0
     else:
       self.header = std_msgs.msg.Header()
+      self.control_fsm_string = ''
       self.control_fsm = 0
       self.last_control_fsm = 0
       self.flag_follow_tracks_plannerON = False
@@ -92,6 +96,12 @@ string frame_id
       _x = self
       buff.write(_get_struct_3I().pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
       _x = self.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.control_fsm_string
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
@@ -125,6 +135,15 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.header.frame_id = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.control_fsm_string = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.control_fsm_string = str[start:end]
       _x = self
       start = end
       end += 17
@@ -145,6 +164,12 @@ string frame_id
       _x = self
       buff.write(_get_struct_3I().pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
       _x = self.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.control_fsm_string
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
@@ -179,6 +204,15 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.header.frame_id = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.control_fsm_string = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.control_fsm_string = str[start:end]
       _x = self
       start = end
       end += 17

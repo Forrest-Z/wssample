@@ -16,17 +16,17 @@
 
 (defclass planner_msgs::StopGo
   :super ros::object
-  :slots (_header _stop_or_go ))
+  :slots (_header _follow_tracks_ON ))
 
 (defmethod planner_msgs::StopGo
   (:init
    (&key
     ((:header __header) (instance std_msgs::Header :init))
-    ((:stop_or_go __stop_or_go) "")
+    ((:follow_tracks_ON __follow_tracks_ON) nil)
     )
    (send-super :init)
    (setq _header __header)
-   (setq _stop_or_go (string __stop_or_go))
+   (setq _follow_tracks_ON __follow_tracks_ON)
    self)
   (:header
    (&rest __header)
@@ -35,16 +35,16 @@
      (progn
        (if __header (setq _header (car __header)))
        _header)))
-  (:stop_or_go
-   (&optional __stop_or_go)
-   (if __stop_or_go (setq _stop_or_go __stop_or_go)) _stop_or_go)
+  (:follow_tracks_ON
+   (&optional __follow_tracks_ON)
+   (if __follow_tracks_ON (setq _follow_tracks_ON __follow_tracks_ON)) _follow_tracks_ON)
   (:serialization-length
    ()
    (+
     ;; std_msgs/Header _header
     (send _header :serialization-length)
-    ;; string _stop_or_go
-    4 (length _stop_or_go)
+    ;; bool _follow_tracks_ON
+    1
     ))
   (:serialize
    (&optional strm)
@@ -52,27 +52,27 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; std_msgs/Header _header
        (send _header :serialize s)
-     ;; string _stop_or_go
-       (write-long (length _stop_or_go) s) (princ _stop_or_go s)
+     ;; bool _follow_tracks_ON
+       (if _follow_tracks_ON (write-byte -1 s) (write-byte 0 s))
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; std_msgs/Header _header
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
-   ;; string _stop_or_go
-     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _stop_or_go (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; bool _follow_tracks_ON
+     (setq _follow_tracks_ON (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get planner_msgs::StopGo :md5sum-) "baf7a56f493b276b6a53976d92a68e99")
+(setf (get planner_msgs::StopGo :md5sum-) "da3d4a046e4f68c9d40c962a1492bab3")
 (setf (get planner_msgs::StopGo :datatype-) "planner_msgs/StopGo")
 (setf (get planner_msgs::StopGo :definition-)
       "Header header
 
-# stop or go
-string stop_or_go
+# follow tracks planner on/off
+bool follow_tracks_ON
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -95,6 +95,6 @@ string frame_id
 
 
 
-(provide :planner_msgs/StopGo "baf7a56f493b276b6a53976d92a68e99")
+(provide :planner_msgs/StopGo "da3d4a046e4f68c9d40c962a1492bab3")
 
 

@@ -1,0 +1,7 @@
+[01m[K/home/oligay_61/zone3/src/control/control_fsm/src/control_fsm.cc:[m[K In function ‘[01m[Kvoid zone3::control::ProcPlannerStopGo(const StopGo&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/control/control_fsm/src/control_fsm.cc:48:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst StopGo {aka const struct planner_msgs::StopGo_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kstop_or_go[m[K’
+     if (msg.stop_or_go == "go") {
+[01;32m[K             ^[m[K
+make[2]: *** [CMakeFiles/control_fsm.dir/src/control_fsm.cc.o] Error 1
+make[1]: *** [CMakeFiles/control_fsm.dir/all] Error 2
+make: *** [all] Error 2

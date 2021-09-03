@@ -136,12 +136,12 @@ struct MD5Sum< ::planner_msgs::WayPoints_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "573e1dc003839203bc6a8d30ca76058b";
+    return "5fe65fd9eca45e86d5dc3de0bdfc36bc";
   }
 
   static const char* value(const ::planner_msgs::WayPoints_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x573e1dc003839203ULL;
-  static const uint64_t static_value2 = 0xbc6a8d30ca76058bULL;
+  static const uint64_t static_value1 = 0x5fe65fd9eca45e86ULL;
+  static const uint64_t static_value2 = 0xd5dc3de0bdfc36bcULL;
 };
 
 template<class ContainerAllocator>
@@ -168,8 +168,7 @@ struct Definition< ::planner_msgs::WayPoints_<ContainerAllocator> >
 # coord_type = \"enu\"\n\
 string coord_type\n\
 \n\
-# teledrive\n\
-# follow_tracks\n\
+# \"teledrive\" or \"follow_tracks\"\n\
 string control_type\n\
 \n\
 string planner_fsm\n\
@@ -198,7 +197,7 @@ MSG: planner_msgs/WayPoint\n\
 # point has no Header\n\
 \n\
 int32 lock_down_index\n\
-int32 aim_pt_index\n\
+int32 pt_index\n\
 \n\
 float64 x\n\
 float64 y \n\
@@ -225,6 +224,7 @@ uint8 air_beep\n\
 \n\
 float64 time_to_last_point\n\
 float64 current_lat_error\n\
+float64 current_lng_error\n\
 bool flag_lock_down_index_offload\n\
 ";
   }

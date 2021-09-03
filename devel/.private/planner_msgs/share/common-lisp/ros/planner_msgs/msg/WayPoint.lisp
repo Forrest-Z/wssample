@@ -12,9 +12,9 @@
     :initarg :lock_down_index
     :type cl:integer
     :initform 0)
-   (aim_pt_index
-    :reader aim_pt_index
-    :initarg :aim_pt_index
+   (pt_index
+    :reader pt_index
+    :initarg :pt_index
     :type cl:integer
     :initform 0)
    (x
@@ -107,6 +107,11 @@
     :initarg :current_lat_error
     :type cl:float
     :initform 0.0)
+   (current_lng_error
+    :reader current_lng_error
+    :initarg :current_lng_error
+    :type cl:float
+    :initform 0.0)
    (flag_lock_down_index_offload
     :reader flag_lock_down_index_offload
     :initarg :flag_lock_down_index_offload
@@ -127,10 +132,10 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader planner_msgs-msg:lock_down_index-val is deprecated.  Use planner_msgs-msg:lock_down_index instead.")
   (lock_down_index m))
 
-(cl:ensure-generic-function 'aim_pt_index-val :lambda-list '(m))
-(cl:defmethod aim_pt_index-val ((m <WayPoint>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader planner_msgs-msg:aim_pt_index-val is deprecated.  Use planner_msgs-msg:aim_pt_index instead.")
-  (aim_pt_index m))
+(cl:ensure-generic-function 'pt_index-val :lambda-list '(m))
+(cl:defmethod pt_index-val ((m <WayPoint>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader planner_msgs-msg:pt_index-val is deprecated.  Use planner_msgs-msg:pt_index instead.")
+  (pt_index m))
 
 (cl:ensure-generic-function 'x-val :lambda-list '(m))
 (cl:defmethod x-val ((m <WayPoint>))
@@ -222,6 +227,11 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader planner_msgs-msg:current_lat_error-val is deprecated.  Use planner_msgs-msg:current_lat_error instead.")
   (current_lat_error m))
 
+(cl:ensure-generic-function 'current_lng_error-val :lambda-list '(m))
+(cl:defmethod current_lng_error-val ((m <WayPoint>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader planner_msgs-msg:current_lng_error-val is deprecated.  Use planner_msgs-msg:current_lng_error instead.")
+  (current_lng_error m))
+
 (cl:ensure-generic-function 'flag_lock_down_index_offload-val :lambda-list '(m))
 (cl:defmethod flag_lock_down_index_offload-val ((m <WayPoint>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader planner_msgs-msg:flag_lock_down_index_offload-val is deprecated.  Use planner_msgs-msg:flag_lock_down_index_offload instead.")
@@ -234,7 +244,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
     )
-  (cl:let* ((signed (cl:slot-value msg 'aim_pt_index)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'pt_index)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
@@ -372,6 +382,15 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'current_lng_error))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'flag_lock_down_index_offload) 1 0)) ostream)
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <WayPoint>) istream)
@@ -387,7 +406,7 @@
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'aim_pt_index) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+      (cl:setf (cl:slot-value msg 'pt_index) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -534,6 +553,16 @@
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'current_lat_error) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'current_lng_error) (roslisp-utils:decode-double-float-bits bits)))
     (cl:setf (cl:slot-value msg 'flag_lock_down_index_offload) (cl:not (cl:zerop (cl:read-byte istream))))
   msg
 )
@@ -545,16 +574,16 @@
   "planner_msgs/WayPoint")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<WayPoint>)))
   "Returns md5sum for a message object of type '<WayPoint>"
-  "347035a0432cd4d05535eedeba88125a")
+  "183ef1b6b55bba411952818555169ea4")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'WayPoint)))
   "Returns md5sum for a message object of type 'WayPoint"
-  "347035a0432cd4d05535eedeba88125a")
+  "183ef1b6b55bba411952818555169ea4")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<WayPoint>)))
   "Returns full string definition for message of type '<WayPoint>"
-  (cl:format cl:nil "# point has no Header~%~%int32 lock_down_index~%int32 aim_pt_index~%~%float64 x~%float64 y ~%float64 z~%~%float64 roll~%float64 pitch~%float64 yaw~%float64 kalman_yawrate~%~%float64 kalman_vx~%float64 acceleration~%~%# teledrive, share gear, xbr~%float64 steer~%float64 throttle_percentage~%float64 xbr~%int8 gear~%~%uint8 left_light~%uint8 right_light~%#uint8 emergency_light~%uint8 air_beep~%~%float64 time_to_last_point~%float64 current_lat_error~%bool flag_lock_down_index_offload~%~%"))
+  (cl:format cl:nil "# point has no Header~%~%int32 lock_down_index~%int32 pt_index~%~%float64 x~%float64 y ~%float64 z~%~%float64 roll~%float64 pitch~%float64 yaw~%float64 kalman_yawrate~%~%float64 kalman_vx~%float64 acceleration~%~%# teledrive, share gear, xbr~%float64 steer~%float64 throttle_percentage~%float64 xbr~%int8 gear~%~%uint8 left_light~%uint8 right_light~%#uint8 emergency_light~%uint8 air_beep~%~%float64 time_to_last_point~%float64 current_lat_error~%float64 current_lng_error~%bool flag_lock_down_index_offload~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'WayPoint)))
   "Returns full string definition for message of type 'WayPoint"
-  (cl:format cl:nil "# point has no Header~%~%int32 lock_down_index~%int32 aim_pt_index~%~%float64 x~%float64 y ~%float64 z~%~%float64 roll~%float64 pitch~%float64 yaw~%float64 kalman_yawrate~%~%float64 kalman_vx~%float64 acceleration~%~%# teledrive, share gear, xbr~%float64 steer~%float64 throttle_percentage~%float64 xbr~%int8 gear~%~%uint8 left_light~%uint8 right_light~%#uint8 emergency_light~%uint8 air_beep~%~%float64 time_to_last_point~%float64 current_lat_error~%bool flag_lock_down_index_offload~%~%"))
+  (cl:format cl:nil "# point has no Header~%~%int32 lock_down_index~%int32 pt_index~%~%float64 x~%float64 y ~%float64 z~%~%float64 roll~%float64 pitch~%float64 yaw~%float64 kalman_yawrate~%~%float64 kalman_vx~%float64 acceleration~%~%# teledrive, share gear, xbr~%float64 steer~%float64 throttle_percentage~%float64 xbr~%int8 gear~%~%uint8 left_light~%uint8 right_light~%#uint8 emergency_light~%uint8 air_beep~%~%float64 time_to_last_point~%float64 current_lat_error~%float64 current_lng_error~%bool flag_lock_down_index_offload~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <WayPoint>))
   (cl:+ 0
      4
@@ -577,13 +606,14 @@
      1
      8
      8
+     8
      1
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <WayPoint>))
   "Converts a ROS message object to a list"
   (cl:list 'WayPoint
     (cl:cons ':lock_down_index (lock_down_index msg))
-    (cl:cons ':aim_pt_index (aim_pt_index msg))
+    (cl:cons ':pt_index (pt_index msg))
     (cl:cons ':x (x msg))
     (cl:cons ':y (y msg))
     (cl:cons ':z (z msg))
@@ -602,5 +632,6 @@
     (cl:cons ':air_beep (air_beep msg))
     (cl:cons ':time_to_last_point (time_to_last_point msg))
     (cl:cons ':current_lat_error (current_lat_error msg))
+    (cl:cons ':current_lng_error (current_lng_error msg))
     (cl:cons ':flag_lock_down_index_offload (flag_lock_down_index_offload msg))
 ))

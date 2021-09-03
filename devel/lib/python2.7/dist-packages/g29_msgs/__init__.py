@@ -1,0 +1,1 @@
+/home/oligay_61/zone3/devel/.private/g29_msgs/lib/python2.7/dist-packages/g29_msgs/__init__.py

@@ -16,12 +16,13 @@
 
 (defclass control_msgs::ControlFSM
   :super ros::object
-  :slots (_header _control_fsm _last_control_fsm _flag_follow_tracks_plannerON _gear _planner_fsm ))
+  :slots (_header _control_fsm_string _control_fsm _last_control_fsm _flag_follow_tracks_plannerON _gear _planner_fsm ))
 
 (defmethod control_msgs::ControlFSM
   (:init
    (&key
     ((:header __header) (instance std_msgs::Header :init))
+    ((:control_fsm_string __control_fsm_string) "")
     ((:control_fsm __control_fsm) 0)
     ((:last_control_fsm __last_control_fsm) 0)
     ((:flag_follow_tracks_plannerON __flag_follow_tracks_plannerON) nil)
@@ -30,6 +31,7 @@
     )
    (send-super :init)
    (setq _header __header)
+   (setq _control_fsm_string (string __control_fsm_string))
    (setq _control_fsm (round __control_fsm))
    (setq _last_control_fsm (round __last_control_fsm))
    (setq _flag_follow_tracks_plannerON __flag_follow_tracks_plannerON)
@@ -43,6 +45,9 @@
      (progn
        (if __header (setq _header (car __header)))
        _header)))
+  (:control_fsm_string
+   (&optional __control_fsm_string)
+   (if __control_fsm_string (setq _control_fsm_string __control_fsm_string)) _control_fsm_string)
   (:control_fsm
    (&optional __control_fsm)
    (if __control_fsm (setq _control_fsm __control_fsm)) _control_fsm)
@@ -63,6 +68,8 @@
    (+
     ;; std_msgs/Header _header
     (send _header :serialization-length)
+    ;; string _control_fsm_string
+    4 (length _control_fsm_string)
     ;; int32 _control_fsm
     4
     ;; int32 _last_control_fsm
@@ -80,6 +87,8 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; std_msgs/Header _header
        (send _header :serialize s)
+     ;; string _control_fsm_string
+       (write-long (length _control_fsm_string) s) (princ _control_fsm_string s)
      ;; int32 _control_fsm
        (write-long _control_fsm s)
      ;; int32 _last_control_fsm
@@ -96,6 +105,8 @@
    (buf &optional (ptr- 0))
    ;; std_msgs/Header _header
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
+   ;; string _control_fsm_string
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _control_fsm_string (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;; int32 _control_fsm
      (setq _control_fsm (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; int32 _last_control_fsm
@@ -110,11 +121,12 @@
    self)
   )
 
-(setf (get control_msgs::ControlFSM :md5sum-) "03aa97f9d8b6f93933703b58d329f026")
+(setf (get control_msgs::ControlFSM :md5sum-) "647cc2d394b5c38d5889eb02edd12f97")
 (setf (get control_msgs::ControlFSM :datatype-) "control_msgs/ControlFSM")
 (setf (get control_msgs::ControlFSM :definition-)
       "Header header
 
+string control_fsm_string
 int32 control_fsm
 int32 last_control_fsm
 bool flag_follow_tracks_plannerON
@@ -142,6 +154,6 @@ string frame_id
 
 
 
-(provide :control_msgs/ControlFSM "03aa97f9d8b6f93933703b58d329f026")
+(provide :control_msgs/ControlFSM "647cc2d394b5c38d5889eb02edd12f97")
 
 

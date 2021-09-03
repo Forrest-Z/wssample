@@ -26,11 +26,11 @@ struct StopGo_
 
   StopGo_()
     : header()
-    , stop_or_go()  {
+    , follow_tracks_ON(false)  {
     }
   StopGo_(const ContainerAllocator& _alloc)
     : header(_alloc)
-    , stop_or_go(_alloc)  {
+    , follow_tracks_ON(false)  {
   (void)_alloc;
     }
 
@@ -39,8 +39,8 @@ struct StopGo_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _stop_or_go_type;
-  _stop_or_go_type stop_or_go;
+   typedef uint8_t _follow_tracks_ON_type;
+  _follow_tracks_ON_type follow_tracks_ON;
 
 
 
@@ -120,12 +120,12 @@ struct MD5Sum< ::planner_msgs::StopGo_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "baf7a56f493b276b6a53976d92a68e99";
+    return "da3d4a046e4f68c9d40c962a1492bab3";
   }
 
   static const char* value(const ::planner_msgs::StopGo_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xbaf7a56f493b276bULL;
-  static const uint64_t static_value2 = 0x6a53976d92a68e99ULL;
+  static const uint64_t static_value1 = 0xda3d4a046e4f68c9ULL;
+  static const uint64_t static_value2 = 0xd40c962a1492bab3ULL;
 };
 
 template<class ContainerAllocator>
@@ -146,8 +146,8 @@ struct Definition< ::planner_msgs::StopGo_<ContainerAllocator> >
   {
     return "Header header\n\
 \n\
-# stop or go\n\
-string stop_or_go\n\
+# follow tracks planner on/off\n\
+bool follow_tracks_ON\n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
 # Standard metadata for higher-level stamped data types.\n\
@@ -184,7 +184,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
-      stream.next(m.stop_or_go);
+      stream.next(m.follow_tracks_ON);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -206,8 +206,8 @@ struct Printer< ::planner_msgs::StopGo_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
-    s << indent << "stop_or_go: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.stop_or_go);
+    s << indent << "follow_tracks_ON: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.follow_tracks_ON);
   }
 };
 

@@ -1,0 +1,18 @@
+[01m[K/home/oligay_61/zone3/src/planner/follow_tracks/src/follow_tracks.cc:[m[K In function ‘[01m[Kvoid zone3::planner::Hold()[m[K’:
+[01m[K/home/oligay_61/zone3/src/planner/follow_tracks/src/follow_tracks.cc:59:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kplanner_msgs::StopGo {aka struct planner_msgs::StopGo_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kstop_or_go[m[K’
+     msg.stop_or_go = "wait";
+[01;32m[K         ^[m[K
+[01m[K/home/oligay_61/zone3/src/planner/follow_tracks/src/follow_tracks.cc:[m[K In function ‘[01m[Kvoid zone3::planner::ProcPlannerFSM(const PlannerFSM&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/planner/follow_tracks/src/follow_tracks.cc:290:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kplanner_msgs::WayPoint {aka struct planner_msgs::WayPoint_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kaim_pt_index[m[K’
+         way_point.aim_pt_index = aim_pt_index;
+[01;32m[K                   ^[m[K
+[01m[K/home/oligay_61/zone3/src/planner/follow_tracks/src/follow_tracks.cc:334:20:[m[K [01;31m[Kerror: [m[K‘[01m[Kplanner_msgs::WayPoint {aka struct planner_msgs::WayPoint_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kaim_pt_index[m[K’
+     way_point_rviz.aim_pt_index = aim_pt_index;
+[01;32m[K                    ^[m[K
+[01m[K/home/oligay_61/zone3/src/planner/follow_tracks/src/follow_tracks.cc:[m[K In function ‘[01m[Kvoid zone3::planner::ProcControlFSM(const ControlFSM&)[m[K’:
+[01m[K/home/oligay_61/zone3/src/planner/follow_tracks/src/follow_tracks.cc:360:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kplanner_msgs::StopGo {aka struct planner_msgs::StopGo_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kstop_or_go[m[K’
+         msg.stop_or_go = "go";
+[01;32m[K             ^[m[K
+make[2]: *** [CMakeFiles/follow_tracks.dir/src/follow_tracks.cc.o] Error 1
+make[1]: *** [CMakeFiles/follow_tracks.dir/all] Error 2
+make: *** [all] Error 2

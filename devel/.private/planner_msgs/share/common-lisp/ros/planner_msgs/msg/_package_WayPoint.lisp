@@ -1,8 +1,8 @@
 (cl:in-package planner_msgs-msg)
 (cl:export '(LOCK_DOWN_INDEX-VAL
           LOCK_DOWN_INDEX
-          AIM_PT_INDEX-VAL
-          AIM_PT_INDEX
+          PT_INDEX-VAL
+          PT_INDEX
           X-VAL
           X
           Y-VAL
@@ -39,6 +39,8 @@
           TIME_TO_LAST_POINT
           CURRENT_LAT_ERROR-VAL
           CURRENT_LAT_ERROR
+          CURRENT_LNG_ERROR-VAL
+          CURRENT_LNG_ERROR
           FLAG_LOCK_DOWN_INDEX_OFFLOAD-VAL
           FLAG_LOCK_DOWN_INDEX_OFFLOAD
 ))

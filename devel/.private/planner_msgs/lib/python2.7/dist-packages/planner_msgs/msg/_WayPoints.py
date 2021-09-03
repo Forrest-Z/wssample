@@ -10,7 +10,7 @@ import planner_msgs.msg
 import std_msgs.msg
 
 class WayPoints(genpy.Message):
-  _md5sum = "573e1dc003839203bc6a8d30ca76058b"
+  _md5sum = "5fe65fd9eca45e86d5dc3de0bdfc36bc"
   _type = "planner_msgs/WayPoints"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
@@ -21,8 +21,7 @@ class WayPoints(genpy.Message):
 # coord_type = "enu"
 string coord_type
 
-# teledrive
-# follow_tracks
+# "teledrive" or "follow_tracks"
 string control_type
 
 string planner_fsm
@@ -51,7 +50,7 @@ MSG: planner_msgs/WayPoint
 # point has no Header
 
 int32 lock_down_index
-int32 aim_pt_index
+int32 pt_index
 
 float64 x
 float64 y 
@@ -78,6 +77,7 @@ uint8 air_beep
 
 float64 time_to_last_point
 float64 current_lat_error
+float64 current_lng_error
 bool flag_lock_down_index_offload"""
   __slots__ = ['header','coord_type','control_type','planner_fsm','points']
   _slot_types = ['std_msgs/Header','string','string','string','planner_msgs/WayPoint[]']
@@ -158,7 +158,7 @@ bool flag_lock_down_index_offload"""
       buff.write(_struct_I.pack(length))
       for val1 in self.points:
         _x = val1
-        buff.write(_get_struct_2i12db3B2dB().pack(_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload))
+        buff.write(_get_struct_2i12db3B3dB().pack(_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -222,8 +222,8 @@ bool flag_lock_down_index_offload"""
         val1 = planner_msgs.msg.WayPoint()
         _x = val1
         start = end
-        end += 125
-        (_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B2dB().unpack(str[start:end])
+        end += 133
+        (_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B3dB().unpack(str[start:end])
         val1.flag_lock_down_index_offload = bool(val1.flag_lock_down_index_offload)
         self.points.append(val1)
       return self
@@ -268,7 +268,7 @@ bool flag_lock_down_index_offload"""
       buff.write(_struct_I.pack(length))
       for val1 in self.points:
         _x = val1
-        buff.write(_get_struct_2i12db3B2dB().pack(_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload))
+        buff.write(_get_struct_2i12db3B3dB().pack(_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -333,8 +333,8 @@ bool flag_lock_down_index_offload"""
         val1 = planner_msgs.msg.WayPoint()
         _x = val1
         start = end
-        end += 125
-        (_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B2dB().unpack(str[start:end])
+        end += 133
+        (_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B3dB().unpack(str[start:end])
         val1.flag_lock_down_index_offload = bool(val1.flag_lock_down_index_offload)
         self.points.append(val1)
       return self
@@ -345,12 +345,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2i12db3B2dB = None
-def _get_struct_2i12db3B2dB():
-    global _struct_2i12db3B2dB
-    if _struct_2i12db3B2dB is None:
-        _struct_2i12db3B2dB = struct.Struct("<2i12db3B2dB")
-    return _struct_2i12db3B2dB
+_struct_2i12db3B3dB = None
+def _get_struct_2i12db3B3dB():
+    global _struct_2i12db3B3dB
+    if _struct_2i12db3B3dB is None:
+        _struct_2i12db3B3dB = struct.Struct("<2i12db3B3dB")
+    return _struct_2i12db3B3dB
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I

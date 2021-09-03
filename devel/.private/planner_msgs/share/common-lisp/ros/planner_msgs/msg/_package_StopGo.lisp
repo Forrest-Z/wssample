@@ -1,6 +1,6 @@
 (cl:in-package planner_msgs-msg)
 (cl:export '(HEADER-VAL
           HEADER
-          STOP_OR_GO-VAL
-          STOP_OR_GO
+          FOLLOW_TRACKS_ON-VAL
+          FOLLOW_TRACKS_ON
 ))

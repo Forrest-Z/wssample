@@ -8,13 +8,13 @@ import struct
 
 
 class WayPoint(genpy.Message):
-  _md5sum = "347035a0432cd4d05535eedeba88125a"
+  _md5sum = "183ef1b6b55bba411952818555169ea4"
   _type = "planner_msgs/WayPoint"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """# point has no Header
 
 int32 lock_down_index
-int32 aim_pt_index
+int32 pt_index
 
 float64 x
 float64 y 
@@ -41,9 +41,10 @@ uint8 air_beep
 
 float64 time_to_last_point
 float64 current_lat_error
+float64 current_lng_error
 bool flag_lock_down_index_offload"""
-  __slots__ = ['lock_down_index','aim_pt_index','x','y','z','roll','pitch','yaw','kalman_yawrate','kalman_vx','acceleration','steer','throttle_percentage','xbr','gear','left_light','right_light','air_beep','time_to_last_point','current_lat_error','flag_lock_down_index_offload']
-  _slot_types = ['int32','int32','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','int8','uint8','uint8','uint8','float64','float64','bool']
+  __slots__ = ['lock_down_index','pt_index','x','y','z','roll','pitch','yaw','kalman_yawrate','kalman_vx','acceleration','steer','throttle_percentage','xbr','gear','left_light','right_light','air_beep','time_to_last_point','current_lat_error','current_lng_error','flag_lock_down_index_offload']
+  _slot_types = ['int32','int32','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','int8','uint8','uint8','uint8','float64','float64','float64','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -53,7 +54,7 @@ bool flag_lock_down_index_offload"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       lock_down_index,aim_pt_index,x,y,z,roll,pitch,yaw,kalman_yawrate,kalman_vx,acceleration,steer,throttle_percentage,xbr,gear,left_light,right_light,air_beep,time_to_last_point,current_lat_error,flag_lock_down_index_offload
+       lock_down_index,pt_index,x,y,z,roll,pitch,yaw,kalman_yawrate,kalman_vx,acceleration,steer,throttle_percentage,xbr,gear,left_light,right_light,air_beep,time_to_last_point,current_lat_error,current_lng_error,flag_lock_down_index_offload
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -64,8 +65,8 @@ bool flag_lock_down_index_offload"""
       # message fields cannot be None, assign default values for those that are
       if self.lock_down_index is None:
         self.lock_down_index = 0
-      if self.aim_pt_index is None:
-        self.aim_pt_index = 0
+      if self.pt_index is None:
+        self.pt_index = 0
       if self.x is None:
         self.x = 0.
       if self.y is None:
@@ -102,11 +103,13 @@ bool flag_lock_down_index_offload"""
         self.time_to_last_point = 0.
       if self.current_lat_error is None:
         self.current_lat_error = 0.
+      if self.current_lng_error is None:
+        self.current_lng_error = 0.
       if self.flag_lock_down_index_offload is None:
         self.flag_lock_down_index_offload = False
     else:
       self.lock_down_index = 0
-      self.aim_pt_index = 0
+      self.pt_index = 0
       self.x = 0.
       self.y = 0.
       self.z = 0.
@@ -125,6 +128,7 @@ bool flag_lock_down_index_offload"""
       self.air_beep = 0
       self.time_to_last_point = 0.
       self.current_lat_error = 0.
+      self.current_lng_error = 0.
       self.flag_lock_down_index_offload = False
 
   def _get_types(self):
@@ -140,7 +144,7 @@ bool flag_lock_down_index_offload"""
     """
     try:
       _x = self
-      buff.write(_get_struct_2i12db3B2dB().pack(_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload))
+      buff.write(_get_struct_2i12db3B3dB().pack(_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -154,8 +158,8 @@ bool flag_lock_down_index_offload"""
       end = 0
       _x = self
       start = end
-      end += 125
-      (_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B2dB().unpack(str[start:end])
+      end += 133
+      (_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B3dB().unpack(str[start:end])
       self.flag_lock_down_index_offload = bool(self.flag_lock_down_index_offload)
       return self
     except struct.error as e:
@@ -170,7 +174,7 @@ bool flag_lock_down_index_offload"""
     """
     try:
       _x = self
-      buff.write(_get_struct_2i12db3B2dB().pack(_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload))
+      buff.write(_get_struct_2i12db3B3dB().pack(_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -185,8 +189,8 @@ bool flag_lock_down_index_offload"""
       end = 0
       _x = self
       start = end
-      end += 125
-      (_x.lock_down_index, _x.aim_pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B2dB().unpack(str[start:end])
+      end += 133
+      (_x.lock_down_index, _x.pt_index, _x.x, _x.y, _x.z, _x.roll, _x.pitch, _x.yaw, _x.kalman_yawrate, _x.kalman_vx, _x.acceleration, _x.steer, _x.throttle_percentage, _x.xbr, _x.gear, _x.left_light, _x.right_light, _x.air_beep, _x.time_to_last_point, _x.current_lat_error, _x.current_lng_error, _x.flag_lock_down_index_offload,) = _get_struct_2i12db3B3dB().unpack(str[start:end])
       self.flag_lock_down_index_offload = bool(self.flag_lock_down_index_offload)
       return self
     except struct.error as e:
@@ -196,9 +200,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2i12db3B2dB = None
-def _get_struct_2i12db3B2dB():
-    global _struct_2i12db3B2dB
-    if _struct_2i12db3B2dB is None:
-        _struct_2i12db3B2dB = struct.Struct("<2i12db3B2dB")
-    return _struct_2i12db3B2dB
+_struct_2i12db3B3dB = None
+def _get_struct_2i12db3B3dB():
+    global _struct_2i12db3B3dB
+    if _struct_2i12db3B3dB is None:
+        _struct_2i12db3B3dB = struct.Struct("<2i12db3B3dB")
+    return _struct_2i12db3B3dB

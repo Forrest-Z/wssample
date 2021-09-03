@@ -9,8 +9,6 @@
           LNG
           ALT-VAL
           ALT
-          LATLNG_STD-VAL
-          LATLNG_STD
           X_ENU-VAL
           X_ENU
           Y_ENU-VAL
@@ -19,10 +17,14 @@
           Z_ENU
           XY_STD_ENU-VAL
           XY_STD_ENU
-          SPEED-VAL
-          SPEED
-          HEADINGANGLE-VAL
-          HEADINGANGLE
+          HEADING_ANGLE-VAL
+          HEADING_ANGLE
+          NUMSATE-VAL
+          NUMSATE
+          VX-VAL
+          VX
+          AUTO_MODE-VAL
+          AUTO_MODE
           CURRENT_STEER-VAL
           CURRENT_STEER
           CURRENT_BRAKE_PEDAL_POS-VAL
@@ -35,10 +37,12 @@
           CURRENT_EPB
           CURRENT_GEAR-VAL
           CURRENT_GEAR
-          CURRENT_HANGANGLE-VAL
-          CURRENT_HANGANGLE
-          AUTO_MODE-VAL
-          AUTO_MODE
+          CURRENT_HANG_ANGLE-VAL
+          CURRENT_HANG_ANGLE
+          AIR_PRESSURE1-VAL
+          AIR_PRESSURE1
+          AIR_PRESSURE2-VAL
+          AIR_PRESSURE2
           LEFT_LIGHT-VAL
           LEFT_LIGHT
           RIGHT_LIGHT-VAL
@@ -73,6 +77,18 @@
           BACK_WORK_LIGHT
           FUEL_CONSUMPTION-VAL
           FUEL_CONSUMPTION
+          PLANNER_FSM_STATE-VAL
+          PLANNER_FSM_STATE
+          LOCK_DOWN_INDEX-VAL
+          LOCK_DOWN_INDEX
+          PT_INDEX-VAL
+          PT_INDEX
+          WPT_X-VAL
+          WPT_X
+          WPT_Y-VAL
+          WPT_Y
+          CONTROL_FSM_STATE-VAL
+          CONTROL_FSM_STATE
           CONTROL_STEER-VAL
           CONTROL_STEER
           CONTROL_THROTTLE_PERCENTAGE-VAL
@@ -85,46 +101,6 @@
           CONTROL_GEAR
           CONTROL_HANG-VAL
           CONTROL_HANG
-          CONTROL_FSM_STATE-VAL
-          CONTROL_FSM_STATE
-          VEHICLE_AUTO_MODE-VAL
-          VEHICLE_AUTO_MODE
-          LEFT-VAL
-          LEFT
-          RIGHT-VAL
-          RIGHT
-          NEAR-VAL
-          NEAR
-          FAR-VAL
-          FAR
-          TOP_WARN-VAL
-          TOP_WARN
-          CONTROL_AIR_BEEP-VAL
-          CONTROL_AIR_BEEP
-          FRONT_FOG-VAL
-          FRONT_FOG
-          FRONT_WORK-VAL
-          FRONT_WORK
-          SIDE-VAL
-          SIDE
-          POSITION-VAL
-          POSITION
-          EMERGENCY-VAL
-          EMERGENCY
-          BRAKE-VAL
-          BRAKE
-          REVERSE-VAL
-          REVERSE
-          BACK_WORK-VAL
-          BACK_WORK
-          TARGET_X-VAL
-          TARGET_X
-          TARGET_Y-VAL
-          TARGET_Y
-          PLANNER_FSM-VAL
-          PLANNER_FSM
-          NUMSATE-VAL
-          NUMSATE
           ENGINE_FAULT-VAL
           ENGINE_FAULT
           GEAR_FAULT-VAL
@@ -135,18 +111,6 @@
           EPS_FAULT
           EPB_FAULT-VAL
           EPB_FAULT
-          TRUCK_FAULT_LEVEL-VAL
-          TRUCK_FAULT_LEVEL
-          ENGINE_FAULT_CODE-VAL
-          ENGINE_FAULT_CODE
-          GEAR_FAULT_CODE-VAL
-          GEAR_FAULT_CODE
-          EPS_FAULT_CODE-VAL
-          EPS_FAULT_CODE
-          EBS_FAULT_CODE-VAL
-          EBS_FAULT_CODE
-          ELECTRIC_FAULT_CODE-VAL
-          ELECTRIC_FAULT_CODE
           TYRE_PRESSURE_LEFTFRONT-VAL
           TYRE_PRESSURE_LEFTFRONT
           TYRE_PRESSURE_RIGHTFRONT-VAL

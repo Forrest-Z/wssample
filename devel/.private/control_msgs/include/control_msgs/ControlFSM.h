@@ -26,6 +26,7 @@ struct ControlFSM_
 
   ControlFSM_()
     : header()
+    , control_fsm_string()
     , control_fsm(0)
     , last_control_fsm(0)
     , flag_follow_tracks_plannerON(false)
@@ -34,6 +35,7 @@ struct ControlFSM_
     }
   ControlFSM_(const ContainerAllocator& _alloc)
     : header(_alloc)
+    , control_fsm_string(_alloc)
     , control_fsm(0)
     , last_control_fsm(0)
     , flag_follow_tracks_plannerON(false)
@@ -46,6 +48,9 @@ struct ControlFSM_
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _control_fsm_string_type;
+  _control_fsm_string_type control_fsm_string;
 
    typedef int32_t _control_fsm_type;
   _control_fsm_type control_fsm;
@@ -140,12 +145,12 @@ struct MD5Sum< ::control_msgs::ControlFSM_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "03aa97f9d8b6f93933703b58d329f026";
+    return "647cc2d394b5c38d5889eb02edd12f97";
   }
 
   static const char* value(const ::control_msgs::ControlFSM_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x03aa97f9d8b6f939ULL;
-  static const uint64_t static_value2 = 0x33703b58d329f026ULL;
+  static const uint64_t static_value1 = 0x647cc2d394b5c38dULL;
+  static const uint64_t static_value2 = 0x5889eb02edd12f97ULL;
 };
 
 template<class ContainerAllocator>
@@ -166,6 +171,7 @@ struct Definition< ::control_msgs::ControlFSM_<ContainerAllocator> >
   {
     return "Header header\n\
 \n\
+string control_fsm_string\n\
 int32 control_fsm\n\
 int32 last_control_fsm\n\
 bool flag_follow_tracks_plannerON\n\
@@ -207,6 +213,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
+      stream.next(m.control_fsm_string);
       stream.next(m.control_fsm);
       stream.next(m.last_control_fsm);
       stream.next(m.flag_follow_tracks_plannerON);
@@ -233,6 +240,8 @@ struct Printer< ::control_msgs::ControlFSM_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
+    s << indent << "control_fsm_string: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.control_fsm_string);
     s << indent << "control_fsm: ";
     Printer<int32_t>::stream(s, indent + "  ", v.control_fsm);
     s << indent << "last_control_fsm: ";

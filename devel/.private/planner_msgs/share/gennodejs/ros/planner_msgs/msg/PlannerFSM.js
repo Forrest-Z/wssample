@@ -20,6 +20,7 @@ class PlannerFSM {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
+      this.planner_fsm_string = null;
       this.gear = null;
       this.planner_fsm = null;
       this.last_planner_fsm = null;
@@ -30,6 +31,12 @@ class PlannerFSM {
       }
       else {
         this.header = new std_msgs.msg.Header();
+      }
+      if (initObj.hasOwnProperty('planner_fsm_string')) {
+        this.planner_fsm_string = initObj.planner_fsm_string
+      }
+      else {
+        this.planner_fsm_string = '';
       }
       if (initObj.hasOwnProperty('gear')) {
         this.gear = initObj.gear
@@ -56,6 +63,8 @@ class PlannerFSM {
     // Serializes a message object of type PlannerFSM
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
+    // Serialize message field [planner_fsm_string]
+    bufferOffset = _serializer.string(obj.planner_fsm_string, buffer, bufferOffset);
     // Serialize message field [gear]
     bufferOffset = _serializer.int32(obj.gear, buffer, bufferOffset);
     // Serialize message field [planner_fsm]
@@ -71,6 +80,8 @@ class PlannerFSM {
     let data = new PlannerFSM(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
+    // Deserialize message field [planner_fsm_string]
+    data.planner_fsm_string = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [gear]
     data.gear = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [planner_fsm]
@@ -83,7 +94,8 @@ class PlannerFSM {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 12;
+    length += object.planner_fsm_string.length;
+    return length + 16;
   }
 
   static datatype() {
@@ -93,7 +105,7 @@ class PlannerFSM {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '6df5be79c813c24a6414911b5ba25621';
+    return '17792b6358bfdffcd755358b31a0d229';
   }
 
   static messageDefinition() {
@@ -101,6 +113,7 @@ class PlannerFSM {
     return `
     Header header
     
+    string planner_fsm_string
     int32 gear
     int32 planner_fsm
     int32 last_planner_fsm
@@ -136,6 +149,13 @@ class PlannerFSM {
     }
     else {
       resolved.header = new std_msgs.msg.Header()
+    }
+
+    if (msg.planner_fsm_string !== undefined) {
+      resolved.planner_fsm_string = msg.planner_fsm_string;
+    }
+    else {
+      resolved.planner_fsm_string = ''
     }
 
     if (msg.gear !== undefined) {

@@ -19,7 +19,7 @@ class WayPoint {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.lock_down_index = null;
-      this.aim_pt_index = null;
+      this.pt_index = null;
       this.x = null;
       this.y = null;
       this.z = null;
@@ -38,6 +38,7 @@ class WayPoint {
       this.air_beep = null;
       this.time_to_last_point = null;
       this.current_lat_error = null;
+      this.current_lng_error = null;
       this.flag_lock_down_index_offload = null;
     }
     else {
@@ -47,11 +48,11 @@ class WayPoint {
       else {
         this.lock_down_index = 0;
       }
-      if (initObj.hasOwnProperty('aim_pt_index')) {
-        this.aim_pt_index = initObj.aim_pt_index
+      if (initObj.hasOwnProperty('pt_index')) {
+        this.pt_index = initObj.pt_index
       }
       else {
-        this.aim_pt_index = 0;
+        this.pt_index = 0;
       }
       if (initObj.hasOwnProperty('x')) {
         this.x = initObj.x
@@ -161,6 +162,12 @@ class WayPoint {
       else {
         this.current_lat_error = 0.0;
       }
+      if (initObj.hasOwnProperty('current_lng_error')) {
+        this.current_lng_error = initObj.current_lng_error
+      }
+      else {
+        this.current_lng_error = 0.0;
+      }
       if (initObj.hasOwnProperty('flag_lock_down_index_offload')) {
         this.flag_lock_down_index_offload = initObj.flag_lock_down_index_offload
       }
@@ -174,8 +181,8 @@ class WayPoint {
     // Serializes a message object of type WayPoint
     // Serialize message field [lock_down_index]
     bufferOffset = _serializer.int32(obj.lock_down_index, buffer, bufferOffset);
-    // Serialize message field [aim_pt_index]
-    bufferOffset = _serializer.int32(obj.aim_pt_index, buffer, bufferOffset);
+    // Serialize message field [pt_index]
+    bufferOffset = _serializer.int32(obj.pt_index, buffer, bufferOffset);
     // Serialize message field [x]
     bufferOffset = _serializer.float64(obj.x, buffer, bufferOffset);
     // Serialize message field [y]
@@ -212,6 +219,8 @@ class WayPoint {
     bufferOffset = _serializer.float64(obj.time_to_last_point, buffer, bufferOffset);
     // Serialize message field [current_lat_error]
     bufferOffset = _serializer.float64(obj.current_lat_error, buffer, bufferOffset);
+    // Serialize message field [current_lng_error]
+    bufferOffset = _serializer.float64(obj.current_lng_error, buffer, bufferOffset);
     // Serialize message field [flag_lock_down_index_offload]
     bufferOffset = _serializer.bool(obj.flag_lock_down_index_offload, buffer, bufferOffset);
     return bufferOffset;
@@ -223,8 +232,8 @@ class WayPoint {
     let data = new WayPoint(null);
     // Deserialize message field [lock_down_index]
     data.lock_down_index = _deserializer.int32(buffer, bufferOffset);
-    // Deserialize message field [aim_pt_index]
-    data.aim_pt_index = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [pt_index]
+    data.pt_index = _deserializer.int32(buffer, bufferOffset);
     // Deserialize message field [x]
     data.x = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [y]
@@ -261,13 +270,15 @@ class WayPoint {
     data.time_to_last_point = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [current_lat_error]
     data.current_lat_error = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [current_lng_error]
+    data.current_lng_error = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [flag_lock_down_index_offload]
     data.flag_lock_down_index_offload = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 125;
+    return 133;
   }
 
   static datatype() {
@@ -277,7 +288,7 @@ class WayPoint {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '347035a0432cd4d05535eedeba88125a';
+    return '183ef1b6b55bba411952818555169ea4';
   }
 
   static messageDefinition() {
@@ -286,7 +297,7 @@ class WayPoint {
     # point has no Header
     
     int32 lock_down_index
-    int32 aim_pt_index
+    int32 pt_index
     
     float64 x
     float64 y 
@@ -313,6 +324,7 @@ class WayPoint {
     
     float64 time_to_last_point
     float64 current_lat_error
+    float64 current_lng_error
     bool flag_lock_down_index_offload
     `;
   }
@@ -330,11 +342,11 @@ class WayPoint {
       resolved.lock_down_index = 0
     }
 
-    if (msg.aim_pt_index !== undefined) {
-      resolved.aim_pt_index = msg.aim_pt_index;
+    if (msg.pt_index !== undefined) {
+      resolved.pt_index = msg.pt_index;
     }
     else {
-      resolved.aim_pt_index = 0
+      resolved.pt_index = 0
     }
 
     if (msg.x !== undefined) {
@@ -461,6 +473,13 @@ class WayPoint {
     }
     else {
       resolved.current_lat_error = 0.0
+    }
+
+    if (msg.current_lng_error !== undefined) {
+      resolved.current_lng_error = msg.current_lng_error;
+    }
+    else {
+      resolved.current_lng_error = 0.0
     }
 
     if (msg.flag_lock_down_index_offload !== undefined) {

@@ -57,38 +57,38 @@ include CMakeFiles/data_display.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/data_display.dir/flags.make
 
-CMakeFiles/data_display.dir/src/datadisplay.cpp.o: CMakeFiles/data_display.dir/flags.make
-CMakeFiles/data_display.dir/src/datadisplay.cpp.o: /home/oligay_61/zone3/src/data_display/src/datadisplay.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oligay_61/zone3/build/data_display/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/data_display.dir/src/datadisplay.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/data_display.dir/src/datadisplay.cpp.o -c /home/oligay_61/zone3/src/data_display/src/datadisplay.cpp
+CMakeFiles/data_display.dir/src/data_display.cpp.o: CMakeFiles/data_display.dir/flags.make
+CMakeFiles/data_display.dir/src/data_display.cpp.o: /home/oligay_61/zone3/src/data_display/src/data_display.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oligay_61/zone3/build/data_display/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/data_display.dir/src/data_display.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/data_display.dir/src/data_display.cpp.o -c /home/oligay_61/zone3/src/data_display/src/data_display.cpp
 
-CMakeFiles/data_display.dir/src/datadisplay.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/data_display.dir/src/datadisplay.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oligay_61/zone3/src/data_display/src/datadisplay.cpp > CMakeFiles/data_display.dir/src/datadisplay.cpp.i
+CMakeFiles/data_display.dir/src/data_display.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/data_display.dir/src/data_display.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oligay_61/zone3/src/data_display/src/data_display.cpp > CMakeFiles/data_display.dir/src/data_display.cpp.i
 
-CMakeFiles/data_display.dir/src/datadisplay.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_display.dir/src/datadisplay.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oligay_61/zone3/src/data_display/src/datadisplay.cpp -o CMakeFiles/data_display.dir/src/datadisplay.cpp.s
+CMakeFiles/data_display.dir/src/data_display.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_display.dir/src/data_display.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oligay_61/zone3/src/data_display/src/data_display.cpp -o CMakeFiles/data_display.dir/src/data_display.cpp.s
 
-CMakeFiles/data_display.dir/src/datadisplay.cpp.o.requires:
+CMakeFiles/data_display.dir/src/data_display.cpp.o.requires:
 
-.PHONY : CMakeFiles/data_display.dir/src/datadisplay.cpp.o.requires
+.PHONY : CMakeFiles/data_display.dir/src/data_display.cpp.o.requires
 
-CMakeFiles/data_display.dir/src/datadisplay.cpp.o.provides: CMakeFiles/data_display.dir/src/datadisplay.cpp.o.requires
-	$(MAKE) -f CMakeFiles/data_display.dir/build.make CMakeFiles/data_display.dir/src/datadisplay.cpp.o.provides.build
-.PHONY : CMakeFiles/data_display.dir/src/datadisplay.cpp.o.provides
+CMakeFiles/data_display.dir/src/data_display.cpp.o.provides: CMakeFiles/data_display.dir/src/data_display.cpp.o.requires
+	$(MAKE) -f CMakeFiles/data_display.dir/build.make CMakeFiles/data_display.dir/src/data_display.cpp.o.provides.build
+.PHONY : CMakeFiles/data_display.dir/src/data_display.cpp.o.provides
 
-CMakeFiles/data_display.dir/src/datadisplay.cpp.o.provides.build: CMakeFiles/data_display.dir/src/datadisplay.cpp.o
+CMakeFiles/data_display.dir/src/data_display.cpp.o.provides.build: CMakeFiles/data_display.dir/src/data_display.cpp.o
 
 
 # Object files for target data_display
 data_display_OBJECTS = \
-"CMakeFiles/data_display.dir/src/datadisplay.cpp.o"
+"CMakeFiles/data_display.dir/src/data_display.cpp.o"
 
 # External object files for target data_display
 data_display_EXTERNAL_OBJECTS =
 
-/home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display: CMakeFiles/data_display.dir/src/datadisplay.cpp.o
+/home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display: CMakeFiles/data_display.dir/src/data_display.cpp.o
 /home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display: CMakeFiles/data_display.dir/build.make
 /home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display: /opt/ros/kinetic/lib/libroscpp.so
 /home/oligay_61/zone3/devel/.private/data_display/lib/data_display/data_display: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -118,7 +118,7 @@ CMakeFiles/data_display.dir/build: /home/oligay_61/zone3/devel/.private/data_dis
 
 .PHONY : CMakeFiles/data_display.dir/build
 
-CMakeFiles/data_display.dir/requires: CMakeFiles/data_display.dir/src/datadisplay.cpp.o.requires
+CMakeFiles/data_display.dir/requires: CMakeFiles/data_display.dir/src/data_display.cpp.o.requires
 
 .PHONY : CMakeFiles/data_display.dir/requires
 

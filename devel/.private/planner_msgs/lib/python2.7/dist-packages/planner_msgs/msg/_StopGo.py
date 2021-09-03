@@ -9,13 +9,13 @@ import struct
 import std_msgs.msg
 
 class StopGo(genpy.Message):
-  _md5sum = "baf7a56f493b276b6a53976d92a68e99"
+  _md5sum = "da3d4a046e4f68c9d40c962a1492bab3"
   _type = "planner_msgs/StopGo"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
 
-# stop or go
-string stop_or_go
+# follow tracks planner on/off
+bool follow_tracks_ON
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -34,8 +34,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','stop_or_go']
-  _slot_types = ['std_msgs/Header','string']
+  __slots__ = ['header','follow_tracks_ON']
+  _slot_types = ['std_msgs/Header','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -45,7 +45,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,stop_or_go
+       header,follow_tracks_ON
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -56,11 +56,11 @@ string frame_id
       # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
-      if self.stop_or_go is None:
-        self.stop_or_go = ''
+      if self.follow_tracks_ON is None:
+        self.follow_tracks_ON = False
     else:
       self.header = std_msgs.msg.Header()
-      self.stop_or_go = ''
+      self.follow_tracks_ON = False
 
   def _get_types(self):
     """
@@ -82,12 +82,8 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.stop_or_go
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.follow_tracks_ON
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -115,14 +111,9 @@ string frame_id
       else:
         self.header.frame_id = str[start:end]
       start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.stop_or_go = str[start:end].decode('utf-8', 'rosmsg')
-      else:
-        self.stop_or_go = str[start:end]
+      end += 1
+      (self.follow_tracks_ON,) = _get_struct_B().unpack(str[start:end])
+      self.follow_tracks_ON = bool(self.follow_tracks_ON)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -143,12 +134,8 @@ string frame_id
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.stop_or_go
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.follow_tracks_ON
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -177,14 +164,9 @@ string frame_id
       else:
         self.header.frame_id = str[start:end]
       start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.stop_or_go = str[start:end].decode('utf-8', 'rosmsg')
-      else:
-        self.stop_or_go = str[start:end]
+      end += 1
+      (self.follow_tracks_ON,) = _get_struct_B().unpack(str[start:end])
+      self.follow_tracks_ON = bool(self.follow_tracks_ON)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -199,3 +181,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B

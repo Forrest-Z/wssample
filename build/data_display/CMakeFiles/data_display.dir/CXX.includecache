@@ -116,6 +116,24 @@ std_msgs/Header.h
 geometry_msgs/Quaternion.h
 -
 
+/home/oligay_61/zone3/devel/.private/planner_msgs/include/planner_msgs/PlannerFSM.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+
 /home/oligay_61/zone3/devel/.private/planner_msgs/include/planner_msgs/WayPoint.h
 string
 -
@@ -206,24 +224,6 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/oligay_61/zone3/devel/.private/tli65_can_msgs/include/tli65_can_msgs/RxFuel.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-std_msgs/Header.h
--
-
 /home/oligay_61/zone3/devel/.private/tli65_can_msgs/include/tli65_can_msgs/RxStHighspeed.h
 string
 -
@@ -278,11 +278,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/oligay_61/zone3/src/data_display/src/DataDisplay.h
-iostream
--
-map
--
+/home/oligay_61/zone3/src/data_display/src/data_display.cpp
 ros/ros.h
 -
 string
@@ -299,6 +295,8 @@ kalman_msgs/Kinematics.h
 /home/oligay_61/zone3/src/data_display/src/kalman_msgs/Kinematics.h
 localization_msgs/Pose.h
 /home/oligay_61/zone3/src/data_display/src/localization_msgs/Pose.h
+planner_msgs/PlannerFSM.h
+/home/oligay_61/zone3/src/data_display/src/planner_msgs/PlannerFSM.h
 planner_msgs/WayPoints.h
 /home/oligay_61/zone3/src/data_display/src/planner_msgs/WayPoints.h
 tli65_can_msgs/ContainerCalib.h
@@ -307,18 +305,12 @@ tli65_can_msgs/RxEPB.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxEPB.h
 tli65_can_msgs/RxFt.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxFt.h
-tli65_can_msgs/RxFuel.h
-/home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxFuel.h
 tli65_can_msgs/RxStHighspeed.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxStHighspeed.h
 tli65_can_msgs/RxStLowspeed.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxStLowspeed.h
 tli65_can_msgs/RxTyre.h
 /home/oligay_61/zone3/src/data_display/src/tli65_can_msgs/RxTyre.h
-
-/home/oligay_61/zone3/src/data_display/src/datadisplay.cpp
-DataDisplay.h
-/home/oligay_61/zone3/src/data_display/src/DataDisplay.h
 
 /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 string

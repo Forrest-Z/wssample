@@ -14,13 +14,13 @@
 
 (defclass planner_msgs::WayPoint
   :super ros::object
-  :slots (_lock_down_index _aim_pt_index _x _y _z _roll _pitch _yaw _kalman_yawrate _kalman_vx _acceleration _steer _throttle_percentage _xbr _gear _left_light _right_light _air_beep _time_to_last_point _current_lat_error _flag_lock_down_index_offload ))
+  :slots (_lock_down_index _pt_index _x _y _z _roll _pitch _yaw _kalman_yawrate _kalman_vx _acceleration _steer _throttle_percentage _xbr _gear _left_light _right_light _air_beep _time_to_last_point _current_lat_error _current_lng_error _flag_lock_down_index_offload ))
 
 (defmethod planner_msgs::WayPoint
   (:init
    (&key
     ((:lock_down_index __lock_down_index) 0)
-    ((:aim_pt_index __aim_pt_index) 0)
+    ((:pt_index __pt_index) 0)
     ((:x __x) 0.0)
     ((:y __y) 0.0)
     ((:z __z) 0.0)
@@ -39,11 +39,12 @@
     ((:air_beep __air_beep) 0)
     ((:time_to_last_point __time_to_last_point) 0.0)
     ((:current_lat_error __current_lat_error) 0.0)
+    ((:current_lng_error __current_lng_error) 0.0)
     ((:flag_lock_down_index_offload __flag_lock_down_index_offload) nil)
     )
    (send-super :init)
    (setq _lock_down_index (round __lock_down_index))
-   (setq _aim_pt_index (round __aim_pt_index))
+   (setq _pt_index (round __pt_index))
    (setq _x (float __x))
    (setq _y (float __y))
    (setq _z (float __z))
@@ -62,14 +63,15 @@
    (setq _air_beep (round __air_beep))
    (setq _time_to_last_point (float __time_to_last_point))
    (setq _current_lat_error (float __current_lat_error))
+   (setq _current_lng_error (float __current_lng_error))
    (setq _flag_lock_down_index_offload __flag_lock_down_index_offload)
    self)
   (:lock_down_index
    (&optional __lock_down_index)
    (if __lock_down_index (setq _lock_down_index __lock_down_index)) _lock_down_index)
-  (:aim_pt_index
-   (&optional __aim_pt_index)
-   (if __aim_pt_index (setq _aim_pt_index __aim_pt_index)) _aim_pt_index)
+  (:pt_index
+   (&optional __pt_index)
+   (if __pt_index (setq _pt_index __pt_index)) _pt_index)
   (:x
    (&optional __x)
    (if __x (setq _x __x)) _x)
@@ -124,6 +126,9 @@
   (:current_lat_error
    (&optional __current_lat_error)
    (if __current_lat_error (setq _current_lat_error __current_lat_error)) _current_lat_error)
+  (:current_lng_error
+   (&optional __current_lng_error)
+   (if __current_lng_error (setq _current_lng_error __current_lng_error)) _current_lng_error)
   (:flag_lock_down_index_offload
    (&optional __flag_lock_down_index_offload)
    (if __flag_lock_down_index_offload (setq _flag_lock_down_index_offload __flag_lock_down_index_offload)) _flag_lock_down_index_offload)
@@ -132,7 +137,7 @@
    (+
     ;; int32 _lock_down_index
     4
-    ;; int32 _aim_pt_index
+    ;; int32 _pt_index
     4
     ;; float64 _x
     8
@@ -170,6 +175,8 @@
     8
     ;; float64 _current_lat_error
     8
+    ;; float64 _current_lng_error
+    8
     ;; bool _flag_lock_down_index_offload
     1
     ))
@@ -179,8 +186,8 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; int32 _lock_down_index
        (write-long _lock_down_index s)
-     ;; int32 _aim_pt_index
-       (write-long _aim_pt_index s)
+     ;; int32 _pt_index
+       (write-long _pt_index s)
      ;; float64 _x
        (sys::poke _x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _y
@@ -217,6 +224,8 @@
        (sys::poke _time_to_last_point (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _current_lat_error
        (sys::poke _current_lat_error (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _current_lng_error
+       (sys::poke _current_lng_error (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; bool _flag_lock_down_index_offload
        (if _flag_lock_down_index_offload (write-byte -1 s) (write-byte 0 s))
      ;;
@@ -225,8 +234,8 @@
    (buf &optional (ptr- 0))
    ;; int32 _lock_down_index
      (setq _lock_down_index (sys::peek buf ptr- :integer)) (incf ptr- 4)
-   ;; int32 _aim_pt_index
-     (setq _aim_pt_index (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; int32 _pt_index
+     (setq _pt_index (sys::peek buf ptr- :integer)) (incf ptr- 4)
    ;; float64 _x
      (setq _x (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _y
@@ -264,19 +273,21 @@
      (setq _time_to_last_point (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _current_lat_error
      (setq _current_lat_error (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _current_lng_error
+     (setq _current_lng_error (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; bool _flag_lock_down_index_offload
      (setq _flag_lock_down_index_offload (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get planner_msgs::WayPoint :md5sum-) "347035a0432cd4d05535eedeba88125a")
+(setf (get planner_msgs::WayPoint :md5sum-) "183ef1b6b55bba411952818555169ea4")
 (setf (get planner_msgs::WayPoint :datatype-) "planner_msgs/WayPoint")
 (setf (get planner_msgs::WayPoint :definition-)
       "# point has no Header
 
 int32 lock_down_index
-int32 aim_pt_index
+int32 pt_index
 
 float64 x
 float64 y 
@@ -303,11 +314,12 @@ uint8 air_beep
 
 float64 time_to_last_point
 float64 current_lat_error
+float64 current_lng_error
 bool flag_lock_down_index_offload
 ")
 
 
 
-(provide :planner_msgs/WayPoint "347035a0432cd4d05535eedeba88125a")
+(provide :planner_msgs/WayPoint "183ef1b6b55bba411952818555169ea4")
 
 

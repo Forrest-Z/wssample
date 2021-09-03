@@ -111,7 +111,7 @@
    self)
   )
 
-(setf (get planner_msgs::WayPoints :md5sum-) "573e1dc003839203bc6a8d30ca76058b")
+(setf (get planner_msgs::WayPoints :md5sum-) "5fe65fd9eca45e86d5dc3de0bdfc36bc")
 (setf (get planner_msgs::WayPoints :datatype-) "planner_msgs/WayPoints")
 (setf (get planner_msgs::WayPoints :definition-)
       "Header header
@@ -122,8 +122,7 @@
 # coord_type = \"enu\"
 string coord_type
 
-# teledrive
-# follow_tracks
+# \"teledrive\" or \"follow_tracks\"
 string control_type
 
 string planner_fsm
@@ -152,7 +151,7 @@ MSG: planner_msgs/WayPoint
 # point has no Header
 
 int32 lock_down_index
-int32 aim_pt_index
+int32 pt_index
 
 float64 x
 float64 y 
@@ -179,11 +178,12 @@ uint8 air_beep
 
 float64 time_to_last_point
 float64 current_lat_error
+float64 current_lng_error
 bool flag_lock_down_index_offload
 ")
 
 
 
-(provide :planner_msgs/WayPoints "573e1dc003839203bc6a8d30ca76058b")
+(provide :planner_msgs/WayPoints "5fe65fd9eca45e86d5dc3de0bdfc36bc")
 
 

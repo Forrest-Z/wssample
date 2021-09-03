@@ -1,4 +1,4 @@
 Header header
 
-# stop or go
-string stop_or_go
+# follow tracks planner on/off
+bool follow_tracks_ON
